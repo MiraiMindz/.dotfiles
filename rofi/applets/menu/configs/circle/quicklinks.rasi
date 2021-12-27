@@ -36,7 +36,7 @@ prompt {
     padding:                        10px;
 	background-color: 				@background;
 	text-color: 					@accent;
-    border:                  		0px 2px 0px 2px;
+    border:                  		2px 2px 2px 2px;
     border-radius:                  100%;
     border-color:                  	@accent;
 }
@@ -60,12 +60,12 @@ inputbar {
     border-radius:                  0px;
     border-color:                  	@accent;
     margin:                         0px 0px 0px 0px;
-    padding:                        0px;
+    padding:                        0px 0px 20px 0px;
     position:                       center;
 }
 
 listview {
-    columns:						6;
+    columns:						4;
     lines:							1;
     spacing:                        15px;
     cycle:                          true;
@@ -88,11 +88,11 @@ element {
 }
 
 element-text {
-	font:							"feather 32";
+	font:							"Font Awesome 5 Pro Solid 48";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0;
-    margin:                         25px 0px 65px 0px;
+    margin:                         0px 0px 20px 0px;
 }
 
 element normal.urgent,

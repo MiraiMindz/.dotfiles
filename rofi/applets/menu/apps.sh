@@ -12,7 +12,7 @@ rofi_command="rofi -theme $dir/apps.rasi"
 
 # Links
 files=""
-editor=""
+editor="﬏ "
 browser=""
 rofi=""
 quicklinks=""
