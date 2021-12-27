@@ -10,6 +10,8 @@ alias cdd=cd
 alias dcc=cd
 alias ccd=cd
 alias ddc=cd
+alias exi=exit
+alias ext=exit
 alias ls='ls -F --color=auto'
 alias ll='ls -lh'
 alias la='ls -a'
