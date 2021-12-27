@@ -11,12 +11,14 @@ dir="$HOME/.config/rofi/applets/menu/configs/$style"
 rofi_command="rofi -theme $dir/apps.rasi"
 
 # Links
-terminal=""
 files=""
-editor=""
-browser=""
-music=""
-settings=""
+editor=""
+browser=""
+rofi=""
+quicklinks=""
+scrcpy=""
+discord=""
+
 
 # Error msg
 msg() {
@@ -24,34 +26,17 @@ msg() {
 }
 
 # Variable passed to rofi
-options="$terminal\n$files\n$editor\n$browser\n$music\n$settings"
+options="$rofi\n$discord\n$browser\n$editor\n$files\n$scrcpy\n$quicklinks"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Most Used" -dmenu -selected-row 0)"
 case $chosen in
-    $terminal)
-		if [[ -f /usr/bin/termite ]]; then
-			termite &
-		elif [[ -f /usr/bin/urxvt ]]; then
-			urxvt &
-		elif [[ -f /usr/bin/kitty ]]; then
-			kitty &
-		elif [[ -f /usr/bin/xterm ]]; then
-			xterm &
-		elif [[ -f /usr/bin/xfce4-terminal ]]; then
-			xfce4-terminal &
-		elif [[ -f /usr/bin/gnome-terminal ]]; then
-			gnome-terminal &
-		else
-			msg "No suitable terminal found!"
-		fi
-        ;;
     $files)
 		if [[ -f /usr/bin/thunar ]]; then
 			thunar &
 		elif [[ -f /usr/bin/pcmanfm ]]; then
 			pcmanfm &
 		else
-			msg "No suitable file manager found!"
+			msg "Thunar not found"
 		fi
         ;;
     $editor)
@@ -61,35 +46,43 @@ case $chosen in
 			leafpad &
 		elif [[ -f /usr/bin/mousepad ]]; then
 			mousepad &
-		elif [[ -f /usr/bin/code ]]; then
-			code &
+		elif [[ -f  $HOME/Apps/VisualStudioCode/code ]]; then
+			vscode &
 		else
-			msg "No suitable text editor found!"
+			msg "Code not found"
 		fi
         ;;
     $browser)
 		if [[ -f /usr/bin/firefox ]]; then
 			firefox &
-		elif [[ -f /usr/bin/chromium ]]; then
-			chromium &
-		elif [[ -f /usr/bin/midori ]]; then
-			midori &
-		else
-			msg "No suitable web browser found!"
 		fi
         ;;
-    $music)
-		if [[ -f /usr/bin/lxmusic ]]; then
-			lxmusic &
+    $rofi)
+		if [[ -f /usr/bin/rofi ]]; then
+			rofi -show run &
 		else
-			msg "No suitable music player found!"
+			msg "Rofi not found"
 		fi
         ;;
-    $settings)
-		if [[ -f /usr/bin/xfce4-settings-manager ]]; then
-			xfce4-settings-manager &
+    $quicklinks)
+		if [[ -f $HOME/.config/rofi/bin/menu_quicklinks ]]; then
+			bash  $HOME/.config/rofi/bin/menu_quicklinks &
 		else
-			msg "No suitable settings manager found!"
+			msg "Quicklinks not found"
+		fi
+        ;;
+	$scrcpy)
+		if [[ -f /usr/bin/scrcpy ]]; then
+			scrcpy &
+		else
+			msg "Scrcpy not found"
+		fi
+        ;;
+	$discord)
+		if [[ -f /usr/bin/discord ]]; then
+			discord &
+		else
+			msg "Discord not found"
 		fi
         ;;
 esac
