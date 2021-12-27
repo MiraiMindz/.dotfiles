@@ -16,35 +16,35 @@ msg() {
 }
 
 # Options
+allscreens=""
 screen=""
 area=""
 window=""
 
 # Variable passed to rofi
-options="$screen\n$area\n$window"
+options="$allscreens\n$screen\n$area\n$window"
 
-chosen="$(echo -e "$options" | $rofi_command -p 'App : scrot' -dmenu -selected-row 1)"
+chosen="$(echo -e "$options" | $rofi_command -p 'spectacle' -dmenu -selected-row 1)"
 case $chosen in
     $screen)
-		if [[ -f /usr/bin/scrot ]]; then
-			sleep 1; scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+		if [[ -f /usr/bin/spectacle ]]; then
+			sleep 1; spectacle -m -r -o /home/mirai/Imagens/Screenshot_%T_%Y%M%D_%H%m%S --copy-image
 		else
 			msg
 		fi
         ;;
     $area)
-		if [[ -f /usr/bin/scrot ]]; then
-			scrot -s 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+		if [[ -f /usr/bin/spectacle ]]; then
+			spectacle -r -o /home/mirai/Imagens/Screenshot_%T_%Y%M%D_%H%m%S --copy-image
 		else
 			msg
 		fi
         ;;
     $window)
-		if [[ -f /usr/bin/scrot ]]; then
-			sleep 1; scrot -u 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+		if [[ -f /usr/bin/spectacle ]]; then
+			spectacle -w -a -o /home/mirai/Imagens/Screenshot_%T_%Y%M%D_%H%m%S --copy-image
 		else
 			msg
 		fi
         ;;
 esac
-
