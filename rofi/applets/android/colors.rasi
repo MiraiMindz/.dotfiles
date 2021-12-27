@@ -20,3 +20,13 @@
  */
 
 @import "../styles/arc.rasi"
+
+element-text, element-icon {
+	background-color: inherit;
+	text-color:       inherit;
+}
+
+element-icon {
+	horizontal-align:   0.5;
+	vertical-align:     0.5;
+}
