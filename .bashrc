@@ -32,7 +32,7 @@ DOTFILES=$HOME/.dotfiles
 
 ### Export Variables
 export GOROOT=/usr/lib/go
-export GOPATH=/media/Arquivos/Arquivos/Programacao/VisualCode/Projects/Go/Workspace
+export GOPATH=$HOME/go
 
 ### Functions
 if [ -e $HOME/.bash_functions ]; then
