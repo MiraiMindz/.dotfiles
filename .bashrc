@@ -27,11 +27,12 @@ NOCOLOR=$(tput sgr0)
 PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W \[$DARK_GREEN\]~\[$NOCOLOR\] '
 
 ### Variables
-GOROOT=/usr/lib/go
-GOPATH=/media/Arquivos/Arquivos/Programacao/VisualCode/Projects/Go/Workspace
-
 ARQUIVOS=/media/Arquivos/Arquivos
 DOTFILES=$HOME/.dotfiles
+
+### Export Variables
+export GOROOT=/usr/lib/go
+export GOPATH=/media/Arquivos/Arquivos/Programacao/VisualCode/Projects/Go/Workspace
 
 ### Functions
 if [ -e $HOME/.bash_functions ]; then
