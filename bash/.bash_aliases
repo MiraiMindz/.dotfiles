@@ -13,6 +13,9 @@ alias ddc=cd
 alias exi=exit
 alias ext=exit
 alias ls='ls -F --color=auto'
+alias sl=ls
+alias ssl=ls
+alias lls=ls
 alias ll='ls -lh'
 alias la='ls -a'
 alias lla='ls -a -lh'
