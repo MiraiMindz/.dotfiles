@@ -2,10 +2,14 @@
 [keybindings]
 [profiles]
   [[default]]
+    background_darkness = 1.0
+    background_type = transparent
     cursor_color = "#aaaaaa"
+    show_titlebar = False
+    scrollbar_position = hidden
   [[Mirai]]
     background_color = "#0f111a"
-    background_darkness = 1.0
+    background_darkness = 0.35
     background_type = transparent
     cursor_color = "#aaaaaa"
     font = Cascadia Code PL Semi-Light 10
