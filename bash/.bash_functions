@@ -1,4 +1,4 @@
-function cl() {
+cl() {
     DIR="$*";
         # if no DIR given, go home
         if [ $# -lt 1 ]; then
@@ -9,7 +9,7 @@ function cl() {
         ls -F --color=auto
 }
 
-function initgit() {
+initgit() {
     git init -b main && git add . && git commit -m "First commit" && git remote add origin "$1" && git remote -v && git push origin main
 }
 
