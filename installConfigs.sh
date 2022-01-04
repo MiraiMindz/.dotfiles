@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+initgit() {
+    git init -b main && git add . && git commit -m "created .dotfiles repo from script" && git remote add origin "$1" && git remote -v && git push origin main
+}
+
 doinstall() {
     printf "\e[32mSTARTING INSTALLATION\e[0m\nChecking if all the packages are installed\nand proceeding with the instalation\n"
     if [[ -d $HOME/.dotfiles ]]; then
@@ -187,6 +191,58 @@ doinstall() {
         fi
     else
         printf ".bashrc doesn't exists, do you wish to copy the dotfiles .bashrc file?\n"
+    fi
+
+    echo -n "Do you whish to import the .gitconfig file? (y/n)? "
+    old_stty_cfg=$(stty -g)
+    stty raw -echo
+    answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+    stty $old_stty_cfg
+    if echo "$answer" | grep -iq "^y" ;then
+        if [[ -e $HOME/.gitconfig ]]; then
+            printf ".gitconfig file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+            mv -v $HOME/.gitconfig $HOME/PREVIOUS_CONFIG_BACKUP/
+            cp -v -r ./.gitconfig $HOME/.dotfiles/
+            ln -v -sf $HOME/.dotfiles/.gitconfig $HOME/
+        else
+            printf ".gitconfig file was not found in $HOME skipping...\n"
+        fi
+    else
+        printf "cleaning\n"
+    fi
+
+    echo -n "Do you wanna create a git repo to monitore the $HOME/.dotfiles folder (y/n)? "
+    old_stty_cfg=$(stty -g)
+    stty raw -echo
+    answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+    stty $old_stty_cfg
+    if echo "$answer" | grep -iq "^y" ;then
+        if [[ -e $(which gh) ]]; then
+            printf "Github CLI is installed: $(which gh)\n"
+            cd $HOME/.dotfiles/
+            git init -b main
+            git add .
+            git commit -m "created .dotfiles repo from script"
+            gh repo create
+            cd $HOME
+        else
+            printf "Github CLI was not found, please create a Github repository and come back to this script\n"
+            echo -n "Do you have created the repository (y/n)? "
+            old_stty_cfg=$(stty -g)
+            stty raw -echo
+            answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+            stty $old_stty_cfg
+            if echo "$answer" | grep -iq "^y" ;then
+                cd $HOME/.dotfiles/
+                printf "Please insert the github repository URL: "
+                initgit
+                cd $HOME
+            else
+                printf "exiting\n"
+            fi
+        fi
+    else
+        printf "aborting\n"
     fi
 
     printf "INSTALLATION DONE\nREMAINDERS:\nNow open your \e[32m\e[3mVIM\e[23m\e[0m and run \e[33m:PlugInstall\e[0m to install the plugins\n"
