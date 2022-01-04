@@ -209,7 +209,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id hideIt.sh -w --name '^Polybar tray window$' --region 0x768+10+-40
 
 ### Picom Config
-exec_always --no-startup-id picom -b --experimental-backends --config $HOME/.config/picom/picom.conf
+# exec_always --no-startup-id picom -b --experimental-backends --config $HOME/.config/picom/picom.conf
 
 ### Screenshot
 bindsym Print exec bash $HOME/.config/rofi/bin/menu_screenshot
