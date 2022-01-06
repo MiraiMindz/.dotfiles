@@ -5,24 +5,11 @@
 ### If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-### Colors
-DARK_BLACK=$(tput setaf 0)
-DARK_RED=$(tput setaf 1)
-DARK_GREEN=$(tput setaf 2)
-DARK_YELLOW=$(tput setaf 3)
-DARK_BLUE=$(tput setaf 4)
-DARK_PURPLE=$(tput setaf 5)
-DARK_CYAN=$(tput setaf 6)
-DARK_WHITE=$(tput setaf 7)
-LIGHT_BLACK=$(tput setaf 8)
-LIGHT_RED=$(tput setaf 9)
-LIGHT_GREEN=$(tput setaf 10)
-LIGHT_YELLOW=$(tput setaf 11)
-LIGHT_BLUE=$(tput setaf 12)
-LIGHT_PURPLE=$(tput setaf 13)
-LIGHT_CYAN=$(tput setaf 14)
-LIGHT_WHITE=$(tput setaf 15)
-NOCOLOR=$(tput sgr0)
+### Text Formatting
+if [ -e $HOME/.bash_text-formatting ]; then
+    source $HOME/.bash_text-formatting
+fi
+
 
 ### Variables
 ARQUIVOS=/media/Arquivos/Arquivos
@@ -47,10 +34,15 @@ if [ -e $HOME/.bash_aliases ]; then
 fi
 
 # Git Completion
-source $HOME/git-completion.bash
+if [ -e $HOME/git-completion.bash ]; then
+    source $HOME/git-completion.bash
+fi
 
 # Git Prompt
-source $HOME/git-prompt.sh
+if [ -e $HOME/git-prompt.sh ]; then
+    source $HOME/git-prompt.sh
+fi
+
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
@@ -62,5 +54,6 @@ GIT_PS1_DESCRIBE_STYLE="branch"
 
 # Prompt Customization
 # PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W \[$DARK_GREEN\]~\[$NOCOLOR\] '
-
-PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W$(__git_ps1 " (%s)")\[$DARK_GREEN\] ~\[$NOCOLOR\] '
+# PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W$(__git_ps1 " (%s)")\[$DARK_GREEN\] ~\[$NOCOLOR\] '
+# PS1='[\t] \u@\W$(__git_ps1 " (%s)") ~ '
+PS1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\] \[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W\[$($DARK_RED_16_fg)\]$(__git_ps1 " (%s)") \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
