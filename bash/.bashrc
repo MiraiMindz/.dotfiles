@@ -24,8 +24,6 @@ LIGHT_CYAN=$(tput setaf 14)
 LIGHT_WHITE=$(tput setaf 15)
 NOCOLOR=$(tput sgr0)
 
-PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W \[$DARK_GREEN\]~\[$NOCOLOR\] '
-
 ### Variables
 ARQUIVOS=/media/Arquivos/Arquivos
 DOTFILES=$HOME/.dotfiles
@@ -47,3 +45,15 @@ fi
 if [ -e $HOME/.bash_aliases ]; then
     source $HOME/.bash_aliases
 fi
+
+# Git Completion
+source $HOME/git-completion.bash
+
+# Git Prompt
+source $HOME/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=1
+
+
+# Prompt Customization
+# PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W \[$DARK_GREEN\]~\[$NOCOLOR\] '
+PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W$(__git_ps1 " (%s)")\[$DARK_GREEN\] ~\[$NOCOLOR\] '
