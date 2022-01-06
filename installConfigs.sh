@@ -1,11 +1,46 @@
 #!/usr/bin/env bash
 
+DARK_BLACK='\e[30m'
+DARK_RED='\e[31m'
+DARK_GREEN='\e[32m'
+DARK_YELLOW='\e[33m'
+DARK_BLUE='\e[34m'
+DARK_PURPLE='\e[35m'
+DARK_CYAN='\e[36m'
+DARK_WHITE='\e[37m'
+LIGHT_BLACK='\e[90m'
+LIGHT_RED='\e[91m'
+LIGHT_GREEN='\e[92m'
+LIGHT_YELLOW='\e[93m'
+LIGHT_BLUE='\e[94m'
+LIGHT_PURPLE='\e[95m'
+LIGHT_CYAN='\e[96m'
+LIGHT_WHITE='\e[97m'
+NOCOLOR='\e[39m'
+TEXTRESETALL='\e[m'
+TEXTBOLD_ON='\e[1m'
+TEXTFAINT_ON='\e[2m'
+TEXTITALIC_ON='\e[3m'
+TEXTUNDERLN_ON='\e[4m'
+TEXTBLINK_ON='\e[5m'
+TEXTHIGHLT_ON='\e[7m'
+TEXTHIDDEN_ON='\e[8m'
+TEXTSTRIKE_ON='\e[9m'
+TEXTBOLD_OFF='\e[21m'
+TEXTFAINT_OFF='\e[22m'
+TEXTITALIC_OFF='\e[23m'
+TEXTUNDERLN_OFF='\e[24m'
+TEXTBLINK_OFF='\e[25m'
+TEXTHIGHLT_OFF='\e[27m'
+TEXTHIDDEN_OFF='\e[28m'
+TEXTSTRIKE_OFF='\e[29m'
+
 initgit() {
     git init -b main && git add . && git commit -m "created .dotfiles repo from script" && git remote add origin "$1" && git remote -v && git push origin main
 }
 
 doinstall() {
-    printf "\e[32mSTARTING INSTALLATION\e[0m\nChecking if all the packages are installed\nand proceeding with the instalation\n"
+    printf "$DARK_GREEN STARTING INSTALLATION$NOCOLOR\nChecking if all the packages are installed\nand proceeding with the instalation\n"
     if [[ -d $HOME/.dotfiles ]]; then
         printf ".dotfiles directory exists: $HOME/.dotfiles\n"
     else
@@ -171,29 +206,121 @@ doinstall() {
     fi
 
     if [[ -e $HOME/.bashrc ]]; then
-        printf ".bashrc file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
-        mkdir -p $HOME/PREVIOUS_CONFIG_BACKUP/bash
-        mv -v $HOME/.bashrc $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-        mkdir -v -p $HOME/.dotfiles/bash
-        cp -v -r ./bash/* $HOME/.dotfiles/bash/
-        ln -v -sf $HOME/.dotfiles/bash/.bashrc $HOME/
-        if [[ -e $HOME/.bash_aliases ]]; then
-            printf ".bash_aliases file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
-            mv -v $HOME/.bash_aliases $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+        echo -n "Do you wish to copy the dotfiles .bashrc file (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+        old_stty_cfg=$(stty -g)
+        stty raw -echo
+        answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+        stty $old_stty_cfg
+        if echo "$answer" | grep -iq "^y" ;then
+            printf ".bashrc file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+            mkdir -p $HOME/PREVIOUS_CONFIG_BACKUP/bash
+            mv -v $HOME/.bashrc $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+            mkdir -v -p $HOME/.dotfiles/bash
+            cp -v -r ./bash/* $HOME/.dotfiles/bash/
+            ln -v -sf $HOME/.dotfiles/bash/.bashrc $HOME/
+            if [[ -e $HOME/.bash_aliases ]]; then
+                printf ".bash_aliases file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_aliases $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+            fi
+            if [[ -e $HOME/.bash_functions ]]; then
+                printf ".bash_functions file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_functions $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+            fi
+            if [[ -e $HOME/.bash_variables ]]; then
+                printf ".bash_variables file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_variables $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
+            fi
+            if [[ -e $HOME/.bash_text-formatting ]]; then
+                printf ".bash_text-formatting file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+            fi
+            if [[ -e $HOME/git-completion.bash ]]; then
+                printf ".git-completion.bash file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
+            fi
+            if [[ -e $HOME/git-prompt.sh ]]; then
+                printf "git-prompt.sh file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/git-prompt.sh $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+            fi
         else
-            ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
-        fi
-        if [[ -e $HOME/.bash_functions ]]; then
-            printf ".bash_functions file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
-            mv -v $HOME/.bash_functions $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-        else
-            ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+            printf "proceeding...\n"
         fi
     else
-        printf ".bashrc doesn't exists, do you wish to copy the dotfiles .bashrc file?\n"
+        echo -n ".bashrc doesn't exists, do you wish to copy the dotfiles .bashrc file (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+        old_stty_cfg=$(stty -g)
+        stty raw -echo
+        answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+        stty $old_stty_cfg
+        if echo "$answer" | grep -iq "^y" ;then
+            mkdir -v -p $HOME/.dotfiles/bash
+            cp -v -r ./bash/* $HOME/.dotfiles/bash/
+            ln -v -sf $HOME/.dotfiles/bash/.bashrc $HOME/
+            if [[ -e $HOME/.bash_aliases ]]; then
+                printf ".bash_aliases file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_aliases $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+            fi
+            if [[ -e $HOME/.bash_functions ]]; then
+                printf ".bash_functions file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_functions $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+            fi
+            if [[ -e $HOME/.bash_variables ]]; then
+                printf ".bash_variables file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_variables $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
+            fi
+            if [[ -e $HOME/.bash_text-formatting ]]; then
+                printf ".bash_text-formatting file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+            fi
+            if [[ -e $HOME/git-completion.bash ]]; then
+                printf ".git-completion.bash file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
+            fi
+            if [[ -e $HOME/git-prompt.sh ]]; then
+                printf "git-prompt.sh file found in $HOME creating backup copy of it in $HOME/PREVIOUS_CONFIG_BACKUP\n"
+                mv -v $HOME/git-prompt.sh $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+            else
+                ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+            fi
+        else
+            printf "proceeding...\n"
+        fi
     fi
 
-    echo -n "Do you whish to import the .gitconfig file? (y/n)? "
+    echo -n "Do you whish to import the .gitconfig file? (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
     old_stty_cfg=$(stty -g)
     stty raw -echo
     answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
@@ -211,7 +338,7 @@ doinstall() {
         printf "cleaning\n"
     fi
 
-    echo -n "Do you wanna create a git repo to monitore the $HOME/.dotfiles folder (y/n)? "
+    echo -n "Do you wanna create a git repo to monitore the $HOME/.dotfiles folder (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
     old_stty_cfg=$(stty -g)
     stty raw -echo
     answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
@@ -227,7 +354,7 @@ doinstall() {
             cd $HOME
         else
             printf "Github CLI was not found, please create a Github repository and come back to this script\n"
-            echo -n "Do you have created the repository (y/n)? "
+            echo -n "Do you have created the repository (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
             old_stty_cfg=$(stty -g)
             stty raw -echo
             answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
@@ -245,26 +372,28 @@ doinstall() {
         printf "aborting\n"
     fi
 
-    printf "INSTALLATION DONE\nREMAINDERS:\nNow open your \e[32m\e[3mVIM\e[23m\e[0m and run \e[33m:PlugInstall\e[0m to install the plugins\n"
+    printf "INSTALLATION DONE\nREMAINDERS:\n\tNow open your \e[32m\e[3mVIM\e[23m\e[0m and run \e[33m:PlugInstall\e[0m to install the plugins\n"
 }
 
-printf "\e[1m\e[33mWARNING
-\e[31mTHE FOLLOWING SCRIPT WILL INSTALL ALL THE CONFIGURATIONS AUTOMATIC
+printf "${TEXTBOLD_ON}${DARK_YELLOW}WARNING
+${DARK_RED}THE FOLLOWING SCRIPT WILL INSTALL ALL THE CONFIGURATIONS AUTOMATIC
 PLEASE ENSURE THAT YOU HAVE THE FOLLOWING PACKAGES INSTALLED:
-\e[32mPicom \e[35m[Ibhagwan Fork]\e[34m(https://github.com/ibhagwan/picom)
-\e[32mi3wm\e[34m (https://github.com/i3/i3)
-\e[32mNeofetch\e[34m (https://github.com/dylanaraps/neofetch)
-\e[32mPolybar\e[34m (https://github.com/polybar/polybar)
-\e[32mRofi\e[34m (https://github.com/davatorium/rofi)
-\e[32mRofi Applets\e[34m (https://github.com/adi1090x/rofi)
-\e[32mTerminator\e[34m (https://github.com/gnome-terminator/terminator)
-\e[32mVim\e[34m (https://github.com/vim/vim)
+${DARK_GREEN}Picom ${DARK_PURPLE}[Ibhagwan Fork]${DARK_BLUE}(https://github.com/ibhagwan/picom)
+${DARK_GREEN}i3wm${DARK_BLUE} (https://github.com/i3/i3)
+${DARK_GREEN}Neofetch${DARK_BLUE} (https://github.com/dylanaraps/neofetch)
+${DARK_GREEN}Polybar${DARK_BLUE} (https://github.com/polybar/polybar)
+${DARK_GREEN}Rofi${DARK_BLUE} (https://github.com/davatorium/rofi)
+${DARK_GREEN}Rofi Applets${DARK_BLUE} (https://github.com/adi1090x/rofi)
+${DARK_GREEN}Terminator${DARK_BLUE} (https://github.com/gnome-terminator/terminator)
+${DARK_GREEN}Vim${DARK_BLUE} (https://github.com/vim/vim)
 
-\e[33mTHIS SCRIPT WILL CREATE A FOLDER INSIDE THE \e[36m\$HOME \e[34m($HOME)\e[33m DIRECTIORY CALLED \e[36m.dotfiles\e[33m
+${DARK_YELLOW}THIS SCRIPT WILL CREATE A FOLDER INSIDE THE ${DARK_CYAN}\$HOME ${DARK_BLUE}($HOME)${DARK_YELLOW} DIRECTIORY CALLED ${DARK_CYAN}.dotfiles${DARK_YELLOW}
 AND THEN WILL CREATE SYMLINKS FROM THAT DIRECTORY TO THE ORIGINAL CONFIG FILES.
-\e[21m\e[0m\n"
+IF ANY CONFIGURATION IS FOUND IT WILL BE BACKED UP IN A CREATED FOLDER ${DARK_BLUE}($HOME/PREVIOUS_CONFIG_BACKUP)${DARK_YELLOW}
+THIS SCRIPT USES THE BOURNE AGAIN SHELL (BASH) AS MAIN USER SHELL
+IF YOU USE THE Z SHELL (ZSH) PLEASE DENY THE SHELL IMPORTS WHEN PROMPTED${TEXTRESETALL}\n"
 
-echo -n "Do you have these packages installed (y/n)? "
+echo -n "Do you have these packages installed (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
 old_stty_cfg=$(stty -g)
 stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
@@ -272,5 +401,5 @@ stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
     doinstall
 else
-    printf "\e[31mABORTING\e[0m\n"
+    printf "${DARK_RED}ABORTING${NOCOLOR}\n"
 fi
