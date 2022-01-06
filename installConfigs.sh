@@ -218,66 +218,123 @@ doinstall() {
         printf "Rofi is not installed\n"
     fi
 
-    if [[ -e $HOME/.bashrc ]]; then
-        echo -e -n "Do you wish to copy the dotfiles .bashrc file (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
-        old_stty_cfg=$(stty -g)
-        stty raw -echo
-        answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
-        stty $old_stty_cfg
-        if echo "$answer" | grep -iq "^y" ;then
-            printf ".bashrc file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
-            mkdir -p $HOME/PREVIOUS_CONFIG_BACKUP/bash
-            mv -v $HOME/.bashrc $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-            mkdir -v -p $HOME/.dotfiles/bash
-            cp -v -r ./bash/* $HOME/.dotfiles/bash/
-            ln -v -sf $HOME/.dotfiles/bash/.bashrc $HOME/
-            if [[ -e $HOME/.bash_aliases ]]; then
-                printf ".bash_aliases file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}n"
-                mv -v $HOME/.bash_aliases $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-                ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+    if [[ -e $(which bash) ]]; then
+        if [[ -e $HOME/.bashrc ]]; then
+            echo -e -n "Do you wish to copy the dotfiles .bashrc file (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+            old_stty_cfg=$(stty -g)
+            stty raw -echo
+            answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+            stty $old_stty_cfg
+            if echo "$answer" | grep -iq "^y" ;then
+                printf ".bashrc file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                mkdir -p $HOME/PREVIOUS_CONFIG_BACKUP/bash
+                mv -v $HOME/.bashrc $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                mkdir -v -p $HOME/.dotfiles/bash
+                cp -v -r ./bash/* $HOME/.dotfiles/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bashrc $HOME/
+                if [[ -e $HOME/.bash_aliases ]]; then
+                    printf ".bash_aliases file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}n"
+                    mv -v $HOME/.bash_aliases $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+                fi
+                if [[ -e $HOME/.bash_functions ]]; then
+                    printf ".bash_functions file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_functions $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+                fi
+                if [[ -e $HOME/.bash_variables ]]; then
+                    printf ".bash_variables file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_variables $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
+                fi
+                if [[ -e $HOME/.bash_text-formatting ]]; then
+                    printf ".bash_text-formatting file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+                fi
+                if [[ -e $HOME/git-completion.bash ]]; then
+                    printf ".git-completion.bash file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
+                fi
+                if [[ -e $HOME/git-prompt.sh ]]; then
+                    printf "git-prompt.sh file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/git-prompt.sh $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+                fi
             else
-                ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
-            fi
-            if [[ -e $HOME/.bash_functions ]]; then
-                printf ".bash_functions file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
-                mv -v $HOME/.bash_functions $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-                ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
-            else
-                ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
-            fi
-            if [[ -e $HOME/.bash_variables ]]; then
-                printf ".bash_variables file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
-                mv -v $HOME/.bash_variables $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-                ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
-            else
-                ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
-            fi
-            if [[ -e $HOME/.bash_text-formatting ]]; then
-                printf ".bash_text-formatting file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
-                mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-                ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
-            else
-                ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
-            fi
-            if [[ -e $HOME/git-completion.bash ]]; then
-                printf ".git-completion.bash file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
-                mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-                ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
-            else
-                ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
-            fi
-            if [[ -e $HOME/git-prompt.sh ]]; then
-                printf "git-prompt.sh file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
-                mv -v $HOME/git-prompt.sh $HOME/PREVIOUS_CONFIG_BACKUP/bash/
-                ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
-            else
-                ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+                printf "proceeding...\n"
             fi
         else
-            printf "proceeding...\n"
+            echo -e -n ".bashrc doesn't exists, do you wish to copy the dotfiles .bashrc file (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+            old_stty_cfg=$(stty -g)
+            stty raw -echo
+            answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+            stty $old_stty_cfg
+            if echo "$answer" | grep -iq "^y" ;then
+                mkdir -v -p $HOME/.dotfiles/bash
+                cp -v -r ./bash/* $HOME/.dotfiles/bash/
+                ln -v -sf $HOME/.dotfiles/bash/.bashrc $HOME/
+                if [[ -e $HOME/.bash_aliases ]]; then
+                    printf ".bash_aliases file found in ${DARK_BLUE}$HOME${NOCOLOR}creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_aliases $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_aliases $HOME/
+                fi
+                if [[ -e $HOME/.bash_functions ]]; then
+                    printf ".bash_functions file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_functions $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_functions $HOME/
+                fi
+                if [[ -e $HOME/.bash_variables ]]; then
+                    printf ".bash_variables file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_variables $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_variables $HOME/
+                fi
+                if [[ -e $HOME/.bash_text-formatting ]]; then
+                    printf ".bash_text-formatting file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+                fi
+                if [[ -e $HOME/git-completion.bash ]]; then
+                    printf ".git-completion.bash file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/git-completion.bash $HOME/
+                fi
+                if [[ -e $HOME/git-prompt.sh ]]; then
+                    printf "git-prompt.sh file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/git-prompt.sh $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/git-prompt.sh $HOME/
+                fi
+            else
+                printf "proceeding...\n"
+            fi
         fi
     else
-        echo -e -n ".bashrc doesn't exists, do you wish to copy the dotfiles .bashrc file (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+        echo -e -n "Bash not found do you wish to import all the bash configs (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
         old_stty_cfg=$(stty -g)
         stty raw -echo
         answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
@@ -332,6 +389,7 @@ doinstall() {
             printf "proceeding...\n"
         fi
     fi
+
 
     echo -e -n "Do you whish to import the .gitconfig file? (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
     old_stty_cfg=$(stty -g)
