@@ -5,6 +5,11 @@
 ### If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+### Font Icons
+if [[ -e $HOME/.local/share/icons-in-terminal/icons_bash.sh ]]; then
+    source $HOME/.local/share/icons-in-terminal/icons_bash.sh
+fi
+
 ### Text Formatting
 if [ -e $HOME/.bash_text-formatting ]; then
     source $HOME/.bash_text-formatting
@@ -25,12 +30,12 @@ if [ -e $HOME/.bash_aliases ]; then
     source $HOME/.bash_aliases
 fi
 
-# Git Completion
+### Git Completion
 if [ -e $HOME/git-completion.bash ]; then
     source $HOME/git-completion.bash
 fi
 
-# Git Prompt
+### Git Prompt
 if [ -e $HOME/git-prompt.sh ]; then
     source $HOME/git-prompt.sh
     GIT_PS1_SHOWDIRTYSTATE=1

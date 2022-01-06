@@ -12,15 +12,6 @@ alias ccd=cd
 alias ddc=cd
 alias exi=exit
 alias ext=exit
-alias ls='ls -F --color=auto'
-alias sl=ls
-alias ssl=ls
-alias lls=ls
-alias ll='ls -lh'
-alias la='ls -a'
-alias lla='ls -a -lh'
-alias lt='ls --human-readable --size -1 -S --classify'
-alias modfiles='ls -t -1'
 alias count='find . -type f | wc -l'
 alias ping='ping -c 5'
 alias untar='tar -zxvf '
@@ -48,3 +39,43 @@ alias topgit='cd `git rev-parse --show-toplevel` && git checkout master && git p
 alias cg='cd `git rev-parse --show-toplevel`'
 alias initgitcli='git init -b main && git add . && git commit -m "initial commit" && gh repo create'
 alias trmcolors='printf "\033[0;30m██\033[0;31m██\033[0;32m██\033[0;33m██\033[0;34m██\033[0;35m██\033[0;36m██\033[0;37m\033[0m\n\033[1;30m██\033[1;31m██\033[1;32m██\033[1;33m██\033[1;34m██\033[1;35m██\033[1;36m██\033[1;37m\033[0m\n" && printf "COLORTERM=$COLORTERM\n"'
+
+
+if [[ -e $(which lsd) ]];then
+    alias ls='lsd'
+    if [[ -e $(which tree) ]]; then
+        alias lt='ls --tree'
+        alias ltt='tree --dirsfirst -u -D -h -C -p -F'
+        alias lttf='lt -f'
+        alias lttsf='lt -l'
+        alias lttd='lt -d'
+        alias ltta='lt -a'
+        alias lttl='lt -L'
+        alias lttall='lt -f -l -a -L'
+    else
+        alias lt='ls --tree'
+    fi
+else
+    alias ls='ls -F --color=auto'
+    if [[ -e $(which tree) ]]; then
+        alias lt='tree --dirsfirst -u -D -h -C -p -F'
+        alias ltf='lt -f'
+        alias ltsf='lt -l'
+        alias ltd='lt -d'
+        alias lta='lt -a'
+        alias ltl='lt -L'
+        alias ltall='lt -f -l -a -L'
+    else
+        alias lt='ls --human-readable --size -1 -S --classify'
+    fi
+fi
+
+alias sl=ls
+alias ssl=ls
+alias lls=ls
+alias ld='ls -d'
+alias ll='ls -lh'
+alias la='ls -a'
+alias lla='ls -a -lh'
+alias modfiles='ls -t -1'
+
