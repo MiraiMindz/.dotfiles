@@ -46,12 +46,12 @@ if [[ -e $(which lsd) ]];then
     if [[ -e $(which tree) ]]; then
         alias lt='ls --tree'
         alias ltt='tree --dirsfirst -u -D -h -C -p -F'
-        alias lttf='lt -f'
-        alias lttsf='lt -l'
-        alias lttd='lt -d'
-        alias ltta='lt -a'
-        alias lttl='lt -L'
-        alias lttall='lt -f -l -a -L'
+        alias lttf='ltt -f'
+        alias lttsf='ltt -l'
+        alias lttd='ltt -d'
+        alias ltta='ltt -a'
+        alias lttl='ltt -L'
+        alias lttall='ltt -f -l -a -L'
     else
         alias lt='ls --tree'
     fi
