@@ -47,26 +47,28 @@ if [[ -e $(which lsd) ]];then
     alias ls='lsd'
     if [[ -e $(which tree) ]]; then
         alias lt='ls --tree'
-        alias ltt='tree --dirsfirst -u -D -h -C -p -F'
-        alias lttf='ltt -f'
-        alias lttsf='ltt -l'
-        alias lttd='ltt -d'
-        alias ltta='ltt -a'
-        alias lttl='ltt -L'
-        alias lttall='ltt -f -l -a -L'
+        alias ltt='tree --dirsfirst -u -D -h -C -p -F -L 5'
+        alias lttf='tree --dirsfirst -u -D -h -C -p -F -f -L 5'
+        alias lttsf='tree --dirsfirst -u -D -h -C -p -F -l -L 5'
+        alias lttd='tree --dirsfirst -u -D -h -C -p -F -d -L 5'
+        alias ltta='tree --dirsfirst -u -D -h -C -p -F -a -L 5'
+        alias lttl='tree --dirsfirst -u -D -h -C -p -F -L'
+        alias lttlall='tree --dirsfirst -u -D -h -C -p -F -f -l -a -L'
+        alias lttall='tree --dirsfirst -u -D -h -C -p -F -f -l -a -L 5'
     else
         alias lt='ls --tree'
     fi
 else
     alias ls='ls -F --color=auto'
     if [[ -e $(which tree) ]]; then
-        alias lt='tree --dirsfirst -u -D -h -C -p -F'
-        alias ltf='lt -f'
-        alias ltsf='lt -l'
-        alias ltd='lt -d'
-        alias lta='lt -a'
-        alias ltl='lt -L'
-        alias ltall='lt -f -l -a -L'
+        alias lt='tree --dirsfirst -u -D -h -C -p -F -L 5'
+        alias ltf='tree --dirsfirst -u -D -h -C -p -F -f -L 5'
+        alias ltsf='tree --dirsfirst -u -D -h -C -p -F -l -L 5'
+        alias ltd='tree --dirsfirst -u -D -h -C -p -F -d -L 5'
+        alias lta='tree --dirsfirst -u -D -h -C -p -F -a -L 5'
+        alias ltl='tree --dirsfirst -u -D -h -C -p -F -L'
+        alias ltlall='tree --dirsfirst -u -D -h -C -p -F -f -l -a -L'
+        alias ltall='tree --dirsfirst -u -D -h -C -p -F -f -l -a -L 5'
     else
         alias lt='ls --human-readable --size -1 -S --classify'
     fi
