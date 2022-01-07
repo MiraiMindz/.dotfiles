@@ -260,6 +260,13 @@ doinstall() {
                 else
                     ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
                 fi
+                if [[ -e $HOME/.bash_prompts ]]; then
+                    printf ".bash_prompts file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_prompts $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_prompts $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_prompts $HOME/
+                fi
                 if [[ -e $HOME/git-completion.bash ]]; then
                     printf ".git-completion.bash file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
                     mv -v $HOME/.bash_text-formatting $HOME/PREVIOUS_CONFIG_BACKUP/bash/
@@ -314,6 +321,13 @@ doinstall() {
                     ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
                 else
                     ln -v -sf $HOME/.dotfiles/bash/.bash_text-formatting $HOME/
+                fi
+                if [[ -e $HOME/.bash_prompts ]]; then
+                    printf ".bash_prompts file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
+                    mv -v $HOME/.bash_prompts $HOME/PREVIOUS_CONFIG_BACKUP/bash/
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_prompts $HOME/
+                else
+                    ln -v -sf $HOME/.dotfiles/bash/.bash_prompts $HOME/
                 fi
                 if [[ -e $HOME/git-completion.bash ]]; then
                     printf ".git-completion.bash file found in ${DARK_BLUE}$HOME${NOCOLOR} creating backup copy of it in ${DARK_BLUE}$HOME/PREVIOUS_CONFIG_BACKUP${NOCOLOR}\n"
