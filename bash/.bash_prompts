@@ -1,0 +1,7 @@
+if [ -e $HOME/git-prompt.sh ]; then
+    PS1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\] \[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W\[$($DARK_RED_16_fg)\]$(__git_ps1 " (%s)") \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
+    PS2='└\[$($DARK_RED_16_fg)\]$(__git_ps1 "(%s)") \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
+else
+    PS1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\] \[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
+    PS2='└ \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
+fi

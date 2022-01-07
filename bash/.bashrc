@@ -45,17 +45,9 @@ if [ -e $HOME/git-prompt.sh ]; then
     GIT_PS1_SHOWCOLORHINTS=1
     GIT_PS1_SHOWUPSTREAM="auto"
     GIT_PS1_DESCRIBE_STYLE="branch"
-
-    PS1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\] \[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W\[$($DARK_RED_16_fg)\]$(__git_ps1 " (%s)") \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
-else
-    PS1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\] \[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
 fi
 
-
-
-
-# Prompt Customization
-# PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W \[$DARK_GREEN\]~\[$NOCOLOR\] '
-# PS1='\[$DARK_YELLOW\][\t]\[$NOCOLOR\] \[$DARK_BLUE\]\u\[$NOCOLOR\]@\[$DARK_PURPLE\]\W$(__git_ps1 " (%s)")\[$DARK_GREEN\] ~\[$NOCOLOR\] '
-# PS1='[\t] \u@\W$(__git_ps1 " (%s)") ~ '
-# PS1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\] \[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W\[$($DARK_RED_16_fg)\]$(__git_ps1 " (%s)") \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
+### Bash Prompts
+if [[ -e $HOME/.bash_prompts ]]; then
+    source $HOME/.bash_prompts
+fi
