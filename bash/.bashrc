@@ -51,3 +51,9 @@ fi
 if [[ -e $HOME/.bash_prompts ]]; then
     source $HOME/.bash_prompts
 fi
+
+### Greeter
+if [[ -e $HOME/.bash_greeter ]]; then
+    # trap 'greeter' SIGWINCH
+    sh $HOME/.bash_greeter
+fi
