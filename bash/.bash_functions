@@ -1,3 +1,7 @@
+if [[ -e $HOME/.bash_aliases ]]; then
+    source $HOME/.bash_aliases
+fi
+
 cl() {
     DIR="$*";
         # if no DIR given, go home
@@ -6,7 +10,7 @@ cl() {
     fi;
     builtin cd "${DIR}" && \
     # use your preferred ls command
-        ls -F --color=auto
+        ls
 }
 
 initgit() {
