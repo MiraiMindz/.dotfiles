@@ -53,7 +53,8 @@ if [[ -e $HOME/.bash_prompts ]]; then
 fi
 
 ### Greeter
-if [[ -e $HOME/.bash_greeter ]]; then
-    # trap 'greeter' SIGWINCH
-    sh $HOME/.bash_greeter
-fi
+# if [[ -e $HOME/.bash_greeter ]]; then
+#     # trap 'greeter' SIGWINCH
+#     sh $HOME/.bash_greeter
+# fi
+
