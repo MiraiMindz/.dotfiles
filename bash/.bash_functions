@@ -42,33 +42,7 @@ tellmethephilosophy() {
     esac
 }
 
-greeter() {
-    BOLD='\e[1m'
-    RESET='\e[m'
-    RED='\e[31m'
-
-    shopt -s checkwinsize; (:;:)
-    # [[ $COLUMNS -lt 67 ]] && exit 0
-    ln0="S I N C E       S E P T E M B E R       1 9 9 1"
-    ln1="######      ########  #####    ###### ####    #### ######  ######"
-    ln2="######      ########  #####    ###### ####    #### ######  ######"
-    ln3=" ####         ####    ######    ####  ####    ####   #########   "
-    ln4=" ####         ####    #######   ####  ####    ####    #######    "
-    ln5=" ####         ####    ########  ####  ####    ####    ########   "
-    ln6=" ####    ##   ####    #### #### ####  ####    ####   ##########  "
-    ln7="########### ######## ###### ########  ############ ######  ######"
-    ln8="########### ######## ######  #######   ##########  ######  ######"
-    ln9="T H E         G N U         O P E R A T I N G         S Y S T E M"
-    #ln9="G  N  U       O  P  E  R  A  T  I  N  G       S  Y  S  T  E  M"
-    clear
-    printf "${BOLD}%*s${RESET}\n" $(((${#ln0}+$COLUMNS)/2)) "$ln0"
-    printf "${RED}%*s\n" $(((${#ln1}+$COLUMNS)/2)) "$ln1"
-    printf "${RED}%*s\n" $(((${#ln2}+$COLUMNS)/2)) "$ln2"
-    printf "${RED}%*s\n" $(((${#ln3}+$COLUMNS)/2)) "$ln3"
-    printf "${RED}%*s\n" $(((${#ln4}+$COLUMNS)/2)) "$ln4"
-    printf "${RED}%*s\n" $(((${#ln5}+$COLUMNS)/2)) "$ln5"
-    printf "${RED}%*s\n" $(((${#ln6}+$COLUMNS)/2)) "$ln6"
-    printf "${RED}%*s\n" $(((${#ln7}+$COLUMNS)/2)) "$ln7"
-    printf "${RED}%*s${RESET}\n" $(((${#ln8}+$COLUMNS)/2)) "$ln8"
-    printf "${BOLD}%*s${RESET}\n" $(((${#ln9}+$COLUMNS)/2)) "$ln9"
+genpasswd() {
+    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-$1};echo;
 }
+
