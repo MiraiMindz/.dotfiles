@@ -39,6 +39,10 @@ else
     fi
 fi
 
+if [[ -e $(which icons-in-terminal) ]];then
+    alias termicon=icons-in-terminal
+fi
+
 alias cler=clear
 alias claer=clear
 alias clar=clear
@@ -88,6 +92,3 @@ alias topgit='cd `git rev-parse --show-toplevel` && git checkout master && git p
 alias cg='cd `git rev-parse --show-toplevel`'
 alias initgitcli='git init -b main && git add . && git commit -m "initial commit" && gh repo create'
 alias trmcolors='printf "\033[0;30m██\033[0;31m██\033[0;32m██\033[0;33m██\033[0;34m██\033[0;35m██\033[0;36m██\033[0;37m\033[0m\n\033[1;30m██\033[1;31m██\033[1;32m██\033[1;33m██\033[1;34m██\033[1;35m██\033[1;36m██\033[1;37m\033[0m\n" && printf "COLORTERM=$COLORTERM\n"'
-if [[ -e $(which icons-in-terminal) ]];then
-    alias termicon=icons-in-terminal
-fi
