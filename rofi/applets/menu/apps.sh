@@ -32,34 +32,36 @@ options="$rofi\n$discord\n$browser\n$editor\n$files\n$scrcpy\n$quicklinks"
 chosen="$(echo -e "$options" | $rofi_command -p "Most Used" -dmenu -selected-row 0)"
 case $chosen in
     $files)
-		if [[ -f /usr/bin/thunar ]]; then
+		if [[ -f $(which thunar) ]]; then
 			thunar &
-		elif [[ -f /usr/bin/pcmanfm ]]; then
+		elif [[ -f $(which pcmanfm) ]]; then
 			pcmanfm &
 		else
 			msg "Thunar not found"
 		fi
         ;;
     $editor)
-		if [[ -f /usr/bin/geany ]]; then
+		if [[ -f $(which geany) ]]; then
 			geany &
-		elif [[ -f /usr/bin/leafpad ]]; then
+		elif [[ -f $(which leafpad) ]]; then
 			leafpad &
-		elif [[ -f /usr/bin/mousepad ]]; then
+		elif [[ -f $(which mousepad) ]]; then
 			mousepad &
-		elif [[ -f  $HOME/Apps/VisualStudioCode/code ]]; then
+		elif [[ -f  $(which vscode) ]]; then
 			vscode &
 		else
 			msg "Code not found"
 		fi
         ;;
     $browser)
-		if [[ -f /usr/bin/firefox ]]; then
-			firefox &
+		if [[ -f $(which brave) ]]; then
+			brave &
+		else
+			msg "Code not found"
 		fi
         ;;
     $rofi)
-		if [[ -f /usr/bin/rofi ]]; then
+		if [[ -f $(which rofi) ]]; then
 			rofi -show run &
 		else
 			msg "Rofi not found"
@@ -73,14 +75,14 @@ case $chosen in
 		fi
         ;;
 	$scrcpy)
-		if [[ -f /usr/bin/scrcpy ]]; then
+		if [[ -f $(which scrcpy) ]]; then
 			scrcpy &
 		else
 			msg "Scrcpy not found"
 		fi
         ;;
 	$discord)
-		if [[ -f /usr/bin/discord ]]; then
+		if [[ -f $(which discord) ]]; then
 			discord &
 		else
 			msg "Discord not found"
