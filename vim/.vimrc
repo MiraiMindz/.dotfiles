@@ -102,6 +102,14 @@ set notimeout ttimeout ttimeoutlen=200
 set pastetoggle=<F11>
 
 """ }}}
+""" PLUGINS CONFIG {{{
+""" NERDTree Configs
+""" Show Hidden Files
+let NERDTreeShowHidden=1
+
+""" Have nerdtree ignore certain files and directories.
+let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
+""" }}}
 """ WILDMENU {{{
 """ Enable auto completion menu after pressing TAB.
 set wildmenu
@@ -255,7 +263,4 @@ noremap <c-right> <c-w><
 """ NERDTree specific mappings.
 """ Map the F3 key to toggle NERDTree open and close.
 nnoremap <F3> :NERDTreeToggle<cr>
-
-""" Have nerdtree ignore certain files and directories.
-let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 """ }}}
