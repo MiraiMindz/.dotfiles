@@ -10,7 +10,7 @@ cl() {
     fi;
     builtin cd "${DIR}" && \
     # use your preferred ls command
-        ls
+        la
 }
 
 initgit() {
