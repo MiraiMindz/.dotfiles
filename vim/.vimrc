@@ -10,6 +10,7 @@
 """                                                """
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
+
 """ PLUGINS {{{
 call plug#begin('$HOME/.dotfiles/vim/plugins/')
 	Plug 'preservim/nerdtree'
@@ -20,6 +21,7 @@ call plug#begin('$HOME/.dotfiles/vim/plugins/')
 	Plug 'Xuyuanp/nerdtree-git-plugin'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'vimsence/vimsence'
 call plug#end()
 """ }}}
 """ VIM CONFIG {{{
@@ -31,18 +33,31 @@ filetype on
 filetype plugin on
 filetype indent on
 
-""" Enable Visual stuff
+""" Enable Syntax Highlight
 syntax on
+
+""" Set Line Numbers
 set number
-" set cursorline
+
+""" Set Cursor Line Highlight
+set cursorline
+
+""" Set The Level Of Indentation
 set shiftwidth=4
+
+""" Set Tab Visual Size to 4 Columns
 set tabstop=4
+
+""" Set The Size of the TAB key to 4 Columns
+set softtabstop=4
 
 """ Uses Spaces instead of tabs
 set expandtab
 
 """ Disable backup files
 set nobackup
+set nowb
+set noswapfile
 
 """ Do not let cursor scroll below or above N number of lines when scrolling.
 set scrolloff=10
@@ -53,8 +68,14 @@ set nowrap
 """ While searching though a file incrementally highlight matching characters as you type.
 set incsearch
 
+""" Use highlighting when doing a search.
+set hlsearch
+
 """ Ignore capital letters during search.
 set ignorecase
+
+""" Show matching words during a search.
+set showmatch
 
 """ Override the ignorecase option if searching for capital letters.
 """ This will allow you to search specifically for capital letters.
@@ -65,12 +86,6 @@ set showcmd
 
 """ Show the mode you are on the last line.
 set showmode
-
-""" Show matching words during a search.
-set showmatch
-
-""" Use highlighting when doing a search.
-set hlsearch
 
 """ Set the commands to save in history default number is 20.
 set history=1000
@@ -101,14 +116,33 @@ set notimeout ttimeout ttimeoutlen=200
 """ Use <F11> to toggle between 'paste' and 'nopaste'
 set pastetoggle=<F11>
 
+""" Set the Spaces to Visually be _
+set listchars=space:_
+
+""" Set the Tabs to Visually be >~~~~
+set listchars=tab:>~ list
+
+""" Set VIM to not redraw the screen during heavy tasks
+set lazyredraw
+
+""" Set foldmethod to indentation
+set foldmethod=indent
+
+""" For regular expressions turn magic on
+set magic
+
+""" How many tenths of a second to blink when matching brackets
+set mat=2
+
 """ }}}
 """ PLUGINS CONFIG {{{
-""" NERDTree Configs
+""" NERDTree Configs {{{
 """ Show Hidden Files
 let NERDTreeShowHidden=1
 
 """ Have nerdtree ignore certain files and directories.
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
+""" }}}
 """ }}}
 """ WILDMENU {{{
 """ Enable auto completion menu after pressing TAB.
@@ -119,7 +153,12 @@ set wildmode=list:longest
 
 """ There are certain files that we would never want to edit with Vim.
 """ Wildmenu will ignore files with these extensions.
-set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx,*.o,*~
+if has("win16") || has("win32")
+    set wildignore+=.git\*,.hg\*,.svn\*
+else
+    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
+endif
 """ }}}
 """ VIMSCRIPTS {{{
 """" This will enable code folding.
@@ -187,9 +226,42 @@ if has('gui_running')
         \endif<CR>
 
 endif
+
+""" Set Mouse
 if has('mouse')
     set mouse=a
 endif
+
+""" Functions {{{
+""" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    endif
+    return ''
+endfunction
+
+""" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+    let l:currentBufNum = bufnr("%")
+    let l:alternateBufNum = bufnr("#")
+
+    if buflisted(l:alternateBufNum)
+        buffer #
+    else
+        bnext
+    endif
+
+    if bufnr("%") == l:currentBufNum
+        new
+    endif
+
+    if buflisted(l:currentBufNum)
+        execute("bdelete! ".l:currentBufNum)
+    endif
+endfunction
+""" }}}
 """ }}}
 """ STATUSBAR {{{
 """ Clear status line when vimrc is reloaded.
@@ -263,4 +335,20 @@ noremap <c-right> <c-w><
 """ NERDTree specific mappings.
 """ Map the F3 key to toggle NERDTree open and close.
 nnoremap <F3> :NERDTreeToggle<cr>
+
+" Map auto complete of (, ", ', [
+vnoremap $1 <esc>`>a)<esc>`<i(<esc>
+vnoremap $2 <esc>`>a]<esc>`<i[<esc>
+vnoremap $3 <esc>`>a}<esc>`<i{<esc>
+vnoremap $$ <esc>`>a"<esc>`<i"<esc>
+vnoremap $q <esc>`>a'<esc>`<i'<esc>
+vnoremap $e <esc>`>a`<esc>`<i`<esc>
+inoremap $1 ()<esc>i
+inoremap $2 []<esc>i
+inoremap $3 {}<esc>i
+inoremap $4 {<esc>o}<esc>O
+inoremap $q ''<esc>i
+inoremap $e ""<esc>i
+
 """ }}}
+
