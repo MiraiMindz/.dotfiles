@@ -263,12 +263,12 @@ function! <SID>BufcloseCloseIt()
 endfunction
 """ }}}
 """ }}}
-""" STATUSBAR {{{
+""" STATUSLINE {{{
 """ Clear status line when vimrc is reloaded.
 set statusline=
 
 """ Status line left side.
-set statusline+=\ %F\ %M\ %Y\ %R
+set statusline+=\ %F\ %M\ %Y\ %R\ %W
 
 """ Use a divider to separate the left side from the right side.
 set statusline+=%=
@@ -276,7 +276,7 @@ set statusline+=%=
 """ Status line right side.
 set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 
-""" Show the status on the second to last line.
+""" Always Show the Status Line
 set laststatus=2
 """ }}}
 """ KEYMAPS {{{
