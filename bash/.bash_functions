@@ -85,6 +85,7 @@ hwinfo() {
 
 secedit() {
     _secureedit() {
+        trap '' INT
         if [[ $(id -u) -ne 0 ]]; then
             printf "Please run as root\n"
             exit
