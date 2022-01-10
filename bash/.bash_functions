@@ -31,6 +31,13 @@ cl() {
         la
 }
 
+gorun () {
+    if [[ $(which go) ]];then
+        go fmt $1
+        go run $1
+    fi
+}
+
 initgit() {
     git init -b main && git add . && git commit -m "First commit" && git remote add origin "$1" && git remote -v && git push origin main
 }
