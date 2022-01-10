@@ -89,22 +89,24 @@ secedit() {
             printf "Please run as root\n"
             exit
         else
-            RANDNUM=$(< /dev/urandom tr -dc @#%\&+=_A-Z-a-z-0-9 | head -c 16)
+            RANDNUM1=$(< /dev/urandom tr -dc 0-9 | head -c 2)
+            RANDFLNM=$(< /dev/urandom tr -dc @%\#\&+=_A-Z-a-z-0-9 | head -c ${RANDNUM1})
+            ITERATIONS=10000000
             fullfilename=$(basename -- "$1")
             extension="${fullfilename##*.}"
             filename="${fullfilename%.*}"
             if [[ -e $(which openssl) ]]; then
                 if [[ "${extension}" == "enc" ]]; then
-                    openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -d -in ${fullfilename} -out "/tmp/${RANDNUM}${filename}"
+                    openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter ${ITERATIONS} -salt -d -in ${fullfilename} -out "/tmp/${RANDFLNM}"
                     sleep 1
                     if [[ -e $(which vim) ]];then
-                        bash -c "vim /tmp/${RANDNUM}${filename}"
+                        bash -c "vim /tmp/${RANDFLNM}"
                     else
-                        bash -c "rnano /tmp/${RANDNUM}${filename}"
+                        bash -c "rnano /tmp/${RANDFLNM}"
                     fi
                     sleep 1
-                    openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -in "/tmp/${RANDNUM}${filename}" -out "${filename}.enc"
-                    bash -c "shred -u /tmp/${RANDNUM}${filename}"
+                    openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter ${ITERATIONS} -salt -in "/tmp/${RANDFLNM}" -out "${filename}.enc"
+                    bash -c "shred -u /tmp/${RANDFLNM}"
                     bash -c "chown root ${fullfilename}"
                     bash -c "chmod 700 ${fullfilename}"
                 else
@@ -114,11 +116,13 @@ secedit() {
                         bash -c "rnano ${fullfilename}"
                     fi
                     sleep 1
-                    openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -in $1 -out "$1.enc"
+                    openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter ${ITERATIONS} -salt -in $1 -out "$1.enc"
                     bash -c "shred -u ${fullfilename}"
                     bash -c "chown root $1.enc"
                     bash -c "chmod 700 $1.enc"
                 fi
+            else
+                printf "Install the openssl package\n"
             fi
         fi
     }
