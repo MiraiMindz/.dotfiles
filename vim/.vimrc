@@ -336,7 +336,7 @@ noremap <c-right> <c-w><
 """ Map the F3 key to toggle NERDTree open and close.
 nnoremap <F3> :NERDTreeToggle<cr>
 
-" Map auto complete of (, ", ', [
+""" Map auto complete of (, ", ', [
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
 vnoremap $3 <esc>`>a}<esc>`<i{<esc>
@@ -349,6 +349,9 @@ inoremap $3 {}<esc>i
 inoremap $4 {<esc>o}<esc>O
 inoremap $q ''<esc>i
 inoremap $e ""<esc>i
+
+""" Insert Real Tab Chars with `expandtab` option
+inoremap <S-tab> <C-v><tab>
 
 """ }}}
 
