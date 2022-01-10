@@ -90,8 +90,8 @@ secedit() {
             exit
         else
             RANDNUM1=$(< /dev/urandom tr -dc 0-9 | head -c 2)
-            RANDFLNM=$(< /dev/urandom tr -dc @%\#\&+=_A-Z-a-z-0-9 | head -c ${RANDNUM1})
-            ITERATIONS=10000000
+            RANDFLNM=$(< /dev/urandom tr -dc @%+=_A-Z-a-z-0-9 | head -c ${RANDNUM1})
+            ITERATIONS=1000000
             fullfilename=$(basename -- "$1")
             extension="${fullfilename##*.}"
             filename="${fullfilename%.*}"
@@ -128,10 +128,3 @@ secedit() {
     }
     sudo bash -c "$(declare -f _secureedit); _secureedit $1"
 }
-
-
-
-
-# secedit
-# sudo bash -c "$(declare -f secureedit); secureedit"
-# openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter 100000 -salt -in InputFilePath -out OutputFilePath
