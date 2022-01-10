@@ -120,7 +120,8 @@ set pastetoggle=<F11>
 set listchars=space:_
 
 """ Set the Tabs to Visually be >~~~~
-set listchars=tab:>~ list
+" set listchars=tab:>~ list
+set listchars=tab:>> list
 
 """ Set VIM to not redraw the screen during heavy tasks
 set lazyredraw
