@@ -12,7 +12,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """ PLUGINS {{{
-call plug#begin('$HOME/.dotfiles/editors/vim/plugins/')
+call plug#begin('$HOME/.dotfiles/editors/vim/.vim/plugins/')
 	Plug 'preservim/nerdtree'
 	Plug 'vim-syntastic/syntastic'
 	Plug 'junegunn/fzf'
