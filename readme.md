@@ -41,5 +41,5 @@ These are my .dotfiles :]
 - https://github.com/ayu-theme/ayu-vim
 - https://github.com/ciaranm/inkpot
 - More Color Schemes on:
-* https://github.com/vimcolorschemes/vimcolorschemes
+ - https://github.com/vimcolorschemes/vimcolorschemes
 
