@@ -25,7 +25,7 @@ These are my .dotfiles :]
 - https://github.com/sjl/badwolf/
 - https://github.com/arcticicestudio/nord-vim
 - https://github.com/nanotech/jellybeans.vim/
-- https://github.com/sindresorhus/hyper-snazzy
+- https://github.com/connorholyday/vim-snazzy
 - https://github.com/mhartington/oceanic-next
 - https://github.com/ayu-theme/ayu-vim
 - https://github.com/ciaranm/inkpot
