@@ -2,6 +2,8 @@
 
 These are my .dotfiles :]
 
+TODO: Refactor `installConfigs.sh`
+
 ### Packages
 
 - https://github.com/ibhagwan/picom
