@@ -95,19 +95,45 @@ set listchars=space:_
 
 """ Set the Tabs to Visually be >~~~~
 " set listchars=tab:>~ list
-set listchars=tab:>> list
+set listchars=tab:>_ list
 
 """ Set VIM to not redraw the screen during heavy tasks
 set lazyredraw
 
-""" Set foldmethod to indentation
-set foldmethod=indent
+""" Set foldmethod to braces
+set foldmethod=marker
 
 """ For regular expressions turn magic on
 set magic
 
 """ How many tenths of a second to blink when matching brackets
 set mat=2
+
+""" Write on :next/:prev/^Z
+set autowrite
+
+""" Automatic program indenting
+set cindent
+
+""" When folds are created, add them to this
+set commentstring=\ \ #%s
+
+""" Make autoindent use the same chars as prev line
+set copyindent
+
+""" UTF-8 by default
+set encoding=utf8
+
+""" t - autowrap normal text; c - autowrap comments; q - gq formats comments; n - autowrap lists; 1 - break _before_ single-letter words; 2 - use indenting from 2nd line of para
+set formatoptions=tcqn1
+
+
+
+
+
+
+
+
 
 """ }}}
 """ WILDMENU {{{
