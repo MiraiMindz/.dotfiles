@@ -20,6 +20,11 @@ LCYAN='\e[1;36m'
 WHITE='\e[1;37m'
 NOCOLOR='\e[0m'
 
+shreddir() {
+find $1 -type f -exec shred -n 30 -v -u {} \;
+rmdir $1
+}
+
 cl() {
     DIR="$*";
         # if no DIR given, go home
