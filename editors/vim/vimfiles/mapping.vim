@@ -70,3 +70,7 @@ inoremap $e ""<esc>i
 
 """ Insert Real Tab Chars with `expandtab` option
 inoremap <S-tab> <C-v><tab>
+
+""" Function used on the solarized theme
+call togglebg#map("<F5>")
+

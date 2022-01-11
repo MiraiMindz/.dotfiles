@@ -69,9 +69,3 @@ if has('mouse')
     set mouse=a
 endif
 
-
-""" Call The Toogle BG function only when running the solarized theme
-if &colorscheme == "solarized"
-    call togglebg#map("<F5>")
-endif
-
