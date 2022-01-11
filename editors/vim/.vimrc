@@ -15,4 +15,4 @@ for f in split(glob('$HOME/vimfiles/*.vim'), '\n')
     exe 'source' f
 endfor
 
-""" Colors from: https://github.com/rainglow/vim
+
