@@ -16,7 +16,7 @@ These are my .dotfiles :]
 - https://github.com/tomasr/molokai
 - https://github.com/altercation/vim-colors-solarized
 - https://github.com/sonph/onehalf
-- https://github.com/dracula/dracula-theme
+- https://github.com/dracula/vim
 - https://github.com/chriskempson/base16-vim
 - https://github.com/jnurmine/Zenburn
 - https://github.com/rakr/vim-one
