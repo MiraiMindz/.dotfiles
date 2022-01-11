@@ -1,1 +1,0 @@
-/home/mirai/.dotfiles/editors/vim-nvim_Commons/autoload/togglebg.vim
