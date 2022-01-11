@@ -6,7 +6,6 @@ These are my .dotfiles :]
 
 - https://github.com/rainglow/vim
 - https://github.com/rafi/awesome-vim-colorschemes
-- https://github.com/mcchrish/vim-no-color-collections
 - https://github.com/haystackandroid/vimspectr
 - https://github.com/mswift42/vim-themes
 - https://github.com/mkarmona/colorsbox
