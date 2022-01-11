@@ -2,7 +2,19 @@
 
 These are my .dotfiles :]
 
-### Colors Schemes From
+### Packages
+
+- https://github.com/ibhagwan/picom
+- https://github.com/Airblader/i3
+- https://github.com/dylanaraps/neofetch
+- https://github.com/polybar/polybar
+- https://github.com/davatorium/rofi
+- https://github.com/adi1090x/rofi
+- https://github.com/gnome-terminator/terminator
+- https://github.com/vim/vim
+
+
+### VIM Colors Schemes From
 
 - https://github.com/rainglow/vim
 - https://github.com/rafi/awesome-vim-colorschemes
@@ -28,7 +40,6 @@ These are my .dotfiles :]
 - https://github.com/mhartington/oceanic-next
 - https://github.com/ayu-theme/ayu-vim
 - https://github.com/ciaranm/inkpot
-
-More Color Schemes on:
-- https://github.com/vimcolorschemes/vimcolorschemes
+- More Color Schemes on:
+* https://github.com/vimcolorschemes/vimcolorschemes
 
