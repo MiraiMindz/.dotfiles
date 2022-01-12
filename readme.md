@@ -11,6 +11,7 @@ These are my .dotfiles :]
 - https://github.com/davatorium/rofi
 - https://github.com/adi1090x/rofi
 - https://github.com/gnome-terminator/terminator
+- https://github.com/Swordfish90/cool-retro-term
 - https://github.com/vim/vim
 
 
