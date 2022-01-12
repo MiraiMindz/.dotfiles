@@ -2,7 +2,7 @@
 
 These are my .dotfiles :]
 
-
+If you don't know, .dotfiles are basically configurations files in unix-like systems
 
 ### Packages
 
@@ -15,7 +15,7 @@ These are my .dotfiles :]
 - https://github.com/gnome-terminator/terminator
 - https://github.com/Swordfish90/cool-retro-term
 - https://github.com/vim/vim
-
+- https://github.com/Peltoche/lsd
 
 ### [Color Schemes](https://github.com/MiraiMindz/vim-colorschemes-collection)
 
