@@ -142,17 +142,11 @@ checkPackages() {
         fi
     }
     _checkPkgs "i3"
-    sleep 0.2
     _checkPkgs "picom"
-    sleep 0.2
     _checkPkgs "polybar"
-    sleep 0.2
     _checkPkgs "terminator"
-    sleep 0.2
     _checkPkgs "neofetch"
-    sleep 0.2
     _checkPkgs "vim"
-    sleep 0.2
     _checkPkgs "rofi"
     if [[ -d $HOME/.config/rofi ]]; then
         printf "Rofi Applets is ${DARK_GREEN}INSTALLED${NOCOLOR}\n"
