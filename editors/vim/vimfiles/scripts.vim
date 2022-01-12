@@ -1,5 +1,5 @@
-augroup filetype_vim                                            " This will enable code folding.
-    autocmd!                                                    " Use the marker method of folding.
+augroup filetype_vim                                            " This will enable code folding. Use the marker method of folding.
+    autocmd!
     autocmd FileType vim setlocal foldmethod=marker
 augroup END
 autocmd Filetype html setlocal tabstop=2 shiftwidth=2 expandtab " If the current file type is HTML, set indentation to 2 spaces.
@@ -9,8 +9,8 @@ if version >= 703                                               " If Vim version
     set undoreload=10000
 endif
 augroup cursor_off                                              " You can split a window into sections by typing `:split` or `:vsplit`.
-    autocmd!                                                    " Display cursorline and cursorcolumn ONLY in active window.
-    autocmd WinLeave * set nocursorline nocursorcolumn
+    autocmd!
+    autocmd WinLeave * set nocursorline nocursorcolumn          " Display cursorline and cursorcolumn ONLY in active window.
     autocmd WinEnter * set cursorline cursorcolumn
 augroup END
 
