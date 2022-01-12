@@ -1,13 +1,11 @@
-""" Returns true if paste mode is enabled
-function! HasPaste()
+function! HasPaste()                        " Returns true if paste mode is enabled
     if &paste
         return 'PASTE MODE  '
     endif
     return ''
 endfunction
 
-""" Don't close window, when deleting a buffer
-command! Bclose call <SID>BufcloseCloseIt()
+command! Bclose call <SID>BufcloseCloseIt() " Don't close window, when deleting a buffer
 function! <SID>BufcloseCloseIt()
     let l:currentBufNum = bufnr("%")
     let l:alternateBufNum = bufnr("#")
