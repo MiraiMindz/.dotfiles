@@ -1,0 +1,1 @@
+/usr/share/sddm/themes/Sugar-Candy/README.md
