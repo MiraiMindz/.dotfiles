@@ -21,4 +21,5 @@ call plug#begin('$HOME/.dotfiles/editors/vim/.vim/plugins/')
 	Plug 'mattn/emmet-vim'
 	Plug 'tpope/vim-commentary'
 	Plug 'dense-analysis/ale'
+	Plug 'mkitt/tabline.vim'
 call plug#end()
