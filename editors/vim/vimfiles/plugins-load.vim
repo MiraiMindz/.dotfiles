@@ -8,7 +8,7 @@ call plug#begin('$HOME/.dotfiles/editors/vim/.vim/plugins/')
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 	Plug 'vimsence/vimsence'
-	Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+	Plug 'fatih/vim-go',
 	Plug 'preservim/tagbar'
 	Plug 'mileszs/ack.vim'
 	Plug 'frazrepo/vim-rainbow'
