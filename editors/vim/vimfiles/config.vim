@@ -46,7 +46,7 @@ set linebreak                           " Break long lines by word, not char
 set confirm                             " Instead of failing a command because of unsaved changes, instead raise a
                                         " dialogue asking if you wish to save changed files.
 set cmdheight=2                         " Set the command window height to 2 lines, to avoid many cases of having to
-                                        " "press <Enter> to continue"
+                                        " 'press <Enter> to continue'
 set nostartofline                       " Stop certain movements from always going to the first character of a line.
                                         " While this behaviour deviates from that of Vi, it does what most users
                                         " coming from other editors would expect.
@@ -57,6 +57,7 @@ set formatoptions=tcqn1                 " t - autowrap normal text
                                         " 1 - break _before_ single-letter words
                                         " 2 - use indenting from 2nd line of para
 silent! nohlsearch                      " Some plugin seems to search for something at startup, so this fixes that.
+set nocursorcolumn                      " Disable the cursor column
 """ }}}
 """ WILDMENU {{{
 set wildmenu                            " Enable auto completion menu after pressing TAB.
