@@ -17,7 +17,7 @@ noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 inoremap <S-tab> <C-v><tab>                         " Insert Real Tab Chars with `expandtab` option
 call togglebg#map("<F5>")                           " Function used on the solarized theme
-""" Map auto complete of (, ", ', [
+""" Map auto complete of (, ", ', [                 " Map auto complete of (, ", ', [
 vnoremap $1 <esc>`>a)<esc>`<i(<esc>
 vnoremap $2 <esc>`>a]<esc>`<i[<esc>
 vnoremap $3 <esc>`>a}<esc>`<i{<esc>
@@ -43,3 +43,35 @@ nnoremap <f5> :w <CR>:!clear <CR>:!python3 % <CR>   " Map the F5 key to run a Py
                                                     " <CR> (carriage return) is like pressing the enter key.
                                                     " !clear runs the external clear screen command.
                                                     " !python3 % executes the current file with Python.
+
+""" Tab Mapping                                     " Tab Mapping
+inoremap <F2> :tabnew<cr>                           " New Tab
+nnoremap <F2> :tabnew<cr>                           " New Tab
+vnoremap <F2> :tabnew<cr>                           " New Tab
+inoremap <C-S-right><esc> :tabnext<esc><cr>         " Next Tab
+vnoremap <C-S-right><esc> :tabnext<esc><cr>         " Next Tab
+nnoremap <C-S-right> :tabnext<cr>                   " Next Tab
+inoremap <C-S-left><esc> :tabprevious<esc><cr>      " Previous Tab
+vnoremap <C-S-left><esc> :tabprevious<esc><cr>      " Previous Tab
+nnoremap <C-S-left> :tabprevious<cr>                " Previous Tab
+
+""" Vim Airline Buffer Mappings                     " Vim Airline Buffer Mappings
+nmap <leader>1 <Plug>AirlineSelectTab1
+nmap <leader>2 <Plug>AirlineSelectTab2
+nmap <leader>3 <Plug>AirlineSelectTab3
+nmap <leader>4 <Plug>AirlineSelectTab4
+nmap <leader>5 <Plug>AirlineSelectTab5
+nmap <leader>6 <Plug>AirlineSelectTab6
+nmap <leader>7 <Plug>AirlineSelectTab7
+nmap <leader>8 <Plug>AirlineSelectTab8
+nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <leader>0 <Plug>AirlineSelectTab0
+nmap <leader>- <Plug>AirlineSelectPrevTab
+nmap <leader>+ <Plug>AirlineSelectNextTab
+inoremap <A-S-right><esc> :bnext<esc><cr>         " Next Buffer
+vnoremap <A-S-right><esc> :bnext<esc><cr>         " Next Buffer
+nnoremap <A-S-right> :bnext<cr>                   " Next Buffer
+inoremap <A-S-left><esc> :bprevious<esc><cr>      " Previous Buffer
+vnoremap <A-S-left><esc> :bprevious<esc><cr>      " Previous Buffer
+nnoremap <A-S-left> :bprevious<cr>                " Previous Buffer
+

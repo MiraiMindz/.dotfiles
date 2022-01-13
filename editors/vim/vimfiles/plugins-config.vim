@@ -197,9 +197,11 @@ let g:airline#extensions#tabline#left_sep = ' '             " Set the Tab Left S
 let g:airline#extensions#tabline#left_alt_sep = '|'         " Set the Alternative Tab Left Separator
 let g:airline#extensions#tabline#fnamemod = ':p:.'
 let g:airline#extensions#tabline#fnamecollapse = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 """ }}}
 let g:airline#extensions#fzf#enabled = 1                            " Enable FZF Integration
 let g:airline#extensions#nerdtree_statusline = 1                    " Enable NerdTree Status Line
+
 """ }}}
 """ }}}
 
