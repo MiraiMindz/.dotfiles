@@ -141,3 +141,13 @@ secedit() {
     }
     sudo bash -c "$(declare -f _secureedit); _secureedit $1"
 }
+
+twitchfetch() {
+    _randArr() {
+        shopt -s nullglob
+        local arr=("$@")
+        neofetch --ascii "${arr[RANDOM % $#]}"
+    }
+    arr2=($HOME/.config/neofetch/asciiArts/*)
+    _randArr "${arr2[@]}"
+}
