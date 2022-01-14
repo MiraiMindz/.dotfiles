@@ -36,3 +36,10 @@ if has('mouse')                                                 " Set Mouse
     set mouse=a
 endif
 
+""" Checks if the vim-airline plugin is installed, then set the showmode accordingly
+if (filereadable($HOME . "/.vim/plugins/vim-airline/autoload/airline.vim"))
+    set noshowmode                      " Don't show the mode you are on the last line.
+else
+    set showmode                        " Show the mode you are on the last line.
+endif
+

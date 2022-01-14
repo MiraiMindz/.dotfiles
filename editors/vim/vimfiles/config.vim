@@ -25,7 +25,6 @@ set infercase                           " Completion recognizes capitalization
 set smartcase                           " Override the ignorecase option if searching for capital letters.
                                         " This will allow you to search specifically for capital letters.
 set showcmd                             " Show partial command you type in the last line of the screen.
-set showmode                            " Show the mode you are on the last line.
 set history=1000                        " Set the commands to save in history default number is 20.
 set backspace=indent,eol,start          " Allow backspacing over autoindent, line breaks and start of insert action
 set notimeout ttimeout ttimeoutlen=200  " Quickly time out on keycodes, but never time out on mappings
@@ -57,7 +56,8 @@ set formatoptions=tcqn1                 " t - autowrap normal text
                                         " 1 - break _before_ single-letter words
                                         " 2 - use indenting from 2nd line of para
 silent! nohlsearch                      " Some plugin seems to search for something at startup, so this fixes that.
-set nocursorcolumn                      " Disable the cursor column
+set nocursorcolumn                      " Disable the cursor column, on the editor and NERDTree
+autocmd FileType nerdtree setlocal nocursorcolumn
 """ }}}
 """ WILDMENU {{{
 set wildmenu                            " Enable auto completion menu after pressing TAB.
@@ -79,3 +79,4 @@ set statusline+=%=                      " Use a divider to separate the left sid
 set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 set laststatus=2                        " Always Show the Status Line
 """ }}}
+
