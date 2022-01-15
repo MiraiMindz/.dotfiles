@@ -156,10 +156,10 @@ installTerminator() {
 installNeofetch() {
     if [[ -e $(which neofetch) ]];then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} Neofetch Config\n"
-        if [[ -d $HOME/.config/neofetch ]]; then
-            
-        else
-        fi
+#        if [[ -d $HOME/.config/neofetch ]]; then
+#            
+#        else
+#        fi
     fi
 }
 
