@@ -21,4 +21,5 @@ call plug#begin('$HOME/.dotfiles/editors/vim/.vim/plugins/')
 	Plug 'vim-airline/vim-airline/'
 	Plug 'ntpeters/vim-better-whitespace'
 	Plug 'MiraiMindz/vim-colorschemes-collection'
+	Plug 'ycm-core/YouCompleteMe'
 call plug#end()
