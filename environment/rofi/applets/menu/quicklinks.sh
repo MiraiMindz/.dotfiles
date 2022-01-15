@@ -22,6 +22,8 @@ elif [[ -f /usr/bin/chromium ]]; then
 	app="chromium"
 elif [[ -f /usr/bin/midori ]]; then
 	app="midori"
+elif [[ -e /usr/bin/brave ]]; then
+    app="brave"
 else
 	msg "No suitable web browser found!"
 	exit 1
