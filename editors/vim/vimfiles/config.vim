@@ -32,6 +32,7 @@ set pastetoggle=<F11>                   " Use <F11> to toggle between 'paste' an
 set list                                " Show whitespace as special chars - see listchars
 set listchars=space:_                   " Set the Spaces to Visually be _
 set listchars=tab:>_ list               " Set the Tabs to Visually be >___
+"set listchars=tab:|., trail:.          " Set the Tabs to VIsually be |
 set lazyredraw                          " Set VIM to not redraw the screen during heavy tasks
 set foldmethod=marker                   " Set foldmethod to braces
 set magic                               " For regular expressions turn magic on
