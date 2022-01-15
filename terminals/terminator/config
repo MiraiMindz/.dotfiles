@@ -18,6 +18,83 @@
     scrollbar_position = hidden
     palette = "#464b5d:#f07178:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#ffffff:#464b5d:#f07178:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#ffffff"
     use_system_font = False
+  [[Material Theme Ocean]]
+    background_color = "#0f111a"
+    background_darkness = 1.0
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cascadia Code PL Semi-Light 10
+    foreground_color = "#a6accd"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#464b5d:#f07178:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#ffffff:#464b5d:#f07178:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#ffffff"
+    use_system_font = False
+  [[Nord]]
+    background_color = "#2E3440"
+    background_darkness = 1.0
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cascadia Code PL Semi-Light 10
+    foreground_color = "#D8DEE9"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#3B4252:#BF616A:#A3BE8C:#D08770:#5E81AC:#c792ea:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#5E81AC:#c792ea:#88C0D0:#E5E9F0"
+    use_system_font = False
+  [[Dracula]]
+    background_color = "#282a36"
+    background_darkness = 1.0
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cascadia Code PL Semi-Light 10
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#44475a:#ff5555:#50fa7b:#ffb86c:#ff79c6:#bd93f9:#8be9fd:#f8f8f2:#6272a4:#ff5555:#50fa7b:#ffb86c:#ff79c6:#bd93f9:#8be9fd:#f8f8f2"
+    use_system_font = False
+  [[GruvboxYellowDark]]
+    background_color = "#282828"
+    background_darkness = 1.0
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cascadia Code PL Semi-Light 10
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#1d2021:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#3c3836:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#fbf1c7"
+    use_system_font = False
+  [[GruvboxOrangeDark]]
+    background_color = "#282828"
+    background_darkness = 1.0
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cascadia Code PL Semi-Light 10
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#1d2021:#cc241d:#98971a:#d65d0e:#458588:#b16286:#689d6a:#a89984:#3c3836:#fb4934:#b8bb26:#fe8019:#83a598:#d3869b:#8ec07c:#fbf1c7"
+    use_system_font = False
+  [[GruvboxYellowLight]]
+    background_color = "#282828"
+    background_darkness = 1.0
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cascadia Code PL Semi-Light 10
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#1d2021:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#3c3836:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#fbf1c7"
+    use_system_font = False
+  [[GruvboxOrangeLight]]
+    background_color = "#282828"
+    background_darkness = 1.0
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = Cascadia Code PL Semi-Light 10
+    foreground_color = "#ebdbb2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    palette = "#1d2021:#cc241d:#98971a:#d65d0e:#458588:#b16286:#689d6a:#a89984:#3c3836:#fb4934:#b8bb26:#fe8019:#83a598:#d3869b:#8ec07c:#fbf1c7"
+    use_system_font = False
 [layouts]
   [[default]]
     [[[window0]]]
@@ -28,3 +105,4 @@
       parent = window0
       profile = Mirai
 [plugins]
+
