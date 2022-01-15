@@ -102,7 +102,7 @@ createDotfiles_BackupDir() {
 installI3WM() {
     if [[ -e $(which i3) ]]; then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} I3wm Config\n"
-        if [[ -d $($HOME/.config/i3) ]]; then
+        if [[ -d $HOME/.config/i3 ]]; then
             printf "i3 config found, creating backup in $BACKUPFOLDER/\n"
             mkbkp $BACKUPFOLDER/i3wm $HOME/.config/i3
             ln -v -sf $HOME/.dotfiles/environment/i3wm/* $HOME/.config/i3/
@@ -115,7 +115,7 @@ installI3WM() {
 installPicom() {
     if [[ -e $(which picom) ]]; then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} Picom Config\n"
-        if [[ -d $($HOME/.config/picom) ]]; then
+        if [[ -d $HOME/.config/picom ]]; then
             printf "picom config found, creating backup in $BACKUPFOLDER/\n"
             mkbkp $BACKUPFOLDER/picom $HOME/.config/picom
             ln -v -sf $HOME/.dotfiles/environment/picom/* $HOME/.config/picom/
@@ -126,19 +126,41 @@ installPicom() {
 }
 
 installPolybar() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} Polybar Config\n"
+    if [[ -e $(which polybar) ]]; then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Polybar Config\n"
+        if [[ -e $HOME/.config/polybar ]]; then
+            printf "polybar config found, creating backup in $BACKUPFOLDER/\n"
+            mkbkp $BACKUPFOLDER/polybar $HOME/.config/polybar/*
+            ln -v -sf $HOME/.dotfiles/environment/polybar/* $HOME/.config/polybar/
+        else
+            ln -v -sf $HOME/.dotfiles/environment/polybar/* $HOME/.config/polybar/
+        fi
+    fi
 }
 
 installTerminator() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} Terminator Config\n"
+    if [[ -e $(which terminator) ]]; then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Terminator Config\n"
+        if [[ -d $HOME/.config/terminator ]]; then
+            printf "terminator config found, creating backup in $BACKUPFOLDER\n"
+            mkbkp $BACKUPFOLDER/terminator $HOME/.config/polybar/*
+            ln -v -sf $HOME/.dotfiles/environment/polybar/* $HOME/.config/polybar/
+        else
+            ln -v -sf $HOME/.dotfiles/environment/polybar/* $HOME/.config/polybar/
+        fi
+    fi
 }
 
-installTerminator() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} Terminator Config\n"
-}
+
 
 installNeofetch() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} Neofetch Config\n"
+    if [[ -e $(which neofetch) ]];then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Neofetch Config\n"
+        if [[ -d $HOME/.config/neofetch ]]; then
+            
+        else
+        fi
+    fi
 }
 
 installVIM() {
@@ -155,6 +177,12 @@ installRofi() {
 
 installRofiApplets() {
     printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Applets Config\n"
+}
+
+installCoolRetroTerm() {
+    printf "${DARK_GREEN}INSTALLING${NOCOLOR} cool-retro-term Config\n"
+    if [[ -e $(which cool-retro-term) ]]; then
+    fi
 }
 
 installSDDMTheme() {
@@ -184,7 +212,7 @@ checkPackages() {
     _checkPkgs "picom"
     _checkPkgs "polybar"
     _checkPkgs "terminator"
-    -_checkPkgs "cool-retro-term"
+    _checkPkgs "cool-retro-term"
     _checkPkgs "neofetch"
     _checkPkgs "vim"
     _checkPkgs "rofi"
