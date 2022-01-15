@@ -151,3 +151,11 @@ twitchfetch() {
     arr2=($HOME/.config/neofetch/asciiArts/*)
     _randArr "${arr2[@]}"
 }
+
+gitcmt() {
+    git add "$1"
+    git commit -m "$2"
+    git push
+}
+
+
