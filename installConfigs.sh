@@ -202,6 +202,12 @@ installVIM() {
             ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/* $HOME/.dotfiles/editors/vim/vimfiles/
             ln -sf $HOME/.dotfiles/editors/vim/vimfiles $HOME/
         fi
+        if [[ -e $HOME/.vimrc ]]; then
+            mv -v $HOME/.vimrc $BACKUPFOLDER/vim/
+            ln -sf $HOME/.dotfiles/editors/vim/.vimrc $HOME/
+        else
+            ln -sf $HOME/.dotfiles/editors/vim/.vimrc $HOME/
+        fi
     fi
 }
 
