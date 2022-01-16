@@ -177,27 +177,46 @@ installNeofetch() {
 }
 
 installVIM() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} VIM Config\n"
+    if [[ -e $(which vim) ]]; then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} VIM Config\n"
+    fi
 }
 
 installNeoVIM() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} NeoVIM Config\n"
+    if [[ -e $(which neovim) ]]; then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} NeoVIM Config\n"
+    fi
 }
 
 installVI() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} VI Config\n"
+    if [[ -e $(which vi) ]]; then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} VI Config\n"
+    fi
 }
 
 installBash() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} Bash Config\n"
+    echo -e -n "Do you want to import the bash configs (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+    old_stty_cfg=$(stty -g)
+    stty raw -echo
+    answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+    stty $old_stty_cfg
+    if echo "$answer" | grep -iq "^y" ;then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Bash Config\n"
+    else
+        printf "${DARK_RED}PASSING${NOCOLOR}\n"
+    fi
 }
 
 installRofi() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Config\n"
+    if [[ -e $(which rofi) ]]; then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Config\n"
+    fi
 }
 
 installRofiApplets() {
-    printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Applets Config\n"
+    if [[ -d $HOME/.config/rofi ]]; then
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Applets Config\n"
+    fi
 }
 
 installCoolRetroTerm() {
