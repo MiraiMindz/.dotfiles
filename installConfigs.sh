@@ -179,6 +179,29 @@ installNeofetch() {
 installVIM() {
     if [[ -e $(which vim) ]]; then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} VIM Config\n"
+        if [[ -e $HOME/.vim ]]; then
+            mkbkp $BACKUPFOLDER/vim $HOME/.vim
+            unlink $HOME/.vim
+            unlink $HOME/.dotfiles/editors/vim/.vim/plugins
+            ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/plugins $HOME/.dotfiles/editors/vim/.vim/
+            ln -sf $HOME/.dotfiles/editors/vim/.vim $HOME/
+        else
+            unlink $HOME/.dotfiles/editors/vim/.vim/plugins
+            ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/plugins $HOME/.dotfiles/editors/vim/.vim/
+            ln -sf $HOME/.dotfiles/editors/vim/.vim $HOME/
+        fi
+        if [[ -e $HOME/vimfiles ]]; then
+            mkbkp $BACKUPFORDER/vim/vimfiles $HOME/vimfiles
+            unlink $HOME/vimfiles
+            rm $HOME/.dotfiles/editors/vim/vimfiles/*
+            ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/* $HOME/.dotfiles/editors/vim/vimfiles/
+            ln -sf $HOME/.dotfiles/editors/vim/vimfiles $HOME/
+        else
+            unlink $HOME/vimfiles
+            rm $HOME/.dotfiles/editors/vim/vimfiles/*
+            ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/* $HOME/.dotfiles/editors/vim/vimfiles/
+            ln -sf $HOME/.dotfiles/editors/vim/vimfiles $HOME/
+        fi
     fi
 }
 
