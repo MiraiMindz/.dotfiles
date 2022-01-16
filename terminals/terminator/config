@@ -1302,18 +1302,18 @@
     cursor_color = "#ffcc00"
     cursor_color_fg = False
     foreground_color = "#8f93a2"
-    palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec" [[Material-Palenight]]
-  background_darkness = 1.0
-  background_type = transparent
-  font = Cascadia Code PL Semi-Light 10
-  show_titlebar = False
-  scrollbar_position = hidden
-  use_system_font = Falsebackground_color = "#292d3e"
-
-cursor_color = "#ffcc00"
-cursor_color_fg = False
-foreground_color = "#a6accd"
-palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
+    palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
+  [[Material-Palenight]]
+    background_darkness = 1.0
+    background_type = transparent
+    font = Cascadia Code PL Semi-Light 10
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = Falsebackground_color = "#292d3e"
+    cursor_color = "#ffcc00"
+    cursor_color_fg = False
+    foreground_color = "#a6accd"
+    palette = "#2e3436:#ff5370:#c3e88d:#ffcb6b:#82aaff:#c792ea:#89ddff:#d3d7cf:#555753:#f07178:#c3e88d:#f78c6c:#729fcf:#bb80b3:#89ddff:#eeeeec"
   [[Mathias]]
     background_darkness = 1.0
     background_type = transparent
