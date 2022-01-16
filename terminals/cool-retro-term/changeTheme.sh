@@ -38,18 +38,22 @@ changeTheme() {
     if [[ -e /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme ]]; then
         sudo rm /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
         printf "Please select one of these ${GREEN}themes${NOCOLOR}:\n"
-        printf "${GREEN}0${NOCOLOR}. Dracula\n"
-        printf "${GREEN}1${NOCOLOR}. MaterialOcean\n"
-        printf "${GREEN}2${NOCOLOR}. Nord\n"
+        printf "${GREEN}0${NOCOLOR}. Default\n"
+        printf "${GREEN}1${NOCOLOR}. Dracula\n"
+        printf "${GREEN}2${NOCOLOR}. MaterialOcean\n"
+        printf "${GREEN}3${NOCOLOR}. Nord\n"
         read -e -p "Enter the number: " CHOICE
         case $CHOICE in
         "0" | 0)
-        sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Dracula.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+        sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/default.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
         ;;
         "1" | 1)
-        sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/MaterialThemeOcean.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+        sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Dracula.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
         ;;
         "2" | 2)
+        sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/MaterialThemeOcean.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+        ;;
+        "3" | 3)
         sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Nord.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
         ;;
         *)
