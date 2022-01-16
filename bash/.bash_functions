@@ -159,3 +159,33 @@ gitcmt() {
 }
 
 
+if [[ -e $(which cool-retro-term) ]]; then
+    if [[ $(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)) == "cool-retro-term" ]]; then
+        changeThemeCoolRetroTerm() {
+            if [[ -e /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme ]]; then
+                sudo rm /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                printf "Please select one of these ${GREEN}themes${NOCOLOR}:\n"
+                printf "${GREEN}0${NOCOLOR}. Dracula\n"
+                printf "${GREEN}1${NOCOLOR}. MaterialOcean\n"
+                printf "${GREEN}2${NOCOLOR}. Nord\n"
+                read -e -p "Enter the number: " CHOICE
+                case $CHOICE in
+                "0" | 0)
+                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Dracula.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                ;;
+                "1" | 1)
+                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/MaterialThemeOcean.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                ;;
+                "2" | 2)
+                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Nord.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                ;;
+                *)
+                printf "${RED}Invalid input, try again${NOCOLOR}\n"
+                ;;
+                esac
+            fi
+            exec cool-retro-term &
+            exit
+        }
+    fi
+fi
