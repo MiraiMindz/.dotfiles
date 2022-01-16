@@ -181,23 +181,24 @@ installVIM() {
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} VIM Config\n"
         if [[ -e $HOME/.vim ]]; then
             mkbkp $BACKUPFOLDER/vim $HOME/.vim
-            unlink $HOME/.vim
-            unlink $HOME/.dotfiles/editors/vim/.vim/plugins
+            rm -v $HOME/.vim
+            rm -v $HOME/.dotfiles/editors/vim/.vim/plugins
             ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/plugins $HOME/.dotfiles/editors/vim/.vim/
             ln -sf $HOME/.dotfiles/editors/vim/.vim $HOME/
         else
-            unlink $HOME/.dotfiles/editors/vim/.vim/plugins
+            rm -v $HOME/.vim
+            rm -v $HOME/.dotfiles/editors/vim/.vim/plugins
             ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/plugins $HOME/.dotfiles/editors/vim/.vim/
             ln -sf $HOME/.dotfiles/editors/vim/.vim $HOME/
         fi
         if [[ -e $HOME/vimfiles ]]; then
-            mkbkp $BACKUPFORDER/vim/vimfiles $HOME/vimfiles
-            unlink $HOME/vimfiles
+            mkbkp $BACKUPFOLDER/vim/vimfiles $HOME/vimfiles
+            rm -v $HOME/vimfiles
             rm $HOME/.dotfiles/editors/vim/vimfiles/*
             ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/* $HOME/.dotfiles/editors/vim/vimfiles/
             ln -sf $HOME/.dotfiles/editors/vim/vimfiles $HOME/
         else
-            unlink $HOME/vimfiles
+            rm -v $HOME/vimfiles
             rm $HOME/.dotfiles/editors/vim/vimfiles/*
             ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/* $HOME/.dotfiles/editors/vim/vimfiles/
             ln -sf $HOME/.dotfiles/editors/vim/vimfiles $HOME/
@@ -214,12 +215,39 @@ installVIM() {
 installNeoVIM() {
     if [[ -e $(which neovim) ]]; then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} NeoVIM Config\n"
+        if [[ -e $HOME/.config/nvim ]]; then
+            mkbkp $BACKUPFOLDER/neovim $HOME/.config/nvim
+            rm -v $HOME/.config/nvim
+            rm -v $HOME/.dotfiles/editors/nvim/plugins
+            ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/plugins $HOME/.dotfiles/editors/nvim/
+            ln -sf $HOME/.dotfiles/editors/nvim $HOME/.config/
+        else
+            rm -v $HOME/.config/nvim
+            rm -v $HOME/.dotfiles/editors/nvim/plugins
+            ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/plugins $HOME/.dotfiles/editors/nvim/
+            ln -sf $HOME/.dotfiles/editors/nvim $HOME/.config/
+        fi
+        if [[ -d $HOME/.dotfiles/editors/nvim/nvimfiles ]]; then
+            rm $HOME/.dotfiles/editors/nvim/nvimfiles/*
+            ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/* $HOME/.dotfiles/editors/nvim/nvimfiles/
+        else
+            mkdir $HOME/.dotfiles/editors/nvim/nvimfiles
+            ln -sf $HOME/.dotfiles/editors/vim-nvim-commons/* $HOME/.dotfiles/editors/nvim/nvimfiles/
+        fi
     fi
 }
 
 installVI() {
     if [[ -e $(which vi) ]]; then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} VI Config\n"
+        if [[ -e $HOME/.exrc ]]; then
+            mkdir $BACKUPFOLDER/vi
+            mv -v $HOME/.exrc $BACKUPFOLDER/vi/
+            rm -v $HOME/.exrc
+            ln -sf $HOME/.dotfiles/editors/vi/.exrc
+        else
+            ln -sf $HOME/.dotfiles/editors/vi/.exrc
+        fi
     fi
 }
 
@@ -231,6 +259,22 @@ installBash() {
     stty $old_stty_cfg
     if echo "$answer" | grep -iq "^y" ;then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} Bash Config\n"
+        if [[ -e $HOME/.bash ]]; then
+            mkbkp $BACKUPFOLDER/bash $HOME/.bash
+            rmdir $HOME/.bash
+            mkdir $HOME/.bash
+            ln -sf $HOME/.dotfiles/bash/* $HOME/.bash/
+            unlink $HOME/.bash/.bashrc
+        else
+            ln -sf $HOME/.dotfiles/bash $HOME/.bash
+        fi
+        if [[ -e $HOME/.bashrc ]]; then
+            mv -v $HOME/.bashrc $BACKUPFOLDER/bash/
+            rm $HOME/.bashrc
+            ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
+        else
+            ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
+        fi
     else
         printf "${DARK_RED}PASSING${NOCOLOR}\n"
     fi
@@ -239,18 +283,59 @@ installBash() {
 installRofi() {
     if [[ -e $(which rofi) ]]; then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Config\n"
+        if [[ -d /usr/share/rofi/themes ]];
+            printf "the rofi themes resides in the ${DARK_YELLOW}/usr${NOCOLOR} folder, to install these themes we will need the sudo permission"
+            sudo rmdir /usr/share/rofi/themes
+            sudo ln -sf $HOME/.dotfiles/environment/rofi/themes /usr/share/rofi/
+        else
+            sudo ln -sf $HOME/.dotfiles/environment/rofi/themes /usr/share/rofi/
+        fi
     fi
 }
 
 installRofiApplets() {
     if [[ -d $HOME/.config/rofi ]]; then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Applets Config\n"
+        rm -rf $HOME/.config/rofi/*
+        ln -sf $HOME/.dotfiles/environment/rofi/applets $HOME/.config/rofi/
+        ln -sf $HOME/.dotfiles/environment/rofi/bin $HOME/.config/rofi/
+        ln -sf $HOME/.dotfiles/environment/rofi/launchers $HOME/.config/rofi/
+        ln -sf $HOME/.dotfiles/environment/rofi/powermenu $HOME/.config/rofi/
+        ln -sf $HOME/.dotfiles/environment/rofi/config.rasi $HOME/.config/rofi/
     fi
 }
 
 installCoolRetroTerm() {
     if [[ -e $(which cool-retro-term) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} cool-retro-term Config\n"
+        printf "${DARK_GREEN}INSTALLING${NOCOLOR} cool-retro-term Theme\n"
+        if [[ -e /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme ]]; then
+            sudo rm /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+            printf "Please select one of these themes:\n"
+            printf "0. Default\n"
+            printf "1. Dracula\n"
+            printf "2. MaterialOcean\n"
+            printf "3. Nord\n"
+            read -e -p "Enter the number: " CHOICE
+            case $CHOICE in
+            "0" | 0)
+            sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/default.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+            ;;
+            "1" | 1)
+            sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Dracula.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+            ;;
+            "2" | 2)
+            sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/MaterialThemeOcean.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+            ;;
+            "3" | 3)
+            sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Nord.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+            ;;
+            *)
+            printf "Invalid input, try again\n"
+            ;;
+            esac
+        fi
+        printf "If you want another theme, run the changeTheme script in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR}\n"
+        printf "Or if you want you can read the readme.md in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR} or in ${DARK_BLUE}https://github.com/MiraiMindz/.dotfiles/tree/main/terminals/cool-retro-term#readme${NOCOLOR}"
     fi
 }
 
@@ -258,6 +343,10 @@ installSDDMTheme() {
     if [[ -e $(which sddm) ]]; then
         if [[ -d /usr/share/sddm/themes/Sugar-Candy ]]; then
             printf "${DARK_GREEN}INSTALLING${NOCOLOR} SDDM Sugar Candy Theme Config\n"
+            sudo mv -v $HOME/.dotfiles/environment/sddm/Themes/Wallpapers/* /usr/share/sddm/themes/Sugar-Candy/Backgrounds/
+            sudo ln -sf /usr/share/sddm/themes/Sugar-Candy/* $HOME/.dotfiles/environment/sddm/Themes/SugarCandy/
+            sudo mkdir /etc/sddm.conf.d
+            sudo ln -sf $HOME/.dotfiles/environment/sddm/config.conf /etc/sddm.conf.d/
         else
             printf "Install the Sugar Candy Theme ${DARK_BLUE} (https://github.com/Kangie/sddm-sugar-candy)${NOCOLOR}\n"
             printf "And run the following commands\n"
@@ -301,7 +390,6 @@ checkPackages() {
 }
 
 doinstall() {
-    sleep 0.5
     clear
     printf "${DARK_YELLOW}CKECKING FOR PACKAGES${TEXTRESETALL}\n"
     checkPackages
