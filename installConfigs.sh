@@ -138,6 +138,7 @@ installPolybar() {
             rmdir $HOME/.config/polybar
             ln -v -sf $HOME/.dotfiles/environment/polybar $HOME/.config/
         else
+            rmdir $HOME/.config/polybar
             ln -v -sf $HOME/.dotfiles/environment/polybar $HOME/.config/
         fi
     fi
@@ -177,6 +178,14 @@ installNeofetch() {
 
 installVIM() {
     printf "${DARK_GREEN}INSTALLING${NOCOLOR} VIM Config\n"
+}
+
+installNeoVIM() {
+    printf "${DARK_GREEN}INSTALLING${NOCOLOR} NeoVIM Config\n"
+}
+
+installVI() {
+    printf "${DARK_GREEN}INSTALLING${NOCOLOR} VI Config\n"
 }
 
 installBash() {
@@ -227,6 +236,8 @@ checkPackages() {
     _checkPkgs "cool-retro-term"
     _checkPkgs "neofetch"
     _checkPkgs "vim"
+    _checkPkgs "neovim"
+    _checkPkgs "vi"
     _checkPkgs "rofi"
     if [[ -d $HOME/.config/rofi ]]; then
         printf "Rofi Applets is ${DARK_GREEN}INSTALLED${NOCOLOR}\n"
@@ -255,6 +266,8 @@ doinstall() {
     installCoolRetroTerm
     installNeofetch
     installVIM
+    installNeoVIM
+    installVI
     installBash
     installRofi
     installRofiApplets
