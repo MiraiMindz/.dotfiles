@@ -70,7 +70,7 @@ initgit() {
             git commit -m "created .dotfiles repo from script"
             printf "Please insert the github repository URL: "
             git remote add origin
-            git remote -v && git push origin main
+            git remote -v && git push
             cd $HOME
         else
             printf "exiting\n"
@@ -407,6 +407,19 @@ doinstall() {
     installBash
     installRofi
     installRofiApplets
+    echo -e -n "Do you want to create a git repository on the ${DARK_YELLOW}$HOME/.dotfiles${NOCOLOR} directory (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+    old_stty_cfg=$(stty -g)
+    stty raw -echo
+    answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+    stty $old_stty_cfg
+    if echo "$answer" | grep -iq "^y" ;then
+        printf "${DARK_GREEN}INITIALIZING GIT${NOCOLOR}\n"
+        initgit
+    else
+        printf "${DARK_RED}PROCEEDING${NOCOLOR}\n"
+    fi
+
+    printf "INSTALLATION ${DARK_GREEN}DONE${NOCOLOR}\n"
 }
 
 ### Installation
@@ -435,6 +448,6 @@ if echo "$answer" | grep -iq "^y" ;then
     printf "${DARK_GREEN}INSTALLING${TEXTRESETALL}\n"
     doinstall
 else
-    printf "${DARK_RED}ABORTING${NOCOLOR}\n"
+    printf "${DARK_RED}ABORTING${TEXTRESETALL}\n"
 fi
 
