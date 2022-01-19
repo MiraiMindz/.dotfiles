@@ -3,3 +3,6 @@
 	email = 78761663+MiraiMindz@users.noreply.github.com
 [init]
 	defaultBranch = main
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
