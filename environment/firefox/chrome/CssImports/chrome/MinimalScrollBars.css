@@ -1,0 +1,9 @@
+/* Changes various in-UI scrollabars to be slim and more subtle */
+
+.panel-subview-body,
+#permList,
+scrollbar{
+ color: inherit;
+ scrollbar-color: currentColor transparent;
+ scrollbar-width: thin
+}

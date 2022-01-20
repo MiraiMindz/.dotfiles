@@ -1,0 +1,9 @@
+@import url(./CssImports/content/AboutPagesScrollbars.css);
+@import url(./CssImports/content/AddonManagerWithoutPopup.css);
+@import url(./CssImports/content/CompactAddonManager.css);
+/* @import url(./CssImports/content/CssDataLeak.css); *//* This may break some sites, read the file */
+@import url(./CssImports/content/DarkSettingsPages.css);
+@import url(./CssImports/content/NewtabBackground.css);
+@import url(./CssImports/content/ScrollbarWidthColor.css);
+@import url(./CssImports/content/StandaloneImagePagesMod.css);
+@import url(./CssImports/content/TransparentReaderToolbar.css);
