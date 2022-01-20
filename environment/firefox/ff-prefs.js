@@ -52,6 +52,8 @@ user_pref("devtools.theme", "dark");
 user_pref("devtools.inspector.showUserAgentStyles", true);
 user_pref("browser.toolbars.bookmarks.visibility", "never");
 user_pref("browser.uiCustomization.state", "{\"placements\":{\"widget-overflow-fixed-list\":[\"search-container\",\"edit-controls\",\"zoom-controls\",\"fxa-toolbar-menu-button\",\"find-button\",\"downloads-button\",\"screenshot-button\",\"fullscreen-button\",\"stop-reload-button\",\"developer-button\",\"preferences-button\",\"add-ons-button\",\"privatebrowsing-button\",\"new-window-button\",\"sidebar-button\",\"home-button\",\"sync-button\",\"panic-button\",\"save-to-pocket-button\",\"bookmarks-menu-button\",\"library-button\",\"history-panelmenu\",\"email-link-button\",\"open-file-button\",\"characterencoding-button\",\"print-button\",\"save-page-button\"],\"nav-bar\":[\"back-button\",\"forward-button\",\"urlbar-container\"],\"toolbar-menubar\":[\"menubar-items\"],\"TabsToolbar\":[\"tabbrowser-tabs\",\"new-tab-button\",\"alltabs-button\"],\"PersonalToolbar\":[\"import-button\",\"personal-bookmarks\"]},\"seen\":[\"save-to-pocket-button\",\"developer-button\"],\"dirtyAreaCache\":[\"nav-bar\",\"PersonalToolbar\",\"widget-overflow-fixed-list\"],\"currentVersion\":17,\"newElementCount\":3}");
+user_pref("devtools.chrome.enabled", true);
+user_pref("devtools.debugger.remote-enabled", true);
 
 user_pref("app.normandy.api_url", "");
 user_pref("app.normandy.enabled", false);
