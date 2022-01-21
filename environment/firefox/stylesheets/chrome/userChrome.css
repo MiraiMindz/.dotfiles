@@ -1,23 +1,22 @@
-/* @import url(./CssImports/chrome/AutoHideTabsToolbar.css); */
-/* @import url(./CssImports/chrome/CenteredTabLabel.css); */
-/* @import url(./CssImports/chrome/CompactUrlBar.css); */
-/* @import url(./CssImports/chrome/MinimalScrollBars.css); */
-/* @import url(./CssImports/chrome/MinimalToolbarButtons.css); */
-/* @import url(./CssImports/chrome/NumberedTabs.css); */
+@import url(./CssImports/chrome/AutoHideTabsToolbar.css);
+@import url(./CssImports/chrome/CenteredTabLabel.css);
+@import url(./CssImports/chrome/CompactUrlBar.css);
+@import url(./CssImports/chrome/MinimalScrollBars.css);
+@import url(./CssImports/chrome/MinimalToolbarButtons.css);
+@import url(./CssImports/chrome/NumberedTabs.css);
 @import url(./CssImports/chrome/RoundUiItems.css);
-/* @import url(./CssImports/chrome/UrlBarCenteredText.css); */
-/* @import url(./CssImports/chrome/BottomNavBar.css); */
-/* @import url(./CssImports/chrome/ConnectionTypeColors.css); */
-/* @import url(./CssImports/chrome/UrlContainerColorBorder.css); */
-/* @import url(./CssImports/chrome/ScrollableMenuPopups.css); */
-/* @import url(./CssImports/chrome/ScrollableUrlBarPopups.css); */
-/* @import url(./CssImports/chrome/RoundedMenuPopups.css); */
-/* @import url(./CssImports/chrome/TabLineLoadingIndicator.css); */
-/* @import url(./CssImports/chrome/InlineTabAudioIcons.css); */
+@import url(./CssImports/chrome/UrlBarCenteredText.css);
+@import url(./CssImports/chrome/BottomNavBar.css);
+@import url(./CssImports/chrome/UrlContainerColorBorder.css);
+@import url(./CssImports/chrome/ScrollableMenuPopups.css);
+@import url(./CssImports/chrome/ScrollableUrlBarPopups.css);
+@import url(./CssImports/chrome/RoundedMenuPopups.css);
+@import url(./CssImports/chrome/TabLineLoadingIndicator.css);
+@import url(./CssImports/chrome/InlineTabAudioIcons.css);
 /* @import url(./CssImports/chrome/UrlbarHoverInfoIcons.css); */
-/* @import url(./CssImports/chrome/CenteredTopStatusPanel.css); */
-/* @import url(./CssImports/chrome/MenubarIcons.css); */
-/* @import url(./CssImports/chrome/MainMenuIcons.css); */
+@import url(./CssImports/chrome/CenteredTopStatusPanel.css);
+@import url(./CssImports/chrome/MenubarIcons.css);
+@import url(./CssImports/chrome/MainMenuIcons.css);
 /* @import url(./CssImports/chrome/ButtonsGlow.css); */
 @import url(./CssImports/chrome/LittleChanges.css);
 @import url(./Theme/base.css);
