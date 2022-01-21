@@ -69,11 +69,43 @@ case $chosen in
 		fi
         ;;
     $browser)
-		if [[ -f $(which brave) ]]; then
-			brave &
-		else
-			msg "Code not found"
-		fi
+		case $(xdg-settings get default-web-browser) in
+			"firefox.desktop")
+				if [[ -f $(which firefox) ]]; then
+					firefox &
+				else
+					msg "firefox not found"
+				fi
+			;;
+			"chrome.desktop")
+				if [[ -f $(which chrome) ]]; then
+					chrome &
+				else
+					msg "chrome not found"
+				fi
+			;;
+			"chromium.desktop")
+				if [[ -f $(which chromium) ]]; then
+					chromium &
+				else
+					msg "chromium not found"
+				fi
+			;;
+			"opera.desktop")
+				if [[ -f $(which opera) ]]; then
+					opera &
+				else
+					msg "opera not found"
+				fi
+			;;
+			*)
+				if [[ -f $(which brave) ]]; then
+					brave &
+				else
+					msg "browser not found"
+				fi
+			;;
+		esac
         ;;
     $rofi)
 		if [[ -f $(which rofi) ]]; then
