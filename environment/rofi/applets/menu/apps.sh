@@ -13,13 +13,28 @@ rofi_command="rofi -theme $dir/apps.rasi"
 # Links
 files=""
 editor="﬏ "
-#browser=""
-browser=""
 rofi=""
 quicklinks=""
 scrcpy=""
 discord=""
 
+case $(xdg-settings get default-web-browser) in
+	"firefox.desktop")
+		browser=""
+	;;
+	"chrome.desktop")
+		browser=""
+	;;
+	"chromium.desktop")
+		browser=""
+	;;
+	"opera.desktop")
+		browser=""
+	;;
+	*)
+		browser=""
+	;;
+esac
 
 # Error msg
 msg() {
