@@ -1,0 +1,304 @@
+@import url(./Fonts.css);
+
+html,body {
+    height: 100%;
+    width: 100%;
+}
+
+#BackgroundImage {
+    height: 100%;
+    width: 100%;
+}
+#BackgroundImage:after {
+    content: "";
+    background-image: var(--BackgroundImage);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 50%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#MainIcon {
+    width: 128px;
+    height: 128px;
+}
+
+#WelcomeText {
+    font-family: 'Comfortaa';
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-top:0.5em;
+    width: 25%;
+    margin: auto;
+}
+
+
+#description {
+    padding: 0 0.2em;
+}
+
+#temp {
+    padding: 0 0.2em;
+}
+
+#humidt {
+    padding: 0 0.2em;
+}
+
+#weathericon {
+    --size: 20px;
+    padding-right: 0.15em;
+    width: var(--size);
+    height: var(--size);
+    margin-bottom: -1em;
+}
+
+#humicon {
+    --size: 17px;
+    padding: 0 0.15em;
+    width: var(--size);
+    height: var(--size);
+    margin-bottom: -1em;
+}
+
+#tempicon {
+    --size: 9px;
+    padding: 0 0.15em;
+    width: var(--size);
+    height: var(--size);
+    margin-bottom: -1em;
+}
+
+#clock {
+    font-family: 'Comfortaa';
+    margin: auto;
+    margin-top: 0.5em;
+}
+
+#clockhours {
+    text-align: center;
+    margin: auto;
+    font-size: 2em;
+    border-radius: 12em;
+    width: 11%;
+    padding-top: 0.2em;
+}
+
+#clockdate {
+    text-align: center;
+    margin: 0;
+    font-size: 1.5em;
+}
+
+#dayname {
+    text-align: center;
+    margin: 0;
+    font-size: 1.5em;
+    margin-top: 0.3em;
+}
+
+.roundweather {
+    display: flex;
+    position: absolute;
+    font-family: 'Comfortaa';
+    margin: auto;
+    right: 2%;
+    top: 2%;
+    border-radius: 10em;
+    padding: 0.5em 1em;
+}
+
+#weather2 {
+    margin-top: 2.5em;
+}
+
+#weather3 {
+    margin-top: 5em;
+}
+
+#configtoggler {
+    --size: 20px;
+    display: flex;
+    position: absolute;
+    font-family: 'Comfortaa';
+    margin: auto;
+    right: 2%;
+    top: 2%;
+    border-radius: 10em;
+    padding: 0.5em;
+    margin-top: 7.5em;
+    height: var(--size);
+    width: var(--size);
+}
+
+#configmenu {
+    position: absolute;
+    font-family: 'Comfortaa';
+    margin: auto;
+    right: 2%;
+    top: 2%;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-top: 9.25em;
+    margin-right: 2em;
+    width: 12em;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.ThemeSwitcherItem {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.ThemesHeader {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#SearchBarConfig {
+    margin-top: 0.5em;
+}
+
+.roundbooks {
+    display: flex;
+    position: absolute;
+    font-family: 'Comfortaa';
+    margin: auto;
+    left: 2%;
+    top: 2%;
+    border-radius: 10em;
+    padding: 0.5em 1em;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+#empty-bm1 {margin-top: calc(0*2.5em); width: 14.75%;}
+#empty-bm2 {margin-top: calc(1*2.5em); width: 13.75%;}
+#empty-bm3 {margin-top: calc(2*2.5em); width: 12.5%;}
+#empty-bm4 {margin-top: calc(3*2.5em); width: 10.75%;}
+#empty-bm5 {margin-top: calc(4*2.5em); width: 9.25%;}
+#empty-bm6 {margin-top: calc(5*2.5em); width: 8%;}
+#empty-bm7 {margin-top: calc(6*2.5em); width: 7.5%;}
+#empty-bm8 {margin-top: calc(7*2.5em); width: 6.5%;}
+#empty-bm9 {margin-top: calc(8*2.5em); width: 6%;}
+#empty-bm10 {margin-top: calc(9*2.5em); width: 6%;}
+#empty-bm11 {margin-top: calc(10*2.5em); width: 6.5%;}
+#empty-bm12 {margin-top: calc(11*2.5em); width: 7.5%;}
+#empty-bm13 {margin-top: calc(12*2.5em); width: 8%;}
+#empty-bm14 {margin-top: calc(13*2.5em); width: 9.25%;}
+#empty-bm15 {margin-top: calc(14*2.5em); width: 10.75%;}
+#empty-bm16 {margin-top: calc(15*2.5em); width: 12%;}
+#empty-bm17 {margin-top: calc(16*2.5em); width: 13.25%;}
+#empty-bm18 {margin-top: calc(17*2.5em); width: 14.75%;}
+
+/* #empty-bm2 {margin-top: calc(0*2.5em); width: 13.75%;}
+#empty-bm3 {margin-top: calc(1*2.5em); width: 12.5%;}
+#empty-bm4 {margin-top: calc(2*2.5em); width: 10.75%;}
+#empty-bm5 {margin-top: calc(3*2.5em); width: 9.25%;}
+#empty-bm6 {margin-top: calc(4*2.5em); width: 8%;}
+#empty-bm7 {margin-top: calc(5*2.5em); width: 7.5%;}
+#empty-bm8 {margin-top: calc(6*2.5em); width: 6.5%;}
+#empty-bm9 {margin-top: calc(7*2.5em); width: 6%;}
+#empty-bm10 {margin-top: calc(8*2.5em); width: 6%;}
+#empty-bm11 {margin-top: calc(9*2.5em); width: 6.5%;}
+#empty-bm12 {margin-top: calc(10*2.5em); width: 7.5%;}
+#empty-bm13 {margin-top: calc(11*2.5em); width: 8%;}
+#empty-bm14 {margin-top: calc(12*2.5em); width: 9.25%;}
+#empty-bm15 {margin-top: calc(13*2.5em); width: 10.75%;}
+#empty-bm16 {margin-top: calc(14*2.5em); width: 12%;}
+#empty-bm17 {margin-top: calc(15*2.5em); width: 13.25%;} */
+
+.bmempty {
+    opacity: 20%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.SearchBar {
+    display: flex;
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    align-tracks: center;
+    position:absolute;
+    padding: 1% 1%;
+    width: 40%;
+    /* top: 54%; */
+    top: 49%;
+    left: 28%;
+    background: transparent;
+    border-radius: 10em;
+    border: 3px solid ;
+}
+
+.SearchBarInput {
+    font-family: 'Comfortaa';
+    width: 90%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: none;
+    outline: none;
+    background: none;
+    text-align: center;
+    font-weight: 900;
+    font-size: 1.1em;
+}
+
+.Button {
+    background: none;
+    border: none;
+    padding: none;
+    margin: none;
+}
+
+.SearchBarSubmit {
+    width: 32px;
+    height: 32px;
+    margin: -8px -13px -13px -24px;
+}
+.SearchMethod {
+    width: 32px;
+    height: 32px;
+    margin: -8px -13px -13px -8px;
+}
+
+.MainIcon {
+    width: 25%;
+    position:absolute;
+    top: 40%;
+    left: 37.5%;
+    fill: transparent;
+    stroke-width: 3px;
+}
+
+#quotes {
+    font-family: 'Comfortaa';
+    font-size: 0.6em;
+    width: 30%;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+}
+
+#QuoteAuthorShow {
+    text-align: right;
+}
+

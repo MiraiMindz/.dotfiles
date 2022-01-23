@@ -1,0 +1,99 @@
+@import url(../Colors/Nord_ColorBank.css);
+
+html {
+    background-color: var(--PolarNight1-100);
+}
+
+#BackgroundImage {
+    --BackgroundImage: url(../Images/Backgrounds/AudioBunny.png);
+}
+
+#WelcomeText {
+    color: var(--SnowStorm1-100);
+}
+
+#clock {
+    color: var(--SnowStorm1-100);
+}
+
+#clockhours {
+    border: 1px solid var(--SnowStorm1-100);
+}
+
+#weathericon, #tempicon, #humicon {
+    fill: var(--SnowStorm1-100);
+}
+
+.roundweather {
+    color: var(--SnowStorm1-100);
+    background-color: var(--PolarNight2-100);
+}
+
+#configtoggler {
+    color: var(--SnowStorm1-100);
+    background-color: var(--PolarNight2-100);
+}
+
+#configcog {
+    fill: var(--SnowStorm1-100);
+}
+
+#configmenu {
+    color: var(--SnowStorm1-100);
+    background-color: var(--PolarNight2-100);
+}
+
+.roundbooks {
+    color: var(--SnowStorm1-100);
+    background-color: var(--PolarNight2-100);
+}
+
+#SearchBarToggler {
+    color: var(--Aurora1-100);
+}
+
+#SearchBarToggler.on {
+    color: var(--Aurora4-100);
+}
+
+a {
+    color: var(--SnowStorm1-75);
+}
+
+#CHAN_BM:hover {
+    color: var(--Aurora4-100);
+}
+
+#REDD_BM:hover {
+    color: var(--Aurora3-100);
+}
+
+#GTHB_BM:hover {
+    color: var(--Aurora5-100);
+}
+
+.SearchBar {
+    border-color: var(--PolarNight2-100);
+}
+
+.SearchBarInput {
+    color: var(--SnowStorm1-100);
+}
+
+.SearchBarSubmit {
+    fill: var(--SnowStorm1-100);
+}
+
+.SearchMethod {
+    fill: var(--SnowStorm1-100);
+}
+
+.MainIcon {
+    stroke: var(--SnowStorm1-100);
+}
+
+#quotes {
+    color: var(--SnowStorm1-100);
+}
+
+
