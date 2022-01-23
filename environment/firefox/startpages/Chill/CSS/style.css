@@ -35,7 +35,7 @@ html,body {
     justify-content: center;
     text-align: center;
     padding-top:0.5em;
-    width: 25%;
+    width: fit-content;
     margin: auto;
 }
 
