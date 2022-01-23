@@ -2,3 +2,7 @@
 .tab-label,.tab-secondary-label{ overflow: hidden }
 .tabbrowser-tab[selected]:not(:hover) .tab-label-container,
 #tabbrowser-tabs:not([closebuttons="activetab"]) .tabbrowser-tab:not(:hover,[pinned]) .tab-label-container{ margin-inline-end: 7px }
+
+.tab-label-container {
+    padding-top: 6px !important;
+}
