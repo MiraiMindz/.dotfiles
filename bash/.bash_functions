@@ -194,6 +194,3 @@ if [[ -e $(which cool-retro-term) ]]; then
     fi
 fi
 
-cfs() {
-    find . -type f -name '$1' -printf x | wc -c
-}
