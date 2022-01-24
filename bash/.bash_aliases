@@ -43,6 +43,10 @@ if [[ -e $(which icons-in-terminal) ]];then
     alias termicon=icons-in-terminal
 fi
 
+if [[ -e $(which ccat) ]]; then
+    alias cat=ccat
+fi
+
 alias cler=clear
 alias claer=clear
 alias clar=clear
