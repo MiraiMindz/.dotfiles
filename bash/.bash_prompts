@@ -1,7 +1,39 @@
+exitstatus() {
+    if [[ $? == 0 ]]; then
+        printf '\e[92m⬤ \e[39m'
+    else
+        printf '\e[31m⬤ \e[39m'
+    fi
+}
+
+EXTSTS='\[$($DARK_BLACK_16_fg)\]\[$($DARK_BLACK_16_bg)\]$(exitstatus)'
+TM1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\]'
+UWD1='\[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W'
+IDCTR1='\[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\]'
+GT1='\[$($DARK_RED_16_fg)\]$(__git_ps1 " (%s)")'
+JBS1='\j '
+TM2='\[$($DARK_YELLOW_16_fg)\]\[$($DARK_YELLOW_16_bg)$($DARK_BLACK_16_fg)\]\t\[$($NOCOLOR_16_bg)\]\[$($DARK_YELLOW_16_fg)\]\[$($NOCOLOR_16_fg)\]'
+UWD2='\[$($DARK_BLUE_16_fg)\]\[$($DARK_BLUE_16_bg)$($DARK_BLACK_16_fg)\]\u\[$($DARK_PURPLE_16_fg)\]\[$($DARK_PURPLE_16_bg)$($DARK_BLACK_16_fg)\]\W\[$($NOCOLOR_16_bg)\]\[$($DARK_PURPLE_16_fg)\]\[$($NOCOLOR_16_fg)\]'
+IDCTR2='\[$($DARK_GREEN_16_fg)\]\[$($DARK_GREEN_16_bg)$($DARK_BLACK_16_fg)\]~\[$($NOCOLOR_16_bg)$($DARK_GREEN_16_fg)\]\[$($NOCOLOR_16_fg)\]'
+GT2='$(__git_ps1 " \[$($DARK_RED_16_fg)\]\[$($DARK_RED_16_bg)$($DARK_BLACK_16_fg)\]%s\[$($NOCOLOR_16_bg)\]\[$($DARK_RED_16_fg)\]\[$($NOCOLOR_16_fg)\]")'
+TM3='\[$($DARK_YELLOW_16_fg)\]\[$($DARK_YELLOW_16_bg)$($DARK_BLACK_16_fg)\]\t\[$($DARK_YELLOW_16_bg)\]\[$($NOCOLOR_16_fg)\]'
+UWD3='\[$($DARK_BLUE_16_fg)\]\[$($DARK_BLUE_16_bg)$($DARK_BLACK_16_fg)\]\u\[$($DARK_PURPLE_16_fg)\]\[$($DARK_PURPLE_16_bg)$($DARK_BLACK_16_fg)\]\W\[$($DARK_PURPLE_16_bg)\]\[$($NOCOLOR_16_fg)\]'
+IDCTR3='\[$($NOCOLOR_16_bg)\]\[$($NOCOLOR_16_fg)\]'
+GT3='$(__git_ps1 "\[$($DARK_RED_16_fg)\]\[$($DARK_RED_16_bg)$($DARK_BLACK_16_fg)\]%s\[$($DARK_RED_16_bg)\]\[$($NOCOLOR_16_fg)\]")'
+TM4='\[$($DARK_YELLOW_16_fg)\]\[$($DARK_YELLOW_16_bg)$($DARK_BLACK_16_fg)\]\t\[$($DARK_YELLOW_16_bg)\]\[$($NOCOLOR_16_fg)\]'
+UWD4='\[$($DARK_BLUE_16_fg)\]\[$($DARK_BLUE_16_bg)$($DARK_BLACK_16_fg)\]\u\[$($DARK_PURPLE_16_fg)\]\[$($DARK_PURPLE_16_bg)$($DARK_BLACK_16_fg)\]\W\[$($DARK_PURPLE_16_bg)$($DARK_PURPLE_16_fg)\]'
+GT4='$(__git_ps1 "\[$($DARK_RED_16_fg)\]\[$($DARK_RED_16_bg)$($DARK_BLACK_16_fg)\]%s\[$($DARK_RED_16_bg)$($DARK_RED_16_fg)\]")'
+
+
+
 if [ -e $HOME/.bash/git-prompt.sh ]; then
-    PS1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\] \[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W\[$($DARK_RED_16_fg)\]$(__git_ps1 " (%s)") \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
-    PS2='└\[$($DARK_RED_16_fg)\]$(__git_ps1 "(%s)") \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
+    #PS1="${TM1} ${UWD1}${GT1} ${IDCTR1} " # Base PS1 no Powerline | 0
+    #PS1="${TM2} ${UWD2}${GT2} ${IDCTR1} " # Base PS1 with Powerline | 1
+    #PS1="${TM3}${UWD3}${GT3}${IDCTR2} " # Base PS1 full Powerline | 2
+    PS1="${EXTSTS}${JBS1}${TM4}${UWD4}${GT4}${IDCTR3} " # Extended PS1 full Powerline | 3
+    PS2="└${GT2} ${IDCTR1} "
 else
-    PS1='\[$($DARK_YELLOW_16_fg)\][\t]\[$($NOCOLOR_16_fg)\] \[$($DARK_BLUE_16_fg)\]\u\[$($NOCOLOR_16_fg)\]@\[$($DARK_PURPLE_16_fg)\]\W \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
-    PS2='└ \[$($DARK_GREEN_16_fg)\]~\[$($NOCOLOR_16_fg)\] '
+    PS1="${TM2} ${UWD2} ${IDCTR1} "
+    PS2="└ ${IDCTR1} "
 fi
+
