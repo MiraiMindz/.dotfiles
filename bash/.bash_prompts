@@ -25,6 +25,7 @@ UWD4='\[$($DARK_BLUE_16_fg)\]\[$($DARK_BLUE_16_bg)$($DARK_BLACK_16_fg)\]\u\[$
 GT4='$(__git_ps1 "\[$($DARK_RED_16_fg)\]\[$($DARK_RED_16_bg)$($DARK_BLACK_16_fg)\]%s\[$($DARK_RED_16_bg)$($DARK_RED_16_fg)\]")'
 
 
+# To make the Powerline variants work, you will need to set the terminal font to 12px, and use any supported Powerline font
 
 if [ -e $HOME/.bash/git-prompt.sh ]; then
     #PS1="${TM1} ${UWD1}${GT1} ${IDCTR1} " # Base PS1 no Powerline | 0
