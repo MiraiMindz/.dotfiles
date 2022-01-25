@@ -12,7 +12,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a6accd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -23,7 +23,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a6accd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -34,7 +34,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#D8DEE9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -45,7 +45,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f8f8f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -56,7 +56,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#4a4543"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#4a4543"
     show_titlebar = False
     scrollbar_position = hidden
@@ -68,7 +68,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#a5a2a2"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a5a2a2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -80,7 +80,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#c4e9ff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b4e1fd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -92,7 +92,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bae2fb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b4e1fd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -104,7 +104,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#efbf38"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f8dcc0"
     show_titlebar = False
     scrollbar_position = hidden
@@ -116,7 +116,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     show_titlebar = False
     scrollbar_position = hidden
     palette = "#2e3436:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#d3d7cf:#555753:#ef4a9e:#00d2bc:#e7ca7a:#9399fa:#ca5bcc:#86d079:#eeeeec"
@@ -126,7 +126,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d0d0d0"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d0d0d0"
     show_titlebar = False
     scrollbar_position = hidden
@@ -138,7 +138,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#73fa91"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#637d75"
     show_titlebar = False
     scrollbar_position = hidden
@@ -150,7 +150,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ff0018"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#fffaf4"
     show_titlebar = False
     scrollbar_position = hidden
@@ -162,7 +162,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e2bbef"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ddeedd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -174,7 +174,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#979db4"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#979db4"
     show_titlebar = False
     scrollbar_position = hidden
@@ -186,7 +186,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d0d0d0"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#c5c8c6"
     show_titlebar = False
     scrollbar_position = hidden
@@ -198,7 +198,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#2a2c33"
     show_titlebar = False
     scrollbar_position = hidden
@@ -210,7 +210,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#00485a"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#80b6ad"
     show_titlebar = False
     scrollbar_position = hidden
@@ -221,7 +221,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f29718"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e6e1cf"
     show_titlebar = False
     scrollbar_position = hidden
@@ -233,7 +233,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ff6a00"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#5c6773"
     show_titlebar = False
     scrollbar_position = hidden
@@ -245,7 +245,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#FFD580"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9d7ce"
     show_titlebar = False
     scrollbar_position = hidden
@@ -257,7 +257,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d2e8fc"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9e6f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -269,7 +269,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fcef0c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#6f6f6f"
     show_titlebar = False
     scrollbar_position = hidden
@@ -281,7 +281,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#45373c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#45373c"
     show_titlebar = False
     scrollbar_position = hidden
@@ -293,7 +293,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#968c83"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#968c83"
     show_titlebar = False
     scrollbar_position = hidden
@@ -305,7 +305,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#c4d0de"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a9bed8"
     show_titlebar = False
     scrollbar_position = hidden
@@ -317,7 +317,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#573d26"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e0dbb7"
     show_titlebar = False
     scrollbar_position = hidden
@@ -329,7 +329,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d9e6f2"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9e6f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -341,7 +341,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#00ecc8"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#00ecc8"
     show_titlebar = False
     scrollbar_position = hidden
@@ -352,7 +352,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f9dc5c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     show_titlebar = False
     scrollbar_position = hidden
     palette = "#2e3436:#ff512f:#b2ffa9:#fffd82:#3185fc:#dd2476:#66d7d1:#f2efea:#555753:#ff512f:#b2ffa9:#fffd82:#3185fc:#dd2476:#66d7d1:#f2efea"
@@ -363,7 +363,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffa560"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffff4e"
     show_titlebar = False
     scrollbar_position = hidden
@@ -375,7 +375,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f34b00"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b3c9d7"
     show_titlebar = False
     scrollbar_position = hidden
@@ -387,7 +387,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e6e1dc"
     show_titlebar = False
     scrollbar_position = hidden
@@ -399,7 +399,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#b9b9b9"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d6dbe5"
     show_titlebar = False
     scrollbar_position = hidden
@@ -411,7 +411,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#7869c4"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#7869c4"
     show_titlebar = False
     scrollbar_position = hidden
@@ -423,7 +423,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e3eef9"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9e6f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -434,7 +434,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#AAAAAA"
     show_titlebar = False
     scrollbar_position = hidden
@@ -445,7 +445,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d9e6f2"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9e6f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -458,7 +458,7 @@
     background_type = transparent
     cursor_color = "#ffffff"
     cursor_color_fg = False
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -469,7 +469,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#708284"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d2d8d9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -481,7 +481,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#2c85f7"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#cdd2e9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -493,7 +493,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#92805b"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#aea47a"
     show_titlebar = False
     scrollbar_position = hidden
@@ -505,7 +505,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#6fd3fc"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#262626"
     show_titlebar = False
     scrollbar_position = hidden
@@ -517,7 +517,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f0cc09"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -529,7 +529,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#c4206f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#8ff586"
     show_titlebar = False
     scrollbar_position = hidden
@@ -541,7 +541,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#68525a"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#68525a"
     show_titlebar = False
     scrollbar_position = hidden
@@ -552,7 +552,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -564,7 +564,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#bababa"
     show_titlebar = False
     scrollbar_position = hidden
@@ -576,7 +576,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d0d0d0"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#cdcdcd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -588,7 +588,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#00ff00"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -600,7 +600,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f83e19"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b9bcba"
     show_titlebar = False
     scrollbar_position = hidden
@@ -612,7 +612,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d9002f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ebebeb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -624,7 +624,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ff9839"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b7a1ff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -636,7 +636,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f6f7ec"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e5c7a9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -648,7 +648,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#facb80"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#807a74"
     show_titlebar = False
     scrollbar_position = hidden
@@ -660,7 +660,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#efefef"
     show_titlebar = False
     scrollbar_position = hidden
@@ -672,7 +672,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fbfbfb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f2f2f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -683,7 +683,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#00a595"
     show_titlebar = False
     scrollbar_position = hidden
@@ -695,7 +695,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d6d6d6"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -707,7 +707,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b8a898"
     show_titlebar = False
     scrollbar_position = hidden
@@ -719,7 +719,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d4605a"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dbdae0"
     show_titlebar = False
     scrollbar_position = hidden
@@ -731,7 +731,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#708284"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#7c8fa4"
     show_titlebar = False
     scrollbar_position = hidden
@@ -743,7 +743,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f6f7ec"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#9ba2b2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -755,7 +755,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fecd5e"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ecf0fe"
     show_titlebar = False
     scrollbar_position = hidden
@@ -767,7 +767,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e5be0c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#2cc55d"
     show_titlebar = False
     scrollbar_position = hidden
@@ -779,7 +779,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#708284"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b8dbef"
     show_titlebar = False
     scrollbar_position = hidden
@@ -791,7 +791,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dbd1b9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -803,7 +803,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#9e9ecb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e2d8cd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -815,7 +815,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#839496"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#94a3a5"
     show_titlebar = False
     scrollbar_position = hidden
@@ -827,7 +827,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#cdcdcd"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#adadad"
     show_titlebar = False
     scrollbar_position = hidden
@@ -839,7 +839,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e5591c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dec165"
     show_titlebar = False
     scrollbar_position = hidden
@@ -851,7 +851,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -863,7 +863,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#3f3f3f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#3e3e3e"
     show_titlebar = False
     scrollbar_position = hidden
@@ -875,7 +875,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#6c6c6c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -887,7 +887,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#a288f7"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#9f9fa1"
     show_titlebar = False
     scrollbar_position = hidden
@@ -899,7 +899,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#8c2800"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#fff0a5"
     show_titlebar = False
     scrollbar_position = hidden
@@ -911,7 +911,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#5ccfe6"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d7dce2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -922,7 +922,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a0a0a0"
     show_titlebar = False
     scrollbar_position = hidden
@@ -934,7 +934,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#a8a49d"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a8a49d"
     show_titlebar = False
     scrollbar_position = hidden
@@ -945,7 +945,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#BAFFAA"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#FFFFFF"
     show_titlebar = False
     scrollbar_position = hidden
@@ -957,7 +957,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#FF0054"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#444444"
     show_titlebar = False
     scrollbar_position = hidden
@@ -969,7 +969,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e0d9b9"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ededed"
     show_titlebar = False
     scrollbar_position = hidden
@@ -981,7 +981,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#23ff18"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#84c138"
     show_titlebar = False
     scrollbar_position = hidden
@@ -992,7 +992,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#23ff18"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#00ff00"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1004,7 +1004,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e95379"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#bbbbbb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1015,7 +1015,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dbdbdb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1027,7 +1027,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#b7bcba"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b7bcba"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1039,7 +1039,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#42ff58"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9efd3"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1051,7 +1051,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fc531d"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffcb83"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1063,7 +1063,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d6d6d6"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1074,7 +1074,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#808080"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f1f1f1"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1086,7 +1086,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#23ff18"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffcc2f"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1098,7 +1098,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#edcf4f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f7f6ec"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1110,7 +1110,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffa560"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dedede"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1122,7 +1122,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#adadad"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1134,7 +1134,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fcfcfc"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#fcfcfc"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1146,7 +1146,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#9fda9c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f7f7f7"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1158,7 +1158,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#424242"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#959595"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1170,7 +1170,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#8c91fa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#736e7d"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1182,7 +1182,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#afc2c2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1193,7 +1193,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#afc2c2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1204,7 +1204,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#afc2c2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1216,7 +1216,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#af98e6"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#96979b"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1227,7 +1227,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#7f7f7f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#000000"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1239,7 +1239,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#23476a"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#23476a"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1251,7 +1251,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#657B83"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#C3C7D1"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1263,7 +1263,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#16afca"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#232322"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1275,7 +1275,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#16afca"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e5e5e5"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1288,7 +1288,7 @@
     background_type = transparent
     cursor_color = "#ffcc00"
     cursor_color_fg = False
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#8f93a2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1299,7 +1299,7 @@
     background_type = transparent
     cursor_color = "#ffcc00"
     cursor_color_fg = False
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a6accd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1309,7 +1309,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#bbbbbb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1321,7 +1321,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d3ba30"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#cac296"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1333,7 +1333,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#000000"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e1e1e0"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1345,7 +1345,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d7dee4"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9e6f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1357,7 +1357,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#bbbbbb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1369,7 +1369,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#c46c32"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f7d66a"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1381,7 +1381,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f8f8f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1393,7 +1393,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f6f7ec"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#c4c5b5"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1405,7 +1405,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fb0007"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f9f9f9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1417,7 +1417,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aa9175"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a0a0a0"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1429,7 +1429,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#00e8c6"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1440,7 +1440,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1452,7 +1452,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f6f7ec"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e6e8ef"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1463,7 +1463,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#bbbbbb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1475,7 +1475,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#bbbbbb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1488,7 +1488,7 @@
     background_type = transparent
     cursor_color = "#80a4c2"
     cursor_color_fg = False
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d6deeb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1499,7 +1499,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#73635a"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#3b2322"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1511,7 +1511,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#c0cad0"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#cdcdcd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1523,7 +1523,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#7f7f7f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1535,7 +1535,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#a0a4b2"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#979cac"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1547,7 +1547,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#b3b8c3"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#c2c8d7"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1559,7 +1559,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#5b6ea7"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#8a8dae"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1571,7 +1571,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#676c76"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#5c6370"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1583,7 +1583,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#a3b3cc"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dcdfe4"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1595,7 +1595,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bfceff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#383a42"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1607,7 +1607,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e3ecf5"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9e6f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1619,7 +1619,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f0eeee"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e6e6e6"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1631,7 +1631,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#43d58e"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e1e1e1"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1643,7 +1643,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#a39e9b"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a39e9b"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1655,7 +1655,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#a39e9b"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#a39e9b"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1666,7 +1666,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#4d4d4d"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f2f2f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1678,7 +1678,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#20bbfc"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f1f1f1"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1690,7 +1690,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#20bbfc"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#424242"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1701,7 +1701,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#BBBBBB"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#c7c7c7"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1713,7 +1713,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#5e77c8"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#414141"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1725,7 +1725,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e4c9af"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d0d0d0"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1736,7 +1736,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#4d4d4d"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f2f2f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1748,7 +1748,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1760,7 +1760,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#c2b790"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#c2b790"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1772,7 +1772,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d7c9a7"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1784,7 +1784,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d9d9d9"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9d9d9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1796,7 +1796,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#7f7f7f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1808,7 +1808,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#9ccfd8"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e0def4"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1819,7 +1819,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#524966"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#514968"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1831,7 +1831,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ececec"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ececec"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1843,7 +1843,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#57647a"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d4e7d4"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1855,7 +1855,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fca02f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#deb88d"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1867,7 +1867,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e3bf21"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#cacecd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1879,7 +1879,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#4afcd6"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#405555"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1891,7 +1891,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#6192d2"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#4882cd"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1903,7 +1903,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#aaaaaa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#aeaeb1"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1914,7 +1914,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#87d3c4"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#35b1d2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1926,7 +1926,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f7f7f7"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1938,7 +1938,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#97979b"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#eff0eb"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1950,7 +1950,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d2e0de"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#99a3a2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1962,7 +1962,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#708284"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d2d8d9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1974,7 +1974,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#eee8d5"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#eee8d5"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1986,7 +1986,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#f34b00"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#9cc2c3"
     show_titlebar = False
     scrollbar_position = hidden
@@ -1998,7 +1998,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#708284"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#708284"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2010,7 +2010,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#002b36"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#002b36"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2022,7 +2022,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#708284"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ecf0c1"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2034,7 +2034,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#b3b8c3"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b3b8c3"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2046,7 +2046,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#bdbaae"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2058,7 +2058,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#c9c6bc"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2070,7 +2070,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#2c3fff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#e3e3e3"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2082,7 +2082,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#4d4d4c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#4d4d4c"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2094,7 +2094,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fcfbcc"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#acacab"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2106,7 +2106,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#c9c9c9"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2117,7 +2117,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#dc322f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2129,7 +2129,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e4c9af"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d0d0d0"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2141,7 +2141,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#7f7f7f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#000000"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2153,7 +2153,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fc971f"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#f8f8f8"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2165,7 +2165,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#16b61b"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b5b5b5"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2177,7 +2177,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#4d4d4c"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#4d4d4c"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2189,7 +2189,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2200,7 +2200,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#eaeaea"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#eaeaea"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2212,7 +2212,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#c5c8c6"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#c5c8c6"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2224,7 +2224,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#cccccc"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#cccccc"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2236,7 +2236,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#d5d5d5"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#31d07b"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2248,7 +2248,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#fac814"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#786b53"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2260,7 +2260,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffd4"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2272,7 +2272,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#eeeeec"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2283,7 +2283,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#4afcd6"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2295,7 +2295,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#a063eb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#877a9b"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2307,7 +2307,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#e5f0fa"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#d9e6f2"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2319,7 +2319,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ff5555"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dcdccc"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2331,7 +2331,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#9ecfa2"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#668198"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2341,7 +2341,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#ffffff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#ffffff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2353,7 +2353,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#708284"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#708284"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2365,7 +2365,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#536870"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#536870"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2377,7 +2377,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#30ff24"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#afdab6"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2388,7 +2388,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#53ae71"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#b3b3b3"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2400,7 +2400,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#dd00ff"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dafaff"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2412,7 +2412,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#bbbbbb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dedacf"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2424,7 +2424,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#9e9ecb"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#999993"
     show_titlebar = False
     scrollbar_position = hidden
@@ -2436,7 +2436,7 @@
     background_darkness = 1.0
     background_type = transparent
     cursor_color = "#73635a"
-    font = Cascadia Code PL Semi-Light 10
+    font = Cascadia Code PL Semi-Light 12
     foreground_color = "#dcdccc"
     show_titlebar = False
     scrollbar_position = hidden
