@@ -1,3 +1,8 @@
+if [[ -e $HOME/.zsh/aliases.sh ]]; then
+    source $HOME/.zsh/aliases.sh
+fi
+
+
 ### History Search
 autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
@@ -25,8 +30,19 @@ if [[ "$TERM" == (Eterm*|alacritty*|aterm*|gnome*|konsole*|kterm*|putty*|rxvt*|s
     add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
-secedit() {
+function twitchfetch() {
+    bash -c '_randArr() {
+        shopt -s nullglob
+        local arr=("$@")
+        /usr/bin/neofetch --ascii "${arr[RANDOM % $#]}"
+        }
+        arr2=($HOME/.config/neofetch/asciiArts/*)
+        _randArr "${arr2[@]}"'
+}
+
+function secedit() {
     _secureedit() {
+        trap '' INT
         if [[ $(id -u) -ne 0 ]]; then
             printf "Please run as root\n"
             exit
@@ -42,41 +58,157 @@ secedit() {
                     openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter ${ITERATIONS} -salt -d -in ${fullfilename} -out "/tmp/${RANDFLNM}"
                     sleep 1
                     if [[ -e $(which vim) ]];then
-                        zsh -c "vim /tmp/${RANDFLNM}"
+                        bash -c "vim /tmp/${RANDFLNM}"
                     else
-                        zsh -c "rnano /tmp/${RANDFLNM}"
+                        bash -c "rnano /tmp/${RANDFLNM}"
                     fi
                     sleep 1
                     openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter ${ITERATIONS} -salt -in "/tmp/${RANDFLNM}" -out "${filename}.enc"
-                    zsh -c "shred -u /tmp/${RANDFLNM}"
-                    zsh -c "chown root ${fullfilename}"
-                    zsh -c "chmod 700 ${fullfilename}"
+                    bash -c "shred -u /tmp/${RANDFLNM}"
+                    bash -c "chown root ${fullfilename}"
+                    bash -c "chmod 700 ${fullfilename}"
                 else
                     if [[ -e $(which vim) ]];then
-                        zsh -c "vim ${fullfilename}"
+                        bash -c "vim ${fullfilename}"
                     else
-                        zsh -c "rnano ${fullfilename}"
+                        bash -c "rnano ${fullfilename}"
                     fi
                     sleep 1
                     openssl enc -aes-256-cbc -md sha512 -pbkdf2 -iter ${ITERATIONS} -salt -in $1 -out "$1.enc"
-                    zsh -c "shred -u ${fullfilename}"
-                    zsh -c "chown root $1.enc"
-                    zsh -c "chmod 700 $1.enc"
+                    bash -c "shred -u ${fullfilename}"
+                    bash -c "chown root $1.enc"
+                    bash -c "chmod 700 $1.enc"
                 fi
             else
                 printf "Install the openssl package\n"
             fi
         fi
     }
-    sudo zsh -c "$(declare -f _secureedit); _secureedit $1"
+    sudo bash -c "$(declare -f _secureedit); _secureedit $1"
 }
 
-function twitchfetch() {
-    bash -c '_randArr() {
-        shopt -s nullglob
-        local arr=("$@")
-        /usr/bin/neofetch --ascii "${arr[RANDOM % $#]}"
+function hwinfo() {
+    _hinf() {
+        shopt -s checkwinsize; (:;:)
+        cpuln="================================ CPU ================================"
+        memln="================================ MEMORY ================================"
+        diskln="================================ DISK ================================"
+        netln="================================ NET ================================"
+        printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#cpuln}+$COLUMNS)/2)) "$cpuln"
+        cpuinfo
+        printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#memln}+$COLUMNS)/2)) "$memln"
+        meminfo -w
+        printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#diskln}+$COLUMNS)/2)) "$diskln"
+        lsblk -o "NAME,MAJ:MIN,RM,SIZE,RO,FSTYPE,MOUNTPOINT,UUID"
+        printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#netln}+$COLUMNS)/2)) "$netln"
+        ip ad show
+        printf "\n"
+    }
+    bash -c "$(declare -f _hinf); _hinf"
+}
+
+if [[ -e $(which cool-retro-term) ]]; then
+    if [[ $(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)) == "cool-retro-term" ]]; then
+        function changeThemeCoolRetroTerm() {
+            _chtm() {
+                if [[ -e /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme ]]; then
+                    sudo rm /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                    printf "Please select one of these ${GREEN}themes${NOCOLOR}:\n"
+                    printf "${GREEN}0${NOCOLOR}. Default\n"
+                    printf "${GREEN}1${NOCOLOR}. Dracula\n"
+                    printf "${GREEN}2${NOCOLOR}. MaterialOcean\n"
+                    printf "${GREEN}3${NOCOLOR}. Nord\n"
+                    read -e -p "Enter the number: " CHOICE
+                    case $CHOICE in
+                    "0" | 0)
+                    sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/default.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                    ;;
+                    "1" | 0)
+                    sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Dracula.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                    ;;
+                    "2" | 1)
+                    sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/MaterialThemeOcean.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                    ;;
+                    "3" | 2)
+                    sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Nord.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                    ;;
+                    *)
+                    printf "${RED}Invalid input, try again${NOCOLOR}\n"
+                    ;;
+                    esac
+                fi
+                exec cool-retro-term &
+                exit
+            }
+            bash -c "$(declare -f _chtm); _chtm"
+            exit
         }
-        arr2=($HOME/.config/neofetch/asciiArts/*)
-        _randArr "${arr2[@]}"'
+    fi
+fi
+
+function shreddir() {
+    find $1 -type f -exec shred -n 30 -v -u {} \;
+    rmdir $1
+}
+
+function cl() {
+    DIR="$*";
+        # if no DIR given, go home
+        if [ $# -lt 1 ]; then
+                DIR=$HOME;
+    fi;
+    builtin cd "${DIR}" && \
+    # use your preferred ls command
+        la
+}
+
+function gorun () {
+    if [[ $(which go) ]];then
+        go fmt $1
+        go run $1
+    fi
+}
+
+function initgit() {
+    git init -b main && git add . && git commit -m "First commit" && git remote add origin "$1" && git remote -v && git push origin main
+}
+
+function tellmethephilosophy() {
+    _telmtp() {
+        printf "Please select which interpretation of the \e[0;33mUnix Philosophy\e[0m you wanna see:\n0. \e[0;33mDennis Ritchie & Ken Thompson\e[0m\n1. \e[0;33mDoug McIlroy\e[0m\n2. \e[0;33mPeter H. Salus\e[0m\n3. \e[0;33mEric Raymond\e[0m\n4. \e[0;33mMike Gancarz\e[0m\n"
+        read -e -p "Enter your numeric choice: " PHILOSOPHY
+        case $PHILOSOPHY in
+            "0" | 0)
+            printf "\e[0;34mDennis Ritchie & Ken Thompson \e[0;33mPhilosophy\e[0m:\n\t1. Make it easy to write, test, and run programs.\n\t2. Interactive use instead of batch processing.\n\t3. Economy and elegance of design due to size constraints (\"salvation through suffering\").\n\t4. Self-supporting system: all Unix software is maintained under Unix.\n"
+            ;;
+            "1" | 1)
+            printf "\e[0;34mDoug McIlroy \e[0;33mPhilosophy\e[0m:\n\t1. Make each program do one thing well. To do a new job, build afresh rather than complicate old programs by adding new \"features\".\n\t2. Expect the output of every program to become the input to another, as yet unknown, program. Don't clutter output with extraneous information.\n\t   Avoid stringently columnar or binary input formats. Don't insist on interactive input.\n\t3. Design and build software, even operating systems, to be tried early, ideally within weeks. Don't hesitate to throw away the clumsy parts and rebuild them.\n\t4. Use tools in preference to unskilled help to lighten a programming task\n\t   even if you have to detour to build the tools and expect to throw some of them out after you've finished using them.\n"
+            ;;
+            "2" | 2)
+            printf "\e[0;34mPeter H. Salus \e[0;33mPhilosophy\e[0m:\n\t1. Write programs that do one thing and do it well.\n\t2. Write programs to work together.\n\t3. Write programs to handle text streams, because that is a universal interface.\n"
+            ;;
+            "3" | 3)
+            printf "\e[0;34mEric Raymond \e[0;33mPhilosophy\e[0m:\n\t1. Build modular programs.\n\t2. Write readable programs.\n\t3. Use composition.\n\t4. Separate mechanisms from policy.\n\t5. Write simple programs.\n\t6. Write small programs.\n\t7. Write transparent programs.\n\t8. Write robust programs.\n\t9. Make data complicated when required, not the program.\n\t10. Build on potential users' expected knowledge.\n\t11. Avoid unnecessary output.\n\t12. Write programs which fail in a way that is easy to diagnose.\n\t13. Value developer time over machine time.\n\t14. Write abstract programs that generate code instead of writing code by hand.\n\t15. Prototype software before polishing it.\n\t16. Write flexible and open programs.\n\t17. Make the program and protocols extensible.\n"
+            ;;
+            "4" | 4)
+            printf "\e[0;34mMike Gancarz \e[0;33mPhilosophy\e[0m:\n\t1. Small is beautiful.\n\t2. Make each program do one thing well.\n\t3. Build a prototype as soon as possible.\n\t4. Choose portability over efficiency.\n\t5. Store data in flat text files.\n\t6. Use software leverage to your advantage.\n\t7. Use shell scripts to increase leverage and portability.\n\t8. Avoid captive user interfaces.\n\t10. Make every program a filter.\n"
+            ;;
+            *)
+            printf "\e[0;31mInvalid input, try again\e[0m\n"
+            ;;
+        esac
+    }
+    bash -c "$(declare -f _telmtp); _telmtp"
+}
+
+function genpasswd() {
+#    < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-$1};echo;
+    < /dev/urandom tr -dc @#%\&+=_A-Z-a-z-0-9 | head -c${1:-$1};echo;
+
+}
+
+function gitcmt() {
+    git add "$1"
+    git commit -m "$2"
+    git push
 }

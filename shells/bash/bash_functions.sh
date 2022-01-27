@@ -1,5 +1,5 @@
-if [[ -e $HOME/.bash/shell_aliases.sh ]]; then
-    source $HOME/.bash/bash_aliases.sh
+if [[ -e $HOME/.bash/aliases.sh ]]; then
+    source $HOME/.bash/aliases.sh
 fi
 
 BLACK='\e[0;30m'
