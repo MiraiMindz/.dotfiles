@@ -10,4 +10,9 @@ if [[ -d $HOME/.zsh ]]; then
     done
 fi
 
+### Hitory file
+HISTFILE=${ZDOTDIR:-$HOME}/.zsh_history
+SAVEHIST=1000
+
+### Prompt
 prompt fullpl
