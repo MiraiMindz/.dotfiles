@@ -1,0 +1,1 @@
+/home/mirai/.dotfiles/shells/shcommons/git-prompt.sh

@@ -1,5 +1,5 @@
-if [[ -e $HOME/.bash_aliases ]]; then
-    source $HOME/.bash_aliases
+if [[ -e $HOME/.bash/shell_aliases.sh ]]; then
+    source $HOME/.bash/bash_aliases.sh
 fi
 
 BLACK='\e[0;30m'
@@ -78,21 +78,55 @@ genpasswd() {
 
 }
 
-hwinfo() {
-    shopt -s checkwinsize; (:;:)
-    cpuln="================================ CPU ================================"
-    memln="================================ MEMORY ================================"
-    diskln="================================ DISK ================================"
-    netln="================================ NET ================================"
-    printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#cpuln}+$COLUMNS)/2)) "$cpuln"
-    cpuinfo
-    printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#memln}+$COLUMNS)/2)) "$memln"
-    meminfo -w
-    printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#diskln}+$COLUMNS)/2)) "$diskln"
-    lsblk -o "NAME,MAJ:MIN,RM,SIZE,RO,FSTYPE,MOUNTPOINT,UUID"
-    printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#netln}+$COLUMNS)/2)) "$netln"
-    ip ad show
-    printf "\n"
+gitcmt() {
+    git add "$1"
+    git commit -m "$2"
+    git push
+}
+
+if [[ -e $(which cool-retro-term) ]]; then
+    if [[ $(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)) == "cool-retro-term" ]]; then
+        changeThemeCoolRetroTerm() {
+            if [[ -e /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme ]]; then
+                sudo rm /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                printf "Please select one of these ${GREEN}themes${NOCOLOR}:\n"
+                printf "${GREEN}0${NOCOLOR}. Default\n"
+                printf "${GREEN}1${NOCOLOR}. Dracula\n"
+                printf "${GREEN}2${NOCOLOR}. MaterialOcean\n"
+                printf "${GREEN}3${NOCOLOR}. Nord\n"
+                read -e -p "Enter the number: " CHOICE
+                case $CHOICE in
+                "0" | 0)
+                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/default.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                ;;
+                "1" | 0)
+                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Dracula.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                ;;
+                "2" | 1)
+                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/MaterialThemeOcean.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                ;;
+                "3" | 2)
+                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Nord.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
+                ;;
+                *)
+                printf "${RED}Invalid input, try again${NOCOLOR}\n"
+                ;;
+                esac
+            fi
+            exec cool-retro-term &
+            exit
+        }
+    fi
+fi
+
+twitchfetch() {
+    _randArr() {
+        shopt -s nullglob
+        local arr=("$@")
+        neofetch --ascii "${arr[RANDOM % $#]}"
+    }
+    arr2=($HOME/.config/neofetch/asciiArts/*)
+    _randArr "${arr2[@]}"
 }
 
 secedit() {
@@ -142,55 +176,20 @@ secedit() {
     sudo bash -c "$(declare -f _secureedit); _secureedit $1"
 }
 
-twitchfetch() {
-    _randArr() {
-        shopt -s nullglob
-        local arr=("$@")
-        neofetch --ascii "${arr[RANDOM % $#]}"
-    }
-    arr2=($HOME/.config/neofetch/asciiArts/*)
-    _randArr "${arr2[@]}"
+hwinfo() {
+    shopt -s checkwinsize; (:;:)
+    cpuln="================================ CPU ================================"
+    memln="================================ MEMORY ================================"
+    diskln="================================ DISK ================================"
+    netln="================================ NET ================================"
+    printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#cpuln}+$COLUMNS)/2)) "$cpuln"
+    cpuinfo
+    printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#memln}+$COLUMNS)/2)) "$memln"
+    meminfo -w
+    printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#diskln}+$COLUMNS)/2)) "$diskln"
+    lsblk -o "NAME,MAJ:MIN,RM,SIZE,RO,FSTYPE,MOUNTPOINT,UUID"
+    printf "${RED}\n%*s\n\n${NOCOLOR}" $(((${#netln}+$COLUMNS)/2)) "$netln"
+    ip ad show
+    printf "\n"
 }
-
-gitcmt() {
-    git add "$1"
-    git commit -m "$2"
-    git push
-}
-
-
-if [[ -e $(which cool-retro-term) ]]; then
-    if [[ $(ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$)) == "cool-retro-term" ]]; then
-        changeThemeCoolRetroTerm() {
-            if [[ -e /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme ]]; then
-                sudo rm /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
-                printf "Please select one of these ${GREEN}themes${NOCOLOR}:\n"
-                printf "${GREEN}0${NOCOLOR}. Default\n"
-                printf "${GREEN}1${NOCOLOR}. Dracula\n"
-                printf "${GREEN}2${NOCOLOR}. MaterialOcean\n"
-                printf "${GREEN}3${NOCOLOR}. Nord\n"
-                read -e -p "Enter the number: " CHOICE
-                case $CHOICE in
-                "0" | 0)
-                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/default.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
-                ;;
-                "1" | 0)
-                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Dracula.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
-                ;;
-                "2" | 1)
-                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/MaterialThemeOcean.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
-                ;;
-                "3" | 2)
-                sudo ln -sf $HOME/.dotfiles/terminals/cool-retro-term/Themes/Nord.colorscheme /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
-                ;;
-                *)
-                printf "${RED}Invalid input, try again${NOCOLOR}\n"
-                ;;
-                esac
-            fi
-            exec cool-retro-term &
-            exit
-        }
-    fi
-fi
 

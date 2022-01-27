@@ -1,0 +1,9 @@
+setopt AUTO_CD
+setopt AUTO_PUSHD
+setopt AUTO_MENU
+setopt COMPLETE_ALIASES
+setopt EXTENDED_HISTORY
+setopt APPEND_HISTORY
+setopt ALIASES
+setopt CORRECT
+setopt CHECK_JOBS

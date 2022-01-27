@@ -28,11 +28,18 @@ GT4='$(__git_ps1 "\[$($DARK_RED_16_fg)\]\[$($DARK_RED_16_bg)$($DARK_BLACK_16_
 # To make the Powerline variants work, you will need to set the terminal font to 12px, and use any supported Powerline font
 
 if [ -e $HOME/.bash/git-prompt.sh ]; then
+    GIT_PS1_SHOWDIRTYSTATE=1
+    GIT_PS1_SHOWSTASHSTATE=1
+    GIT_PS1_SHOWUNTRACKEDFILES=1
+    GIT_PS1_SHOWCOLORHINTS=1
+    GIT_PS1_SHOWUPSTREAM="auto"
+    GIT_PS1_DESCRIBE_STYLE="branch"
+
     #PS1="${TM1} ${UWD1}${GT1} ${IDCTR1} " # Base PS1 no Powerline | 0
     #PS1="${TM2} ${UWD2}${GT2} ${IDCTR1} " # Base PS1 with Powerline | 1
     #PS1="${TM3}${UWD3}${GT3}${IDCTR2} " # Base PS1 full Powerline | 2
     PS1="${EXTSTS}${JBS1}${TM4}${UWD4}${GT4}${IDCTR3} " # Extended PS1 full Powerline | 3
-    PS2="└${GT2} ${IDCTR1} "
+    PS2="${EXTSTS}${JBS1}${GT4}${IDCTR3} "
 else
     PS1="${TM2} ${UWD2} ${IDCTR1} "
     PS2="└ ${IDCTR1} "
