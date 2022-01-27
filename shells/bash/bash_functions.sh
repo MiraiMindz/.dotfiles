@@ -123,7 +123,7 @@ twitchfetch() {
     _randArr() {
         shopt -s nullglob
         local arr=("$@")
-        neofetch --ascii "${arr[RANDOM % $#]}"
+        /usr/bin/neofetch --ascii "${arr[RANDOM % $#]}"
     }
     arr2=($HOME/.config/neofetch/asciiArts/*)
     _randArr "${arr2[@]}"

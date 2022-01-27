@@ -16,5 +16,3 @@ if [[ -d $HOME/.bash ]]; then
         source $itn
     done
 fi
-
-for itn in $HOME/.bash/*; do source $itn; done
