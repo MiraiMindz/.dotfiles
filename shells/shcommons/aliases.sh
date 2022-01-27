@@ -47,6 +47,11 @@ if [[ -e $(which ccat) ]]; then
     alias cat=ccat
 fi
 
+if [[ -e $(which nvim) ]];then
+    alias vim=nvim
+    alias vi=nvim
+fi
+
 alias cler=clear
 alias claer=clear
 alias clar=clear
