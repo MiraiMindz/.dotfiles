@@ -116,4 +116,4 @@ alias neofetch=twitchfetch
 alias timeshell='for i in $(seq 1 10); do time $SHELL -i -c exit; done'
 alias gitignsymlink='find . -type l >> .gitignore'
 alias initgitcli='git init -b main && git add . && git commit -m "initial commit" && gh repo create'
-alias trmcolors='printf "\033[0;30m██\033[0;31m██\033[0;32m██\033[0;33m██\033[0;34m██\033[0;35m██\033[0;36m██\033[0;37m\033[0m\n\033[1;30m██\033[1;31m██\033[1;32m██\033[1;33m██\033[1;34m██\033[1;35m██\033[1;36m██\033[1;37m\033[0m\n" && printf "COLORTERM=$COLORTERM\n"'
+alias trmcolors='printf " \e[30m⬤ \e[31m⬤ \e[32m⬤ \e[33m⬤ \e[34m⬤ \e[35m⬤ \e[36m⬤ \e[37m⬤ \e[39m\n \e[90m⬤ \e[91m⬤ \e[92m⬤ \e[93m⬤ \e[94m⬤ \e[95m⬤ \e[96m⬤ \e[97m⬤ \e[39m\nCOLORTERM=$COLORTERM\n"'
