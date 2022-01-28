@@ -136,8 +136,14 @@ secedit() {
             printf "Please run as root\n"
             exit
         else
-            RANDNUM1=$(< /dev/urandom tr -dc 0-9 | head -c 2)
-            RANDFLNM=$(< /dev/urandom tr -dc @%+=_A-Z-a-z-0-9 | head -c ${RANDNUM1})
+            if [[ -e $(which mktemp) ]]; then
+                RANDFL=$(mktemp)
+                RANDFLNM=${RANDFL##*'/tmp/'}
+            else
+                RANDNUM1=$(< /dev/urandom tr -dc 0-9 | head -c 2)
+                RANDFLNM=$(< /dev/urandom tr -dc @%+=_A-Z-a-z-0-9 | head -c ${RANDNUM1})
+            fi
+
             ITERATIONS=1000000
             fullfilename=$(basename -- "$1")
             extension="${fullfilename##*.}"
