@@ -44,12 +44,12 @@ DOTFILESDIR=$HOME/.dotfiles
 mkbkp() {
     mkdir -v -p $1
     mv -v $2/* $1/
-    printf "Backup done, proceeding with Installation.\n"
+    printf "%s\n" "Backup done, proceeding with Installation."
 }
 
 initgit() {
     if [[ -e $(which gh) ]]; then
-        printf "Github CLI is installed: $(which gh)\n"
+        printf "%s\n" "Github CLI is installed: $(which gh)"
         cd $DOTFILESDIR/
         git init -b main
         git add .
@@ -57,7 +57,7 @@ initgit() {
         gh repo create
         cd $HOME
     else
-        printf "Github CLI was not found, please create a Github repository and come back to this script\n"
+        printf "%s\n" "Github CLI was not found, please create a Github repository and come back to this script"
         echo -e -n "Do you have created the repository (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
         old_stty_cfg=$(stty -g)
         stty raw -echo
@@ -68,32 +68,32 @@ initgit() {
             git init -b main
             git add .
             git commit -m "created .dotfiles repo from script"
-            printf "Please insert the github repository URL: "
+            printf "%s" "Please insert the github repository URL: "
             git remote add origin
             git remote -v && git push
             cd $HOME
         else
-            printf "exiting\n"
+            printf "%s\n" "${DARK_RED}Exiting${NOCOLOR}"
         fi
     fi
 }
 
 createDotfiles_BackupDir() {
     if [[ -d $BACKUPFOLDER ]]; then
-        printf "${DARK_BLUE}$BACKUPFOLDER${NOCOLOR} Directory Already Exists\n"
+        printf "%s\n" "${DARK_BLUE}$BACKUPFOLDER${NOCOLOR} Directory Already Exists"
         mkdir $HOME/old_config_backup2
         mv -v BACKUPFOLDER/* $HOME/old_config_backup2
     else
-        printf "Creating ${DARK_BLUE}$BACKUPFOLDER${NOCOLOR} Directory\n"
+        printf "%s\n" "Creating ${DARK_BLUE}$BACKUPFOLDER${NOCOLOR} Directory"
         mkdir $BACKUPFOLDER/
     fi
     if [[ -d $HOME/.dotfiles ]];  then
-        printf "${DARK_BLUE}$DOTFILESDIR${NOCOLOR} Directory Already Exists\n"
-        printf "Backing up\n"
+        printf "%s\n" "${DARK_BLUE}$DOTFILESDIR${NOCOLOR} Directory Already Exists"
+        printf "%s\n" "Backing up"
         mv -v $DOTFILESDIR/* $BACKUPFOLDER/
         mv -v * $DOTFILESDIR/
     else
-        printf "Creating ${DARK_BLUE}$DOTFILESDIR${NOCOLOR} Directory\n"
+        printf "%s\n" "Creating ${DARK_BLUE}$DOTFILESDIR${NOCOLOR} Directory"
         mkdir $DOTFILESDIR
         mv -v * $DOTFILESDIR/
     fi
@@ -101,9 +101,9 @@ createDotfiles_BackupDir() {
 
 installI3WM() {
     if [[ -e $(which i3) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} I3wm Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} I3wm Config"
         if [[ -d $HOME/.config/i3 ]]; then
-            printf "i3 config found, creating backup in $BACKUPFOLDER/\n"
+            printf "%s\n" "i3 config found, creating backup in $BACKUPFOLDER/"
             mkbkp $BACKUPFOLDER/i3wm $HOME/.config/i3
             rmdir $HOME/.config/i3
             ln -v -sf $HOME/.dotfiles/environment/i3wm $HOME/.config/i3
@@ -116,9 +116,9 @@ installI3WM() {
 
 installPicom() {
     if [[ -e $(which picom) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Picom Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} Picom Config"
         if [[ -d $HOME/.config/picom ]]; then
-            printf "picom config found, creating backup in $BACKUPFOLDER/\n"
+            printf "%s\n" "picom config found, creating backup in $BACKUPFOLDER/"
             mkbkp $BACKUPFOLDER/picom $HOME/.config/picom
             rmdir $HOME/.config/picom
             ln -v -sf $HOME/.dotfiles/environment/picom $HOME/.config/
@@ -131,9 +131,9 @@ installPicom() {
 
 installPolybar() {
     if [[ -e $(which polybar) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Polybar Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} Polybar Config"
         if [[ -e $HOME/.config/polybar ]]; then
-            printf "polybar config found, creating backup in $BACKUPFOLDER/\n"
+            printf "%s\n" "polybar config found, creating backup in $BACKUPFOLDER/"
             mkbkp $BACKUPFOLDER/polybar $HOME/.config/polybar
             rmdir $HOME/.config/polybar
             ln -v -sf $HOME/.dotfiles/environment/polybar $HOME/.config/
@@ -146,9 +146,9 @@ installPolybar() {
 
 installTerminator() {
     if [[ -e $(which terminator) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Terminator Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} Terminator Config"
         if [[ -d $HOME/.config/terminator ]]; then
-            printf "terminator config found, creating backup in $BACKUPFOLDER\n"
+            printf "%s\n" "terminator config found, creating backup in $BACKUPFOLDER/"
             mkbkp $BACKUPFOLDER/terminator $HOME/.config/terminator
             rmdir $HOME/.config/terminator
             ln -v -sf $HOME/.dotfiles/environment/terminator $HOME/.config/
@@ -163,9 +163,9 @@ installTerminator() {
 
 installNeofetch() {
     if [[ -e $(which neofetch) ]];then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Neofetch Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} Neofetch Config"
         if [[ -d $HOME/.config/neofetch ]]; then
-            printf "neofetch config found, creating backup in $BACKUPFOLDER\n"
+            printf "%s\n" "neofetch config found, creating backup in $BACKUPFOLDER"
             mkbkp $BACKUPFOLDER/neofetch $HOME/.config/neofetch
             rmdir $HOME/.config/neofetch
             ln -sf $HOME/.dotfiles/neofetch $HOME/.config/
@@ -178,7 +178,7 @@ installNeofetch() {
 
 installVIM() {
     if [[ -e $(which vim) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} VIM Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} VIM Config"
         if [[ -e $HOME/.vim ]]; then
             mkbkp $BACKUPFOLDER/vim $HOME/.vim
             rm -v $HOME/.vim
@@ -214,7 +214,7 @@ installVIM() {
 
 installNeoVIM() {
     if [[ -e $(which neovim) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} NeoVIM Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} NeoVIM Config"
         if [[ -e $HOME/.config/nvim ]]; then
             mkbkp $BACKUPFOLDER/neovim $HOME/.config/nvim
             rm -v $HOME/.config/nvim
@@ -239,7 +239,7 @@ installNeoVIM() {
 
 installVI() {
     if [[ -e $(which vi) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} VI Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} VI Config"
         if [[ -e $HOME/.exrc ]]; then
             mkdir $BACKUPFOLDER/vi
             mv -v $HOME/.exrc $BACKUPFOLDER/vi/
@@ -251,40 +251,42 @@ installVI() {
     fi
 }
 
-installBash() {
-    echo -e -n "Do you want to import the bash configs (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
-    old_stty_cfg=$(stty -g)
-    stty raw -echo
-    answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
-    stty $old_stty_cfg
-    if echo "$answer" | grep -iq "^y" ;then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Bash Config\n"
-        if [[ -e $HOME/.bash ]]; then
-            mkbkp $BACKUPFOLDER/bash $HOME/.bash
-            rmdir $HOME/.bash
-            mkdir $HOME/.bash
-            ln -sf $HOME/.dotfiles/bash/* $HOME/.bash/
-            unlink $HOME/.bash/.bashrc
-        else
-            ln -sf $HOME/.dotfiles/bash $HOME/.bash
-        fi
-        if [[ -e $HOME/.bashrc ]]; then
-            mv -v $HOME/.bashrc $BACKUPFOLDER/bash/
-            rm $HOME/.bashrc
-            ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
-        else
-            ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
-        fi
-    else
-        printf "${DARK_RED}PASSING${NOCOLOR}\n"
-    fi
-}
+#################### TODO: BASH/ZSH Configs
+# installBash() {
+#     echo -e -n "Do you want to import the bash configs (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+#     old_stty_cfg=$(stty -g)
+#     stty raw -echo
+#     answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+#     stty $old_stty_cfg
+#     if echo "$answer" | grep -iq "^y" ;then
+#         printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} Bash Config"
+#         if [[ -e $HOME/.bash ]]; then
+#             mkbkp $BACKUPFOLDER/bash $HOME/.bash
+#             rmdir $HOME/.bash
+#             mkdir $HOME/.bash
+#             ln -sf $HOME/.dotfiles/bash/* $HOME/.bash/
+#             unlink $HOME/.bash/.bashrc
+#         else
+#             ln -sf $HOME/.dotfiles/bash $HOME/.bash
+#         fi
+#         if [[ -e $HOME/.bashrc ]]; then
+#             mv -v $HOME/.bashrc $BACKUPFOLDER/bash/
+#             rm $HOME/.bashrc
+#             ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
+#         else
+#             ln -sf $HOME/.dotfiles/bash/.bashrc $HOME/.bashrc
+#         fi
+#     else
+#         printf "%s\n" "${DARK_RED}PASSING${NOCOLOR}"
+#     fi
+# }
+####################
 
 installRofi() {
     if [[ -e $(which rofi) ]]; then
         printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Config\n"
         if [[ -d /usr/share/rofi/themes ]];
-            printf "the rofi themes resides in the ${DARK_YELLOW}/usr${NOCOLOR} folder, to install these themes we will need the sudo permission"
+            printf "%s\n" "the rofi themes resides in the ${DARK_YELLOW}/usr${NOCOLOR} folder, to install these themes we will need the sudo permission"
             sudo rmdir /usr/share/rofi/themes
             sudo ln -sf $HOME/.dotfiles/environment/rofi/themes /usr/share/rofi/
         else
@@ -295,7 +297,7 @@ installRofi() {
 
 installRofiApplets() {
     if [[ -d $HOME/.config/rofi ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Applets Config\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} Rofi Applets Config"
         rm -rf $HOME/.config/rofi/*
         ln -sf $HOME/.dotfiles/environment/rofi/applets $HOME/.config/rofi/
         ln -sf $HOME/.dotfiles/environment/rofi/bin $HOME/.config/rofi/
@@ -307,14 +309,14 @@ installRofiApplets() {
 
 installCoolRetroTerm() {
     if [[ -e $(which cool-retro-term) ]]; then
-        printf "${DARK_GREEN}INSTALLING${NOCOLOR} cool-retro-term Theme\n"
+        printf "%s\n" "${DARK_GREEN}INSTALLING${NOCOLOR} cool-retro-term Theme"
         if [[ -e /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme ]]; then
             sudo rm /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
             printf "Please select one of these themes:\n"
-            printf "0. Default\n"
-            printf "1. Dracula\n"
-            printf "2. MaterialOcean\n"
-            printf "3. Nord\n"
+            printf "%s\n" "0. Default"
+            printf "%s\n" "1. Dracula"
+            printf "%s\n" "2. MaterialOcean"
+            printf "%s\n" "3. Nord"
             read -e -p "Enter the number: " CHOICE
             case $CHOICE in
             "0" | 0)
@@ -334,8 +336,8 @@ installCoolRetroTerm() {
             ;;
             esac
         fi
-        printf "If you want another theme, run the changeTheme script in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR}\n"
-        printf "Or if you want you can read the readme.md in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR} or in ${DARK_BLUE}https://github.com/MiraiMindz/.dotfiles/tree/main/terminals/cool-retro-term#readme${NOCOLOR}"
+        printf "%s\n" "If you want another theme, run the changeTheme script in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR}"
+        printf "%s\n" "Or if you want you can read the readme.md in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR} or in ${DARK_BLUE}https://github.com/MiraiMindz/.dotfiles/tree/main/terminals/cool-retro-term#readme${NOCOLOR}"
     fi
 }
 
@@ -348,12 +350,12 @@ installSDDMTheme() {
             sudo mkdir /etc/sddm.conf.d
             sudo ln -sf $HOME/.dotfiles/environment/sddm/config.conf /etc/sddm.conf.d/
         else
-            printf "Install the Sugar Candy Theme ${DARK_BLUE} (https://github.com/Kangie/sddm-sugar-candy)${NOCOLOR}\n"
-            printf "And run the following commands\n"
-            printf "${DARK_YELLOW}sudo mv -v \$HOME/.dotfiles/environment/sddm/Themes/Wallpapers/* /usr/share/sddm/themes/Sugar-Candy/Backgrounds/${NOCOLOR}"
-            printf "${DARK_YELLOW}sudo ln -sf /usr/share/sddm/themes/Sugar-Candy/* \$HOME/.dotfiles/environment/sddm/Themes/SugarCandy/${NOCOLOR}"
-            printf "${DARK_YELLOW}sudo mkdir /etc/sddm.conf.d${NOCOLOR}\n"
-            printf "${DARK_YELLOW}sudo ln -sf \$HOME/.dotfiles/environment/sddm/config.conf /etc/sddm.conf.d/${NOCOLOR}\n"
+            printf "%s\n" "Install the Sugar Candy Theme ${DARK_BLUE} (https://github.com/Kangie/sddm-sugar-candy)${NOCOLOR}"
+            printf "%s\n" "And run the following commands"
+            printf "%s\n" "${DARK_YELLOW}sudo mv -v \$HOME/.dotfiles/environment/sddm/Themes/Wallpapers/* /usr/share/sddm/themes/Sugar-Candy/Backgrounds/${NOCOLOR}"
+            printf "%s\n" "${DARK_YELLOW}sudo ln -sf /usr/share/sddm/themes/Sugar-Candy/* \$HOME/.dotfiles/environment/sddm/Themes/SugarCandy/${NOCOLOR}"
+            printf "%s\n" "${DARK_YELLOW}sudo mkdir /etc/sddm.conf.d${NOCOLOR}"
+            printf "%s\n" "${DARK_YELLOW}sudo ln -sf \$HOME/.dotfiles/environment/sddm/config.conf /etc/sddm.conf.d/${NOCOLOR}"
         fi
     fi
 }
@@ -361,11 +363,13 @@ installSDDMTheme() {
 checkPackages() {
     _checkPkgs() {
         if [[ -e $(which $1) ]]; then
-            printf "$1 is ${DARK_GREEN}INSTALLED${NOCOLOR}\n"
+            printf "%s\n" "$1 is ${DARK_GREEN}INSTALLED${NOCOLOR}"
         else
-            printf "$1 is ${DARK_RED}MISSING${NOCOLOR}\n"
+            printf "%s\n" "$1 is ${DARK_RED}MISSING${NOCOLOR}"
         fi
     }
+    _checkPkgs "bash"
+    _checkPkgs "zsh"
     _checkPkgs "i3"
     _checkPkgs "picom"
     _checkPkgs "polybar"
@@ -377,23 +381,23 @@ checkPackages() {
     _checkPkgs "vi"
     _checkPkgs "rofi"
     if [[ -d $HOME/.config/rofi ]]; then
-        printf "Rofi Applets is ${DARK_GREEN}INSTALLED${NOCOLOR}\n"
+        printf "%s\n" "Rofi Applets is ${DARK_GREEN}INSTALLED${NOCOLOR}"
     else
-        printf "Rofi Applets is ${DARK_RED}MISSING${NOCOLOR}\n"
+        printf "%s\n" "Rofi Applets is ${DARK_RED}MISSING${NOCOLOR}"
     fi
     _checkPkgs "sddm"
     if [[ -d /usr/share/sddm/themes/Sugar-Candy ]]; then
-        printf "SDDM Sugar Candy Theme is ${DARK_GREEN}INSTALLED${NOCOLOR}\n"
+        printf "%s\n" "SDDM Sugar Candy Theme is ${DARK_GREEN}INSTALLED${NOCOLOR}"
     else
-        printf "SDDM Sugar Candy Theme is ${DARK_RED}MISSING${NOCOLOR}\n"
+        printf "%s\n" "SDDM Sugar Candy Theme is ${DARK_RED}MISSING${NOCOLOR}"
     fi
 }
 
 doinstall() {
     clear
-    printf "${DARK_YELLOW}CKECKING FOR PACKAGES${TEXTRESETALL}\n"
+    printf "%s\n" "${DARK_YELLOW}CKECKING FOR PACKAGES${TEXTRESETALL}"
     checkPackages
-    printf "${DARK_YELLOW}CHECKING COMPLETE, PROCEEDING WITH INSTALLATION${TEXTRESETALL}\n"
+    printf "%s\n" "${DARK_YELLOW}CHECKING COMPLETE, PROCEEDING WITH INSTALLATION${TEXTRESETALL}"
     createDotfiles_BackupDir
     installI3WM
     installPicom
@@ -405,6 +409,7 @@ doinstall() {
     installNeoVIM
     installVI
     installBash
+    installZSH
     installRofi
     installRofiApplets
     echo -e -n "Do you want to create a git repository on the ${DARK_YELLOW}$HOME/.dotfiles${NOCOLOR} directory (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
@@ -413,13 +418,13 @@ doinstall() {
     answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
     stty $old_stty_cfg
     if echo "$answer" | grep -iq "^y" ;then
-        printf "${DARK_GREEN}INITIALIZING GIT${NOCOLOR}\n"
+        printf "%s\n" "${DARK_GREEN}INITIALIZING GIT${NOCOLOR}"
         initgit
     else
-        printf "${DARK_RED}PROCEEDING${NOCOLOR}\n"
+        printf "%s\n" "${DARK_RED}PROCEEDING${NOCOLOR}"
     fi
 
-    printf "INSTALLATION ${DARK_GREEN}DONE${NOCOLOR}\n"
+    printf "%s\n" "INSTALLATION ${DARK_GREEN}DONE${NOCOLOR}"
 }
 
 ### Installation
@@ -435,9 +440,20 @@ printf "${TEXTBOLD_ON}${DARK_RED}%*s${TEXTRESETALL}\n" $(((${#ln1}+$COLUMNS)/2))
 printf "${TEXTBOLD_ON}${DARK_RED}%*s${TEXTRESETALL}\n" $(((${#ln2}+$COLUMNS)/2)) "$ln2"
 printf %"$COLUMNS"s |tr " " "="
 
-printf "${DARK_GREEN}Picom ${DARK_PURPLE}[Ibhagwan Fork]${DARK_BLUE}(https://github.com/ibhagwan/picom)\n${DARK_GREEN}i3wm${DARK_BLUE} (https://github.com/Airblader/i3)\n${DARK_GREEN}Neofetch${DARK_BLUE} (https://github.com/dylanaraps/neofetch)\n${DARK_GREEN}Polybar${DARK_BLUE} (https://github.com/polybar/polybar)\n${DARK_GREEN}Rofi${DARK_BLUE} (https://github.com/davatorium/rofi)\n${DARK_GREEN}Rofi Applets${DARK_BLUE} (https://github.com/adi1090x/rofi)\n${DARK_GREEN}Terminator${DARK_BLUE} (https://github.com/gnome-terminator/terminator)\n${DARK_GREEN}Cool Retro Term${DARK_BLUE} (https://github.com/Swordfish90/cool-retro-term)\n${DARK_GREEN}Vim${DARK_BLUE} (https://github.com/vim/vim)\n${DARK_GREEN}SDDM ${DARK_BLUE}(https://github.com/sddm/sddm)\n${DARK_GREEN}SDDM Sugar Candy${DARK_BLUE} (https://github.com/Kangie/sddm-sugar-candy)${NOCOLOR}\n"
+printf "%s\n" "${DARK_GREEN}Picom ${DARK_PURPLE}[Ibhagwan Fork]${DARK_BLUE}(https://github.com/ibhagwan/picom)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}i3wm${DARK_BLUE} (https://github.com/Airblader/i3)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}Neofetch${DARK_BLUE} (https://github.com/dylanaraps/neofetch)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}Polybar${DARK_BLUE} (https://github.com/polybar/polybar)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}Rofi${DARK_BLUE} (https://github.com/davatorium/rofi)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}Rofi Applets${DARK_BLUE} (https://github.com/adi1090x/rofi)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}Terminator${DARK_BLUE} (https://github.com/gnome-terminator/terminator)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}Cool Retro Term${DARK_BLUE} (https://github.com/Swordfish90/cool-retro-term)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}Vim${DARK_BLUE} (https://github.com/vim/vim)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}SDDM ${DARK_BLUE}(https://github.com/sddm/sddm)${NOCOLOR}"
+printf "%s\n" "${DARK_GREEN}SDDM Sugar Candy${DARK_BLUE} (https://github.com/Kangie/sddm-sugar-candy)${NOCOLOR}"
 
-#printf "${DARK_YELLOW}THIS SCRIPT WILL CREATE A FOLDER INSIDE THE ${DARK_CYAN}\$HOME ${DARK_BLUE}($HOME)${DARK_YELLOW} DIRECTIORY CALLED ${DARK_CYAN}.dotfiles${DARK_YELLOW}\nAND THEN WILL CREATE SYMLINKS FROM THAT DIRECTORY TO THE ORIGINAL CONFIG FILES.\nIF ANY CONFIGURATION IS FOUND IT WILL BE BACKED UP IN A CREATED FOLDER ${DARK_BLUE}($BACKUPFOLDER/)${DARK_YELLOW}\nTHIS SCRIPT USES THE BOURNE AGAIN SHELL (BASH) AS MAIN USER SHELL\nIF YOU USE THE Z SHELL (ZSH) PLEASE DENY THE SHELL IMPORTS WHEN PROMPTED${TEXTRESETALL}\n"
+printf "%s\n" "${DARK_YELLOW}THIS SCRIPT WILL CREATE A FOLDER INSIDE THE ${DARK_CYAN}\$HOME ${DARK_BLUE}($HOME)${DARK_YELLOW} DIRECTIORY CALLED ${DARK_CYAN}.dotfiles${DARK_YELLOW}\nAND THEN WILL CREATE SYMLINKS FROM THAT DIRECTORY TO THE ORIGINAL CONFIG FILES."
+printf "%s\n" "IF ANY CONFIGURATION IS FOUND IT WILL BE BACKED UP IN A CREATED FOLDER ${DARK_BLUE}($BACKUPFOLDER/)${DARK_YELLOW}${TEXTRESETALL}\n"
 
 echo -e -n "Do you have these packages installed (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
 old_stty_cfg=$(stty -g)
@@ -445,9 +461,9 @@ stty raw -echo
 answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
-    printf "${DARK_GREEN}INSTALLING${TEXTRESETALL}\n"
+    printf "%s\n" "${DARK_GREEN}INSTALLING${TEXTRESETALL}"
     doinstall
 else
-    printf "${DARK_RED}ABORTING${TEXTRESETALL}\n"
+    printf "%s\n" "${DARK_RED}ABORTING${TEXTRESETALL}"
 fi
 
