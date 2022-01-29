@@ -199,3 +199,7 @@ hwinfo() {
     printf "\n"
 }
 
+replaceline() {
+    sed -i "$1s/.*/$2/" $3
+}
+

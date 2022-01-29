@@ -212,3 +212,7 @@ function gitcmt() {
     git commit -m "$2"
     git push
 }
+
+function replaceline() {
+    sed -i "$1s/.*/$2/" $3
+}
