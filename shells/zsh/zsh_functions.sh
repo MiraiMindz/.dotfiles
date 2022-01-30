@@ -47,8 +47,13 @@ function secedit() {
             printf "Please run as root\n"
             exit
         else
-            RANDNUM1=$(< /dev/urandom tr -dc 0-9 | head -c 2)
-            RANDFLNM=$(< /dev/urandom tr -dc @%+=_A-Z-a-z-0-9 | head -c ${RANDNUM1})
+            if [[ -e $(which mktemp) ]]; then
+                RANDFL=$(mktemp)
+                RANDFLNM=${RANDFL##*'/tmp/'}
+            else
+                RANDNUM1=$(< /dev/urandom tr -dc 0-9 | head -c 2)
+                RANDFLNM=$(< /dev/urandom tr -dc @%+=_A-Z-a-z-0-9 | head -c ${RANDNUM1})
+            fi
             ITERATIONS=1000000
             fullfilename=$(basename -- "$1")
             extension="${fullfilename##*.}"
@@ -215,4 +220,34 @@ function gitcmt() {
 
 function replaceline() {
     sed -i "$1s/.*/$2/" $3
+}
+
+
+function upsys() {
+    function upmirrors() {
+        if [[ $(id -u ) -ne 0 ]]; then
+            printf "%s\n" "Please run as sudo"
+        else
+            if [[ -e /etc/pacman.d/mirrorlist ]]; then
+                rm /etc/pacman.d/mirrorlist
+                while IFS="" read -r p || [ -n "$p" ]; do
+                    printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist
+                done <<< $(curl https://archlinux.org/mirrorlist/all/)
+            else
+                while IFS="" read -r p || [ -n "$p" ]; do
+                    printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist
+                done <<< $(curl https://archlinux.org/mirrorlist/all/)
+            fi
+        fi
+    }
+    if [[ -e $(which yay) ]]; then
+        sudo sh -c "$(declare -f upmirrors); upmirrors; pacman -Syyy && pacman -Syu"
+        yay -Syyy && yay -Syu
+        echo "clearing cache"
+        rm $HOME/.cache/*
+    else
+        sudo sh -c "$(declare -f upmirrors); upmirrors; pacman -Syyy && pacman -Syu"
+        echo 'clearing cache'
+        rm $HOME/.cache/*
+    fi
 }
