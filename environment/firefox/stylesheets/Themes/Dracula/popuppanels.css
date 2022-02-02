@@ -1,0 +1,14 @@
+:root {
+    --arrowpanel-background: var(--Background1-100) !important;
+    --arrowpanel-border-color: var(--Background1-100) !important;
+    --arrowpanel-color: var(--Foreground1-100) !important;
+    --arrowpanel-dimmed: rgba(0,0,0,0.4) !important;
+}
+
+/* .toolbarbutton-icon {
+    filter: invert(100%) invert(70%) sepia(7%) saturate(954%) hue-rotate(193deg) brightness(97%) contrast(94%) !important;
+}
+
+.toolbarbutton-1.chromeclass-toolbar-additional.panel-no-padding.webextension-browser-action {
+    filter: none !important;
+} */

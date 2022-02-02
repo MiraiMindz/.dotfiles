@@ -1,0 +1,2112 @@
+:root{
+
+    /* OPACITY - 01%*/
+    --PolarNight1-01:#2e344003;
+    --PolarNight2-01:#3b425203;
+    --PolarNight3-01:#434c5e03;
+    --PolarNight4-01:#4c566a03;
+
+    --SnowStorm1-01:#d8dee903;
+    --SnowStorm2-01:#e5e9f003;
+    --SnowStorm3-01:#eceff403;
+
+    --Frost1-01:#8fbcbb03;
+    --Frost2-01:#88c0d003;
+    --Frost3-01:#81a1c103;
+    --Frost4-01:#5e81ac03;
+
+    --Aurora1-01:#bf616a03;
+    --Aurora2-01:#d0877003;
+    --Aurora3-01:#ebcb8b03;
+    --Aurora4-01:#a3be8c03;
+    --Aurora5-01:#b48ead03;
+
+    /* OPACITY - 02%*/
+    --PolarNight1-02:#2e344005;
+    --PolarNight2-02:#3b425205;
+    --PolarNight3-02:#434c5e05;
+    --PolarNight4-02:#4c566a05;
+
+    --SnowStorm1-02:#d8dee905;
+    --SnowStorm2-02:#e5e9f005;
+    --SnowStorm3-02:#eceff405;
+
+    --Frost1-02:#8fbcbb05;
+    --Frost2-02:#88c0d005;
+    --Frost3-02:#81a1c105;
+    --Frost4-02:#5e81ac05;
+
+    --Aurora1-02:#bf616a05;
+    --Aurora2-02:#d0877005;
+    --Aurora3-02:#ebcb8b05;
+    --Aurora4-02:#a3be8c05;
+    --Aurora5-02:#b48ead05;
+
+    /* OPACITY - 03%*/
+    --PolarNight1-03:#2e344008;
+    --PolarNight2-03:#3b425208;
+    --PolarNight3-03:#434c5e08;
+    --PolarNight4-03:#4c566a08;
+
+    --SnowStorm1-03:#d8dee908;
+    --SnowStorm2-03:#e5e9f008;
+    --SnowStorm3-03:#eceff408;
+
+    --Frost1-03:#8fbcbb08;
+    --Frost2-03:#88c0d008;
+    --Frost3-03:#81a1c108;
+    --Frost4-03:#5e81ac08;
+
+    --Aurora1-03:#bf616a08;
+    --Aurora2-03:#d0877008;
+    --Aurora3-03:#ebcb8b08;
+    --Aurora4-03:#a3be8c08;
+    --Aurora5-03:#b48ead08;
+
+    /* OPACITY - 04%*/
+    --PolarNight1-04:#2e34400A;
+    --PolarNight2-04:#3b42520A;
+    --PolarNight3-04:#434c5e0A;
+    --PolarNight4-04:#4c566a0A;
+
+    --SnowStorm1-04:#d8dee90A;
+    --SnowStorm2-04:#e5e9f00A;
+    --SnowStorm3-04:#eceff40A;
+
+    --Frost1-04:#8fbcbb0A;
+    --Frost2-04:#88c0d00A;
+    --Frost3-04:#81a1c10A;
+    --Frost4-04:#5e81ac0A;
+
+    --Aurora1-04:#bf616a0A;
+    --Aurora2-04:#d087700A;
+    --Aurora3-04:#ebcb8b0A;
+    --Aurora4-04:#a3be8c0A;
+    --Aurora5-04:#b48ead0A;
+
+    /* OPACITY - 05%*/
+    --PolarNight1-05:#2e34400D;
+    --PolarNight2-05:#3b42520D;
+    --PolarNight3-05:#434c5e0D;
+    --PolarNight4-05:#4c566a0D;
+
+    --SnowStorm1-05:#d8dee90D;
+    --SnowStorm2-05:#e5e9f00D;
+    --SnowStorm3-05:#eceff40D;
+
+    --Frost1-05:#8fbcbb0D;
+    --Frost2-05:#88c0d00D;
+    --Frost3-05:#81a1c10D;
+    --Frost4-05:#5e81ac0D;
+
+    --Aurora1-05:#bf616a0D;
+    --Aurora2-05:#d087700D;
+    --Aurora3-05:#ebcb8b0D;
+    --Aurora4-05:#a3be8c0D;
+    --Aurora5-05:#b48ead0D;
+
+    /* OPACITY - 06%*/
+    --PolarNight1-06:#2e34400F;
+    --PolarNight2-06:#3b42520F;
+    --PolarNight3-06:#434c5e0F;
+    --PolarNight4-06:#4c566a0F;
+
+    --SnowStorm1-06:#d8dee90F;
+    --SnowStorm2-06:#e5e9f00F;
+    --SnowStorm3-06:#eceff40F;
+
+    --Frost1-06:#8fbcbb0F;
+    --Frost2-06:#88c0d00F;
+    --Frost3-06:#81a1c10F;
+    --Frost4-06:#5e81ac0F;
+
+    --Aurora1-06:#bf616a0F;
+    --Aurora2-06:#d087700F;
+    --Aurora3-06:#ebcb8b0F;
+    --Aurora4-06:#a3be8c0F;
+    --Aurora5-06:#b48ead0F;
+
+    /* OPACITY - 07%*/
+    --PolarNight1-07:#2e344012;
+    --PolarNight2-07:#3b425212;
+    --PolarNight3-07:#434c5e12;
+    --PolarNight4-07:#4c566a12;
+
+    --SnowStorm1-07:#d8dee912;
+    --SnowStorm2-07:#e5e9f012;
+    --SnowStorm3-07:#eceff412;
+
+    --Frost1-07:#8fbcbb12;
+    --Frost2-07:#88c0d012;
+    --Frost3-07:#81a1c112;
+    --Frost4-07:#5e81ac12;
+
+    --Aurora1-07:#bf616a12;
+    --Aurora2-07:#d0877012;
+    --Aurora3-07:#ebcb8b12;
+    --Aurora4-07:#a3be8c12;
+    --Aurora5-07:#b48ead12;
+
+    /* OPACITY - 08%*/
+    --PolarNight1-08:#2e344014;
+    --PolarNight2-08:#3b425214;
+    --PolarNight3-08:#434c5e14;
+    --PolarNight4-08:#4c566a14;
+
+    --SnowStorm1-08:#d8dee914;
+    --SnowStorm2-08:#e5e9f014;
+    --SnowStorm3-08:#eceff414;
+
+    --Frost1-08:#8fbcbb14;
+    --Frost2-08:#88c0d014;
+    --Frost3-08:#81a1c114;
+    --Frost4-08:#5e81ac14;
+
+    --Aurora1-08:#bf616a14;
+    --Aurora2-08:#d0877014;
+    --Aurora3-08:#ebcb8b14;
+    --Aurora4-08:#a3be8c14;
+    --Aurora5-08:#b48ead14;
+
+    /* OPACITY - 09%*/
+    --PolarNight1-09:#2e344017;
+    --PolarNight2-09:#3b425217;
+    --PolarNight3-09:#434c5e17;
+    --PolarNight4-09:#4c566a17;
+
+    --SnowStorm1-09:#d8dee917;
+    --SnowStorm2-09:#e5e9f017;
+    --SnowStorm3-09:#eceff417;
+
+    --Frost1-09:#8fbcbb17;
+    --Frost2-09:#88c0d017;
+    --Frost3-09:#81a1c117;
+    --Frost4-09:#5e81ac17;
+
+    --Aurora1-09:#bf616a17;
+    --Aurora2-09:#d0877017;
+    --Aurora3-09:#ebcb8b17;
+    --Aurora4-09:#a3be8c17;
+    --Aurora5-09:#b48ead17;
+
+
+    /* OPACITY - 10%*/
+    --PolarNight1-10:#2e34401A;
+    --PolarNight2-10:#3b42521A;
+    --PolarNight3-10:#434c5e1A;
+    --PolarNight4-10:#4c566a1A;
+
+    --SnowStorm1-10:#d8dee91A;
+    --SnowStorm2-10:#e5e9f01A;
+    --SnowStorm3-10:#eceff41A;
+
+    --Frost1-10:#8fbcbb1A;
+    --Frost2-10:#88c0d01A;
+    --Frost3-10:#81a1c11A;
+    --Frost4-10:#5e81ac1A;
+
+    --Aurora1-10:#bf616a1A;
+    --Aurora2-10:#d087701A;
+    --Aurora3-10:#ebcb8b1A;
+    --Aurora4-10:#a3be8c1A;
+    --Aurora5-10:#b48ead1A;
+
+    /* OPACITY - 11%*/
+    --PolarNight1-11:#2e34401C;
+    --PolarNight2-11:#3b42521C;
+    --PolarNight3-11:#434c5e1C;
+    --PolarNight4-11:#4c566a1C;
+
+    --SnowStorm1-11:#d8dee91C;
+    --SnowStorm2-11:#e5e9f01C;
+    --SnowStorm3-11:#eceff41C;
+
+    --Frost1-11:#8fbcbb1C;
+    --Frost2-11:#88c0d01C;
+    --Frost3-11:#81a1c11C;
+    --Frost4-11:#5e81ac1C;
+
+    --Aurora1-11:#bf616a1C;
+    --Aurora2-11:#d087701C;
+    --Aurora3-11:#ebcb8b1C;
+    --Aurora4-11:#a3be8c1C;
+    --Aurora5-11:#b48ead1C;
+
+    /* OPACITY - 12%*/
+    --PolarNight1-12:#2e34401F;
+    --PolarNight2-12:#3b42521F;
+    --PolarNight3-12:#434c5e1F;
+    --PolarNight4-12:#4c566a1F;
+
+    --SnowStorm1-12:#d8dee91F;
+    --SnowStorm2-12:#e5e9f01F;
+    --SnowStorm3-12:#eceff41F;
+
+    --Frost1-12:#8fbcbb1F;
+    --Frost2-12:#88c0d01F;
+    --Frost3-12:#81a1c11F;
+    --Frost4-12:#5e81ac1F;
+
+    --Aurora1-12:#bf616a1F;
+    --Aurora2-12:#d087701F;
+    --Aurora3-12:#ebcb8b1F;
+    --Aurora4-12:#a3be8c1F;
+    --Aurora5-12:#b48ead1F;
+
+    /* OPACITY - 13%*/
+    --PolarNight1-13:#2e344021;
+    --PolarNight2-13:#3b425221;
+    --PolarNight3-13:#434c5e21;
+    --PolarNight4-13:#4c566a21;
+
+    --SnowStorm1-13:#d8dee921;
+    --SnowStorm2-13:#e5e9f021;
+    --SnowStorm3-13:#eceff421;
+
+    --Frost1-13:#8fbcbb21;
+    --Frost2-13:#88c0d021;
+    --Frost3-13:#81a1c121;
+    --Frost4-13:#5e81ac21;
+
+    --Aurora1-13:#bf616a21;
+    --Aurora2-13:#d0877021;
+    --Aurora3-13:#ebcb8b21;
+    --Aurora4-13:#a3be8c21;
+    --Aurora5-13:#b48ead21;
+
+    /* OPACITY - 14%*/
+    --PolarNight1-14:#2e344024;
+    --PolarNight2-14:#3b425224;
+    --PolarNight3-14:#434c5e24;
+    --PolarNight4-14:#4c566a24;
+
+    --SnowStorm1-14:#d8dee924;
+    --SnowStorm2-14:#e5e9f024;
+    --SnowStorm3-14:#eceff424;
+
+    --Frost1-14:#8fbcbb24;
+    --Frost2-14:#88c0d024;
+    --Frost3-14:#81a1c124;
+    --Frost4-14:#5e81ac24;
+
+    --Aurora1-14:#bf616a24;
+    --Aurora2-14:#d0877024;
+    --Aurora3-14:#ebcb8b24;
+    --Aurora4-14:#a3be8c24;
+    --Aurora5-14:#b48ead24;
+
+    /* OPACITY - 15%*/
+    --PolarNight1-15:#2e344026;
+    --PolarNight2-15:#3b425226;
+    --PolarNight3-15:#434c5e26;
+    --PolarNight4-15:#4c566a26;
+
+    --SnowStorm1-15:#d8dee926;
+    --SnowStorm2-15:#e5e9f026;
+    --SnowStorm3-15:#eceff426;
+
+    --Frost1-15:#8fbcbb26;
+    --Frost2-15:#88c0d026;
+    --Frost3-15:#81a1c126;
+    --Frost4-15:#5e81ac26;
+
+    --Aurora1-15:#bf616a26;
+    --Aurora2-15:#d0877026;
+    --Aurora3-15:#ebcb8b26;
+    --Aurora4-15:#a3be8c26;
+    --Aurora5-15:#b48ead26;
+
+    /* OPACITY - 16%*/
+    --PolarNight1-16:#2e344029;
+    --PolarNight2-16:#3b425229;
+    --PolarNight3-16:#434c5e29;
+    --PolarNight4-16:#4c566a29;
+
+    --SnowStorm1-16:#d8dee929;
+    --SnowStorm2-16:#e5e9f029;
+    --SnowStorm3-16:#eceff429;
+
+    --Frost1-16:#8fbcbb29;
+    --Frost2-16:#88c0d029;
+    --Frost3-16:#81a1c129;
+    --Frost4-16:#5e81ac29;
+
+    --Aurora1-16:#bf616a29;
+    --Aurora2-16:#d0877029;
+    --Aurora3-16:#ebcb8b29;
+    --Aurora4-16:#a3be8c29;
+    --Aurora5-16:#b48ead29;
+
+    /* OPACITY - 17%*/
+    --PolarNight1-17:#2e34402B;
+    --PolarNight2-17:#3b42522B;
+    --PolarNight3-17:#434c5e2B;
+    --PolarNight4-17:#4c566a2B;
+
+    --SnowStorm1-17:#d8dee92B;
+    --SnowStorm2-17:#e5e9f02B;
+    --SnowStorm3-17:#eceff42B;
+
+    --Frost1-17:#8fbcbb2B;
+    --Frost2-17:#88c0d02B;
+    --Frost3-17:#81a1c12B;
+    --Frost4-17:#5e81ac2B;
+
+    --Aurora1-17:#bf616a2B;
+    --Aurora2-17:#d087702B;
+    --Aurora3-17:#ebcb8b2B;
+    --Aurora4-17:#a3be8c2B;
+    --Aurora5-17:#b48ead2B;
+
+    /* OPACITY - 18%*/
+    --PolarNight1-18:#2e34402E;
+    --PolarNight2-18:#3b42522E;
+    --PolarNight3-18:#434c5e2E;
+    --PolarNight4-18:#4c566a2E;
+
+    --SnowStorm1-18:#d8dee92E;
+    --SnowStorm2-18:#e5e9f02E;
+    --SnowStorm3-18:#eceff42E;
+
+    --Frost1-18:#8fbcbb2E;
+    --Frost2-18:#88c0d02E;
+    --Frost3-18:#81a1c12E;
+    --Frost4-18:#5e81ac2E;
+
+    --Aurora1-18:#bf616a2E;
+    --Aurora2-18:#d087702E;
+    --Aurora3-18:#ebcb8b2E;
+    --Aurora4-18:#a3be8c2E;
+    --Aurora5-18:#b48ead2E;
+
+    /* OPACITY - 19%*/
+    --PolarNight1-19:#2e344030;
+    --PolarNight2-19:#3b425230;
+    --PolarNight3-19:#434c5e30;
+    --PolarNight4-19:#4c566a30;
+
+    --SnowStorm1-19:#d8dee930;
+    --SnowStorm2-19:#e5e9f030;
+    --SnowStorm3-19:#eceff430;
+
+    --Frost1-19:#8fbcbb30;
+    --Frost2-19:#88c0d030;
+    --Frost3-19:#81a1c130;
+    --Frost4-19:#5e81ac30;
+
+    --Aurora1-19:#bf616a30;
+    --Aurora2-19:#d0877030;
+    --Aurora3-19:#ebcb8b30;
+    --Aurora4-19:#a3be8c30;
+    --Aurora5-19:#b48ead30;
+
+
+    /* OPACITY - 20%*/
+    --PolarNight1-20:#2e344033;
+    --PolarNight2-20:#3b425233;
+    --PolarNight3-20:#434c5e33;
+    --PolarNight4-20:#4c566a33;
+
+    --SnowStorm1-20:#d8dee933;
+    --SnowStorm2-20:#e5e9f033;
+    --SnowStorm3-20:#eceff433;
+
+    --Frost1-20:#8fbcbb33;
+    --Frost2-20:#88c0d033;
+    --Frost3-20:#81a1c133;
+    --Frost4-20:#5e81ac33;
+
+    --Aurora1-20:#bf616a33;
+    --Aurora2-20:#d0877033;
+    --Aurora3-20:#ebcb8b33;
+    --Aurora4-20:#a3be8c33;
+    --Aurora5-20:#b48ead33;
+
+    /* OPACITY - 21%*/
+    --PolarNight1-21:#2e344036;
+    --PolarNight2-21:#3b425236;
+    --PolarNight3-21:#434c5e36;
+    --PolarNight4-21:#4c566a36;
+
+    --SnowStorm1-21:#d8dee936;
+    --SnowStorm2-21:#e5e9f036;
+    --SnowStorm3-21:#eceff436;
+
+    --Frost1-21:#8fbcbb36;
+    --Frost2-21:#88c0d036;
+    --Frost3-21:#81a1c136;
+    --Frost4-21:#5e81ac36;
+
+    --Aurora1-21:#bf616a36;
+    --Aurora2-21:#d0877036;
+    --Aurora3-21:#ebcb8b36;
+    --Aurora4-21:#a3be8c36;
+    --Aurora5-21:#b48ead36;
+
+    /* OPACITY - 22%*/
+    --PolarNight1-22:#2e344038;
+    --PolarNight2-22:#3b425238;
+    --PolarNight3-22:#434c5e38;
+    --PolarNight4-22:#4c566a38;
+
+    --SnowStorm1-22:#d8dee938;
+    --SnowStorm2-22:#e5e9f038;
+    --SnowStorm3-22:#eceff438;
+
+    --Frost1-22:#8fbcbb38;
+    --Frost2-22:#88c0d038;
+    --Frost3-22:#81a1c138;
+    --Frost4-22:#5e81ac38;
+
+    --Aurora1-22:#bf616a38;
+    --Aurora2-22:#d0877038;
+    --Aurora3-22:#ebcb8b38;
+    --Aurora4-22:#a3be8c38;
+    --Aurora5-22:#b48ead38;
+
+    /* OPACITY - 23%*/
+    --PolarNight1-23:#2e34403B;
+    --PolarNight2-23:#3b42523B;
+    --PolarNight3-23:#434c5e3B;
+    --PolarNight4-23:#4c566a3B;
+
+    --SnowStorm1-23:#d8dee93B;
+    --SnowStorm2-23:#e5e9f03B;
+    --SnowStorm3-23:#eceff43B;
+
+    --Frost1-23:#8fbcbb3B;
+    --Frost2-23:#88c0d03B;
+    --Frost3-23:#81a1c13B;
+    --Frost4-23:#5e81ac3B;
+
+    --Aurora1-23:#bf616a3B;
+    --Aurora2-23:#d087703B;
+    --Aurora3-23:#ebcb8b3B;
+    --Aurora4-23:#a3be8c3B;
+    --Aurora5-23:#b48ead3B;
+
+    /* OPACITY - 24%*/
+    --PolarNight1-24:#2e34403D;
+    --PolarNight2-24:#3b42523D;
+    --PolarNight3-24:#434c5e3D;
+    --PolarNight4-24:#4c566a3D;
+
+    --SnowStorm1-24:#d8dee93D;
+    --SnowStorm2-24:#e5e9f03D;
+    --SnowStorm3-24:#eceff43D;
+
+    --Frost1-24:#8fbcbb3D;
+    --Frost2-24:#88c0d03D;
+    --Frost3-24:#81a1c13D;
+    --Frost4-24:#5e81ac3D;
+
+    --Aurora1-24:#bf616a3D;
+    --Aurora2-24:#d087703D;
+    --Aurora3-24:#ebcb8b3D;
+    --Aurora4-24:#a3be8c3D;
+    --Aurora5-24:#b48ead3D;
+
+    /* OPACITY - 25%*/
+    --PolarNight1-25:#2e344040;
+    --PolarNight2-25:#3b425240;
+    --PolarNight3-25:#434c5e40;
+    --PolarNight4-25:#4c566a40;
+
+    --SnowStorm1-25:#d8dee940;
+    --SnowStorm2-25:#e5e9f040;
+    --SnowStorm3-25:#eceff440;
+
+    --Frost1-25:#8fbcbb40;
+    --Frost2-25:#88c0d040;
+    --Frost3-25:#81a1c140;
+    --Frost4-25:#5e81ac40;
+
+    --Aurora1-25:#bf616a40;
+    --Aurora2-25:#d0877040;
+    --Aurora3-25:#ebcb8b40;
+    --Aurora4-25:#a3be8c40;
+    --Aurora5-25:#b48ead40;
+
+    /* OPACITY - 26%*/
+    --PolarNight1-26:#2e344042;
+    --PolarNight2-26:#3b425242;
+    --PolarNight3-26:#434c5e42;
+    --PolarNight4-26:#4c566a42;
+
+    --SnowStorm1-26:#d8dee942;
+    --SnowStorm2-26:#e5e9f042;
+    --SnowStorm3-26:#eceff442;
+
+    --Frost1-26:#8fbcbb42;
+    --Frost2-26:#88c0d042;
+    --Frost3-26:#81a1c142;
+    --Frost4-26:#5e81ac42;
+
+    --Aurora1-26:#bf616a42;
+    --Aurora2-26:#d0877042;
+    --Aurora3-26:#ebcb8b42;
+    --Aurora4-26:#a3be8c42;
+    --Aurora5-26:#b48ead42;
+
+    /* OPACITY - 27%*/
+    --PolarNight1-27:#2e344045;
+    --PolarNight2-27:#3b425245;
+    --PolarNight3-27:#434c5e45;
+    --PolarNight4-27:#4c566a45;
+
+    --SnowStorm1-27:#d8dee945;
+    --SnowStorm2-27:#e5e9f045;
+    --SnowStorm3-27:#eceff445;
+
+    --Frost1-27:#8fbcbb45;
+    --Frost2-27:#88c0d045;
+    --Frost3-27:#81a1c145;
+    --Frost4-27:#5e81ac45;
+
+    --Aurora1-27:#bf616a45;
+    --Aurora2-27:#d0877045;
+    --Aurora3-27:#ebcb8b45;
+    --Aurora4-27:#a3be8c45;
+    --Aurora5-27:#b48ead45;
+
+    /* OPACITY - 28%*/
+    --PolarNight1-28:#2e344047;
+    --PolarNight2-28:#3b425247;
+    --PolarNight3-28:#434c5e47;
+    --PolarNight4-28:#4c566a47;
+
+    --SnowStorm1-28:#d8dee947;
+    --SnowStorm2-28:#e5e9f047;
+    --SnowStorm3-28:#eceff447;
+
+    --Frost1-28:#8fbcbb47;
+    --Frost2-28:#88c0d047;
+    --Frost3-28:#81a1c147;
+    --Frost4-28:#5e81ac47;
+
+    --Aurora1-28:#bf616a47;
+    --Aurora2-28:#d0877047;
+    --Aurora3-28:#ebcb8b47;
+    --Aurora4-28:#a3be8c47;
+    --Aurora5-28:#b48ead47;
+
+    /* OPACITY - 29%*/
+    --PolarNight1-29:#2e34404A;
+    --PolarNight2-29:#3b42524A;
+    --PolarNight3-29:#434c5e4A;
+    --PolarNight4-29:#4c566a4A;
+
+    --SnowStorm1-29:#d8dee94A;
+    --SnowStorm2-29:#e5e9f04A;
+    --SnowStorm3-29:#eceff44A;
+
+    --Frost1-29:#8fbcbb4A;
+    --Frost2-29:#88c0d04A;
+    --Frost3-29:#81a1c14A;
+    --Frost4-29:#5e81ac4A;
+
+    --Aurora1-29:#bf616a4A;
+    --Aurora2-29:#d087704A;
+    --Aurora3-29:#ebcb8b4A;
+    --Aurora4-29:#a3be8c4A;
+    --Aurora5-29:#b48ead4A;
+
+
+    /* OPACITY - 30%*/
+    --PolarNight1-30:#2e34404D;
+    --PolarNight2-30:#3b42524D;
+    --PolarNight3-30:#434c5e4D;
+    --PolarNight4-30:#4c566a4D;
+
+    --SnowStorm1-30:#d8dee94D;
+    --SnowStorm2-30:#e5e9f04D;
+    --SnowStorm3-30:#eceff44D;
+
+    --Frost1-30:#8fbcbb4D;
+    --Frost2-30:#88c0d04D;
+    --Frost3-30:#81a1c14D;
+    --Frost4-30:#5e81ac4D;
+
+    --Aurora1-30:#bf616a4D;
+    --Aurora2-30:#d087704D;
+    --Aurora3-30:#ebcb8b4D;
+    --Aurora4-30:#a3be8c4D;
+    --Aurora5-30:#b48ead4D;
+
+    /* OPACITY - 31%*/
+    --PolarNight1-31:#2e34404F;
+    --PolarNight2-31:#3b42524F;
+    --PolarNight3-31:#434c5e4F;
+    --PolarNight4-31:#4c566a4F;
+
+    --SnowStorm1-31:#d8dee94F;
+    --SnowStorm2-31:#e5e9f04F;
+    --SnowStorm3-31:#eceff44F;
+
+    --Frost1-31:#8fbcbb4F;
+    --Frost2-31:#88c0d04F;
+    --Frost3-31:#81a1c14F;
+    --Frost4-31:#5e81ac4F;
+
+    --Aurora1-31:#bf616a4F;
+    --Aurora2-31:#d087704F;
+    --Aurora3-31:#ebcb8b4F;
+    --Aurora4-31:#a3be8c4F;
+    --Aurora5-31:#b48ead4F;
+
+    /* OPACITY - 32%*/
+    --PolarNight1-32:#2e344052;
+    --PolarNight2-32:#3b425252;
+    --PolarNight3-32:#434c5e52;
+    --PolarNight4-32:#4c566a52;
+
+    --SnowStorm1-32:#d8dee952;
+    --SnowStorm2-32:#e5e9f052;
+    --SnowStorm3-32:#eceff452;
+
+    --Frost1-32:#8fbcbb52;
+    --Frost2-32:#88c0d052;
+    --Frost3-32:#81a1c152;
+    --Frost4-32:#5e81ac52;
+
+    --Aurora1-32:#bf616a52;
+    --Aurora2-32:#d0877052;
+    --Aurora3-32:#ebcb8b52;
+    --Aurora4-32:#a3be8c52;
+    --Aurora5-32:#b48ead52;
+
+    /* OPACITY - 33%*/
+    --PolarNight1-33:#2e344054;
+    --PolarNight2-33:#3b425254;
+    --PolarNight3-33:#434c5e54;
+    --PolarNight4-33:#4c566a54;
+
+    --SnowStorm1-33:#d8dee954;
+    --SnowStorm2-33:#e5e9f054;
+    --SnowStorm3-33:#eceff454;
+
+    --Frost1-33:#8fbcbb54;
+    --Frost2-33:#88c0d054;
+    --Frost3-33:#81a1c154;
+    --Frost4-33:#5e81ac54;
+
+    --Aurora1-33:#bf616a54;
+    --Aurora2-33:#d0877054;
+    --Aurora3-33:#ebcb8b54;
+    --Aurora4-33:#a3be8c54;
+    --Aurora5-33:#b48ead54;
+
+    /* OPACITY - 34%*/
+    --PolarNight1-34:#2e344057;
+    --PolarNight2-34:#3b425257;
+    --PolarNight3-34:#434c5e57;
+    --PolarNight4-34:#4c566a57;
+
+    --SnowStorm1-34:#d8dee957;
+    --SnowStorm2-34:#e5e9f057;
+    --SnowStorm3-34:#eceff457;
+
+    --Frost1-34:#8fbcbb57;
+    --Frost2-34:#88c0d057;
+    --Frost3-34:#81a1c157;
+    --Frost4-34:#5e81ac57;
+
+    --Aurora1-34:#bf616a57;
+    --Aurora2-34:#d0877057;
+    --Aurora3-34:#ebcb8b57;
+    --Aurora4-34:#a3be8c57;
+    --Aurora5-34:#b48ead57;
+
+    /* OPACITY - 35%*/
+    --PolarNight1-35:#2e344059;
+    --PolarNight2-35:#3b425259;
+    --PolarNight3-35:#434c5e59;
+    --PolarNight4-35:#4c566a59;
+
+    --SnowStorm1-35:#d8dee959;
+    --SnowStorm2-35:#e5e9f059;
+    --SnowStorm3-35:#eceff459;
+
+    --Frost1-35:#8fbcbb59;
+    --Frost2-35:#88c0d059;
+    --Frost3-35:#81a1c159;
+    --Frost4-35:#5e81ac59;
+
+    --Aurora1-35:#bf616a59;
+    --Aurora2-35:#d0877059;
+    --Aurora3-35:#ebcb8b59;
+    --Aurora4-35:#a3be8c59;
+    --Aurora5-35:#b48ead59;
+
+    /* OPACITY - 36%*/
+    --PolarNight1-36:#2e34405C;
+    --PolarNight2-36:#3b42525C;
+    --PolarNight3-36:#434c5e5C;
+    --PolarNight4-36:#4c566a5C;
+
+    --SnowStorm1-36:#d8dee95C;
+    --SnowStorm2-36:#e5e9f05C;
+    --SnowStorm3-36:#eceff45C;
+
+    --Frost1-36:#8fbcbb5C;
+    --Frost2-36:#88c0d05C;
+    --Frost3-36:#81a1c15C;
+    --Frost4-36:#5e81ac5C;
+
+    --Aurora1-36:#bf616a5C;
+    --Aurora2-36:#d087705C;
+    --Aurora3-36:#ebcb8b5C;
+    --Aurora4-36:#a3be8c5C;
+    --Aurora5-36:#b48ead5C;
+
+    /* OPACITY - 37%*/
+    --PolarNight1-37:#2e34405E;
+    --PolarNight2-37:#3b42525E;
+    --PolarNight3-37:#434c5e5E;
+    --PolarNight4-37:#4c566a5E;
+
+    --SnowStorm1-37:#d8dee95E;
+    --SnowStorm2-37:#e5e9f05E;
+    --SnowStorm3-37:#eceff45E;
+
+    --Frost1-37:#8fbcbb5E;
+    --Frost2-37:#88c0d05E;
+    --Frost3-37:#81a1c15E;
+    --Frost4-37:#5e81ac5E;
+
+    --Aurora1-37:#bf616a5E;
+    --Aurora2-37:#d087705E;
+    --Aurora3-37:#ebcb8b5E;
+    --Aurora4-37:#a3be8c5E;
+    --Aurora5-37:#b48ead5E;
+
+    /* OPACITY - 38%*/
+    --PolarNight1-38:#2e344061;
+    --PolarNight2-38:#3b425261;
+    --PolarNight3-38:#434c5e61;
+    --PolarNight4-38:#4c566a61;
+
+    --SnowStorm1-38:#d8dee961;
+    --SnowStorm2-38:#e5e9f061;
+    --SnowStorm3-38:#eceff461;
+
+    --Frost1-38:#8fbcbb61;
+    --Frost2-38:#88c0d061;
+    --Frost3-38:#81a1c161;
+    --Frost4-38:#5e81ac61;
+
+    --Aurora1-38:#bf616a61;
+    --Aurora2-38:#d0877061;
+    --Aurora3-38:#ebcb8b61;
+    --Aurora4-38:#a3be8c61;
+    --Aurora5-38:#b48ead61;
+
+    /* OPACITY - 39%*/
+    --PolarNight1-39:#2e344063;
+    --PolarNight2-39:#3b425263;
+    --PolarNight3-39:#434c5e63;
+    --PolarNight4-39:#4c566a63;
+
+    --SnowStorm1-39:#d8dee963;
+    --SnowStorm2-39:#e5e9f063;
+    --SnowStorm3-39:#eceff463;
+
+    --Frost1-39:#8fbcbb63;
+    --Frost2-39:#88c0d063;
+    --Frost3-39:#81a1c163;
+    --Frost4-39:#5e81ac63;
+
+    --Aurora1-39:#bf616a63;
+    --Aurora2-39:#d0877063;
+    --Aurora3-39:#ebcb8b63;
+    --Aurora4-39:#a3be8c63;
+    --Aurora5-39:#b48ead63;
+
+
+    /* OPACITY - 40%*/
+    --PolarNight1-40:#2e344066;
+    --PolarNight2-40:#3b425266;
+    --PolarNight3-40:#434c5e66;
+    --PolarNight4-40:#4c566a66;
+
+    --SnowStorm1-40:#d8dee966;
+    --SnowStorm2-40:#e5e9f066;
+    --SnowStorm3-40:#eceff466;
+
+    --Frost1-40:#8fbcbb66;
+    --Frost2-40:#88c0d066;
+    --Frost3-40:#81a1c166;
+    --Frost4-40:#5e81ac66;
+
+    --Aurora1-40:#bf616a66;
+    --Aurora2-40:#d0877066;
+    --Aurora3-40:#ebcb8b66;
+    --Aurora4-40:#a3be8c66;
+    --Aurora5-40:#b48ead66;
+
+    /* OPACITY - 41%*/
+    --PolarNight1-41:#2e344069;
+    --PolarNight2-41:#3b425269;
+    --PolarNight3-41:#434c5e69;
+    --PolarNight4-41:#4c566a69;
+
+    --SnowStorm1-41:#d8dee969;
+    --SnowStorm2-41:#e5e9f069;
+    --SnowStorm3-41:#eceff469;
+
+    --Frost1-41:#8fbcbb69;
+    --Frost2-41:#88c0d069;
+    --Frost3-41:#81a1c169;
+    --Frost4-41:#5e81ac69;
+
+    --Aurora1-41:#bf616a69;
+    --Aurora2-41:#d0877069;
+    --Aurora3-41:#ebcb8b69;
+    --Aurora4-41:#a3be8c69;
+    --Aurora5-41:#b48ead69;
+
+    /* OPACITY - 42%*/
+    --PolarNight1-42:#2e34406B;
+    --PolarNight2-42:#3b42526B;
+    --PolarNight3-42:#434c5e6B;
+    --PolarNight4-42:#4c566a6B;
+
+    --SnowStorm1-42:#d8dee96B;
+    --SnowStorm2-42:#e5e9f06B;
+    --SnowStorm3-42:#eceff46B;
+
+    --Frost1-42:#8fbcbb6B;
+    --Frost2-42:#88c0d06B;
+    --Frost3-42:#81a1c16B;
+    --Frost4-42:#5e81ac6B;
+
+    --Aurora1-42:#bf616a6B;
+    --Aurora2-42:#d087706B;
+    --Aurora3-42:#ebcb8b6B;
+    --Aurora4-42:#a3be8c6B;
+    --Aurora5-42:#b48ead6B;
+
+    /* OPACITY - 43%*/
+    --PolarNight1-43:#2e34406E;
+    --PolarNight2-43:#3b42526E;
+    --PolarNight3-43:#434c5e6E;
+    --PolarNight4-43:#4c566a6E;
+
+    --SnowStorm1-43:#d8dee96E;
+    --SnowStorm2-43:#e5e9f06E;
+    --SnowStorm3-43:#eceff46E;
+
+    --Frost1-43:#8fbcbb6E;
+    --Frost2-43:#88c0d06E;
+    --Frost3-43:#81a1c16E;
+    --Frost4-43:#5e81ac6E;
+
+    --Aurora1-43:#bf616a6E;
+    --Aurora2-43:#d087706E;
+    --Aurora3-43:#ebcb8b6E;
+    --Aurora4-43:#a3be8c6E;
+    --Aurora5-43:#b48ead6E;
+
+    /* OPACITY - 44%*/
+    --PolarNight1-44:#2e344070;
+    --PolarNight2-44:#3b425270;
+    --PolarNight3-44:#434c5e70;
+    --PolarNight4-44:#4c566a70;
+
+    --SnowStorm1-44:#d8dee970;
+    --SnowStorm2-44:#e5e9f070;
+    --SnowStorm3-44:#eceff470;
+
+    --Frost1-44:#8fbcbb70;
+    --Frost2-44:#88c0d070;
+    --Frost3-44:#81a1c170;
+    --Frost4-44:#5e81ac70;
+
+    --Aurora1-44:#bf616a70;
+    --Aurora2-44:#d0877070;
+    --Aurora3-44:#ebcb8b70;
+    --Aurora4-44:#a3be8c70;
+    --Aurora5-44:#b48ead70;
+
+    /* OPACITY - 45%*/
+    --PolarNight1-45:#2e344073;
+    --PolarNight2-45:#3b425273;
+    --PolarNight3-45:#434c5e73;
+    --PolarNight4-45:#4c566a73;
+
+    --SnowStorm1-45:#d8dee973;
+    --SnowStorm2-45:#e5e9f073;
+    --SnowStorm3-45:#eceff473;
+
+    --Frost1-45:#8fbcbb73;
+    --Frost2-45:#88c0d073;
+    --Frost3-45:#81a1c173;
+    --Frost4-45:#5e81ac73;
+
+    --Aurora1-45:#bf616a73;
+    --Aurora2-45:#d0877073;
+    --Aurora3-45:#ebcb8b73;
+    --Aurora4-45:#a3be8c73;
+    --Aurora5-45:#b48ead73;
+
+    /* OPACITY - 46%*/
+    --PolarNight1-46:#2e344075;
+    --PolarNight2-46:#3b425275;
+    --PolarNight3-46:#434c5e75;
+    --PolarNight4-46:#4c566a75;
+
+    --SnowStorm1-46:#d8dee975;
+    --SnowStorm2-46:#e5e9f075;
+    --SnowStorm3-46:#eceff475;
+
+    --Frost1-46:#8fbcbb75;
+    --Frost2-46:#88c0d075;
+    --Frost3-46:#81a1c175;
+    --Frost4-46:#5e81ac75;
+
+    --Aurora1-46:#bf616a75;
+    --Aurora2-46:#d0877075;
+    --Aurora3-46:#ebcb8b75;
+    --Aurora4-46:#a3be8c75;
+    --Aurora5-46:#b48ead75;
+
+    /* OPACITY - 47%*/
+    --PolarNight1-47:#2e344078;
+    --PolarNight2-47:#3b425278;
+    --PolarNight3-47:#434c5e78;
+    --PolarNight4-47:#4c566a78;
+
+    --SnowStorm1-47:#d8dee978;
+    --SnowStorm2-47:#e5e9f078;
+    --SnowStorm3-47:#eceff478;
+
+    --Frost1-47:#8fbcbb78;
+    --Frost2-47:#88c0d078;
+    --Frost3-47:#81a1c178;
+    --Frost4-47:#5e81ac78;
+
+    --Aurora1-47:#bf616a78;
+    --Aurora2-47:#d0877078;
+    --Aurora3-47:#ebcb8b78;
+    --Aurora4-47:#a3be8c78;
+    --Aurora5-47:#b48ead78;
+
+    /* OPACITY - 48%*/
+    --PolarNight1-48:#2e34407A;
+    --PolarNight2-48:#3b42527A;
+    --PolarNight3-48:#434c5e7A;
+    --PolarNight4-48:#4c566a7A;
+
+    --SnowStorm1-48:#d8dee97A;
+    --SnowStorm2-48:#e5e9f07A;
+    --SnowStorm3-48:#eceff47A;
+
+    --Frost1-48:#8fbcbb7A;
+    --Frost2-48:#88c0d07A;
+    --Frost3-48:#81a1c17A;
+    --Frost4-48:#5e81ac7A;
+
+    --Aurora1-48:#bf616a7A;
+    --Aurora2-48:#d087707A;
+    --Aurora3-48:#ebcb8b7A;
+    --Aurora4-48:#a3be8c7A;
+    --Aurora5-48:#b48ead7A;
+
+    /* OPACITY - 49%*/
+    --PolarNight1-49:#2e34407D;
+    --PolarNight2-49:#3b42527D;
+    --PolarNight3-49:#434c5e7D;
+    --PolarNight4-49:#4c566a7D;
+
+    --SnowStorm1-49:#d8dee97D;
+    --SnowStorm2-49:#e5e9f07D;
+    --SnowStorm3-49:#eceff47D;
+
+    --Frost1-49:#8fbcbb7D;
+    --Frost2-49:#88c0d07D;
+    --Frost3-49:#81a1c17D;
+    --Frost4-49:#5e81ac7D;
+
+    --Aurora1-49:#bf616a7D;
+    --Aurora2-49:#d087707D;
+    --Aurora3-49:#ebcb8b7D;
+    --Aurora4-49:#a3be8c7D;
+    --Aurora5-49:#b48ead7D;
+
+
+    /* OPACITY - 50%*/
+    --PolarNight1-50:#2e344080;
+    --PolarNight2-50:#3b425280;
+    --PolarNight3-50:#434c5e80;
+    --PolarNight4-50:#4c566a80;
+
+    --SnowStorm1-50:#d8dee980;
+    --SnowStorm2-50:#e5e9f080;
+    --SnowStorm3-50:#eceff480;
+
+    --Frost1-50:#8fbcbb80;
+    --Frost2-50:#88c0d080;
+    --Frost3-50:#81a1c180;
+    --Frost4-50:#5e81ac80;
+
+    --Aurora1-50:#bf616a80;
+    --Aurora2-50:#d0877080;
+    --Aurora3-50:#ebcb8b80;
+    --Aurora4-50:#a3be8c80;
+    --Aurora5-50:#b48ead80;
+
+    /* OPACITY - 51%*/
+    --PolarNight1-51:#2e344082;
+    --PolarNight2-51:#3b425282;
+    --PolarNight3-51:#434c5e82;
+    --PolarNight4-51:#4c566a82;
+
+    --SnowStorm1-51:#d8dee982;
+    --SnowStorm2-51:#e5e9f082;
+    --SnowStorm3-51:#eceff482;
+
+    --Frost1-51:#8fbcbb82;
+    --Frost2-51:#88c0d082;
+    --Frost3-51:#81a1c182;
+    --Frost4-51:#5e81ac82;
+
+    --Aurora1-51:#bf616a82;
+    --Aurora2-51:#d0877082;
+    --Aurora3-51:#ebcb8b82;
+    --Aurora4-51:#a3be8c82;
+    --Aurora5-51:#b48ead82;
+
+    /* OPACITY - 52%*/
+    --PolarNight1-52:#2e344085;
+    --PolarNight2-52:#3b425285;
+    --PolarNight3-52:#434c5e85;
+    --PolarNight4-52:#4c566a85;
+
+    --SnowStorm1-52:#d8dee985;
+    --SnowStorm2-52:#e5e9f085;
+    --SnowStorm3-52:#eceff485;
+
+    --Frost1-52:#8fbcbb85;
+    --Frost2-52:#88c0d085;
+    --Frost3-52:#81a1c185;
+    --Frost4-52:#5e81ac85;
+
+    --Aurora1-52:#bf616a85;
+    --Aurora2-52:#d0877085;
+    --Aurora3-52:#ebcb8b85;
+    --Aurora4-52:#a3be8c85;
+    --Aurora5-52:#b48ead85;
+
+    /* OPACITY - 53%*/
+    --PolarNight1-53:#2e344087;
+    --PolarNight2-53:#3b425287;
+    --PolarNight3-53:#434c5e87;
+    --PolarNight4-53:#4c566a87;
+
+    --SnowStorm1-53:#d8dee987;
+    --SnowStorm2-53:#e5e9f087;
+    --SnowStorm3-53:#eceff487;
+
+    --Frost1-53:#8fbcbb87;
+    --Frost2-53:#88c0d087;
+    --Frost3-53:#81a1c187;
+    --Frost4-53:#5e81ac87;
+
+    --Aurora1-53:#bf616a87;
+    --Aurora2-53:#d0877087;
+    --Aurora3-53:#ebcb8b87;
+    --Aurora4-53:#a3be8c87;
+    --Aurora5-53:#b48ead87;
+
+    /* OPACITY - 54%*/
+    --PolarNight1-54:#2e34408A;
+    --PolarNight2-54:#3b42528A;
+    --PolarNight3-54:#434c5e8A;
+    --PolarNight4-54:#4c566a8A;
+
+    --SnowStorm1-54:#d8dee98A;
+    --SnowStorm2-54:#e5e9f08A;
+    --SnowStorm3-54:#eceff48A;
+
+    --Frost1-54:#8fbcbb8A;
+    --Frost2-54:#88c0d08A;
+    --Frost3-54:#81a1c18A;
+    --Frost4-54:#5e81ac8A;
+
+    --Aurora1-54:#bf616a8A;
+    --Aurora2-54:#d087708A;
+    --Aurora3-54:#ebcb8b8A;
+    --Aurora4-54:#a3be8c8A;
+    --Aurora5-54:#b48ead8A;
+
+    /* OPACITY - 55%*/
+    --PolarNight1-55:#2e34408C;
+    --PolarNight2-55:#3b42528C;
+    --PolarNight3-55:#434c5e8C;
+    --PolarNight4-55:#4c566a8C;
+
+    --SnowStorm1-55:#d8dee98C;
+    --SnowStorm2-55:#e5e9f08C;
+    --SnowStorm3-55:#eceff48C;
+
+    --Frost1-55:#8fbcbb8C;
+    --Frost2-55:#88c0d08C;
+    --Frost3-55:#81a1c18C;
+    --Frost4-55:#5e81ac8C;
+
+    --Aurora1-55:#bf616a8C;
+    --Aurora2-55:#d087708C;
+    --Aurora3-55:#ebcb8b8C;
+    --Aurora4-55:#a3be8c8C;
+    --Aurora5-55:#b48ead8C;
+
+    /* OPACITY - 56%*/
+    --PolarNight1-56:#2e34408F;
+    --PolarNight2-56:#3b42528F;
+    --PolarNight3-56:#434c5e8F;
+    --PolarNight4-56:#4c566a8F;
+
+    --SnowStorm1-56:#d8dee98F;
+    --SnowStorm2-56:#e5e9f08F;
+    --SnowStorm3-56:#eceff48F;
+
+    --Frost1-56:#8fbcbb8F;
+    --Frost2-56:#88c0d08F;
+    --Frost3-56:#81a1c18F;
+    --Frost4-56:#5e81ac8F;
+
+    --Aurora1-56:#bf616a8F;
+    --Aurora2-56:#d087708F;
+    --Aurora3-56:#ebcb8b8F;
+    --Aurora4-56:#a3be8c8F;
+    --Aurora5-56:#b48ead8F;
+
+    /* OPACITY - 57%*/
+    --PolarNight1-57:#2e344091;
+    --PolarNight2-57:#3b425291;
+    --PolarNight3-57:#434c5e91;
+    --PolarNight4-57:#4c566a91;
+
+    --SnowStorm1-57:#d8dee991;
+    --SnowStorm2-57:#e5e9f091;
+    --SnowStorm3-57:#eceff491;
+
+    --Frost1-57:#8fbcbb91;
+    --Frost2-57:#88c0d091;
+    --Frost3-57:#81a1c191;
+    --Frost4-57:#5e81ac91;
+
+    --Aurora1-57:#bf616a91;
+    --Aurora2-57:#d0877091;
+    --Aurora3-57:#ebcb8b91;
+    --Aurora4-57:#a3be8c91;
+    --Aurora5-57:#b48ead91;
+
+    /* OPACITY - 58%*/
+    --PolarNight1-58:#2e344094;
+    --PolarNight2-58:#3b425294;
+    --PolarNight3-58:#434c5e94;
+    --PolarNight4-58:#4c566a94;
+
+    --SnowStorm1-58:#d8dee994;
+    --SnowStorm2-58:#e5e9f094;
+    --SnowStorm3-58:#eceff494;
+
+    --Frost1-58:#8fbcbb94;
+    --Frost2-58:#88c0d094;
+    --Frost3-58:#81a1c194;
+    --Frost4-58:#5e81ac94;
+
+    --Aurora1-58:#bf616a94;
+    --Aurora2-58:#d0877094;
+    --Aurora3-58:#ebcb8b94;
+    --Aurora4-58:#a3be8c94;
+    --Aurora5-58:#b48ead94;
+
+    /* OPACITY - 59%*/
+    --PolarNight1-59:#2e344096;
+    --PolarNight2-59:#3b425296;
+    --PolarNight3-59:#434c5e96;
+    --PolarNight4-59:#4c566a96;
+
+    --SnowStorm1-59:#d8dee996;
+    --SnowStorm2-59:#e5e9f096;
+    --SnowStorm3-59:#eceff496;
+
+    --Frost1-59:#8fbcbb96;
+    --Frost2-59:#88c0d096;
+    --Frost3-59:#81a1c196;
+    --Frost4-59:#5e81ac96;
+
+    --Aurora1-59:#bf616a96;
+    --Aurora2-59:#d0877096;
+    --Aurora3-59:#ebcb8b96;
+    --Aurora4-59:#a3be8c96;
+    --Aurora5-59:#b48ead96;
+
+
+    /* OPACITY - 60%*/
+    --PolarNight1-60:#2e344099;
+    --PolarNight2-60:#3b425299;
+    --PolarNight3-60:#434c5e99;
+    --PolarNight4-60:#4c566a99;
+
+    --SnowStorm1-60:#d8dee999;
+    --SnowStorm2-60:#e5e9f099;
+    --SnowStorm3-60:#eceff499;
+
+    --Frost1-60:#8fbcbb99;
+    --Frost2-60:#88c0d099;
+    --Frost3-60:#81a1c199;
+    --Frost4-60:#5e81ac99;
+
+    --Aurora1-60:#bf616a99;
+    --Aurora2-60:#d0877099;
+    --Aurora3-60:#ebcb8b99;
+    --Aurora4-60:#a3be8c99;
+    --Aurora5-60:#b48ead99;
+
+    /* OPACITY - 61%*/
+    --PolarNight1-61:#2e34409C;
+    --PolarNight2-61:#3b42529C;
+    --PolarNight3-61:#434c5e9C;
+    --PolarNight4-61:#4c566a9C;
+
+    --SnowStorm1-61:#d8dee99C;
+    --SnowStorm2-61:#e5e9f09C;
+    --SnowStorm3-61:#eceff49C;
+
+    --Frost1-61:#8fbcbb9C;
+    --Frost2-61:#88c0d09C;
+    --Frost3-61:#81a1c19C;
+    --Frost4-61:#5e81ac9C;
+
+    --Aurora1-61:#bf616a9C;
+    --Aurora2-61:#d087709C;
+    --Aurora3-61:#ebcb8b9C;
+    --Aurora4-61:#a3be8c9C;
+    --Aurora5-61:#b48ead9C;
+
+    /* OPACITY - 62%*/
+    --PolarNight1-62:#2e34409E;
+    --PolarNight2-62:#3b42529E;
+    --PolarNight3-62:#434c5e9E;
+    --PolarNight4-62:#4c566a9E;
+
+    --SnowStorm1-62:#d8dee99E;
+    --SnowStorm2-62:#e5e9f09E;
+    --SnowStorm3-62:#eceff49E;
+
+    --Frost1-62:#8fbcbb9E;
+    --Frost2-62:#88c0d09E;
+    --Frost3-62:#81a1c19E;
+    --Frost4-62:#5e81ac9E;
+
+    --Aurora1-62:#bf616a9E;
+    --Aurora2-62:#d087709E;
+    --Aurora3-62:#ebcb8b9E;
+    --Aurora4-62:#a3be8c9E;
+    --Aurora5-62:#b48ead9E;
+
+    /* OPACITY - 63%*/
+    --PolarNight1-63:#2e3440A1;
+    --PolarNight2-63:#3b4252A1;
+    --PolarNight3-63:#434c5eA1;
+    --PolarNight4-63:#4c566aA1;
+
+    --SnowStorm1-63:#d8dee9A1;
+    --SnowStorm2-63:#e5e9f0A1;
+    --SnowStorm3-63:#eceff4A1;
+
+    --Frost1-63:#8fbcbbA1;
+    --Frost2-63:#88c0d0A1;
+    --Frost3-63:#81a1c1A1;
+    --Frost4-63:#5e81acA1;
+
+    --Aurora1-63:#bf616aA1;
+    --Aurora2-63:#d08770A1;
+    --Aurora3-63:#ebcb8bA1;
+    --Aurora4-63:#a3be8cA1;
+    --Aurora5-63:#b48eadA1;
+
+    /* OPACITY - 64%*/
+    --PolarNight1-64:#2e3440A3;
+    --PolarNight2-64:#3b4252A3;
+    --PolarNight3-64:#434c5eA3;
+    --PolarNight4-64:#4c566aA3;
+
+    --SnowStorm1-64:#d8dee9A3;
+    --SnowStorm2-64:#e5e9f0A3;
+    --SnowStorm3-64:#eceff4A3;
+
+    --Frost1-64:#8fbcbbA3;
+    --Frost2-64:#88c0d0A3;
+    --Frost3-64:#81a1c1A3;
+    --Frost4-64:#5e81acA3;
+
+    --Aurora1-64:#bf616aA3;
+    --Aurora2-64:#d08770A3;
+    --Aurora3-64:#ebcb8bA3;
+    --Aurora4-64:#a3be8cA3;
+    --Aurora5-64:#b48eadA3;
+
+    /* OPACITY - 65%*/
+    --PolarNight1-65:#2e3440A6;
+    --PolarNight2-65:#3b4252A6;
+    --PolarNight3-65:#434c5eA6;
+    --PolarNight4-65:#4c566aA6;
+
+    --SnowStorm1-65:#d8dee9A6;
+    --SnowStorm2-65:#e5e9f0A6;
+    --SnowStorm3-65:#eceff4A6;
+
+    --Frost1-65:#8fbcbbA6;
+    --Frost2-65:#88c0d0A6;
+    --Frost3-65:#81a1c1A6;
+    --Frost4-65:#5e81acA6;
+
+    --Aurora1-65:#bf616aA6;
+    --Aurora2-65:#d08770A6;
+    --Aurora3-65:#ebcb8bA6;
+    --Aurora4-65:#a3be8cA6;
+    --Aurora5-65:#b48eadA6;
+
+    /* OPACITY - 66%*/
+    --PolarNight1-66:#2e3440A8;
+    --PolarNight2-66:#3b4252A8;
+    --PolarNight3-66:#434c5eA8;
+    --PolarNight4-66:#4c566aA8;
+
+    --SnowStorm1-66:#d8dee9A8;
+    --SnowStorm2-66:#e5e9f0A8;
+    --SnowStorm3-66:#eceff4A8;
+
+    --Frost1-66:#8fbcbbA8;
+    --Frost2-66:#88c0d0A8;
+    --Frost3-66:#81a1c1A8;
+    --Frost4-66:#5e81acA8;
+
+    --Aurora1-66:#bf616aA8;
+    --Aurora2-66:#d08770A8;
+    --Aurora3-66:#ebcb8bA8;
+    --Aurora4-66:#a3be8cA8;
+    --Aurora5-66:#b48eadA8;
+
+    /* OPACITY - 67%*/
+    --PolarNight1-67:#2e3440AB;
+    --PolarNight2-67:#3b4252AB;
+    --PolarNight3-67:#434c5eAB;
+    --PolarNight4-67:#4c566aAB;
+
+    --SnowStorm1-67:#d8dee9AB;
+    --SnowStorm2-67:#e5e9f0AB;
+    --SnowStorm3-67:#eceff4AB;
+
+    --Frost1-67:#8fbcbbAB;
+    --Frost2-67:#88c0d0AB;
+    --Frost3-67:#81a1c1AB;
+    --Frost4-67:#5e81acAB;
+
+    --Aurora1-67:#bf616aAB;
+    --Aurora2-67:#d08770AB;
+    --Aurora3-67:#ebcb8bAB;
+    --Aurora4-67:#a3be8cAB;
+    --Aurora5-67:#b48eadAB;
+
+    /* OPACITY - 68%*/
+    --PolarNight1-68:#2e3440AD;
+    --PolarNight2-68:#3b4252AD;
+    --PolarNight3-68:#434c5eAD;
+    --PolarNight4-68:#4c566aAD;
+
+    --SnowStorm1-68:#d8dee9AD;
+    --SnowStorm2-68:#e5e9f0AD;
+    --SnowStorm3-68:#eceff4AD;
+
+    --Frost1-68:#8fbcbbAD;
+    --Frost2-68:#88c0d0AD;
+    --Frost3-68:#81a1c1AD;
+    --Frost4-68:#5e81acAD;
+
+    --Aurora1-68:#bf616aAD;
+    --Aurora2-68:#d08770AD;
+    --Aurora3-68:#ebcb8bAD;
+    --Aurora4-68:#a3be8cAD;
+    --Aurora5-68:#b48eadAD;
+
+    /* OPACITY - 69%*/
+    --PolarNight1-69:#2e3440B0;
+    --PolarNight2-69:#3b4252B0;
+    --PolarNight3-69:#434c5eB0;
+    --PolarNight4-69:#4c566aB0;
+
+    --SnowStorm1-69:#d8dee9B0;
+    --SnowStorm2-69:#e5e9f0B0;
+    --SnowStorm3-69:#eceff4B0;
+
+    --Frost1-69:#8fbcbbB0;
+    --Frost2-69:#88c0d0B0;
+    --Frost3-69:#81a1c1B0;
+    --Frost4-69:#5e81acB0;
+
+    --Aurora1-69:#bf616aB0;
+    --Aurora2-69:#d08770B0;
+    --Aurora3-69:#ebcb8bB0;
+    --Aurora4-69:#a3be8cB0;
+    --Aurora5-69:#b48eadB0;
+
+
+    /* OPACITY - 70%*/
+    --PolarNight1-70:#2e3440B3;
+    --PolarNight2-70:#3b4252B3;
+    --PolarNight3-70:#434c5eB3;
+    --PolarNight4-70:#4c566aB3;
+
+    --SnowStorm1-70:#d8dee9B3;
+    --SnowStorm2-70:#e5e9f0B3;
+    --SnowStorm3-70:#eceff4B3;
+
+    --Frost1-70:#8fbcbbB3;
+    --Frost2-70:#88c0d0B3;
+    --Frost3-70:#81a1c1B3;
+    --Frost4-70:#5e81acB3;
+
+    --Aurora1-70:#bf616aB3;
+    --Aurora2-70:#d08770B3;
+    --Aurora3-70:#ebcb8bB3;
+    --Aurora4-70:#a3be8cB3;
+    --Aurora5-70:#b48eadB3;
+
+    /* OPACITY - 71%*/
+    --PolarNight1-71:#2e3440B5;
+    --PolarNight2-71:#3b4252B5;
+    --PolarNight3-71:#434c5eB5;
+    --PolarNight4-71:#4c566aB5;
+
+    --SnowStorm1-71:#d8dee9B5;
+    --SnowStorm2-71:#e5e9f0B5;
+    --SnowStorm3-71:#eceff4B5;
+
+    --Frost1-71:#8fbcbbB5;
+    --Frost2-71:#88c0d0B5;
+    --Frost3-71:#81a1c1B5;
+    --Frost4-71:#5e81acB5;
+
+    --Aurora1-71:#bf616aB5;
+    --Aurora2-71:#d08770B5;
+    --Aurora3-71:#ebcb8bB5;
+    --Aurora4-71:#a3be8cB5;
+    --Aurora5-71:#b48eadB5;
+
+    /* OPACITY - 72%*/
+    --PolarNight1-72:#2e3440B8;
+    --PolarNight2-72:#3b4252B8;
+    --PolarNight3-72:#434c5eB8;
+    --PolarNight4-72:#4c566aB8;
+
+    --SnowStorm1-72:#d8dee9B8;
+    --SnowStorm2-72:#e5e9f0B8;
+    --SnowStorm3-72:#eceff4B8;
+
+    --Frost1-72:#8fbcbbB8;
+    --Frost2-72:#88c0d0B8;
+    --Frost3-72:#81a1c1B8;
+    --Frost4-72:#5e81acB8;
+
+    --Aurora1-72:#bf616aB8;
+    --Aurora2-72:#d08770B8;
+    --Aurora3-72:#ebcb8bB8;
+    --Aurora4-72:#a3be8cB8;
+    --Aurora5-72:#b48eadB8;
+
+    /* OPACITY - 73%*/
+    --PolarNight1-73:#2e3440BA;
+    --PolarNight2-73:#3b4252BA;
+    --PolarNight3-73:#434c5eBA;
+    --PolarNight4-73:#4c566aBA;
+
+    --SnowStorm1-73:#d8dee9BA;
+    --SnowStorm2-73:#e5e9f0BA;
+    --SnowStorm3-73:#eceff4BA;
+
+    --Frost1-73:#8fbcbbBA;
+    --Frost2-73:#88c0d0BA;
+    --Frost3-73:#81a1c1BA;
+    --Frost4-73:#5e81acBA;
+
+    --Aurora1-73:#bf616aBA;
+    --Aurora2-73:#d08770BA;
+    --Aurora3-73:#ebcb8bBA;
+    --Aurora4-73:#a3be8cBA;
+    --Aurora5-73:#b48eadBA;
+
+    /* OPACITY - 74%*/
+    --PolarNight1-74:#2e3440BD;
+    --PolarNight2-74:#3b4252BD;
+    --PolarNight3-74:#434c5eBD;
+    --PolarNight4-74:#4c566aBD;
+
+    --SnowStorm1-74:#d8dee9BD;
+    --SnowStorm2-74:#e5e9f0BD;
+    --SnowStorm3-74:#eceff4BD;
+
+    --Frost1-74:#8fbcbbBD;
+    --Frost2-74:#88c0d0BD;
+    --Frost3-74:#81a1c1BD;
+    --Frost4-74:#5e81acBD;
+
+    --Aurora1-74:#bf616aBD;
+    --Aurora2-74:#d08770BD;
+    --Aurora3-74:#ebcb8bBD;
+    --Aurora4-74:#a3be8cBD;
+    --Aurora5-74:#b48eadBD;
+
+    /* OPACITY - 75%*/
+    --PolarNight1-75:#2e3440BF;
+    --PolarNight2-75:#3b4252BF;
+    --PolarNight3-75:#434c5eBF;
+    --PolarNight4-75:#4c566aBF;
+
+    --SnowStorm1-75:#d8dee9BF;
+    --SnowStorm2-75:#e5e9f0BF;
+    --SnowStorm3-75:#eceff4BF;
+
+    --Frost1-75:#8fbcbbBF;
+    --Frost2-75:#88c0d0BF;
+    --Frost3-75:#81a1c1BF;
+    --Frost4-75:#5e81acBF;
+
+    --Aurora1-75:#bf616aBF;
+    --Aurora2-75:#d08770BF;
+    --Aurora3-75:#ebcb8bBF;
+    --Aurora4-75:#a3be8cBF;
+    --Aurora5-75:#b48eadBF;
+
+    /* OPACITY - 76%*/
+    --PolarNight1-76:#2e3440C2;
+    --PolarNight2-76:#3b4252C2;
+    --PolarNight3-76:#434c5eC2;
+    --PolarNight4-76:#4c566aC2;
+
+    --SnowStorm1-76:#d8dee9C2;
+    --SnowStorm2-76:#e5e9f0C2;
+    --SnowStorm3-76:#eceff4C2;
+
+    --Frost1-76:#8fbcbbC2;
+    --Frost2-76:#88c0d0C2;
+    --Frost3-76:#81a1c1C2;
+    --Frost4-76:#5e81acC2;
+
+    --Aurora1-76:#bf616aC2;
+    --Aurora2-76:#d08770C2;
+    --Aurora3-76:#ebcb8bC2;
+    --Aurora4-76:#a3be8cC2;
+    --Aurora5-76:#b48eadC2;
+
+    /* OPACITY - 77%*/
+    --PolarNight1-77:#2e3440C4;
+    --PolarNight2-77:#3b4252C4;
+    --PolarNight3-77:#434c5eC4;
+    --PolarNight4-77:#4c566aC4;
+
+    --SnowStorm1-77:#d8dee9C4;
+    --SnowStorm2-77:#e5e9f0C4;
+    --SnowStorm3-77:#eceff4C4;
+
+    --Frost1-77:#8fbcbbC4;
+    --Frost2-77:#88c0d0C4;
+    --Frost3-77:#81a1c1C4;
+    --Frost4-77:#5e81acC4;
+
+    --Aurora1-77:#bf616aC4;
+    --Aurora2-77:#d08770C4;
+    --Aurora3-77:#ebcb8bC4;
+    --Aurora4-77:#a3be8cC4;
+    --Aurora5-77:#b48eadC4;
+
+    /* OPACITY - 78%*/
+    --PolarNight1-78:#2e3440C7;
+    --PolarNight2-78:#3b4252C7;
+    --PolarNight3-78:#434c5eC7;
+    --PolarNight4-78:#4c566aC7;
+
+    --SnowStorm1-78:#d8dee9C7;
+    --SnowStorm2-78:#e5e9f0C7;
+    --SnowStorm3-78:#eceff4C7;
+
+    --Frost1-78:#8fbcbbC7;
+    --Frost2-78:#88c0d0C7;
+    --Frost3-78:#81a1c1C7;
+    --Frost4-78:#5e81acC7;
+
+    --Aurora1-78:#bf616aC7;
+    --Aurora2-78:#d08770C7;
+    --Aurora3-78:#ebcb8bC7;
+    --Aurora4-78:#a3be8cC7;
+    --Aurora5-78:#b48eadC7;
+
+    /* OPACITY - 79%*/
+    --PolarNight1-79:#2e3440C9;
+    --PolarNight2-79:#3b4252C9;
+    --PolarNight3-79:#434c5eC9;
+    --PolarNight4-79:#4c566aC9;
+
+    --SnowStorm1-79:#d8dee9C9;
+    --SnowStorm2-79:#e5e9f0C9;
+    --SnowStorm3-79:#eceff4C9;
+
+    --Frost1-79:#8fbcbbC9;
+    --Frost2-79:#88c0d0C9;
+    --Frost3-79:#81a1c1C9;
+    --Frost4-79:#5e81acC9;
+
+    --Aurora1-79:#bf616aC9;
+    --Aurora2-79:#d08770C9;
+    --Aurora3-79:#ebcb8bC9;
+    --Aurora4-79:#a3be8cC9;
+    --Aurora5-79:#b48eadC9;
+
+
+    /* OPACITY - 80%*/
+    --PolarNight1-80:#2e3440CC;
+    --PolarNight2-80:#3b4252CC;
+    --PolarNight3-80:#434c5eCC;
+    --PolarNight4-80:#4c566aCC;
+
+    --SnowStorm1-80:#d8dee9CC;
+    --SnowStorm2-80:#e5e9f0CC;
+    --SnowStorm3-80:#eceff4CC;
+
+    --Frost1-80:#8fbcbbCC;
+    --Frost2-80:#88c0d0CC;
+    --Frost3-80:#81a1c1CC;
+    --Frost4-80:#5e81acCC;
+
+    --Aurora1-80:#bf616aCC;
+    --Aurora2-80:#d08770CC;
+    --Aurora3-80:#ebcb8bCC;
+    --Aurora4-80:#a3be8cCC;
+    --Aurora5-80:#b48eadCC;
+
+    /* OPACITY - 81%*/
+    --PolarNight1-81:#2e3440CF;
+    --PolarNight2-81:#3b4252CF;
+    --PolarNight3-81:#434c5eCF;
+    --PolarNight4-81:#4c566aCF;
+
+    --SnowStorm1-81:#d8dee9CF;
+    --SnowStorm2-81:#e5e9f0CF;
+    --SnowStorm3-81:#eceff4CF;
+
+    --Frost1-81:#8fbcbbCF;
+    --Frost2-81:#88c0d0CF;
+    --Frost3-81:#81a1c1CF;
+    --Frost4-81:#5e81acCF;
+
+    --Aurora1-81:#bf616aCF;
+    --Aurora2-81:#d08770CF;
+    --Aurora3-81:#ebcb8bCF;
+    --Aurora4-81:#a3be8cCF;
+    --Aurora5-81:#b48eadCF;
+
+    /* OPACITY - 82%*/
+    --PolarNight1-82:#2e3440D1;
+    --PolarNight2-82:#3b4252D1;
+    --PolarNight3-82:#434c5eD1;
+    --PolarNight4-82:#4c566aD1;
+
+    --SnowStorm1-82:#d8dee9D1;
+    --SnowStorm2-82:#e5e9f0D1;
+    --SnowStorm3-82:#eceff4D1;
+
+    --Frost1-82:#8fbcbbD1;
+    --Frost2-82:#88c0d0D1;
+    --Frost3-82:#81a1c1D1;
+    --Frost4-82:#5e81acD1;
+
+    --Aurora1-82:#bf616aD1;
+    --Aurora2-82:#d08770D1;
+    --Aurora3-82:#ebcb8bD1;
+    --Aurora4-82:#a3be8cD1;
+    --Aurora5-82:#b48eadD1;
+
+    /* OPACITY - 83%*/
+    --PolarNight1-83:#2e3440D4;
+    --PolarNight2-83:#3b4252D4;
+    --PolarNight3-83:#434c5eD4;
+    --PolarNight4-83:#4c566aD4;
+
+    --SnowStorm1-83:#d8dee9D4;
+    --SnowStorm2-83:#e5e9f0D4;
+    --SnowStorm3-83:#eceff4D4;
+
+    --Frost1-83:#8fbcbbD4;
+    --Frost2-83:#88c0d0D4;
+    --Frost3-83:#81a1c1D4;
+    --Frost4-83:#5e81acD4;
+
+    --Aurora1-83:#bf616aD4;
+    --Aurora2-83:#d08770D4;
+    --Aurora3-83:#ebcb8bD4;
+    --Aurora4-83:#a3be8cD4;
+    --Aurora5-83:#b48eadD4;
+
+    /* OPACITY - 84%*/
+    --PolarNight1-84:#2e3440D6;
+    --PolarNight2-84:#3b4252D6;
+    --PolarNight3-84:#434c5eD6;
+    --PolarNight4-84:#4c566aD6;
+
+    --SnowStorm1-84:#d8dee9D6;
+    --SnowStorm2-84:#e5e9f0D6;
+    --SnowStorm3-84:#eceff4D6;
+
+    --Frost1-84:#8fbcbbD6;
+    --Frost2-84:#88c0d0D6;
+    --Frost3-84:#81a1c1D6;
+    --Frost4-84:#5e81acD6;
+
+    --Aurora1-84:#bf616aD6;
+    --Aurora2-84:#d08770D6;
+    --Aurora3-84:#ebcb8bD6;
+    --Aurora4-84:#a3be8cD6;
+    --Aurora5-84:#b48eadD6;
+
+    /* OPACITY - 85%*/
+    --PolarNight1-85:#2e3440D9;
+    --PolarNight2-85:#3b4252D9;
+    --PolarNight3-85:#434c5eD9;
+    --PolarNight4-85:#4c566aD9;
+
+    --SnowStorm1-85:#d8dee9D9;
+    --SnowStorm2-85:#e5e9f0D9;
+    --SnowStorm3-85:#eceff4D9;
+
+    --Frost1-85:#8fbcbbD9;
+    --Frost2-85:#88c0d0D9;
+    --Frost3-85:#81a1c1D9;
+    --Frost4-85:#5e81acD9;
+
+    --Aurora1-85:#bf616aD9;
+    --Aurora2-85:#d08770D9;
+    --Aurora3-85:#ebcb8bD9;
+    --Aurora4-85:#a3be8cD9;
+    --Aurora5-85:#b48eadD9;
+
+    /* OPACITY - 86%*/
+    --PolarNight1-86:#2e3440DB;
+    --PolarNight2-86:#3b4252DB;
+    --PolarNight3-86:#434c5eDB;
+    --PolarNight4-86:#4c566aDB;
+
+    --SnowStorm1-86:#d8dee9DB;
+    --SnowStorm2-86:#e5e9f0DB;
+    --SnowStorm3-86:#eceff4DB;
+
+    --Frost1-86:#8fbcbbDB;
+    --Frost2-86:#88c0d0DB;
+    --Frost3-86:#81a1c1DB;
+    --Frost4-86:#5e81acDB;
+
+    --Aurora1-86:#bf616aDB;
+    --Aurora2-86:#d08770DB;
+    --Aurora3-86:#ebcb8bDB;
+    --Aurora4-86:#a3be8cDB;
+    --Aurora5-86:#b48eadDB;
+
+    /* OPACITY - 87%*/
+    --PolarNight1-87:#2e3440DE;
+    --PolarNight2-87:#3b4252DE;
+    --PolarNight3-87:#434c5eDE;
+    --PolarNight4-87:#4c566aDE;
+
+    --SnowStorm1-87:#d8dee9DE;
+    --SnowStorm2-87:#e5e9f0DE;
+    --SnowStorm3-87:#eceff4DE;
+
+    --Frost1-87:#8fbcbbDE;
+    --Frost2-87:#88c0d0DE;
+    --Frost3-87:#81a1c1DE;
+    --Frost4-87:#5e81acDE;
+
+    --Aurora1-87:#bf616aDE;
+    --Aurora2-87:#d08770DE;
+    --Aurora3-87:#ebcb8bDE;
+    --Aurora4-87:#a3be8cDE;
+    --Aurora5-87:#b48eadDE;
+
+    /* OPACITY - 88%*/
+    --PolarNight1-88:#2e3440E0;
+    --PolarNight2-88:#3b4252E0;
+    --PolarNight3-88:#434c5eE0;
+    --PolarNight4-88:#4c566aE0;
+
+    --SnowStorm1-88:#d8dee9E0;
+    --SnowStorm2-88:#e5e9f0E0;
+    --SnowStorm3-88:#eceff4E0;
+
+    --Frost1-88:#8fbcbbE0;
+    --Frost2-88:#88c0d0E0;
+    --Frost3-88:#81a1c1E0;
+    --Frost4-88:#5e81acE0;
+
+    --Aurora1-88:#bf616aE0;
+    --Aurora2-88:#d08770E0;
+    --Aurora3-88:#ebcb8bE0;
+    --Aurora4-88:#a3be8cE0;
+    --Aurora5-88:#b48eadE0;
+
+    /* OPACITY - 89%*/
+    --PolarNight1-89:#2e3440E3;
+    --PolarNight2-89:#3b4252E3;
+    --PolarNight3-89:#434c5eE3;
+    --PolarNight4-89:#4c566aE3;
+
+    --SnowStorm1-89:#d8dee9E3;
+    --SnowStorm2-89:#e5e9f0E3;
+    --SnowStorm3-89:#eceff4E3;
+
+    --Frost1-89:#8fbcbbE3;
+    --Frost2-89:#88c0d0E3;
+    --Frost3-89:#81a1c1E3;
+    --Frost4-89:#5e81acE3;
+
+    --Aurora1-89:#bf616aE3;
+    --Aurora2-89:#d08770E3;
+    --Aurora3-89:#ebcb8bE3;
+    --Aurora4-89:#a3be8cE3;
+    --Aurora5-89:#b48eadE3;
+
+
+    /* OPACITY - 90%*/
+    --PolarNight1-90:#2e3440E6;
+    --PolarNight2-90:#3b4252E6;
+    --PolarNight3-90:#434c5eE6;
+    --PolarNight4-90:#4c566aE6;
+
+    --SnowStorm1-90:#d8dee9E6;
+    --SnowStorm2-90:#e5e9f0E6;
+    --SnowStorm3-90:#eceff4E6;
+
+    --Frost1-90:#8fbcbbE6;
+    --Frost2-90:#88c0d0E6;
+    --Frost3-90:#81a1c1E6;
+    --Frost4-90:#5e81acE6;
+
+    --Aurora1-90:#bf616aE6;
+    --Aurora2-90:#d08770E6;
+    --Aurora3-90:#ebcb8bE6;
+    --Aurora4-90:#a3be8cE6;
+    --Aurora5-90:#b48eadE6;
+
+    /* OPACITY - 91%*/
+    --PolarNight1-91:#2e3440E8;
+    --PolarNight2-91:#3b4252E8;
+    --PolarNight3-91:#434c5eE8;
+    --PolarNight4-91:#4c566aE8;
+
+    --SnowStorm1-91:#d8dee9E8;
+    --SnowStorm2-91:#e5e9f0E8;
+    --SnowStorm3-91:#eceff4E8;
+
+    --Frost1-91:#8fbcbbE8;
+    --Frost2-91:#88c0d0E8;
+    --Frost3-91:#81a1c1E8;
+    --Frost4-91:#5e81acE8;
+
+    --Aurora1-91:#bf616aE8;
+    --Aurora2-91:#d08770E8;
+    --Aurora3-91:#ebcb8bE8;
+    --Aurora4-91:#a3be8cE8;
+    --Aurora5-91:#b48eadE8;
+
+    /* OPACITY - 92%*/
+    --PolarNight1-92:#2e3440EB;
+    --PolarNight2-92:#3b4252EB;
+    --PolarNight3-92:#434c5eEB;
+    --PolarNight4-92:#4c566aEB;
+
+    --SnowStorm1-92:#d8dee9EB;
+    --SnowStorm2-92:#e5e9f0EB;
+    --SnowStorm3-92:#eceff4EB;
+
+    --Frost1-92:#8fbcbbEB;
+    --Frost2-92:#88c0d0EB;
+    --Frost3-92:#81a1c1EB;
+    --Frost4-92:#5e81acEB;
+
+    --Aurora1-92:#bf616aEB;
+    --Aurora2-92:#d08770EB;
+    --Aurora3-92:#ebcb8bEB;
+    --Aurora4-92:#a3be8cEB;
+    --Aurora5-92:#b48eadEB;
+
+    /* OPACITY - 93%*/
+    --PolarNight1-93:#2e3440ED;
+    --PolarNight2-93:#3b4252ED;
+    --PolarNight3-93:#434c5eED;
+    --PolarNight4-93:#4c566aED;
+
+    --SnowStorm1-93:#d8dee9ED;
+    --SnowStorm2-93:#e5e9f0ED;
+    --SnowStorm3-93:#eceff4ED;
+
+    --Frost1-93:#8fbcbbED;
+    --Frost2-93:#88c0d0ED;
+    --Frost3-93:#81a1c1ED;
+    --Frost4-93:#5e81acED;
+
+    --Aurora1-93:#bf616aED;
+    --Aurora2-93:#d08770ED;
+    --Aurora3-93:#ebcb8bED;
+    --Aurora4-93:#a3be8cED;
+    --Aurora5-93:#b48eadED;
+
+    /* OPACITY - 94%*/
+    --PolarNight1-94:#2e3440F0;
+    --PolarNight2-94:#3b4252F0;
+    --PolarNight3-94:#434c5eF0;
+    --PolarNight4-94:#4c566aF0;
+
+    --SnowStorm1-94:#d8dee9F0;
+    --SnowStorm2-94:#e5e9f0F0;
+    --SnowStorm3-94:#eceff4F0;
+
+    --Frost1-94:#8fbcbbF0;
+    --Frost2-94:#88c0d0F0;
+    --Frost3-94:#81a1c1F0;
+    --Frost4-94:#5e81acF0;
+
+    --Aurora1-94:#bf616aF0;
+    --Aurora2-94:#d08770F0;
+    --Aurora3-94:#ebcb8bF0;
+    --Aurora4-94:#a3be8cF0;
+    --Aurora5-94:#b48eadF0;
+
+    /* OPACITY - 95%*/
+    --PolarNight1-95:#2e3440F2;
+    --PolarNight2-95:#3b4252F2;
+    --PolarNight3-95:#434c5eF2;
+    --PolarNight4-95:#4c566aF2;
+
+    --SnowStorm1-95:#d8dee9F2;
+    --SnowStorm2-95:#e5e9f0F2;
+    --SnowStorm3-95:#eceff4F2;
+
+    --Frost1-95:#8fbcbbF2;
+    --Frost2-95:#88c0d0F2;
+    --Frost3-95:#81a1c1F2;
+    --Frost4-95:#5e81acF2;
+
+    --Aurora1-95:#bf616aF2;
+    --Aurora2-95:#d08770F2;
+    --Aurora3-95:#ebcb8bF2;
+    --Aurora4-95:#a3be8cF2;
+    --Aurora5-95:#b48eadF2;
+
+    /* OPACITY - 96%*/
+    --PolarNight1-96:#2e3440F5;
+    --PolarNight2-96:#3b4252F5;
+    --PolarNight3-96:#434c5eF5;
+    --PolarNight4-96:#4c566aF5;
+
+    --SnowStorm1-96:#d8dee9F5;
+    --SnowStorm2-96:#e5e9f0F5;
+    --SnowStorm3-96:#eceff4F5;
+
+    --Frost1-96:#8fbcbbF5;
+    --Frost2-96:#88c0d0F5;
+    --Frost3-96:#81a1c1F5;
+    --Frost4-96:#5e81acF5;
+
+    --Aurora1-96:#bf616aF5;
+    --Aurora2-96:#d08770F5;
+    --Aurora3-96:#ebcb8bF5;
+    --Aurora4-96:#a3be8cF5;
+    --Aurora5-96:#b48eadF5;
+
+    /* OPACITY - 97%*/
+    --PolarNight1-97:#2e3440F7;
+    --PolarNight2-97:#3b4252F7;
+    --PolarNight3-97:#434c5eF7;
+    --PolarNight4-97:#4c566aF7;
+
+    --SnowStorm1-97:#d8dee9F7;
+    --SnowStorm2-97:#e5e9f0F7;
+    --SnowStorm3-97:#eceff4F7;
+
+    --Frost1-97:#8fbcbbF7;
+    --Frost2-97:#88c0d0F7;
+    --Frost3-97:#81a1c1F7;
+    --Frost4-97:#5e81acF7;
+
+    --Aurora1-97:#bf616aF7;
+    --Aurora2-97:#d08770F7;
+    --Aurora3-97:#ebcb8bF7;
+    --Aurora4-97:#a3be8cF7;
+    --Aurora5-97:#b48eadF7;
+
+    /* OPACITY - 98%*/
+    --PolarNight1-98:#2e3440FA;
+    --PolarNight2-98:#3b4252FA;
+    --PolarNight3-98:#434c5eFA;
+    --PolarNight4-98:#4c566aFA;
+
+    --SnowStorm1-98:#d8dee9FA;
+    --SnowStorm2-98:#e5e9f0FA;
+    --SnowStorm3-98:#eceff4FA;
+
+    --Frost1-98:#8fbcbbFA;
+    --Frost2-98:#88c0d0FA;
+    --Frost3-98:#81a1c1FA;
+    --Frost4-98:#5e81acFA;
+
+    --Aurora1-98:#bf616aFA;
+    --Aurora2-98:#d08770FA;
+    --Aurora3-98:#ebcb8bFA;
+    --Aurora4-98:#a3be8cFA;
+    --Aurora5-98:#b48eadFA;
+
+    /* OPACITY - 99%*/
+    --PolarNight1-99:#2e3440FC;
+    --PolarNight2-99:#3b4252FC;
+    --PolarNight3-99:#434c5eFC;
+    --PolarNight4-99:#4c566aFC;
+
+    --SnowStorm1-99:#d8dee9FC;
+    --SnowStorm2-99:#e5e9f0FC;
+    --SnowStorm3-99:#eceff4FC;
+
+    --Frost1-99:#8fbcbbFC;
+    --Frost2-99:#88c0d0FC;
+    --Frost3-99:#81a1c1FC;
+    --Frost4-99:#5e81acFC;
+
+    --Aurora1-99:#bf616aFC;
+    --Aurora2-99:#d08770FC;
+    --Aurora3-99:#ebcb8bFC;
+    --Aurora4-99:#a3be8cFC;
+    --Aurora5-99:#b48eadFC;
+
+    /* OPACITY - 100%*/
+    --PolarNight1-100:#2e3440FF;
+    --PolarNight2-100:#3b4252FF;
+    --PolarNight3-100:#434c5eFF;
+    --PolarNight4-100:#4c566aFF;
+
+    --SnowStorm1-100:#d8dee9FF;
+    --SnowStorm2-100:#e5e9f0FF;
+    --SnowStorm3-100:#eceff4FF;
+
+    --Frost1-100:#8fbcbbFF;
+    --Frost2-100:#88c0d0FF;
+    --Frost3-100:#81a1c1FF;
+    --Frost4-100:#5e81acFF;
+
+    --Aurora1-100:#bf616aFF;
+    --Aurora2-100:#d08770FF;
+    --Aurora3-100:#ebcb8bFF;
+    --Aurora4-100:#a3be8cFF;
+    --Aurora5-100:#b48eadFF;
+
+}

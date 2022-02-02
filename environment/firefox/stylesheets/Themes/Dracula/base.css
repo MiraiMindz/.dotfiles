@@ -1,0 +1,10 @@
+@import url(ColorBank.css);
+@import url(./Imported/ConnectionTypeColors.css);
+@import url(urlbar.css);
+@import url(navbar.css);
+@import url(tabsbar.css);
+@import url(popuppanels.css);
+
+:root {
+    --focus-outline-color: var(--Pink-100) !important;
+}
