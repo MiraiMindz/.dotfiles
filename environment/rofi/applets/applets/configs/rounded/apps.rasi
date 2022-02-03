@@ -29,6 +29,8 @@ window {
 	width:							500px;
     x-offset:                       -15px;
     y-offset:                       -45px;
+    border:                         2px;
+    border-color:                  	@accent;
 }
 
 prompt {
