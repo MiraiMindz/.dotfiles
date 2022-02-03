@@ -215,6 +215,10 @@ exec_always --no-startup-id hideIt.sh -w --name '^Polybar tray window$' --region
 ### Screenshot
 bindsym Print exec bash $HOME/.config/rofi/bin/menu_screenshot
 
+### Systray Indicators
+exec_always --no-startup-id kdeconnect-indicator
+exec_always --no-startup-id polychromatic-tray-applet
+
 ### Color Scheme
 set $bgcolor50 	#2e344080
 set $bgcolor 	#2e3440
