@@ -38,7 +38,7 @@
     foreground_color = "#D8DEE9"
     show_titlebar = False
     scrollbar_position = hidden
-    palette = "#3B4252:#BF616A:#A3BE8C:#D08770:#5E81AC:#c792ea:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#5E81AC:#c792ea:#88C0D0:#E5E9F0"
+    palette = "#3b4252:#bf616a:#a3be8c:#d08770:#5e81ac:#c792ea:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#5e81ac:#c792ea:#88c0d0:#e5e9f0"
     use_system_font = False
   [[Dracula]]
     background_color = "#282a36"
