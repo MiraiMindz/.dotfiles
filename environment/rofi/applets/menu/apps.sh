@@ -10,6 +10,10 @@ style="$($HOME/.config/rofi/applets/menu/style.sh)"
 dir="$HOME/.config/rofi/applets/menu/configs/$style"
 rofi_command="rofi -theme $dir/apps.rasi"
 
+if [[ -f $HOME/.dotfiles/environment/variables/.env ]]; then
+	source $HOME/.dotfiles/environment/variables/.env
+fi
+
 # Links
 files=""
 editor="﬏ "
@@ -123,9 +127,18 @@ case $chosen in
         ;;
 	$scrcpy)
 		if [[ -f $(which scrcpy) ]]; then
-			kilall -q adb &
-			notify-send "ADB" "$(adb devices -l)" &
-			scrcpy --turn-screen-off &
+			if [[ -f $HOME/.dotfiles/environment/variables/.env ]]; then
+				adb kill-server &
+				kilall -q adb &
+				scrcpy --tcpip="${ADBDEVIP}:5555" --turn-screen-off &
+				sleep 2
+				notify-send "ADB" "$(adb devices -l)" &
+			else
+				kilall -q adb &
+				notify-send "ADB" "$(adb devices -l)" &
+				sleep 2
+				scrcpy --turn-screen-off &
+			fi
 
 		else
 			msg "Scrcpy not found"
