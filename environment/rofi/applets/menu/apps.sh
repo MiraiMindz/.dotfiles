@@ -123,7 +123,10 @@ case $chosen in
         ;;
 	$scrcpy)
 		if [[ -f $(which scrcpy) ]]; then
-			scrcpy &
+			kilall -q adb &
+			notify-send "ADB" "$(adb devices -l)" &
+			scrcpy --turn-screen-off &
+
 		else
 			msg "Scrcpy not found"
 		fi
