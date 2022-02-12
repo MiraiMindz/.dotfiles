@@ -139,7 +139,6 @@ case $chosen in
 				sleep 2
 				scrcpy --turn-screen-off &
 			fi
-
 		else
 			msg "Scrcpy not found"
 		fi
