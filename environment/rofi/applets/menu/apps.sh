@@ -129,8 +129,8 @@ case $chosen in
 		if [[ -f $(which scrcpy) ]]; then
 			if [[ -f $HOME/.dotfiles/environment/variables/.env ]]; then
 				notify-send "ADB" "Connecting via WIFI" &
-				#adb kill-server &
-				#kilall -q adb &
+				killall -q adb &
+				adb kill-server &
 				adb tcpip 5555 &
 				adb connect ${ADBDEVIP}:5555
 				scrcpy --tcpip="${ADBDEVIP}:5555" --turn-screen-off &
