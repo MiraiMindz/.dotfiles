@@ -21,6 +21,7 @@ rofi=""
 quicklinks=""
 scrcpy=""
 discord=""
+music=""
 
 case $(xdg-settings get default-web-browser) in
 	"firefox.desktop")
@@ -46,7 +47,7 @@ msg() {
 }
 
 # Variable passed to rofi
-options="$rofi\n$discord\n$browser\n$editor\n$files\n$scrcpy\n$quicklinks"
+options="$rofi\n$discord\n$browser\n$editor\n$files\n$scrcpy\n$music\n$quicklinks"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Most Used" -dmenu -selected-row 0)"
 case $chosen in
@@ -129,8 +130,8 @@ case $chosen in
 		if [[ -f $(which scrcpy) ]]; then
 			if [[ -f $HOME/.dotfiles/environment/variables/.env ]]; then
 				notify-send "ADB" "Connecting via WIFI" &
-				killall -q adb &
-				adb kill-server &
+				#killall -q adb &
+				#adb kill-server &
 				adb tcpip 5555 &
 				adb connect ${ADBDEVIP}:5555
 				scrcpy --tcpip="${ADBDEVIP}:5555" --turn-screen-off &
@@ -152,6 +153,13 @@ case $chosen in
 			discord &
 		else
 			msg "Discord not found"
+		fi
+        ;;
+	$music)
+		if [[ -f $(which pragha) ]]; then
+			pragha &
+		else
+			msg "Pragha not found"
 		fi
         ;;
 esac
