@@ -225,3 +225,10 @@ function gitcmt() {
 function replaceline() {
     sed -i "$1s/.*/$2/" $3
 }
+
+function adbreset() {
+    printf "${DARK_CYAN_16_fg}Restarting ADB${NOCOLOR_16_fg}\n"
+    adb kill-server
+    killall -q adb
+    printf "${DARK_GREEN_16_fg}DONE${NOCOLOR_16_fg}\n"
+}
