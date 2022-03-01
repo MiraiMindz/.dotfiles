@@ -21,7 +21,11 @@ rofi=""
 quicklinks=""
 scrcpy=""
 discord=""
-music=""
+if [[ -f $(which spotify) ]]; then
+	music=""
+else
+	music=""
+fi
 
 case $(xdg-settings get default-web-browser) in
 	"firefox.desktop")
@@ -156,10 +160,12 @@ case $chosen in
 		fi
         ;;
 	$music)
-		if [[ -f $(which pragha) ]]; then
+		if [[ -f $(which spotify) ]]; then
+			spotify &
+		elif [[ -f $(which pragha) ]]; then
 			pragha &
 		else
-			msg "Pragha not found"
+			msg "Music Player not found"
 		fi
         ;;
 esac
