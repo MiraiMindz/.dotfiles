@@ -218,6 +218,7 @@ bindsym Print exec bash $HOME/.config/rofi/bin/menu_screenshot
 ### Systray Indicators
 exec_always --no-startup-id kdeconnect-indicator
 exec_always --no-startup-id polychromatic-tray-applet
+exec_always --no-startup-id premid
 
 ### Color Scheme
 set $bgcolor50 	#2e344080
