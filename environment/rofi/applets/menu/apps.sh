@@ -15,17 +15,13 @@ if [[ -f $HOME/.dotfiles/environment/variables/.env ]]; then
 fi
 
 # Links
-files=""
-editor="﬏ "
+confs=""
+editor="" # ﬏  
 rofi=""
 quicklinks=""
 scrcpy=""
 discord=""
-if [[ -f $(which spotify) ]]; then
-	music=""
-else
-	music=""
-fi
+music=""
 
 case $(xdg-settings get default-web-browser) in
 	"firefox.desktop")
@@ -51,30 +47,22 @@ msg() {
 }
 
 # Variable passed to rofi
-options="$rofi\n$discord\n$browser\n$editor\n$files\n$scrcpy\n$music\n$quicklinks"
+options="$rofi\n$discord\n$browser\n$editor\n$scrcpy\n$music\n$confs\n$quicklinks"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Most Used" -dmenu -selected-row 0)"
 case $chosen in
-    $files)
-		if [[ -f $(which thunar) ]]; then
-			thunar &
-		elif [[ -f $(which pcmanfm) ]]; then
-			pcmanfm &
+    $confs)
+		if [[ -f $HOME/.config/rofi/applets/menu/editors.sh ]]; then
+			sh $HOME/.config/rofi/applets/menu/confs.sh &
 		else
-			msg "Thunar not found"
+			msg "Config Managers not found"
 		fi
         ;;
     $editor)
-		if [[ -f $(which geany) ]]; then
-			geany &
-		elif [[ -f $(which leafpad) ]]; then
-			leafpad &
-		elif [[ -f $(which mousepad) ]]; then
-			mousepad &
-		elif [[ -f  $(which vscode) ]]; then
-			vscode &
+		if [[ -f $HOME/.config/rofi/applets/menu/editors.sh ]]; then
+			sh $HOME/.config/rofi/applets/menu/editors.sh &
 		else
-			msg "Code not found"
+			msg "Editor not found"
 		fi
         ;;
     $browser)
@@ -160,12 +148,10 @@ case $chosen in
 		fi
         ;;
 	$music)
-		if [[ -f $(which spotify) ]]; then
-			spotify &
-		elif [[ -f $(which pragha) ]]; then
-			pragha &
+		if [[ -f $HOME/.config/rofi/applets/menu/musicplay.sh ]]; then
+			sh $HOME/.config/rofi/applets/menu/musicplay.sh &
 		else
-			msg "Music Player not found"
+			msg "Music Players not found"
 		fi
         ;;
-esac
+	esac
