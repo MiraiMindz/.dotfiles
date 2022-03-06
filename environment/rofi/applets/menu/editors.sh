@@ -28,18 +28,22 @@ case $chosen in
     $vscode)
 		if [[ -f $(which vscode) ]]; then
             vscode &
+        else
+			msg "Visual Studio Code not found"
 		fi
         ;;
     $vim)
-		if [[ -f $(which nvim) ]]; then
-            nvim &
-        elif [[ -f $(which vim) ]]; then
-            vim &
+		if [[ -f $HOME/.config/rofi/applets/menu/vimterms.sh ]]; then
+			sh $HOME/.config/rofi/applets/menu/vimterms.sh &
+		else
+			msg "VimTerms not found"
 		fi
         ;;
     $mark)
 		if [[ -f $(which marktext) ]]; then
             marktext &
+        else
+			msg "MarkText not found"
 		fi
         ;;
 esac
