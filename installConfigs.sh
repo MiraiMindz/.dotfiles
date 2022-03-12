@@ -622,19 +622,28 @@ instTerminator() {
 
 ###   - Editors Install Functions
 instVI() {
-    printf "Installing VI\n"
+    if [[ -e $(which vi) ]]; then
+        printf "Installing VI\n"
+        if [[ -e $HOME/.exrc ]]; then
+            mkdir -v $BACKUPFOLDER/vi
+            mv -v $HOME/.exrc $BACKUPFOLDER/vi/
+            ln -v -sf $HOME/.dotfiles/editors/vi/.exrc $HOME/
+        else
+            ln -v -sf $HOME/.dotfiles/editors/vi/.exrc $HOME/
+        fi
+    fi
 }
 
-instVIM() {
-    printf "Installing VIM\n"
+instVIM() { # TODO
+    if [[ -e $(which vim) ]]; then
+        printf "Installing VIM\n"
+    fi
 }
 
-instNVIM() {
-    printf "Installing NVIM\n"
-}
-
-instVIM-NVIM-CMNS() {
-    printf "Installing VIM NVIM Commons\n"
+instNVIM() { # TODO
+    if [[ -e $(which nvim) ]]; then
+        printf "Installing NVIM\n"
+    fi
 }
 
 ###   - Apps Install Functions
@@ -753,7 +762,6 @@ doinstall() {
     instVI
     instVIM
     instNVIM
-    instVIM-NVIM-CMNS
 
     printf "Installing Apps Configs\n"
     instFirefox
