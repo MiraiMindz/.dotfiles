@@ -16,22 +16,22 @@ terminator=""
 
 # Error msg
 msg() {
-	rofi -theme "$HOME/.config/rofi/applets/styles/message.rasi" -e "$1"
+    rofi -theme "$HOME/.config/rofi/applets/styles/message.rasi" -e "$1"
 }
 
 # Variable passed to rofi
-options="$ctr\n$terminator"
+options="$terminator\n$ctr"
 
-chosen="$(echo -e "$options" | $rofi_command -p "CTR/Terminator" -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -p "Terminator/CTR" -dmenu -selected-row 0)"
 case $chosen in
     $ctr)
-		if [[ -f $(which cool-retro-term) ]]; then
+        if [[ -f $(which cool-retro-term) ]]; then
             cool-retro-term &
-		fi
+        fi
         ;;
     $terminator)
-		if [[ -f $(which terminator) ]]; then
+        if [[ -f $(which terminator) ]]; then
             terminator &
-		fi
+        fi
         ;;
 esac

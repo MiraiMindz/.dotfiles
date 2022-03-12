@@ -60,3 +60,4 @@ case $chosen in
 			msg "File Manager not found"
 		fi
         ;;
+esac
