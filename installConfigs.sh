@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-### Text Styles
+### Variables
+### - Text Styles
 DARK_BLACK='\e[30m'
 DARK_RED='\e[31m'
 DARK_GREEN='\e[32m'
@@ -36,6 +37,7 @@ TEXTSTRIKE_OFF='\e[29m'
 NOCOLOR='\e[39m'
 TEXTRESETALL='\e[m'
 
+### - Folders
 BACKUPFOLDER=$HOME/old_config_backup
 DOTFILESDIR=$HOME/.dotfiles
 
@@ -634,15 +636,58 @@ instVI() {
     fi
 }
 
-instVIM() { # TODO
+instVIM() {
     if [[ -e $(which vim) ]]; then
         printf "Installing VIM\n"
+        printf "Clearing VIM/NVIM Commons symlinks in .dotfiles\n"
+        for lnk in $(find $HOME/.dotfiles/editors/vim/vimfiles -type l -print); do
+            unlink $lnk
+        done
+        if [[ -d $HOME/.vim ]]; then
+            printf ".Vim folder found.\n"
+            mkdir -v $BACKUPFOLDER/vim
+            mkbkp $BACKUPFOLDER/vim/vim $HOME/.vim
+        fi
+        if [[ -d $HOME/vimfiles ]]; then
+            printf "Vim files folder found.\n"
+            mkbkp $BACKUPFOLDER/vim/vimfiles $HOME/vimfiles
+        fi
+        if [[ -e $HOME/.vimrc ]]; then
+            printf ".VimRC found.\n"
+            mv -v $HOME/.vimrc $BACKUPFOLDER/vim/
+        fi
+        rm -v -rf $HOME/vimfiles
+        rm -v -rf $HOME/.vim
+        for itn in $HOME/.dotfiles/editors/vim-nvim-commons/configs/*; do
+            ln -v -sf $itn $HOME/.dotfiles/editors/vim/vimfiles
+        done
+        ln -v -sf $HOME/.dotfiles/editors/vim-nvim-commons/plugins $HOME/.dotfiles/editors/vim/.vim/
+        ln -v -sf $HOME/.dotfiles/editors/vim/.vim $HOME/
+        ln -v -sf $HOME/.dotfiles/editors/vim/vimfiles $HOME/
+        ln -v -sf $HOME/.dotfiles/editors/vim/.vimrc $HOME/
     fi
 }
 
-instNVIM() { # TODO
+instNVIM() {
     if [[ -e $(which nvim) ]]; then
         printf "Installing NVIM\n"
+        printf "Clearing VIM/NVIM Commons symlinks in .dotfiles\n"
+        for lnk in $(find $HOME/.dotfiles/editors/nvim/nvimfiles -type l -print); do
+            unlink $lnk
+        done
+        for lnk in $(find $HOME/.dotfiles/editors/nvim -type l -print); do
+            unlink $lnk
+        done
+        if [[ -d $HOME/.config/nvim ]]; then
+            printf "NeoVim Config folder found.\n"
+            mkbkp $BACKUPFOLDER/nvim/ $HOME/.config/nvim
+        fi
+        for itn in $HOME/.dotfiles/editors/vim-nvim-commons/configs/*; do
+            ln -v -sf $itn $HOME/.dotfiles/editors/nvim/nvimfiles
+        done
+        rm -v -rf $HOME/.config/nvim
+        ln -v -sf $HOME/.dotfiles/editors/vim-nvim-commons/plugins $HOME/.dotfiles/editors/nvim/
+        ln -v -sf $HOME/.dotfiles/editors/nvim $HOME/.config/
     fi
 }
 
@@ -711,7 +756,7 @@ instNeofetch() {
     if [[ -e $(which neofetch) ]]; then
         printf "Installing Neofetch Configs\n"
         if [[ -d $HOME/.config/neofetch ]]; then
-            printf "%s\n" "neofetch config found, creating backup in $BACKUPFOLDER"
+            printf "neofetch config found, creating backup in $BACKUPFOLDER\n"
             mkbkp $BACKUPFOLDER/neofetch $HOME/.config/neofetch
             rmdir -v $HOME/.config/neofetch
             ln -v -sf $HOME/.dotfiles/neofetch $HOME/.config/
@@ -769,7 +814,21 @@ doinstall() {
     instNeofetch
     instCustomExecs
 
-    printf "Installation done, proceeding with the theme selection.\n"
+    printf "Installation done.\n"
+    
+    echo -e -n "Do you want to create a Git repo (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
+    old_stty_cfg=$(stty -g)
+    stty raw -echo
+    answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+    stty $old_stty_cfg
+    if echo "$answer" | grep -iq "^y" ;then
+        printf "${DARK_GREEN}Creating${TEXTRESETALL}\n"
+        initgit
+    else
+        printf "${DARK_RED}Aborting${TEXTRESETALL}\n"
+    fi
+
+    printf "Welcome to this rice theme changer.\n"
     changeRiceTheme
 }
 
