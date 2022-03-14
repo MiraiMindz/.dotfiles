@@ -5,7 +5,7 @@
 #############################################################################
 #    This script was made to make my life easy when installing Arch Linux   #
 # It will install base packages for MY USE CASE, and apply the Rice install #
-# Before using it you will need to set some stuff before, here is the list: #
+#    Before using it you will need to set some stuff, here is the list:     #
 #   - Network Connection                                                    #
 #   - Partitions                                                            #
 #                                                                           #
@@ -70,7 +70,7 @@ printf "This is the ${DARK_YELLOW}BEFORE FIRST BOOT${NOCOLOR} Script\n"
 printf "This script was made to make my life easy when installing Arch Linux\n"
 printf "It will install base packages for MY USE CASE, in this part\n"
 printf "On the After First Boot Script, that script will install my rice and my packages\n"
-printf "Before using this one you will need to set some stuff before, here is the list:\n"
+printf "Before using this one you will need to set some stuff, here is the list:\n"
 printf "    - Network Connection\n"
 printf "    - Partitions\n"
 printf "Here is some reminders of my personal pre-config\n"
@@ -123,40 +123,45 @@ sed -i "s/#pt_BR.UTF-8 UTF-8/pt_BR.UTF-8 UTF-8/" /etc/locale.gen
 locale-gen
 printf "Saving the locale in /etc/locale.conf\n"
 if [ -e /etc/locale.conf ]; then
-    echo "LANG=pt_BR.UTF-8" > /etc/locale.conf
+    echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
 else
     touch /etc/locale.conf
-    echo "LANG=pt_BR.UTF-8" > /etc/locale.conf
+    echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
 if
 printf "Saving the keyboard layout in /etc/locale.conf\n"
 if [ -e /etc/vconsole.conf ]; then
-    echo "KEYMAP=br-abnt2" > /etc/vconsole.conf
+    echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 else
     touch /etc/vconsole.conf
-    echo "KEYMAP=br-abnt2" > /etc/vconsole.conf
+    echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 if
 
 printf "Generating the hostname file\n"
 read -e -p "Enter this machine hostname: " HSTNM
-echo $HSTNM > /etc/hostname
+if [[ -e /etc/hostname ]]; then
+    echo $HSTNM >> /etc/hostname
+else
+    touch /etc/hostname
+    echo $HSTNM >> /etc/hostname
+fi
 
 printf "Generating the hosts file\n"
-echo "# =====================================" > /etc/hosts
-echo "# IPv4	Config" > /etc/hosts
-echo "127.0.0.1	localhost" > /etc/hosts
-echo "::1		localhost" > /etc/hosts
-echo "127.0.1.1	${HSTNM}.localdomain	${HSTNM}" > /etc/hosts
+echo "# =====================================" >> /etc/hosts
+echo "# IPv4	Config" >> /etc/hosts
+echo "127.0.0.1	localhost" >> /etc/hosts
+echo "::1		localhost" >> /etc/hosts
+echo "127.0.1.1	${HSTNM}.localdomain	${HSTNM}" >> /etc/hosts
 echo "127.0.0.1	local" > /etc/Hosts
-echo "# =====================================" > /etc/Hosts
-echo "::1		ip6-localhost" > /etc/Hosts
-echo "::1		ip6-loopback" > /etc/Hosts
-echo "fe80::1%lo0 	localhost" > /etc/Hosts
-echo "ff00::0		ip6-localnet" > /etc/Hosts
-echo "ff00::0		ip6-mcastprefix" > /etc/Hosts
-echo "ff02::1		ip6-allnodes" > /etc/Hosts
-echo "ff02::2		ip6-allrouters" > /etc/Hosts
-echo "ff02::3		ip6-allhosts" > /etc/Hosts
-echo "0.0.0.0		0.0.0.0" > /etc/Hosts
+echo "# =====================================" >> /etc/hosts
+echo "::1		ip6-localhost" >> /etc/hosts
+echo "::1		ip6-loopback" >> /etc/hosts
+echo "fe80::1%lo0 	localhost" >> /etc/hosts
+echo "ff00::0		ip6-localnet" >> /etc/hosts
+echo "ff00::0		ip6-mcastprefix" >> /etc/hosts
+echo "ff02::1		ip6-allnodes" >> /etc/hosts
+echo "ff02::2		ip6-allrouters" >> /etc/hosts
+echo "ff02::3		ip6-allhosts" >> /etc/hosts
+echo "0.0.0.0		0.0.0.0" >> /etc/hosts
 
 echo -e -n "Do you want to add Custom Hosts to this file too (y/n)? "
 old_stty_cfg=$(stty -g)
@@ -165,7 +170,7 @@ answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
     printf "Adding custom hosts\n"
-    curl -fL "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/MiraiHosts.txt" > /etc/Hosts
+    curl -fL "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/MiraiHosts.txt" >> /etc/hosts
 else
     printf "Proceeding with the installation\n"
 fi

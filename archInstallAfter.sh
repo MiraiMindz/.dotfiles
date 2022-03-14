@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 #############################################################################
-#                          AFTER FIRST BOOT SCRIPT                          #
+#                          BEFORE FIRST BOOT SCRIPT                         #
 #############################################################################
 #    This script was made to make my life easy when installing Arch Linux   #
 # It will install base packages for MY USE CASE, and apply the Rice install #
-# Before using it you will need to set some stuff before, here is the list: #
+#    Before using it you will need to set some stuff, here is the list:     #
 #   - Network Connection                                                    #
 #                                                                           #
 #                 So without further ado, let's get into it                 #
