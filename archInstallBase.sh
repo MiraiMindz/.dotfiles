@@ -196,6 +196,6 @@ printf "list all available networks with: ${DARK_YELLOW}station \${device} get-n
 printf "to connect to a network type: ${DARK_YELLOW}station \${device} connect \${SSID}${NOCOLOR}\n"
 printf "clone the After First Boot script with this command:\n"
 printf "${DARK_YELLOW}curl -fLo archInstallAfter.sh \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh\"${NOCOLOR}\n"
-printf "Activate internet and run the new script with: ${DARK_YELLOW}sh archInstallAfter.sh${NOCOLOR}\n"
+printf "Run the new script with: ${DARK_YELLOW}sh archInstallAfter.sh${NOCOLOR}\n"
 printf "${DARK_GREEN}Good Luck${NOCOLOR}!\n"
 exit
