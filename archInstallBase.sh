@@ -178,7 +178,6 @@ pacman -S grub networkmanager network-manager-applet dialog wireless_tools wpa_s
 
 printf "Installing bootloader\n"
 printf "Please answer the following question with the full name (/dev/sdX)\n"
-
 read -e -p "What is the name of your disk: " DSKNM
 grub-install --target=i386-pc $DSKNM
 grub-mkconfig -o /boot/grub/grub.cfg
@@ -187,7 +186,15 @@ printf "INSTRUCTIONS READ BEFORE DOING\n"
 printf "Please exit the installation media by typing: ${DARK_YELLOW}exit${NOCOLOR}\n"
 printf "unmount the partition by typing: ${DARK_YELLOW}umount -a${NOCOLOR}\n"
 printf "reboot your system by typing: ${DARK_YELLOW}reboot${NOCOLOR}\n"
-printf "after the reboot clone the after first boot script with this command:\n"
+printf "after the reboot activate the internet with this command:\n"
+printf "${DARK_YELLOW}systemctl start NetworkManager${NOCOLOR}\n"
+printf "if you are on Wi-Fi you can connect using this command: ${DARK_YELLOW}iwctl${NOCOLOR}\n"
+printf "on the [iwd]# shell you will do the following to connect into a network:\n"
+printf "list wireless devices names with: ${DARK_YELLOW}device list${NOCOLOR}\n"
+printf "scan for networks with: ${DARK_YELLOW}station \${device} scan${NOCOLOR}\n"
+printf "list all available networks with: ${DARK_YELLOW}station \${device} get-networks${NOCOLOR}\n"
+printf "to connect to a network type: ${DARK_YELLOW}station \${device} connect \${SSID}${NOCOLOR}\n"
+printf "clone the After First Boot script with this command:\n"
 printf "${DARK_YELLOW}curl -fLo archInstallAfter.sh \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh\"${NOCOLOR}\n"
 printf "Activate internet and run the new script with: ${DARK_YELLOW}sh archInstallAfter.sh${NOCOLOR}\n"
 printf "${DARK_GREEN}Good Luck${NOCOLOR}!\n"
