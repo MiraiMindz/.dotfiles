@@ -191,3 +191,4 @@ printf "after the reboot clone the after first boot script with this command:\n"
 printf "curl -fLo archInstallAfter.sh \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh\"\n"
 printf "Activate internet and run the new script with: sh archInstallAfter.sh\n"
 printf "${DARK_GREEN}Good Luck${NOCOLOR}!\n"
+exit
