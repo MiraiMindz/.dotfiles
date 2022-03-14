@@ -184,11 +184,11 @@ grub-install --target=i386-pc $DSKNM
 grub-mkconfig -o /boot/grub/grub.cfg
 
 printf "INSTRUCTIONS READ BEFORE DOING\n"
-printf "Please exit the installation media by typing: exit\n"
-printf "unmount the partition by typing: umount -a\n"
-printf "reboot your system by typing: reboot\n"
+printf "Please exit the installation media by typing: ${DARK_YELLOW}exit${NOCOLOR}\n"
+printf "unmount the partition by typing: ${DARK_YELLOW}umount -a${NOCOLOR}\n"
+printf "reboot your system by typing: ${DARK_YELLOW}reboot${NOCOLOR}\n"
 printf "after the reboot clone the after first boot script with this command:\n"
-printf "curl -fLo archInstallAfter.sh \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh\"\n"
-printf "Activate internet and run the new script with: sh archInstallAfter.sh\n"
+printf "${DARK_YELLOW}curl -fLo archInstallAfter.sh \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh\"${NOCOLOR}\n"
+printf "Activate internet and run the new script with: ${DARK_YELLOW}sh archInstallAfter.sh${NOCOLOR}\n"
 printf "${DARK_GREEN}Good Luck${NOCOLOR}!\n"
 exit
