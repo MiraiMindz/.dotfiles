@@ -123,7 +123,6 @@ yayPacmanInstall xf86-video-intel xorg pulseaudio pavucontrol xdg-user-dirs
 
 printf "Installing environment packages:\n"
 printf "Display Manager, Window Manager, Terminal, Status Bar, Compositor, Notification system, App launcher\n"
-printf "Installing SDDM display manager\n"
 yayPacmanInstall sddm i3-gaps terminator polybar-git dunst picom-ibhagwan-git rofi
 
 printf "Enabling SDDM display manager\n"

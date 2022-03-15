@@ -128,7 +128,7 @@ else
     touch /etc/locale.conf
     echo "LANG=pt_BR.UTF-8" >> /etc/locale.conf
 if
-printf "Saving the keyboard layout in /etc/locale.conf\n"
+printf "Saving the keyboard layout in /etc/vconsole.conf\n"
 if [ -e /etc/vconsole.conf ]; then
     echo "KEYMAP=br-abnt2" >> /etc/vconsole.conf
 else
