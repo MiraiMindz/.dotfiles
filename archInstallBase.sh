@@ -202,5 +202,5 @@ printf "to connect to a network type: ${DARK_YELLOW}station \${device} connect \
 printf "clone the After First Boot script with this command:\n"
 printf "${DARK_YELLOW}curl -fLo archInstallAfter.sh \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh\"${NOCOLOR}\n"
 printf "Run the new script with: ${DARK_YELLOW}sh archInstallAfter.sh${NOCOLOR}\n"
-printf "${DARK_GREEN}Good Luck${NOCOLOR}!\n"
+printf "${DARK_GREEN}Good Luck${NOCOLOR}! \n"
 exit
