@@ -121,7 +121,6 @@ rm -rf ./yay
 printf "Installing graphical drives, display server, audio mixer & user directories\n"
 yayPacmanInstall xf86-video-intel xorg pulseaudio pavucontrol xdg-user-dirs
 
-
 printf "Installing environment packages:\n"
 printf "Display Manager, Window Manager, Terminal, Status Bar, Compositor, Notification system, App launcher\n"
 printf "Installing SDDM display manager\n"
@@ -130,3 +129,4 @@ yayPacmanInstall sddm i3-gaps terminator polybar-git dunst picom-ibhagwan-git ro
 printf "Enabling SDDM display manager\n"
 systemctl enable sddm.service
 
+printf "Setting up custom use case packages\n"
