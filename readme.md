@@ -6,7 +6,10 @@ If you don't know, .dotfiles are basically configurations files in unix-like sys
 
 after setting up the base of an Arch Install (Partitions and Network Connection) you can clone my ArchInstallBase script and run it with the following command:
 
-`curl -fLo archInstallBase.sh https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallBase.sh && sh archInstallBase.sh`
+`curl -fLo archInstallBase.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallBase.sh" && sh archInstallBase.sh`
+during the install you will need to clone the other 2 scripts, here are the lines:
+`curl -fLo archInstallAfter.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh" && archInstallAfter.sh`
+`curl -fLo installConfigs.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/installConfigs.sh" && installConfigs.sh`
 
 ### Packages
 
