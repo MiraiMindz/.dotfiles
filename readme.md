@@ -2,19 +2,47 @@
 
 These are my .dotfiles :]
 
-If you don't know, .dotfiles are basically configurations files in unix-like systems
+If you don't know .dotfiles are basically configurations files in unix-like systems
 
-after setting up the bare-base of an Arch Install (Partitions and Network Connection) you can clone my ArchInstallBase script and run it with the following command:
+This branch is focused on the Arch Linux distro, this repository will contain all of the .dotfiles from my Linux user journey.
+
+## Setting things up
+
+In this section I will show how to set stuffs to install this rice
+
+### Script Install
+
+For using the scripts you will need to setup the partitioning of the disk and a network connection on the installation media
+
+My partitioning is the following:
+
+| Name | Size         | Type | Mountpoint        | Filesystem |
+|:----:|:------------:|:----:|:-----------------:|:----------:|
+| sdX  | FULL-DISK    | disk |                   |            |
+| sdXY | 4GB~12GB     | part | [SWAP]            | LINUX-SWAP |
+| sdXY | 30GB         | part | /home/${username} | EXT4       |
+| sdXY | 50GB         | part | /                 | EXT4       |
+| sdXY | REST-OF-DISK | part | /media/Arquivos   | BTRFS      |
+
+You can clone the initial script with the following command:
 
 `curl -fLo archInstallBase.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallBase.sh" && sh archInstallBase.sh`
 
-during the install you will need to clone the other 2 scripts, here are the lines:
+After the first script you will need to clone the "After First Boot" script, you can do this with the following line:
 
 `curl -fLo archInstallAfter.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh" && archInstallAfter.sh`
 
+After finishing the Arch Linux installation you can clone the install script of the rice with this line:
+
 `curl -fLo installConfigs.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/installConfigs.sh" && installConfigs.sh`
 
-### Packages
+Enjoy, any trouble or advice on this you can open an issue and I will take a look and help you.
+
+### Manual Install
+
+Work In Progress
+
+#### Packages
 
 - https://github.com/gitGNU/gnu_bash or https://github.com/zsh-users/zsh
 - https://github.com/ibhagwan/picom
@@ -29,8 +57,6 @@ during the install you will need to clone the other 2 scripts, here are the line
 - https://github.com/Peltoche/lsd
 - https://github.com/tadly/hideIt.sh
 
-### [Color Schemes](https://github.com/MiraiMindz/vim-colorschemes-collection)
+#### [Color Schemes](https://github.com/MiraiMindz/vim-colorschemes-collection)
 
 https://github.com/MiraiMindz/vim-colorschemes-collection
-
-
