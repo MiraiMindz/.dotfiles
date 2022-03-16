@@ -4,7 +4,7 @@ These are my .dotfiles :]
 
 If you don't know, .dotfiles are basically configurations files in unix-like systems
 
-after setting up the base of an Arch Install (Partitions and Network Connection) you can clone my ArchInstallBase script and run it with the following command:
+after setting up the bare-base of an Arch Install (Partitions and Network Connection) you can clone my ArchInstallBase script and run it with the following command:
 
 `curl -fLo archInstallBase.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallBase.sh" && sh archInstallBase.sh`
 
