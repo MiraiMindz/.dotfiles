@@ -23,8 +23,8 @@
 #   [x] Install Display Manager                                             #
 #   [x] Activate Display Manager                                            #
 #   [x] Install Desktop Environment / Window Manager                        #
-#   [] Install The Custom Packages                                          #
-#   [] Apply the Rice                                                       #
+#   [x] Install The Custom Packages                                         #
+#   [x] Apply the Rice                                                      #
 #############################################################################
 
 DARK_BLACK='\e[30m'
@@ -72,14 +72,16 @@ yayPacmanInstall() {
     fi
 }
 
-printf "Welcome to Mirai's Arch Linux Install Script\n"
-printf "This is the ${DARK_YELLOW}AFTER FIRST BOOT${NOCOLOR} Script\n"
-printf "This script was made to make my life easy when installing Arch Linux\n"
-printf "It will install base packages for MY USE CASE, in this part\n"
-printf "On the After First Boot Script, that script will install my rice and my packages\n"
-printf "Before using this one you will need to set some stuff, here is the list:\n"
-printf "    - Network Connection\n"
-printf "So without further ado, let's start this script\n"
+printf "┌──────────────────────────────────────────────────────────────────────────┐\n"
+printf "│               Welcome to Mirai's Arch Linux Install Script               │\n"
+printf "│ This is the ${DARK_YELLOW}AFTER FIRST BOOT${NOCOLOR} Script\t\t\t\t\t   │\n"
+printf "│ This script was made to make my life easy when installing Arch Linux     │\n"
+printf "│ It will install base packages for MY USE CASE, in this part              │\n"
+printf "│ This script will install my rice and my packages                         │\n"
+printf "│ Before using this one you will need to set some stuff, here is the list: │\n"
+printf "│   - Network Connection                                                   │\n"
+printf "│             So without further ado, let's start this script              │\n"
+printf "└──────────────────────────────────────────────────────────────────────────┘\n"
 
 printf "Enabling NetworkManager with SystemD\n"
 systemctl enable NetworkManager
@@ -119,13 +121,100 @@ cd ../
 rm -rf ./yay
 
 printf "Installing graphical drives, display server, audio mixer & user directories\n"
-yayPacmanInstall xf86-video-intel xorg pulseaudio pavucontrol xdg-user-dirs
+yayPacmanInstall xf86-video-intel xorg pipewire lib32-pipewire pipewire-pulse pavucontrol xdg-user-dirs
+systemctl enable pipewire-pulse.service
 
 printf "Installing environment packages:\n"
 printf "Display Manager, Window Manager, Terminal, Status Bar, Compositor, Notification system, App launcher\n"
-yayPacmanInstall sddm i3-gaps terminator polybar-git dunst picom-ibhagwan-git rofi
+yayPacmanInstall sddm i3-gaps terminator polybar-git dunst picom-ibhagwan-git rofi feh
 
 printf "Enabling SDDM display manager\n"
 systemctl enable sddm.service
 
-printf "Setting up custom use case packages\n"
+printf "Setting up custom use-case packages\n"
+yayPacmanInstall discord gnome-keyring archlinux-keyring cool-retro-term-git docker firefox font-manager github-cli grub-customizer hideit.sh-git lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils scrcpy sddm-theme-sugar-candy-git thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions openssh openssl shfs gvfs gvfs-mtp spectacle scrcpy perl neofetch kdeconnect indicator-kdeconnect-git btop android-file-transfer android-tools android-udev pragha spotify
+
+git clone --depth=1 https://github.com/adi1090x/rofi.git
+cd rofi
+chmod +x setup.sh
+./setup.sh
+cd ../
+rm -rf ./rofi/
+
+echo -e -n "Do you want to install Razer Drivers (y/n)? "
+old_stty_cfg=$(stty -g)
+stty raw -echo
+answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+stty $old_stty_cfg
+if echo "$answer" | grep -iq "^y" ;then
+    printf "Installing Packages\n"
+    yayPacmanInstall openrazer-daemon openrazer-driver-dkms openrazer-meta polychromatic noise-suppression-for-voice
+    gpasswd -a $USRNM plugdev
+else
+    printf "Proceeding\n"
+fi
+
+printf "Downloading net packages\n"
+if [[ -d /home/$USRNM ]];then
+    if [[ -d /home/$USRNM/Apps ]];then
+        printf "Installing Visual Studio Code.\n"
+        mkdir -p /home/$USRNM/Apps/VisualStudioCode
+        cd /home/$USRNM/Apps/VisualStudioCode
+        curl -fLo "code-stable-x64.tar.gz" "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
+        tar -xvf code-stable-x64.tar.gz
+        ln -sf ./VSCode-linux-x64/code /usr/bin/vscode
+    else
+        printf "Unable to Download & Install Visual Studio Code.\n"
+    fi
+else
+    printf "User home directory not found.\n"
+fi
+
+echo -e -n "Do you want to install additional development packages (y/n)? "
+old_stty_cfg=$(stty -g)
+stty raw -echo
+answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+stty $old_stty_cfg
+if echo "$answer" | grep -iq "^y" ;then
+    printf "Installing Packages\n"
+    yayPacmanInstall python python-pip rust go ruby java-runtime-common java-environment-common jre-openjdk jre11-openjdk jre8-openjdk jdk-openjdk jdk11-openjdk jdk8-openjdk java-openjfx java11-openjfx java8-openjfx
+    printf "Setting up Go\n"
+    if [[ -e $(which go) ]]; then
+        if [[ -d /home/$USRNM ]]; then
+            if [[ -d /home/$USRNM/go ]]; then
+                mkdir -p /home/$USRNM/go/src
+                export PATH="$PATH:/home/$USRNM/go/bin"
+                printf "Checking Go env\n"
+                go env
+            else
+                printf "Unable to set the \$GOPATH variable.\n"
+            fi
+        else
+            printf "User home directory not found.\n"
+        fi
+    fi
+else
+    printf "Proceeding\n"
+fi
+
+printf "Adding ${USRNM} to docker group\n"
+groupadd docker
+usermod -aG docker $USRNM
+printf "Enabling docker service\n"
+systemctl start docker.service
+systemctl enable docker.service
+printf "Testing docker\n"
+docker info
+printf "Installation Done.\n"
+
+printf "INSTRUCTIONS READ BEFORE DOING\n"
+printf "Reboot by typing: ${DARK_YELLOW}reboot${NOCOLOR}\n"
+printf "Select the i3 as Desktop Environment\n"
+printf "Login on your user on the SDDM Display Manager\n"
+printf "Open the Terminator terminal with the keybind: ${DARK_YELLOW}\$ModKey+Enter${NOCOLOR}\n"
+printf "Clone the Install Configs (Rice) with this command:\n"
+printf "${DARK_YELLOW}curl -fLo installConfigs.sh \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/installConfigs.sh\"${NOCOLOR}\n"
+printf "Run the new script with: ${DARK_YELLOW}sh installConfigs.sh${NOCOLOR}\n"
+printf "${DARK_GREEN}Enjoy and Good Luck${NOCOLOR}! \n"
+exit
+
