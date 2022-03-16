@@ -192,17 +192,3 @@ case $THEME in
     printf "Invalid input, try again\n"
     ;;
 esac
-
-# #setMaterialOcean
-# #setNord
-# setDracula
-
-
-
-
-
-
-
-
-
-
