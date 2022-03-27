@@ -815,7 +815,7 @@ doinstall() {
     instCustomExecs
 
     printf "Installation done.\n"
-    
+
     echo -e -n "Do you want to create a Git repo (${DARK_GREEN}y${NOCOLOR}/${DARK_RED}n${NOCOLOR})? "
     old_stty_cfg=$(stty -g)
     stty raw -echo
