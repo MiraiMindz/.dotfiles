@@ -129,12 +129,24 @@ case $chosen in
 				scrcpy --tcpip="${ADBDEVIP}:5555" --turn-screen-off &
 				sleep 2
 				notify-send "ADB" "$(adb devices -l)" &
+				notify-send "ADB" "Fowarding Audio" &
+				sleep 5
+				if [[ -e $(which sndcpy) ]]; then
+					sndcpy &
+				fi
+				notify-send "ADB" "Audio Fowarded" &
 			else
 				notify-send "ADB" "Connecting via USB" &
 				kilall -q adb &
 				notify-send "ADB" "$(adb devices -l)" &
 				sleep 2
 				scrcpy --turn-screen-off &
+				notify-send "ADB" "Fowarding Audio" &
+				sleep 5
+				if [[ -e $(which sndcpy) ]]; then
+					sndcpy &
+				fi
+				notify-send "ADB" "Audio Fowarded" &
 			fi
 		else
 			msg "Scrcpy not found"
