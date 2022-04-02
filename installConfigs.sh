@@ -107,9 +107,9 @@ createDotfiles_BackupDir() {
 checkPackages() {
     _checkPkgs() {
         if [[ -e $(which $1) ]]; then
-            printf "%s\n" "$1 is ${DARK_GREEN}INSTALLED${NOCOLOR}"
+            printf "$1 is ${DARK_GREEN}INSTALLED${NOCOLOR}\n"
         else
-            printf "%s\n" "$1 is ${DARK_RED}MISSING${NOCOLOR}"
+            printf "$1 is ${DARK_RED}MISSING${NOCOLOR}\n"
         fi
     }
     _checkPkgs "bash"
@@ -122,19 +122,19 @@ checkPackages() {
     _checkPkgs "firefox"
     _checkPkgs "neofetch"
     _checkPkgs "vim"
-    _checkPkgs "neovim"
+    _checkPkgs "nvim"
     _checkPkgs "vi"
     _checkPkgs "rofi"
     if [[ -d $HOME/.config/rofi ]]; then
-        printf "%s\n" "Rofi Applets is ${DARK_GREEN}INSTALLED${NOCOLOR}"
+        printf "Rofi Applets is ${DARK_GREEN}INSTALLED${NOCOLOR}\n"
     else
-        printf "%s\n" "Rofi Applets is ${DARK_RED}MISSING${NOCOLOR}"
+        printf "Rofi Applets is ${DARK_RED}MISSING${NOCOLOR}\n"
     fi
     _checkPkgs "sddm"
     if [[ -d /usr/share/sddm/themes/Sugar-Candy ]]; then
-        printf "%s\n" "SDDM Sugar Candy Theme is ${DARK_GREEN}INSTALLED${NOCOLOR}"
+        printf "SDDM Sugar Candy Theme is ${DARK_GREEN}INSTALLED${NOCOLOR}\n"
     else
-        printf "%s\n" "SDDM Sugar Candy Theme is ${DARK_RED}MISSING${NOCOLOR}"
+        printf "SDDM Sugar Candy Theme is ${DARK_RED}MISSING${NOCOLOR}\n"
     fi
 }
 
@@ -337,7 +337,7 @@ changeRiceTheme() {
 ###   - Environment Install Functions
 instI3wm() {
     if [[ -e $(which i3) ]]; then
-        printf "Installing i3WM\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} i3WM\n"
         if [[ -d $HOME/.config/i3 ]]; then
             printf "%s\n" "i3 config found, creating backup in $BACKUPFOLDER/"
             mkbkp $BACKUPFOLDER/i3wm $HOME/.config/i3
@@ -352,7 +352,7 @@ instI3wm() {
 
 instPoly() {
     if [[ -e $(which polybar) ]]; then
-        printf "Installing Polybar\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} Polybar\n"
         if [[ -e $HOME/.config/polybar ]]; then
             printf "%s\n" "polybar config found, creating backup in $BACKUPFOLDER/"
             mkbkp $BACKUPFOLDER/polybar $HOME/.config/polybar
@@ -367,14 +367,14 @@ instPoly() {
 
 instDunst() {
     if [[ -e $(which dunst) ]]; then
-        printf "Installing Dunst\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} Dunst\n"
         printf "You will be prompted to select a Rice theme in the end of the script.\n"
     fi
 }
 
 instPicom() {
     if [[ -e $(which picom) ]]; then
-        printf "Installing Picom\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} Picom\n"
         if [[ -d $HOME/.config/picom ]]; then
             printf "%s\n" "picom config found, creating backup in $BACKUPFOLDER/"
             mkbkp $BACKUPFOLDER/picom $HOME/.config/picom
@@ -389,7 +389,7 @@ instPicom() {
 
 instRofi() {
     if [[ -e $(which rofi) ]]; then
-        printf "Installing Rofi\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} Rofi\n"
         if [[ -d /usr/share/rofi/themes ]];
             printf "%s\n" "the rofi themes resides in the ${DARK_YELLOW}/usr${NOCOLOR} folder, to install these themes we will need the sudo permission"
             sudo rmdir -v /usr/share/rofi/themes
@@ -399,7 +399,7 @@ instRofi() {
         fi
 
         if [[ -d $HOME/.config/rofi ]]; then
-            printf "Installing Rofi Applets Config\n"
+            printf "${DARK_GREEN}Installing${NOCOLOR} Rofi Applets Config\n"
             rm -rf $HOME/.config/rofi/*
             ln -v -sf $HOME/.dotfiles/environment/rofi/applets $HOME/.config/rofi/
             ln -v -sf $HOME/.dotfiles/environment/rofi/bin $HOME/.config/rofi/
@@ -433,7 +433,7 @@ instSDDM() {
 ###   - Shells Install Functions
 instShells(){
     _instBASH() {
-        printf "Installing BASH Configs\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} BASH Configs\n"
         if [[ -d $HOME/.bash ]]; then
             mkbkp $BACKUPFOLDER/bash $HOME/.bash
             rm -v -rf $HOME/.bash/*
@@ -466,7 +466,7 @@ instShells(){
     }
 
     _instZSH() {
-        printf "Installing ZSH Configs\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} ZSH Configs\n"
         if [[ -d $HOME/.zsh ]]; then
             mkbkp $BACKUPFOLDER/zsh $HOME/.zsh
             rm -v -rf $HOME/.zsh/*
@@ -575,7 +575,7 @@ instShells(){
 ###   - Terminals Install Functions
 instCRT() {
     if [[ -e $(which cool-retro-term) ]]; then
-        printf "Installing Cool Retro Term\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} Cool Retro Term\n"
         if [[ -e /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme ]]; then
             sudo rm /usr/lib/qt/qml/QMLTermWidget/color-schemes/cool-retro-term.colorscheme
             printf "Please select one of these themes:\n"
@@ -602,14 +602,14 @@ instCRT() {
             ;;
             esac
         fi
-        printf "%s\n" "If you want another theme, run the changeTheme script in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR}"
-        printf "%s\n" "Or if you want you can read the readme.md in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR} or in ${DARK_BLUE}https://github.com/MiraiMindz/.dotfiles/tree/main/terminals/cool-retro-term#readme${NOCOLOR}"
+        printf "If you want another theme, run the changeTheme script in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR}\n"
+        printf "Or if you want you can read the readme.md in ${DARK_YELLOW}$HOME/.dotfiles/terminals/cool-retro-term/${NOCOLOR} or in ${DARK_BLUE}https://github.com/MiraiMindz/.dotfiles/tree/main/terminals/cool-retro-term#readme${NOCOLOR}\n"
     fi
 }
 
 instTerminator() {
     if [[ -e $(which terminator) ]]; then
-        printf "Installing Terminator\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} Terminator\n"
         if [[ -d $HOME/.config/terminator ]]; then
             printf "%s\n" "terminator config found, creating backup in $BACKUPFOLDER/"
             mkbkp $BACKUPFOLDER/terminator $HOME/.config/terminator
@@ -625,7 +625,7 @@ instTerminator() {
 ###   - Editors Install Functions
 instVI() {
     if [[ -e $(which vi) ]]; then
-        printf "Installing VI\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} VI\n"
         if [[ -e $HOME/.exrc ]]; then
             mkdir -v $BACKUPFOLDER/vi
             mv -v $HOME/.exrc $BACKUPFOLDER/vi/
@@ -638,7 +638,7 @@ instVI() {
 
 instVIM() {
     if [[ -e $(which vim) ]]; then
-        printf "Installing VIM\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} VIM\n"
         printf "Clearing VIM/NVIM Commons symlinks in .dotfiles\n"
         for lnk in $(find $HOME/.dotfiles/editors/vim/vimfiles -type l -print); do
             unlink $lnk
@@ -670,7 +670,7 @@ instVIM() {
 
 instNVIM() {
     if [[ -e $(which nvim) ]]; then
-        printf "Installing NVIM\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} NVIM\n"
         printf "Clearing VIM/NVIM Commons symlinks in .dotfiles\n"
         for lnk in $(find $HOME/.dotfiles/editors/nvim/nvimfiles -type l -print); do
             unlink $lnk
@@ -695,7 +695,7 @@ instNVIM() {
 instFirefox() {
     if [[ -e $(which firefox) ]]; then
         if [[ -d $HOME/.mozilla/firefox ]]; then
-            printf "Installing Firefox Configs & Startpage\n"
+            printf "${DARK_GREEN}Installing${NOCOLOR} Firefox Configs & Startpage\n"
             for d in $HOME/.mozilla/firefox/*/ ; do
                 filename=$(basename -- "$d")
                 extension="${filename##*.}"
@@ -740,7 +740,7 @@ instFirefox() {
 
 instLSD() {
     if [[ -e $(which lsd) ]]; then
-        printf "Installing LSD Configs\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} LSD Configs\n"
         if [[ -d $HOME/.config/lsd ]]; then
             mkbkp $BACKUPFOLDER/lsd $HOME/.config/lsd
             rm -v -rf $HOME/.config/lsd/*
@@ -754,7 +754,7 @@ instLSD() {
 
 instNeofetch() {
     if [[ -e $(which neofetch) ]]; then
-        printf "Installing Neofetch Configs\n"
+        printf "${DARK_GREEN}Installing${NOCOLOR} Neofetch Configs\n"
         if [[ -d $HOME/.config/neofetch ]]; then
             printf "neofetch config found, creating backup in $BACKUPFOLDER\n"
             mkbkp $BACKUPFOLDER/neofetch $HOME/.config/neofetch
@@ -768,7 +768,7 @@ instNeofetch() {
 }
 
 instCustomExecs() {
-    printf "Installing Custom Executables\n"
+    printf "${DARK_GREEN}Installing${NOCOLOR} Custom Executables\n"
     if [[ -e $(which wine) ]]; then
         if [[ -e "$HOME/.wine/drive_c/Program Files/Image-Line/FL Studio 20/FL64.exe" ]]; then
             printf "Installing FL Studio Custom Executable\n"
@@ -776,7 +776,7 @@ instCustomExecs() {
         fi
     fi
 
-    printf "Installing Sysman Custom Executable\n"
+    printf "${DARK_GREEN}Installing${NOCOLOR} Sysman Custom Executable\n"
     ln -v -sf $HOME/.dotfiles/environment/custom_execs/sysman.sh /usr/bin/
 }
 
@@ -785,10 +785,10 @@ doinstall() {
     printf "Checking packages please wait.\n"
     checkPackages
 
-    printf "Installing .dotfiles Configs\n"
+    printf "${DARK_GREEN}Installing${NOCOLOR} .dotfiles Configs\n"
     createDotfiles_BackupDir
 
-    printf "Installing Environment Configs\n"
+    printf "${DARK_GREEN}Installing${NOCOLOR} Environment Configs\n"
     instI3wm
     instPoly
     instDunst
@@ -796,19 +796,19 @@ doinstall() {
     instRofi
     instSDDM
 
-    printf "Installing Shells Configs\n"
+    printf "${DARK_GREEN}Installing${NOCOLOR} Shells Configs\n"
     instShells
 
-    printf "Installing Terminals Configs\n"
+    printf "${DARK_GREEN}Installing${NOCOLOR} Terminals Configs\n"
     instTerminator
     instCRT
 
-    printf "Installing Editors Configs\n"
+    printf "${DARK_GREEN}Installing${NOCOLOR} Editors Configs\n"
     instVI
     instVIM
     instNVIM
 
-    printf "Installing Apps Configs\n"
+    printf "${DARK_GREEN}Installing${NOCOLOR} Apps Configs\n"
     instFirefox
     instLSD
     instNeofetch
