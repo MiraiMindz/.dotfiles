@@ -64,13 +64,13 @@ TEXTRESETALL='\e[m'
 
 ### Helper Funcs
 
-yayPacmanInstall() {
-    if [[ -e $(which yay) ]]; then
-        yay -S "$@"
-    else
-        pacman -S "$@"
-    fi
-}
+#yayPacmanInstall() {
+#    if [[ -e $(which yay) ]]; then
+#        yay -S "$@"
+#    else
+#        pacman -S "$@"
+#    fi
+#}
 
 printf "┌──────────────────────────────────────────────────────────────────────────┐\n"
 printf "│               Welcome to Mirai's Arch Linux Install Script               │\n"
@@ -135,18 +135,18 @@ sed -i "s/#Include = \/etc\/pacman.d\/mirrorlist/Include = \/etc\/pacman.d\/mirr
 
 
 printf "Installing graphical drives, display server, audio mixer & user directories\n"
-yayPacmanInstall xf86-video-intel xorg pipewire lib32-pipewire pipewire-pulse pavucontrol xdg-user-dirs
+pacman -S xf86-video-intel xorg pipewire lib32-pipewire pipewire-pulse pavucontrol xdg-user-dirs
 systemctl enable pipewire-pulse.service
 
 printf "Installing environment packages:\n"
 printf "Display Manager, Window Manager, Terminal, Status Bar, Compositor, Notification system, App launcher\n"
-yayPacmanInstall sddm i3-gaps terminator polybar dunst rofi feh
+pacman -S sddm i3-gaps terminator polybar dunst rofi feh
 
 printf "Enabling SDDM display manager\n"
 systemctl enable sddm.service
 
 printf "Setting up custom use-case packages\n"
-yayPacmanInstall discord gnome-keyring archlinux-keyring docker firefox font-manager github-cli grub-customizer lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions zsh-syntax-highlighting openssh openssl shfs gvfs gvfs-mtp spectacle perl neofetch btop android-file-transfer android-tools android-udev pragha spotify pkgfile shellcheck
+pacman -S discord gnome-keyring docker firefox font-manager github-cli grub-customizer lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions zsh-syntax-highlighting openssh openssl shfs gvfs gvfs-mtp spectacle perl neofetch btop android-file-transfer android-tools android-udev pragha spotify pkgfile shellcheck
 
 printf "Refreshing PKGFILE Mirrors\n"
 pkgfile --update
@@ -181,7 +181,7 @@ answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
 stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
     printf "Installing Packages\n"
-    yayPacmanInstall python python-pip rust go ruby java-runtime-common java-environment-common jre-openjdk jre11-openjdk jre8-openjdk jdk-openjdk jdk11-openjdk jdk8-openjdk java-openjfx java11-openjfx java8-openjfx
+    pacman -S python python-pip rust go ruby java-runtime-common java-environment-common jre-openjdk jre11-openjdk jre8-openjdk jdk-openjdk jdk11-openjdk jdk8-openjdk java-openjfx java11-openjfx java8-openjfx
     printf "Setting up Go\n"
     if [[ -e $(which go) ]]; then
         if [[ -d /home/$USRNM ]]; then
