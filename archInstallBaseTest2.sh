@@ -67,16 +67,16 @@ passwd
 echo -e -n "What is your processor ${DARK_BLUE}I${NOCOLOR}ntel or ${DARK_RED}A${NOCOLOR}MD (${DARK_BLUE}i${NOCOLOR}/${DARK_RED}a${NOCOLOR})? "
 old_stty_cfg=$(stty -g)
 stty raw -echo
-answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+answer=$( while ! head -c 1 | grep -i '[ai]' ;do true ;done )
 stty $old_stty_cfg
-if echo "$answer" | grep -iq "^y" ;then
+if echo "$answer" | grep -iq "^i" ;then
     pacman -S intel-ucode
 else
     pacman -S amd-ucode
 fi
 
 printf "Downloading bootloader and other packages\n"
-pacman -S grub networkmanager network-manager-applet dialog wireless_tools wpa_supplicant os-prober mtools dosfstools base-devel linux-headers
+pacman -S grub networkmanager network-manager-applet dialog wireless_tools wpa_supplicant os-prober mtools dosfstools base-devel linux-headers iwd dhcpcd
 
 printf "Installing bootloader\n"
 printf "Please answer the following question with the full name (/dev/sdX)\n"
