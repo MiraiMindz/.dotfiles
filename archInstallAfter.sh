@@ -100,6 +100,18 @@ printf "${DARK_YELLOW}# %%wheel ALL=(ALL) ALL${NOCOLOR}\n"
 printf "use CTRL+O to save the file and CTRL+X to exit the editor\n"
 EDITOR=nano visudo
 
+printf "Updating pacman mirrorlist\n"
+if [[ -e /etc/pacman.d/mirrorlist ]]; then
+    rm /etc/pacman.d/mirrorlist
+    while IFS="" read -r p || [ -n "$p" ]; do
+        printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist
+    done <<< $(curl https://archlinux.org/mirrorlist/all/)
+else
+    while IFS="" read -r p || [ -n "$p" ]; do
+        printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist
+    done <<< $(curl https://archlinux.org/mirrorlist/all/)
+fi
+
 printf "Setting up pacman to parallel download, verbosity and colors\n"
 printf "Setting 5 parallel downloads\n"
 sed -i "s/#ParallelDownloads = 5/ParallelDownloads = 5/" /etc/pacman.conf
