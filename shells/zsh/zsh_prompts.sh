@@ -2,6 +2,9 @@
 autoload -Uz promptinit && promptinit
 setopt prompt_subst
 
+### Colors
+autoload -U colors && colors
+
 if [ -e $HOME/.zsh/git-prompt.sh ]; then
     GIT_PS1_SHOWDIRTYSTATE=1
     GIT_PS1_SHOWSTASHSTATE=1
