@@ -132,7 +132,10 @@ printf "Enabling SDDM display manager\n"
 systemctl enable sddm.service
 
 printf "Setting up custom use-case packages\n"
-yayPacmanInstall discord gnome-keyring archlinux-keyring cool-retro-term-git docker firefox font-manager github-cli grub-customizer hideit.sh-git lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils scrcpy sndcpy.sh sddm-theme-sugar-candy-git thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions openssh openssl shfs gvfs gvfs-mtp spectacle perl neofetch kdeconnect indicator-kdeconnect-git btop android-file-transfer android-tools android-udev pragha spotify
+yayPacmanInstall discord gnome-keyring archlinux-keyring cool-retro-term-git docker firefox font-manager github-cli grub-customizer hideit.sh-git lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils scrcpy sndcpy.sh sddm-theme-sugar-candy-git thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions openssh openssl shfs gvfs gvfs-mtp spectacle perl neofetch kdeconnect indicator-kdeconnect-git btop android-file-transfer android-tools android-udev pragha spotify pkgfile
+
+printf "Refreshing PKGFILE Mirrors\n"
+pkgfile --update
 
 git clone --depth=1 https://github.com/adi1090x/rofi.git
 cd rofi
