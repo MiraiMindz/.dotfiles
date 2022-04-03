@@ -180,6 +180,17 @@ fi
 printf "Setting up the root password\n"
 passwd
 
+echo -e -n "What is your processor ${DARK_BLUE}I${NOCOLOR}ntel or ${DARK_RED}A${NOCOLOR}MD (${DARK_BLUE}i${NOCOLOR}/${DARK_RED}a${NOCOLOR})? "
+old_stty_cfg=$(stty -g)
+stty raw -echo
+answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+stty $old_stty_cfg
+if echo "$answer" | grep -iq "^y" ;then
+    pacman -S intel-ucode
+else
+    pacman -S amd-ucode
+fi
+
 printf "Downloading bootloader and other packages\n"
 pacman -S grub networkmanager network-manager-applet dialog wireless_tools wpa_supplicant os-prober mtools dosfstools base-devel linux-headers
 
