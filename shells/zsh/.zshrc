@@ -16,3 +16,6 @@ SAVEHIST=1000
 
 ### Prompt
 prompt fullpl
+
+### PKGFILE Completions
+source /usr/share/doc/pkgfile/command-not-found.zsh

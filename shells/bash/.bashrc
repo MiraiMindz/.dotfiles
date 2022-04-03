@@ -16,3 +16,8 @@ if [[ -d $HOME/.bash ]]; then
         source $itn
     done
 fi
+
+### PKGFILE Completions
+if [[ -e $(which pkgfile) ]]; then
+    source /usr/share/doc/pkgfile/command-not-found.bash
+fi
