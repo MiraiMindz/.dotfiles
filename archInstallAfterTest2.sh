@@ -8,7 +8,7 @@ makepkg -si
 cd ../
 rm -rf ./yay
 
-yay -S picom-ibhagwan-git cool-retro-term-git hideit.sh-git scrcpy sndcpy.sh sddm-theme-sugar-candy-git kdeconnect indicator-kdeconnect-git
+yay -S picom-ibhagwan-git cool-retro-term-git hideit.sh-git scrcpy sndcpy.sh sddm-theme-sugar-candy-git kdeconnect indicator-kdeconnect-git shfs spotify
 
 echo -e -n "Do you want to install Razer Drivers (y/n)? "
 old_stty_cfg=$(stty -g)
