@@ -129,10 +129,9 @@ sed -i "s/#VerbosePkgLists/VerbosePkgLists/" /etc/pacman.conf
 printf "Setting colors\n"
 sed -i "s/#Color/Color/" /etc/pacman.conf
 
-printf "Setting up pacman to use the multilib repository\n"
-sed -i "s/#[multilib]/[multilib]/" /etc/pacman.conf
-sed -i "s/#Include = \/etc\/pacman.d\/mirrorlist/Include = \/etc\/pacman.d\/mirrorlist/" /etc/pacman.conf
-
+printf "Setting up pacman to use custom repositories\n"
+printf "Please uncomment the repos that you want to use\n"
+nano /etc/pacman.conf
 
 printf "Installing graphical drives, display server, audio mixer & user directories\n"
 pacman -S xf86-video-intel xorg pipewire lib32-pipewire pipewire-pulse pavucontrol xdg-user-dirs
@@ -146,7 +145,7 @@ printf "Enabling SDDM display manager\n"
 systemctl enable sddm.service
 
 printf "Setting up custom use-case packages\n"
-pacman -S discord gnome-keyring docker firefox font-manager github-cli grub-customizer lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions zsh-syntax-highlighting openssh openssl shfs gvfs gvfs-mtp spectacle perl neofetch btop android-file-transfer android-tools android-udev pragha spotify pkgfile shellcheck
+pacman -S discord gnome-keyring docker firefox font-manager github-cli grub-customizer lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions zsh-syntax-highlighting openssh openssl gvfs gvfs-mtp spectacle perl neofetch btop android-file-transfer android-tools android-udev pragha pkgfile shellcheck
 
 printf "Refreshing PKGFILE Mirrors\n"
 pkgfile --update
