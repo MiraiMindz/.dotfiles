@@ -133,6 +133,8 @@ printf "Setting up pacman to use custom repositories\n"
 printf "Please uncomment the repos that you want to use\n"
 nano /etc/pacman.conf
 
+pacman -Syyy
+
 printf "Installing graphical drives, display server, audio mixer & user directories\n"
 pacman -S xf86-video-intel xorg pipewire lib32-pipewire pipewire-pulse pavucontrol xdg-user-dirs
 systemctl enable pipewire-pulse.service
