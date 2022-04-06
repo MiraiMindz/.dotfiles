@@ -141,39 +141,43 @@ systemctl enable pipewire-pulse.service
 
 printf "Installing environment packages:\n"
 printf "Display Manager, Window Manager, Terminal, Status Bar, Compositor, Notification system, App launcher\n"
-pacman -S sddm i3-gaps terminator polybar dunst rofi feh
+pacman -S sddm i3-gaps terminator dunst rofi feh
 
-printf "Enabling SDDM display manager\n"
-systemctl enable sddm.service
+if [[ -e $(which sddm) ]]; then
+  printf "Enabling SDDM display manager\n"
+  systemctl enable sddm.service
+fi
 
 printf "Setting up custom use-case packages\n"
-pacman -S discord gnome-keyring docker firefox font-manager github-cli grub-customizer lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions zsh-syntax-highlighting openssh openssl gvfs gvfs-mtp spectacle perl neofetch btop android-file-transfer android-tools android-udev pragha pkgfile shellcheck
+pacman -S git discord gnome-keyring docker firefox font-manager github-cli grub-customizer lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions zsh-syntax-highlighting openssh openssl gvfs gvfs-mtp spectacle perl neofetch btop android-file-transfer android-tools android-udev pragha pkgfile shellcheck
 
 printf "Refreshing PKGFILE Mirrors\n"
 pkgfile --update
 
-git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd rofi
-chmod +x setup.sh
-./setup.sh
-cd ../
-rm -rf ./rofi/
-
-printf "Downloading net packages\n"
-if [[ -d /home/$USRNM ]];then
-    if [[ -d /home/$USRNM/Apps ]];then
-        printf "Installing Visual Studio Code.\n"
-        mkdir -p /home/$USRNM/Apps/VisualStudioCode
-        cd /home/$USRNM/Apps/VisualStudioCode
-        curl -fLo "code-stable-x64.tar.gz" "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
-        tar -xvf code-stable-x64.tar.gz
-        ln -sf ./VSCode-linux-x64/code /usr/bin/vscode
-    else
-        printf "Unable to Download & Install Visual Studio Code.\n"
-    fi
-else
-    printf "User home directory not found.\n"
+if [[ -e $(which git) ]]; then
+  git clone --depth=1 https://github.com/adi1090x/rofi.git
+  cd rofi
+  chmod +x setup.sh
+  ./setup.sh
+  cd ../
+  rm -rf ./rofi/
 fi
+
+#printf "Downloading net packages\n"
+#if [[ -d /home/$USRNM ]];then
+#    if [[ -d /home/$USRNM/Apps ]];then
+#        printf "Installing Visual Studio Code.\n"
+#        mkdir -p /home/$USRNM/Apps/VisualStudioCode
+#        cd /home/$USRNM/Apps/VisualStudioCode
+#        curl -fLo "code-stable-x64.tar.gz" "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
+#        tar -xvf code-stable-x64.tar.gz
+#        ln -sf ./VSCode-linux-x64/code /usr/bin/vscode
+#    else
+#        printf "Unable to Download & Install Visual Studio Code.\n"
+#    fi
+#else
+#    printf "User home directory not found.\n"
+#fi
 
 echo -e -n "Do you want to install additional development packages (y/n)? "
 old_stty_cfg=$(stty -g)
@@ -183,33 +187,33 @@ stty $old_stty_cfg
 if echo "$answer" | grep -iq "^y" ;then
     printf "Installing Packages\n"
     pacman -S python python-pip rust go ruby java-runtime-common java-environment-common jre-openjdk jre11-openjdk jre8-openjdk jdk-openjdk jdk11-openjdk jdk8-openjdk java-openjfx java11-openjfx java8-openjfx
-    printf "Setting up Go\n"
-    if [[ -e $(which go) ]]; then
-        if [[ -d /home/$USRNM ]]; then
-            if [[ -d /home/$USRNM/go ]]; then
-                mkdir -p /home/$USRNM/go/src
-                export PATH="$PATH:/home/$USRNM/go/bin"
-                printf "Checking Go env\n"
-                go env
-            else
-                printf "Unable to set the \$GOPATH variable.\n"
-            fi
-        else
-            printf "User home directory not found.\n"
-        fi
-    fi
+#    printf "Setting up Go\n"
+#    if [[ -e $(which go) ]]; then
+#        if [[ -d /home/$USRNM ]]; then
+#            if [[ -d /home/$USRNM/go ]]; then
+#                mkdir -p /home/$USRNM/go/src
+#                export PATH="$PATH:/home/$USRNM/go/bin"
+#                printf "Checking Go env\n"
+#                go env
+#            else
+#                printf "Unable to set the \$GOPATH variable.\n"
+#            fi
+#        else
+#            printf "User home directory not found.\n"
+#        fi
+#    fi
 else
     printf "Proceeding\n"
 fi
 
-printf "Adding ${USRNM} to docker group\n"
-groupadd docker
-usermod -aG docker $USRNM
-printf "Enabling docker service\n"
-systemctl start docker.service
-systemctl enable docker.service
-printf "Testing docker\n"
-docker info
+#printf "Adding ${USRNM} to docker group\n"
+#groupadd docker
+#usermod -aG docker $USRNM
+#printf "Enabling docker service\n"
+#systemctl start docker.service
+#systemctl enable docker.service
+#printf "Testing docker\n"
+#docker info
 printf "Installation Done.\n"
 
 printf "INSTRUCTIONS READ BEFORE DOING\n"
