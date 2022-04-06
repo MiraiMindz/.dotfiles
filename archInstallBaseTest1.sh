@@ -111,6 +111,6 @@ else
     exit
 fi
 
-printf "CHRooting to installation\n"
-arch-chroot /mnt
+#printf "CHRooting to installation\n"
+#arch-chroot /mnt
 exit
