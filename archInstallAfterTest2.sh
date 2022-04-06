@@ -9,46 +9,48 @@ makepkg -si
 cd ../
 rm -rf ./yay
 
-yay -S picom-ibhagwan-git cool-retro-term-git hideit.sh-git scrcpy sndcpy.sh sddm-theme-sugar-candy-git kdeconnect indicator-kdeconnect-git shfs spotify polybar-git
+if [[ -e $(which yay) ]]; then
+    yay -S picom-ibhagwan-git cool-retro-term-git hideit.sh-git scrcpy sndcpy.sh sddm-theme-sugar-candy-git kdeconnect indicator-kdeconnect-git shfs spotify polybar-git
 
-echo -e -n "Do you want to install additional development packages (y/n)? "
-old_stty_cfg=$(stty -g)
-stty raw -echo
-answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
-stty $old_stty_cfg
-if echo "$answer" | grep -iq "^y" ;then
-    printf "Installing Packages\n"
-    pacman -S python python-pip rust go ruby java-runtime-common java-environment-common jre-openjdk jre11-openjdk jre8-openjdk jdk-openjdk jdk11-openjdk jdk8-openjdk java-openjfx java11-openjfx java8-openjfx
-printf "Setting up Go\n"
-    if [[ -e $(which go) ]]; then
-        if [[ -d /home/$USRNM ]]; then
-            if [[ -d /home/$USRNM/go ]]; then
-                mkdir -p /home/$USRNM/go/src
-                export PATH="$PATH:/home/$USRNM/go/bin"
-                printf "Checking Go env\n"
-                go env
+    echo -e -n "Do you want to install additional development packages (y/n)? "
+    old_stty_cfg=$(stty -g)
+    stty raw -echo
+    answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+    stty $old_stty_cfg
+    if echo "$answer" | grep -iq "^y" ;then
+        printf "Installing Packages\n"
+        yay -S python python-pip rust go ruby java-runtime-common java-environment-common jre-openjdk jre11-openjdk jre8-openjdk jdk-openjdk jdk11-openjdk jdk8-openjdk java-openjfx java11-openjfx java8-openjfx
+        printf "Setting up Go\n"
+        if [[ -e $(which go) ]]; then
+            if [[ -d $HOME/ ]]; then
+                if [[ -d $HOME/go ]]; then
+                    mkdir -p $HOME/go/src
+                    export PATH="$PATH:/home/$USRNM/go/bin"
+                    printf "Checking Go env\n"
+                    go env
+                else
+                    printf "Unable to set the \$GOPATH variable.\n"
+                fi
             else
-                printf "Unable to set the \$GOPATH variable.\n"
+                printf "User home directory not found.\n"
             fi
-        else
-            printf "User home directory not found.\n"
         fi
+    else
+        printf "Proceeding\n"
     fi
-else
-    printf "Proceeding\n"
-fi
 
-echo -e -n "Do you want to install Razer Drivers (y/n)? "
-old_stty_cfg=$(stty -g)
-stty raw -echo
-answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
-stty $old_stty_cfg
-if echo "$answer" | grep -iq "^y" ;then
-    printf "Installing Packages\n"
-    yay -S openrazer-daemon openrazer-driver-dkms openrazer-meta polychromatic noise-suppression-for-voice
-    gpasswd -a $USRNM plugdev
-else
-    printf "Proceeding\n"
+    echo -e -n "Do you want to install Razer Drivers (y/n)? "
+    old_stty_cfg=$(stty -g)
+    stty raw -echo
+    answer=$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )
+    stty $old_stty_cfg
+    if echo "$answer" | grep -iq "^y" ;then
+        printf "Installing Packages\n"
+        yay -S openrazer-daemon openrazer-driver-dkms openrazer-meta polychromatic noise-suppression-for-voice
+        gpasswd -a $USRNM plugdev
+    else
+        printf "Proceeding\n"
+    fi
 fi
 
 if [[ -e $(which git) ]]; then
@@ -61,11 +63,11 @@ if [[ -e $(which git) ]]; then
 fi
 
 printf "Downloading net packages\n"
-if [[ -d /home/$USRNM ]];then
-    if [[ -d /home/$USRNM/Apps ]];then
+if [[ -d $HOME/ ]];then
+    if [[ -d $HOME/Apps ]];then
         printf "Installing Visual Studio Code.\n"
-        mkdir -p /home/$USRNM/Apps/VisualStudioCode
-        cd /home/$USRNM/Apps/VisualStudioCode
+        mkdir -p $HOME/Apps/VisualStudioCode
+        cd $HOME/Apps/VisualStudioCode
         curl -LO "https://code.visualstudio.com/sha/download?build=stable&os=linux-x64"
         tar -xvf code-stable-x64.tar.gz
         ln -sf ./VSCode-linux-x64/code /usr/bin/vscode
@@ -74,22 +76,6 @@ if [[ -d /home/$USRNM ]];then
     fi
 else
     printf "User home directory not found.\n"
-fi
-
-printf "Setting up Go\n"
-if [[ -e $(which go) ]]; then
-    if [[ -d /home/$USRNM ]]; then
-        if [[ -d /home/$USRNM/go ]]; then
-            mkdir -p /home/$USRNM/go/src
-            export PATH="$PATH:/home/$USRNM/go/bin"
-            printf "Checking Go env\n"
-            go env
-        else
-            printf "Unable to set the \$GOPATH variable.\n"
-        fi
-    else
-        printf "User home directory not found.\n"
-    fi
 fi
 
 printf "Adding ${USRNM} to docker group\n"
