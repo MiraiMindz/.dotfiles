@@ -75,6 +75,10 @@ printf "└───────────────────────
 
 printf "Enabling NetworkManager with SystemD\n"
 systemctl enable NetworkManager
+printf "Enabling IWD with SystemD\n"
+systemctl enable iwd
+printf "Enabling DHCPCD with SystemD\n"
+systemctl enable dhcpcd
 
 printf "Creating new user\n"
 read -e -p "Please enter the username: " USRNM
@@ -133,10 +137,9 @@ printf "Installing environment packages:\n"
 printf "Display Manager, Window Manager, Terminal, Status Bar, Compositor, Notification system, App launcher\n"
 pacman -S sddm i3-gaps terminator dunst rofi feh
 
-if [[ -e $(which sddm) ]]; then
-  printf "Enabling SDDM display manager\n"
-  systemctl enable sddm.service
-fi
+sleep 2
+printf "Enabling SDDM display manager\n"
+systemctl enable sddm.service
 
 printf "Setting up custom use-case packages\n"
 pacman -S git discord gnome-keyring docker firefox font-manager github-cli grub-customizer lxappearance ncurses neovim vim pacman-contrib pacman-mirrorlist pacutils thunar thunar-archive-plugin thunar-media-tags-plugin thunar-volman tumbler zsh zsh-completions zsh-syntax-highlighting openssh openssl gvfs gvfs-mtp spectacle perl neofetch btop android-file-transfer android-tools android-udev pragha pkgfile shellcheck
