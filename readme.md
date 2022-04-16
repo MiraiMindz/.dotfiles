@@ -22,19 +22,19 @@ My partitioning is the following:
 | sdXY | 4GB~12GB     | part | [SWAP]            | LINUX-SWAP |
 | sdXY | 30GB         | part | /home/${username} | EXT4       |
 | sdXY | 50GB         | part | /                 | EXT4       |
-| sdXY | REST-OF-DISK | part | /media/Arquivos   | BTRFS      |
+| sdXY | REST-OF-DISK | part | /media/Arquivos   | EXT4       |
 
 You can clone the initial script with the following command:
 
-`curl -fLo archInstallBase.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallBase.sh" && sh archInstallBase.sh`
+`curl -LO "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/scripts/to_test/archInstallBaseRefact.sh" && sh ./archInstallBaseRefact.sh`
 
 After the first script you will need to clone the "After First Boot" script, you can do this with the following line:
 
-`curl -fLo archInstallAfter.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/archInstallAfter.sh" && archInstallAfter.sh`
+`curl -LO "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/scripts/to_test/archInstallAfterRefactor.sh" && sh ./archInstallAfterRefactor.sh`
 
 After finishing the Arch Linux installation you can clone the install script of the rice with this line:
 
-`curl -fLo installConfigs.sh "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/installConfigs.sh" && installConfigs.sh`
+`curl -LO "https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/scripts/to_refactor-fix/installConfigs.sh" && installConfigs.sh`
 
 Enjoy, any trouble or advice on this you can open an issue and I will take a look and help you.
 
