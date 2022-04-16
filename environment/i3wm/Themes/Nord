@@ -201,7 +201,7 @@ bindsym XF86AudioPrev exec playerctl prev
 exec_always xrandr --auto --output VGA1 --mode 1360x768 --right-of LVDS1
 
 ### Wallpaper
-exec_always --no-startup-id feh --bg-fill /media/Arquivos/Arquivos/Wallpapers/Desktop/Nord/BlueRaindeerNord.png
+exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Nord/HoldWallpaper.png
 
 ### Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -210,7 +210,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id hideIt.sh -w --name '^Polybar tray window$' --region 0x768+10+-40
 
 ### Picom Config
-# exec_always --no-startup-id picom -b --experimental-backends --config $HOME/.config/picom/picom.conf
+exec_always --no-startup-id picom -b --experimental-backends --config $HOME/.config/picom/picom.conf
 
 ### Screenshot
 bindsym Print exec bash $HOME/.config/rofi/bin/menu_screenshot
