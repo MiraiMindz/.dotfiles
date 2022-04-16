@@ -182,7 +182,7 @@ echo "answer=\$( awhile ! head -c 1 | grep -i '[ny]' ;do true ;done )" >> archBa
 echo "stty \$old_stty_cfg" >> archBaseInstall2.sh
 echo "if echo \"\$answer\" | grep -iq \"^y\" ;then" >> archBaseInstall2.sh
 echo "    printf \"Adding custom hosts\n\"" >> archBaseInstall2.sh
-echo "    curl -fL \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/MiraiHosts.txt\" >> /etc/hosts" >> archBaseInstall2.sh
+echo "    curl -fL \"https://raw.githubusercontent.com/MiraiMindz/.dotfiles/main/misc/MiraiHosts.txt\" >> /etc/hosts" >> archBaseInstall2.sh
 echo "else" >> archBaseInstall2.sh
 echo "    printf \"Proceeding with the installation\n\"" >> archBaseInstall2.sh
 echo "fi" >> archBaseInstall2.sh
