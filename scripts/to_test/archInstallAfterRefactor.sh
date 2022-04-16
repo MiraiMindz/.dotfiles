@@ -178,7 +178,7 @@ printf "Installation Done.\n"
 #                                                        #
 ##########################################################
 
-if [[ -e $(which sudo) || -e /bin/sudo ]]; then
+if [[ -e $(command -v sudo) || -e /bin/sudo ]]; then
     if [[ -d /home/$USRNM ]]; then
         printf "${USRNM} home directory found\n"
         printf "sudo found\n"
@@ -208,7 +208,7 @@ if [[ -e $(which sudo) || -e /bin/sudo ]]; then
         echo "    printf \"Installing Packages\n\"" >> archAfterInstall2.sh
         echo "    yay -S python python-pip rust go ruby java-runtime-common java-environment-common jre-openjdk jre11-openjdk jre8-openjdk jdk-openjdk jdk11-openjdk jdk8-openjdk java-openjfx java11-openjfx java8-openjfx" >> archAfterInstall2.sh
         echo "    printf \"Setting up Go\n\"" >> archAfterInstall2.sh
-        echo "    if [[ -e \$(which go) ]]; then" >> archAfterInstall2.sh
+        echo "    if [[ -e \$(command -v  go) ]]; then" >> archAfterInstall2.sh
         echo "        if [[ -d \$HOME/ ]]; then" >> archAfterInstall2.sh
         echo "            mkdir -p \$HOME/go" >> archAfterInstall2.sh
         echo "        if [[ -d \$HOME/go ]]; then" >> archAfterInstall2.sh
@@ -240,7 +240,7 @@ if [[ -e $(which sudo) || -e /bin/sudo ]]; then
         echo "    printf \"Proceeding\n\"" >> archAfterInstall2.sh
         echo "fi" >> archAfterInstall2.sh
         echo "" >> archAfterInstall2.sh
-        echo "if [[ -e \$(which git) ]]; then" >> archAfterInstall2.sh
+        echo "if [[ -e \$(command -v git) ]]; then" >> archAfterInstall2.sh
         echo "  git clone --depth=1 https://github.com/adi1090x/rofi.git" >> archAfterInstall2.sh
         echo "  cd rofi" >> archAfterInstall2.sh
         echo "  chmod +x setup.sh" >> archAfterInstall2.sh
