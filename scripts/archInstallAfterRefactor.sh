@@ -283,9 +283,8 @@ if [[ -e $(which sudo) || -e /bin/sudo ]]; then
         echo "" >> archAfterInstall2.sh
 
         mv -v ./archAfterInstall2.sh /home/$USRNM
-
-
         sudo -i $USRNM sh /home/$USRNM/archAfterInstall2.sh
     fi
 fi
+
 exit
