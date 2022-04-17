@@ -26,8 +26,8 @@ options="$vscode\n$vim\n$mark"
 chosen="$(echo -e "$options" | $rofi_command -p "Select One" -dmenu -selected-row 0)"
 case $chosen in
     $vscode)
-		if [[ -f $(which vscode) ]]; then
-            vscode &
+		if [[ -f $(which vscode) || -f $(which code) ]]; then
+            vscode & || code &
         else
 			msg "Visual Studio Code not found"
 		fi
