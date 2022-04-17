@@ -1,7 +1,7 @@
 [user]
 	name = MiraiMindz
 	email = 78761663+MiraiMindz@users.noreply.github.com
-	signingkey = 852213E6C6B203BF
+	signingkey = CD4E84CB060738C1
 [init]
 	defaultBranch = main
 [credential "https://github.com"]
