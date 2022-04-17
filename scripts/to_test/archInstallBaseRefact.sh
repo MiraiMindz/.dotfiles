@@ -124,6 +124,7 @@ fi
 #                                                        #
 ##########################################################
 
+echo "sleep 1" >> archBaseInstall2.sh
 echo "printf \"Updating the ZoneInfo to America/Sao_Paulo\n\"" >> archBaseInstall2.sh
 echo "ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime" >> archBaseInstall2.sh
 echo "" >> archBaseInstall2.sh
@@ -232,6 +233,6 @@ echo "" >> archBaseInstall2.sh
 mv -v ./archBaseInstall2.sh /mnt
 
 printf "CHRooting to installation\n"
-arch-chroot /mnt & sh ./archBaseInstall2.sh || sh /mnt/archBaseInstall2.sh
+arch-chroot /mnt & sh /mnt/archBaseInstall2.sh
 # rm -v /mnt/archBaseInstall2.sh
 # exit
