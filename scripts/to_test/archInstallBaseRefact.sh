@@ -178,7 +178,7 @@ echo "" >> archBaseInstall2.sh
 echo "echo -e -n \"Do you want to add Custom Hosts to this file too (y/n)? \"" >> archBaseInstall2.sh
 echo "old_stty_cfg=\$(stty -g)" >> archBaseInstall2.sh
 echo "stty raw -echo" >> archBaseInstall2.sh
-echo "answer=\$( awhile ! head -c 1 | grep -i '[ny]' ;do true ;done )" >> archBaseInstall2.sh
+echo "answer=\$( while ! head -c 1 | grep -i '[ny]' ;do true ;done )" >> archBaseInstall2.sh
 echo "stty \$old_stty_cfg" >> archBaseInstall2.sh
 echo "if echo \"\$answer\" | grep -iq \"^y\" ;then" >> archBaseInstall2.sh
 echo "    printf \"Adding custom hosts\n\"" >> archBaseInstall2.sh
@@ -232,6 +232,6 @@ echo "" >> archBaseInstall2.sh
 mv -v ./archBaseInstall2.sh /mnt
 
 printf "CHRooting to installation\n"
-arch-chroot /mnt && sh ./archBaseInstall2.sh
+arch-chroot /mnt & sh ./archBaseInstall2.sh
 rm -v /mnt/archBaseInstall2.sh
 exit
