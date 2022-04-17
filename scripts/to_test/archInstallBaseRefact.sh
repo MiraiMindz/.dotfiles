@@ -232,6 +232,6 @@ echo "" >> archBaseInstall2.sh
 mv -v ./archBaseInstall2.sh /mnt
 
 printf "CHRooting to installation\n"
-arch-chroot /mnt & sh ./archBaseInstall2.sh
-rm -v /mnt/archBaseInstall2.sh
-exit
+arch-chroot /mnt & sh ./archBaseInstall2.sh || sh /mnt/archBaseInstall2.sh
+# rm -v /mnt/archBaseInstall2.sh
+# exit
