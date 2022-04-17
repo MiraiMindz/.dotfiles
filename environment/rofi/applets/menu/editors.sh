@@ -25,25 +25,27 @@ options="$vscode\n$vim\n$mark"
 
 chosen="$(echo -e "$options" | $rofi_command -p "Select One" -dmenu -selected-row 0)"
 case $chosen in
-    $vscode)
-		if [[ -f $(which vscode) || -f $(which code) ]]; then
-            vscode & || code &
-        else
+	$vscode)
+		if [[ -f $(which vscode) ]]; then
+			vscode &
+		elif [[ -f $(which code) ]]; then
+			code &
+		else
 			msg "Visual Studio Code not found"
 		fi
-        ;;
-    $vim)
+		;;
+	$vim)
 		if [[ -f $HOME/.config/rofi/applets/menu/vimterms.sh ]]; then
 			sh $HOME/.config/rofi/applets/menu/vimterms.sh &
 		else
 			msg "VimTerms not found"
 		fi
-        ;;
-    $mark)
+		;;
+	$mark)
 		if [[ -f $(which marktext) ]]; then
-            marktext &
-        else
+			marktext &
+		else
 			msg "MarkText not found"
 		fi
-        ;;
+		;;
 esac
