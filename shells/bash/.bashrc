@@ -21,3 +21,6 @@ fi
 if [[ -e $(which pkgfile) ]]; then
     source /usr/share/doc/pkgfile/command-not-found.bash
 fi
+
+### Export GPG Key
+export GPG_TTY=$(tty)
