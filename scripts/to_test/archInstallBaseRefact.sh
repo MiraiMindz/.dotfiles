@@ -124,7 +124,8 @@ fi
 #                                                        #
 ##########################################################
 
-echo "sleep 1" >> archBaseInstall2.sh
+echo "sleep 5" >> archBaseInstall2.sh
+echo "stty -tostop" >> archBaseInstall2.sh
 echo "printf \"Updating the ZoneInfo to America/Sao_Paulo\n\"" >> archBaseInstall2.sh
 echo "ln -sf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime" >> archBaseInstall2.sh
 echo "" >> archBaseInstall2.sh
