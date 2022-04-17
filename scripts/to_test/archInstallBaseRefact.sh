@@ -140,7 +140,7 @@ echo "if [ -e /etc/locale.conf ]; then" >> archBaseInstall2.sh
 echo "    echo \"LANG=pt_BR.UTF-8\" >> /etc/locale.conf" >> archBaseInstall2.sh
 echo "else" >> archBaseInstall2.sh
 echo "    touch /etc/locale.conf" >> archBaseInstall2.sh
-echo "    echo \"LANG=pt_BR.UTF-8\" >> /etc/locale.conf" >> archBaseInstall2.sha
+echo "    echo \"LANG=pt_BR.UTF-8\" >> /etc/locale.conf" >> archBaseInstall2.sh
 echo "fi" >> archBaseInstall2.sh
 echo "printf \"Saving the keyboard layout in /etc/vconsole.conf\n\"" >> archBaseInstall2.sh
 echo "if [ -e /etc/vconsole.conf ]; then" >> archBaseInstall2.sh
