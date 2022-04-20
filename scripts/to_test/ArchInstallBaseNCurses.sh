@@ -144,8 +144,8 @@ ncursesAutoInstall() {
     timedatectl set-ntp true
 
     counter=0;
-    pacstrap /mnt base linux linux-firmware nano &;
-    pid=$!;
+    pacstrap /mnt base linux linux-firmware nano &
+    pid=$!
     trap "kill $pid 2> /dev/null" EXIT;
     while kill -0 $pid 2> /dev/null; do
         (( counter+=1 ))
@@ -193,8 +193,8 @@ ncursesManualInstall() {
     lwcs_bspkgs=$(echo "$bspkgs" | tr '[:upper:]' '[:lower:]')
     if [[ "$lwcs_bspkgs" == "auto" ]]; then
         counter=0;
-        pacstrap /mnt base linux linux-firmware nano &;
-        pid=$!;
+        pacstrap /mnt base linux linux-firmware nano &
+        pid=$!
         trap "kill $pid 2> /dev/null" EXIT;
         while kill -0 $pid 2> /dev/null; do
             (( counter+=1 ))
