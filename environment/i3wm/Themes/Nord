@@ -201,7 +201,7 @@ bindsym XF86AudioPrev exec playerctl prev
 exec_always xrandr --auto --output VGA1 --mode 1360x768 --right-of LVDS1
 
 ### Wallpaper
-exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Nord/HoldWallpaper.png
+exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Nord/linux-is-coming-4k.png
 
 ### Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
