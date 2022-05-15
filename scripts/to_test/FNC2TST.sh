@@ -469,7 +469,7 @@ ncursesAutoInstall() {
     fi
 
     dialog --title "$default_title 5/$steps" --msgbox "\nInstalling base packages" 7 34 && clear
-    pacstrap /mnt base linux linux-firmware nano &;
+    pacstrap /mnt base linux linux-firmware nano
 
     dialog --title "$default_title 6/$steps" --msgbox "\nChrooting" 7 34 && clear
     genScript
