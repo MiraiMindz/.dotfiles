@@ -13,7 +13,7 @@ rofi_command="rofi -theme $dir/editors.rasi"
 # Links
 vscode="﬏ "
 vim=""
-mark=""
+mark=""
 
 # Error msg
 msg() {

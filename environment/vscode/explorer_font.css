@@ -1,0 +1,36 @@
+:root {
+    --size: 14px;
+    --fnt_fml: "Fixedsys Excelsior";
+}
+
+/* Explorer / Sidebar */
+
+.monaco-panel-view:not(h3) {
+    font-family: var(--fnt_fml) !important;
+    font-size: var(--size);
+}
+.split-view-view > .sidebar > .content > .viewlet{
+    font-family: var(--fnt_fml) !important;
+    font-size: var(--size);
+}
+
+.split-view-view>.sidebar> .title > .title-label > h2 {
+    font-family: var(--fnt_fml) !important;
+    font-size: calc(var(--size) * 2);
+}
+
+/* .explorer-viewlet {
+    font-family: "Fixedsys Excelsior" !important;
+} */
+
+/* Tabbar */
+.monaco-workbench .part.editor > .content .editor-group-container > .title .title-label a, .monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .tab-label a {
+    font-family: var(--fnt_fml) !important;
+    font-size: 16px;
+}
+
+/* Statusbar */
+.monaco-workbench .part.statusbar>.items-container>.statusbar-item {
+    font-family: var(--fnt_fml) !important;
+    font-size: 16px;
+}

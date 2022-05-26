@@ -18,7 +18,7 @@ fi
 confs=""
 editor="" # ﬏  
 rofi=""
-quicklinks=""
+quicklinks=""
 scrcpy=""
 discord=""
 music=""

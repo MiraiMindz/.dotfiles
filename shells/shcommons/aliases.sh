@@ -1,16 +1,16 @@
-if [[ -e $(which doas) ]]; then
+if [[ -e $(command -v doas) ]]; then
     alias sudo='doas'
     alias dias='doas'
-    if [[ -e $(which vim) ]];then
+    if [[ -e $(command -v vim) ]];then
         alias sudoedit='doas vim'
     else
         alias sudoedit='doas rnano'
     fi
 fi
 
-if [[ -e $(which lsd) ]];then
+if [[ -e $(command -v lsd) ]];then
     alias ls='lsd'
-    if [[ -e $(which tree) ]]; then
+    if [[ -e $(command -v tree) ]]; then
         alias lt='ls --tree'
         alias ltt='tree --dirsfirst -u -D -h -C -p -F -L 5'
         alias lttf='tree --dirsfirst -u -D -h -C -p -F -f -L 5'
@@ -25,7 +25,7 @@ if [[ -e $(which lsd) ]];then
     fi
 else
     alias ls='ls -F --color=auto'
-    if [[ -e $(which tree) ]]; then
+    if [[ -e $(command -v tree) ]]; then
         alias lt='tree --dirsfirst -u -D -h -C -p -F -L 5'
         alias ltf='tree --dirsfirst -u -D -h -C -p -F -f -L 5'
         alias ltsf='tree --dirsfirst -u -D -h -C -p -F -l -L 5'
@@ -39,15 +39,19 @@ else
     fi
 fi
 
-if [[ -e $(which icons-in-terminal) ]];then
+if [[ -e $(command -v icons-in-terminal) ]];then
     alias termicon=icons-in-terminal
 fi
 
-if [[ -e $(which ccat) ]]; then
+if [[ -e $(command -v bat) ]]; then
+    alias cat='bat --theme Nord -nfl'
+fi
+
+if [[ -e $(command -v ccat) ]]; then
     alias cat=ccat
 fi
 
-if [[ -e $(which nvim) ]];then
+if [[ -e $(command -v nvim) ]];then
     alias vim=nvim
     alias vi=nvim
 fi
@@ -78,6 +82,7 @@ alias dc....=cd....
 alias dc.....=cd.....
 alias exi=exit
 alias ext=exit
+alias exot=exit
 alias sl=ls
 alias ssl=ls
 alias lls=ls
@@ -117,3 +122,5 @@ alias timeshell='for i in $(seq 1 10); do time $SHELL -i -c exit; done'
 alias gitignsymlink='find . -type l >> .gitignore'
 alias initgitcli='git init -b main && git add . && git commit -m "initial commit" && gh repo create'
 alias trmcolors='printf " \e[30m⬤ \e[31m⬤ \e[32m⬤ \e[33m⬤ \e[34m⬤ \e[35m⬤ \e[36m⬤ \e[37m⬤ \e[39m\n \e[90m⬤ \e[91m⬤ \e[92m⬤ \e[93m⬤ \e[94m⬤ \e[95m⬤ \e[96m⬤ \e[97m⬤ \e[39m\nCOLORTERM=$COLORTERM\n"'
+alias ppwrreset='systemctl --user restart pipewire.service'
+alias kbpreset='setxkbmap -model abnt2 -layout br -variant abnt2'

@@ -1,10 +1,16 @@
 ### User Variables
-ARQUIVOS=/media/Arquivos/Arquivos
-DOTFILES=$HOME/.dotfiles
-CURSOSPROGRAMACAO=/media/Arquivos/Arquivos/Programacao/Courses
-VSCODEPROJECTS=/media/Arquivos/Arquivos/Programacao/VisualCode/Projects
-VSCODECOURSES=/media/Arquivos/Arquivos/Programacao/VisualCode/Courses
-VSCODELIBRARIES=/media/Arquivos/Arquivos/Programacao/VisualCode/Libraries
+Arquivos=/media/Arquivos
+dotfiles=$HOME/.dotfiles
+ProgrammingCourses=$Arquivos/Programming/Courses
+CodeProjects=$Arquivos/Programming/Projects
+CoursesCodes=$Arquivos/Programacao/VisualCode/Course
+CodeLibs=$Arquivos/Programming/Libraries
+CodePratices=$Arquivos/Programming/Pratices
+Games=$Arquivos/Games
+Downloads=$Arquivos/Downloads
+Videos=$Arquivos/Videos
+Images=$Arquivos/Images
+Torrents=$Arquivos/Torrents
 
 ### Export Variables
 export GOROOT=/usr/lib/go
