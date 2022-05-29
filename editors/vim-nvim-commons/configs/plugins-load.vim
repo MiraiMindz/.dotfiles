@@ -19,6 +19,7 @@ call plug#begin('$HOME/.dotfiles/editors/vim-nvim-commons/plugins/')
 	Plug 'dense-analysis/ale/'
 	Plug 'mkitt/tabline.vim/'
 	Plug 'vim-airline/vim-airline/'
-	Plug 'ntpeters/vim-better-whitespace'
-	Plug 'MiraiMindz/vim-colorschemes-collection'
+	Plug 'ntpeters/vim-better-whitespace/'
+	Plug 'catppuccin/nvim', {'as': 'catppuccin'}
+	Plug 'MiraiMindz/vim-colorschemes-collection/'
 call plug#end()
