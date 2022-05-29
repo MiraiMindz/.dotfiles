@@ -2444,8 +2444,8 @@
     use_system_font = False
     background_image = None
   [[Catppuccin]]
-    background_color = "#1E1E28"
-    background_darkness = 1.0
+    background_color = "#1e1e2e"
+    background_darkness = 0.6
     background_type = transparent
     cursor_color = "#b1e3ad"
     font = Cascadia Code PL Semi-Light 12
