@@ -232,4 +232,3 @@ printf "${DARK_YELLOW}curl -fLo installConfigs.sh \"https://raw.githubuserconten
 printf "Run the new script with: ${DARK_YELLOW}sh installConfigs.sh${NOCOLOR}\n"
 printf "${DARK_GREEN}Enjoy and Good Luck${NOCOLOR}! \n"
 exit
-

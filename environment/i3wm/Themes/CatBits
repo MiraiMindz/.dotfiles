@@ -201,22 +201,17 @@ bindsym XF86AudioPrev exec playerctl prev
 exec_always xrandr --auto --output VGA1 --mode 1360x768 --right-of LVDS1
 
 ### Wallpaper
-#exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Catpuccin/misc/cat_colors.png
-#exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Catpuccin/minimalistic/HoldWallpaper.png
-exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Catpuccin/misc/comfy-home.png
+# # exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Catpuccin/misc/cat_colors.png
+exec_always --no-startup-id $HOME/animatedwall.sh
 
-### GLAVA
-exec_always --no-startup-id glava -d -e rc.glsl
-exec_always --no-startup-id glava -d -e rc_dual.glsl
-exec_always --no-startup-id glava -d -e rc_conky.glsl
-exec_always --no-startup-id glava -d -e rc_conky_dual.glsl
-
-### Conky
-exec_always --no-startup-id conky --config=/home/mirai/.config/conky/conky.conf
-exec_always --no-startup-id conky --config=/home/mirai/.config/conky/conky_dual.conf
+# # GLAVA
+# exec_always --no-startup-id glava -dv
+# exec_always --no-startup-id $HOME/glavaexec.sh
+#exec_always --no-startup-id glava -d -e rc.glsl
+#exec_always --no-startup-id glava -d -e rc_dual.glsl
 
 ### Screen Brightness
-exec_always --no-startup-id brightnessctl set 50%
+exec_always --no-startup-id brightnessctl set 40%
 
 ### Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

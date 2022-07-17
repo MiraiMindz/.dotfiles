@@ -44,7 +44,7 @@ if [[ -e $(command -v icons-in-terminal) ]];then
 fi
 
 if [[ -e $(command -v bat) ]]; then
-    alias cat='bat --theme Nord -nfl'
+    alias bat='bat --theme Nord -nfl'
 fi
 
 if [[ -e $(command -v ccat) ]]; then
