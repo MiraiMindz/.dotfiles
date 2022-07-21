@@ -129,5 +129,5 @@ function drawWeather(d) {
 
 }
 
-setInterval(weatherBalloon(${YOUR-ID}), 1000);
-weatherBalloon(${YOUR-ID});
+setInterval(weatherBalloon('${YOUR-ID}'), 1000);
+weatherBalloon('${YOUR-ID}');
