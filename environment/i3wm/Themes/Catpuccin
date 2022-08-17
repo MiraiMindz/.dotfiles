@@ -198,7 +198,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl prev
 
 ### Dual-Monitor Setup
-exec_always xrandr --auto --output VGA1 --mode 1360x768 --right-of LVDS1
+#exec_always xrandr --auto --output VGA1 --mode 1360x768 --right-of LVDS1
+exec_always xrandr --output VGA1 --mode 1360x768 --rate 59.80 --left-of LVDS1 --output LVDS1 --mode 1366x768 --rate 60.03
 
 ### Wallpaper
 #exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Catpuccin/misc/cat_colors.png

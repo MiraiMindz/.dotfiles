@@ -1,6 +1,7 @@
 :root {
     --size: 14px;
-    --fnt_fml: "Fixedsys Excelsior";
+    /* --fnt_fml: "Fixedsys Excelsior"; */
+    --fnt_fml: "Cartograph CF";
 }
 
 /* Explorer / Sidebar */
@@ -11,7 +12,7 @@
 }
 .split-view-view > .sidebar > .content > .viewlet{
     font-family: var(--fnt_fml) !important;
-    font-size: var(--size);
+    font-size: 12px;
 }
 
 .split-view-view>.sidebar> .title > .title-label > h2 {
@@ -32,5 +33,30 @@
 /* Statusbar */
 .monaco-workbench .part.statusbar>.items-container>.statusbar-item {
     font-family: var(--fnt_fml) !important;
-    font-size: 16px;
+    font-size: 12px;
 }
+
+/* GLOW  */
+/* Variables, property names, tags, markup headings */
+/* .mtk5 {
+    color: #d9e0ee;
+    text-shadow: 0 0 2px #181825, 0 0 3px #afbbd2, 0 0 5px #d9e0ee;
+} */
+
+/* Functions, escape characters, CSS #ids */
+/* .mtk6 {
+    color: #96cdfb;
+    text-shadow: 0 0 2px #181825, 0 0 3px #6ea1ca 0 0 5px #96cdfb;
+} */
+
+/* Keywords, template literals & embedded punctuation (e.g. ${} or {} ) */
+/* .mtk9 {
+    color: #ddb6f2;
+    text-shadow: 0 0 2px #181825 0 0 3px #bc93d3, 0 0 5px #ddb6f2;
+} */
+
+/* Operators */
+/* .mtk10 {
+    color: #89dceb;
+    text-shadow: 0 0 2px #181825, 0 0 3px #69b6c3, 0 0 5px #89dceb;
+} */
