@@ -20,23 +20,22 @@ My partitioning is the following:
 | sdXY | 50GB         | part | /                 | EXT4       |
 | sdXY | REST-OF-DISK | part | /media/Arquivos   | EXT4       |
 
-
-
 ## Packages
 
-- https://github.com/gitGNU/gnu_bash or https://github.com/zsh-users/zsh
-- https://github.com/ibhagwan/picom
-- https://github.com/Airblader/i3
-- https://github.com/dylanaraps/neofetch
-- https://github.com/polybar/polybar
-- https://github.com/davatorium/rofi
-- https://github.com/adi1090x/rofi
-- https://github.com/gnome-terminator/terminator
-- https://github.com/Swordfish90/cool-retro-term
-- https://github.com/vim/vim
-- https://github.com/Peltoche/lsd
-- https://github.com/tadly/hideIt.sh
+- <https://github.com/gitGNU/gnu_bash> or <https://github.com/zsh-users/zsh>
+- <https://github.com/ibhagwan/picom>
+- <https://github.com/Airblader/i3>
+- <https://github.com/dylanaraps/neofetch>
+- <https://github.com/polybar/polybar>
+- <https://github.com/davatorium/rofi>
+- <https://github.com/adi1090x/rofi>
+- <https://github.com/gnome-terminator/terminator>
+- <https://github.com/Swordfish90/cool-retro-term>
+- <https://github.com/vim/vim>
+- <https://github.com/Peltoche/lsd>
+- <https://github.com/tadly/hideIt.sh>
 
 ### [Color Schemes](https://github.com/MiraiMindz/vim-colorschemes-collection)
 
-https://github.com/MiraiMindz/vim-colorschemes-collection
+<https://github.com/MiraiMindz/vim-colorschemes-collection>
+
