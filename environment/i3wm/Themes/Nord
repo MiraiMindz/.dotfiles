@@ -198,16 +198,31 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl prev
 
 ### Dual-Monitor Setup
-exec_always xrandr --auto --output VGA1 --mode 1360x768 --right-of LVDS1
+#exec_always xrandr --auto --output VGA1 --mode 1360x768 --right-of LVDS1
+exec_always xrandr --output VGA1 --mode 1360x768 --rate 59.80 --left-of LVDS1 --output LVDS1 --mode 1366x768 --rate 60.03
 
 ### Wallpaper
-exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Nord/covers.png
+#exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Nord/covers.png
+exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Nord/nord_mountains.png
 
 ### Polybar Launch Script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 ### Polybar AutoHide
 exec_always --no-startup-id hideIt.sh -w --name '^Polybar tray window$' --region 0x768+10+-40
+
+### Screen Brightness
+exec_always --no-startup-id brightnessctl set 50%
+
+### Conky
+exec_always --no-startup-id conky --config=/home/mirai/.config/conky/conky.conf
+exec_always --no-startup-id conky --config=/home/mirai/.config/conky/conky_dual.conf
+
+### GLAVA
+#exec_always --no-startup-id glava -d -e rc.glsl
+#exec_always --no-startup-id glava -d -e rc_dual.glsl
+#exec_always --no-startup-id glava -d -e rc_conky.glsl
+#exec_always --no-startup-id glava -d -e rc_conky_dual.glsl
 
 ### Picom Config
 exec_always --no-startup-id picom -b --experimental-backends --config $HOME/.config/picom/picom.conf
@@ -219,6 +234,9 @@ bindsym Print exec bash $HOME/.config/rofi/bin/menu_screenshot
 exec_always --no-startup-id kdeconnect-indicator
 exec_always --no-startup-id polychromatic-tray-applet
 exec_always --no-startup-id premid
+
+### Run Firefox Startpage
+exec_always --no-startup-id serve -s /media/Arquivos/Programming/Projects/HomePages/HomePage01/dist
 
 ### Color Scheme
 set $bgcolor50 	#2e344080

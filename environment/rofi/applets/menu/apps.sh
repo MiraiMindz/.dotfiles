@@ -23,23 +23,25 @@ scrcpy=""
 discord=""
 music=""
 
-case $(xdg-settings get default-web-browser) in
-	"firefox.desktop")
-		browser=""
-	;;
-	"chrome.desktop")
-		browser=""
-	;;
-	"chromium.desktop")
-		browser=""
-	;;
-	"opera.desktop")
-		browser=""
-	;;
-	*)
-		browser=""
-	;;
-esac
+# case $(xdg-settings get default-web-browser) in
+# 	"firefox.desktop")
+# 		browser=""
+# 	;;
+# 	"chrome.desktop")
+# 		browser=""
+# 	;;
+# 	"chromium.desktop")
+# 		browser=""
+# 	;;
+# 	"opera.desktop")
+# 		browser=""
+# 	;;
+# 	*)
+# 		browser=""
+# 	;;
+# esac
+
+browser=""
 
 # Error msg
 msg() {
@@ -66,43 +68,49 @@ case $chosen in
 		fi
         ;;
     $browser)
-		case $(xdg-settings get default-web-browser) in
-			"firefox.desktop")
-				if [[ -f $(which firefox) ]]; then
-					firefox &
-				else
-					msg "firefox not found"
-				fi
-			;;
-			"chrome.desktop")
-				if [[ -f $(which chrome) ]]; then
-					chrome &
-				else
-					msg "chrome not found"
-				fi
-			;;
-			"chromium.desktop")
-				if [[ -f $(which chromium) ]]; then
-					chromium &
-				else
-					msg "chromium not found"
-				fi
-			;;
-			"opera.desktop")
-				if [[ -f $(which opera) ]]; then
-					opera &
-				else
-					msg "opera not found"
-				fi
-			;;
-			*)
-				if [[ -f $(which brave) ]]; then
-					brave &
-				else
-					msg "browser not found"
-				fi
-			;;
-		esac
+		if [[ -f $HOME/.config/rofi/applets/menu/browsers.sh ]]; then
+			sh $HOME/.config/rofi/applets/menu/browsers.sh &
+		else
+			msg "Browser selector not found, fallbacking to default browser"
+			case $(xdg-settings get default-web-browser) in
+				"firefox.desktop")
+					if [[ -f $(which firefox) ]]; then
+						firefox &
+					else
+						msg "firefox not found"
+					fi
+				;;
+				"chrome.desktop")
+					if [[ -f $(which chrome) ]]; then
+						chrome &
+					else
+						msg "chrome not found"
+					fi
+				;;
+				"chromium.desktop")
+					if [[ -f $(which chromium) ]]; then
+						chromium &
+					else
+						msg "chromium not found"
+					fi
+				;;
+				"opera.desktop")
+					if [[ -f $(which opera) ]]; then
+						opera &
+					else
+						msg "opera not found"
+					fi
+				;;
+				*)
+					if [[ -f $(which brave) ]]; then
+						brave &
+					else
+						msg "browser not found"
+					fi
+				;;
+			esac
+		fi
+
         ;;
     $rofi)
 		if [[ -f $(which rofi) ]]; then

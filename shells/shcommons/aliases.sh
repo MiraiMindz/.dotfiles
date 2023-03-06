@@ -43,9 +43,10 @@ if [[ -e $(command -v icons-in-terminal) ]];then
     alias termicon=icons-in-terminal
 fi
 
-if [[ -e $(command -v bat) ]]; then
-    alias bat='bat --theme Nord -nfl'
-fi
+
+#if [[ -e $(command -v bat) ]]; then
+#    alias bat='bat --theme Catppuccin-mocha -nfl'
+#fi
 
 if [[ -e $(command -v ccat) ]]; then
     alias cat=ccat
@@ -55,6 +56,11 @@ if [[ -e $(command -v nvim) ]];then
     alias vim=nvim
     alias vi=nvim
 fi
+
+
+mount_func() {
+    mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | grep -E ^/dev/ | sort
+}
 
 alias cler=clear
 alias claer=clear
@@ -113,7 +119,7 @@ alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 alias cpuinfo='lscpu'
 alias gpumeminfo='grep -i --color memory /var/log/Xorg.0.log'
-alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
+alias mnt=mount_func
 alias grphis='history|grep'
 alias topgit='cd `git rev-parse --show-toplevel` && git checkout master && git pull'
 alias cg='cd `git rev-parse --show-toplevel`'

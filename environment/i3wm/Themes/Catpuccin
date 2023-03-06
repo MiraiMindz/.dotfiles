@@ -207,10 +207,10 @@ exec_always xrandr --output VGA1 --mode 1360x768 --rate 59.80 --left-of LVDS1 --
 exec_always --no-startup-id feh --bg-fill /media/Arquivos/Wallpapers/Desktop/Catpuccin/misc/comfy-home.png
 
 ### GLAVA
-exec_always --no-startup-id glava -d -e rc.glsl
-exec_always --no-startup-id glava -d -e rc_dual.glsl
-exec_always --no-startup-id glava -d -e rc_conky.glsl
-exec_always --no-startup-id glava -d -e rc_conky_dual.glsl
+#exec_always --no-startup-id glava -d -e rc.glsl
+#exec_always --no-startup-id glava -d -e rc_dual.glsl
+#exec_always --no-startup-id glava -d -e rc_conky.glsl
+#exec_always --no-startup-id glava -d -e rc_conky_dual.glsl
 
 ### Conky
 exec_always --no-startup-id conky --config=/home/mirai/.config/conky/conky.conf
@@ -238,6 +238,9 @@ exec_always --no-startup-id sh -c 'notify-send -u critical "Remainder" "Open Not
 exec_always --no-startup-id kdeconnect-indicator
 exec_always --no-startup-id polychromatic-tray-applet
 exec_always --no-startup-id premid
+
+### Run Firefox Startpage
+exec_always --no-startup-id serve -s /media/Arquivos/Programming/Projects/HomePages/HomePage01/dist
 
 ### Color Scheme
 set $bgcolor50 	#1e1e2e80
