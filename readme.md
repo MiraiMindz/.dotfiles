@@ -1,5 +1,11 @@
 # .dotfiles
 
+## Avisos
+
+eu preciso limpar e re-estruturar esses .dotfiles, pois algumas das configs q eu usei tiveram atualizações drasticas, além d'eu ter que organizar para facilitar manutenção e futuras implementações de scripts ou afins.
+
+-----
+
 Para a versão em português brasileiro clique [aqui](./readme_br.md)
 
 If you don't know .dotfiles are basically configurations files in unix-like systems
