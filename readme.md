@@ -2,7 +2,7 @@
 
 ## Avisos
 
-eu preciso limpar e re-estruturar esses .dotfiles, pois algumas das configs q eu usei tiveram atualizações drasticas, além d'eu ter que organizar para facilitar manutenção e futuras implementações de scripts ou afins.
+eu preciso limpar e re-estruturar esses .dotfiles, pois algumas das configurações que eu usei tiveram atualizações drasticas, além d'eu ter que organizar para facilitar manutenção e futuras implementações de scripts ou afins.
 
 -----
 
