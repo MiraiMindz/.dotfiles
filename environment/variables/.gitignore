@@ -1,4 +1,0 @@
-.env
-
-# Please create a .env file with the following KEYS:
-# ADBDEVIP={android device network ip}

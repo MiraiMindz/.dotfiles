@@ -1,6 +1,0 @@
-/* This file is for little changes, that only take 2 or 3 lines */
-
-/* Set the tab-height to be 28px - Compact */
-:root {
-    --tab-min-height: 28px !important;
-}

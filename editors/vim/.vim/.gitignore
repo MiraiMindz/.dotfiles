@@ -1,5 +1,0 @@
-*
-*/
-!.gitignore
-
-# Added this .gitignore to ignore the extensions folders, if you want to see these extensions look at the plugins-load.vim file

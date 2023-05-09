@@ -1,1 +1,0 @@
-/home/mirai/.dotfiles/editors/vim-nvim-commons/configs/plugins-config.vim

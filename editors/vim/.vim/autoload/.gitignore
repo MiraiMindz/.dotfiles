@@ -1,7 +1,0 @@
-*
-*/
-!.gitignore
-!plug.vim
-
-# Moved Color Schemes to dedicated repository https://github.com/MiraiMindz/vim-colorschemes-collection
-# Added this .gitignore to ignore the Color Schemes files

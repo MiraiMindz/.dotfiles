@@ -1,1 +1,0 @@
-/home/mirai/.dotfiles/shells/shcommons/aliases.sh
