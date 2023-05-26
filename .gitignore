@@ -1,5 +1,8 @@
 .vscode/
+*.vsix
+.history/
 .github/
+.obsidian/
 CONTRIBUTING.md
 CODE_OF_CONDUCT.md
 LICENSE

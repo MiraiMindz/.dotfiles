@@ -1,4 +1,6 @@
-MIT License
+# MIT License
+
+![LicenseLogo](./assets/meta/images/Headers/License.svg)
 
 Copyright (c) [2021] [Mirai]
 
