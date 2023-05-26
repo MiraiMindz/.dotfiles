@@ -2,6 +2,8 @@
 
 ![LicenseLogo](./assets/meta/images/Headers/License.svg)
 
+Para a versão em português brasileiro, [clique aqui](./LICENSE_BR.md).
+
 Copyright (c) [2021] [Mirai]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

@@ -2,6 +2,8 @@
 
 ![ContributingLogo](./assets/meta/images/Headers/Contributing.svg)
 
+Para a versão em português brasileiro, [clique aqui](./CONTRIBUTING_BR.md).
+
 Thank you for considering contributing to this project! Contributions, bug reports, and feature requests are all welcome. By participating in this project, you agree to abide by the [Code of Conduct](./CODE_OF_CONDUCT.md).
 
 This is mostly a personal repo, but, if you want to suggest something, you can always create a Issue, or a Pull Request.

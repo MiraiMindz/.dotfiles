@@ -2,6 +2,8 @@
 
 ![Logotipo da Licença](./assets/meta/images/Headers/License_BR.svg)
 
+For the english version, [click here](./LICENSE.md).
+
 Direitos autorais (c) [2021] [Mirai]
 
 A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia

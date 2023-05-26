@@ -4,6 +4,8 @@
 
 Bem-vindo ao meu repositório pessoal de dotfiles! Essa coleção de dotfiles contém os arquivos de configuração de várias ferramentas e aplicativos que utilizo diariamente. Ao versionar esses arquivos com o Git, posso facilmente sincronizar minhas configurações em várias máquinas e configurar rapidamente novos ambientes.
 
+For the english version, [click here](./README.md).
+
 ## Sumário
 
 - [Dotfiles](#dotfiles)
@@ -74,13 +76,13 @@ Lembre-se de manter suas alterações dentro do diretório `~/.dotfiles` para ma
 
 Contribuições, melhorias e sugestões são sempre bem-vindas! Se encontrar algum problema ou tiver ideias para aprimorar esses dotfiles, sinta-se à vontade para abrir uma issue ou enviar uma solicitação de pull.
 
-Se deseja contribuir, consulte [CONTRIBUTING](./CONTRIBUTING.md) para mais detalhes.
+Se deseja contribuir, consulte [CONTRIBUTING](./CONTRIBUTING_BR.md) para mais detalhes.
 
 Por favor, tenha paciência durante o processo de revisão, pois pode levar algum tempo para abordar e incorporar suas contribuições.
 
 ## Licença
 
-Este repositório está licenciado sob a [Licença do MIT](./LICENSE.md). Você está livre para usar, modificar e distribuir o código neste repositório. Consulte o arquivo [LICENSE](./LICENSE.md) para obter mais detalhes.
+Este repositório está licenciado sob a [Licença do MIT](./LICENSE_BR.md). Você está livre para usar, modificar e distribuir o código neste repositório. Consulte o arquivo [LICENSE](./LICENSE_BR.md) para obter mais detalhes.
 
 ## Agradecimentos
 

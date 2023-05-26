@@ -4,6 +4,8 @@
 
 Welcome to my personal dotfiles repository! This collection of dotfiles contains the configuration files for various tools and applications I use on a daily basis. By version controlling these files with Git, I can easily synchronize my configurations across multiple machines and quickly set up new environments.
 
+Para a versão em português brasileiro, [clique aqui](./README_BR.md).
+
 ## Table of Contents
 
 - [Dotfiles](#dotfiles)

@@ -2,7 +2,9 @@
 
 ![ContributingLogo](./assets/meta/images/Headers/Contributing_BR.svg)
 
-Obrigado por considerar contribuir para este projeto! Contribuições, relatórios de bugs e solicitações de novos recursos são bem-vindos. Ao participar deste projeto, você concorda em seguir o [Código de Conduta](./CODE_OF_CONDUCT.md).
+For the english version, [click here](./CONTRIBUTING.md).
+
+Obrigado por considerar contribuir para este projeto! Contribuições, relatórios de bugs e solicitações de novos recursos são bem-vindos. Ao participar deste projeto, você concorda em seguir o [Código de Conduta](./CODE_OF_CONDUCT_BR.md).
 
 Este é principalmente um repositório pessoal, mas se você quiser sugerir algo, você sempre pode criar uma Issue ou um Pull Request.
 
@@ -126,4 +128,4 @@ Além disso, estendemos nossos agradecimentos aos criadores e mantenedores dos p
 
 ## Licença
 
-Este projeto está licenciado sob a [Licença MIT](./LICENSE.md). Ao contribuir para este projeto, você concorda em licenciar suas contribuições sob a mesma licença.
+Este projeto está licenciado sob a [Licença MIT](./LICENSE_BR.md). Ao contribuir para este projeto, você concorda em licenciar suas contribuições sob a mesma licença.

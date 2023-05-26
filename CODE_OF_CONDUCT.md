@@ -2,6 +2,8 @@
 
 ![CodeOfConductLogo](./assets/meta/images/Headers/CodeOfConduct.svg)
 
+Para a versão em português brasileiro, [clique aqui](./CODE_OF_CONDUCT_BR.md).
+
 ## Our Pledge
 
 We as members, contributors, and leaders pledge to make participation in our

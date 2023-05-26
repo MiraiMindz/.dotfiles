@@ -2,6 +2,8 @@
 
 ![Logotipo do Código de Conduta](./assets/meta/images/Headers/CodeOfConduct_BR.svg)
 
+For the english version, [click here](./CODE_OF_CONDUCT.md).
+
 ## Nosso Compromisso
 
 Nós, como membros, contribuintes e líderes, nos comprometemos a tornar a participação em nossa
