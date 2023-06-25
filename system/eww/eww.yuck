@@ -1,0 +1,338 @@
+;
+
+(defvar songimage "/home/mirai/.cache/album_covers/output.png")
+; (defvar songimage "/home/mirai/.config/eww/icons/Spotify_Icon.svg")
+
+
+(deflisten musictitle :initial "Title"
+    "playerctl --follow metadata --format '{{ title }}' || true"
+)
+
+(deflisten musicartist :initial "Artist"
+    "playerctl --follow metadata --format '{{ artist }}' || true"
+)
+
+(deflisten songposition :initial 0.0
+    "playerctl --follow metadata --format '{{ (position / mpris:length) * 100 }}' || true"
+)
+
+(deflisten songpositiontime :initial "0:00"
+    "playerctl --follow metadata --format '{{ duration(position) }}' || true"
+)
+
+(deflisten songdurationtime :initial "0:00"
+    "playerctl --follow metadata --format '{{ duration(mpris:length) }}' || true"
+)
+
+(defpoll time :interval "10s"
+    "date '+%H:%M %b %d, %Y'"
+)
+
+(defvar loopstate "Playlist")
+(defvar playstate "Playing")
+(defvar pathTrack "./icons/spotify_buttons/Loop_Song.svg")
+(defvar pathList "./icons/spotify_buttons/Loop_Playlist.svg")
+(defvar pathNone "./icons/spotify_buttons/Loop_None.svg")
+
+
+(defwidget dummy []
+    ""
+)
+
+(defwidget padder [size]
+    (box
+        :spacing size
+        " "
+        " ")
+)
+
+(defwidget workspaces_box []
+    (transform
+        :translate-x "1%"
+        (box :class "workspaces_box"
+        (workspaces)))
+)
+
+(defwidget workspaces []
+    (box :class "workspaces"
+            :orientation "h"
+            :space-evenly true
+            :halign "start"
+            :spacing 10
+        (button :onclick "bspc desktop -f 0" (image :path "./icons/Terminal_Icon.svg" :image-width 20))
+        (button :onclick "bspc desktop -f 1" (image :path "./icons/Chrome_Icon.svg" :image-width 20))
+        (button :onclick "bspc desktop -f 2" (image :path "./icons/Discord_Icon.svg" :image-width 20))
+        (button :onclick "bspc desktop -f 3" (image :path "./icons/VSCode_Icon.svg" :image-width 20))
+        (button :onclick "bspc desktop -f 4" (image :path "./icons/Folder_Icon.svg" :image-width 21))
+        (button :onclick "bspc desktop -f 5" (image :path "./icons/Spotify_Icon.svg" :image-width 20))
+        (button :onclick "bspc desktop -f 6" (image :path "./icons/Workspace_7_Icon.svg" :image-width 20))
+        (button :onclick "bspc desktop -f 7" (image :path "./icons/Workspace_8_Icon.svg" :image-width 20))
+        (button :onclick "bspc desktop -f 8" (image :path "./icons/Workspace_9_Icon.svg" :image-width 20))
+        (button :onclick "bspc desktop -f 9" (image :path "./icons/Workspace_10_Icon.svg" :image-width 20)))
+)
+
+
+(defwidget musiccontrols []
+    (centerbox :class "controls-wrapper"
+        :orientation "h"
+        :halign "start"
+        :valign "center"
+        :spacing 2
+        :width "0%"
+        :height "0%"
+        (box :class "spotify-control loop-button"
+            (button :onclick "./update_spotify_loop.sh"
+                (image
+                    :width "0%"
+                    :height "0%"
+                    :path {loopstate == "Track" ? pathTrack : loopstate == "Playlist" ? pathList : pathNone}
+                    :image-width 24)))
+        (centerbox :class "players-buttons"
+            :orientation "h"
+            :halign "start"
+            :valign "center"
+            :spacing 2
+            :width "0%"
+            :height "0%"
+            (button :onclick "playerctl --player=spotify previous" :class "backward-icon"
+                (image
+                    :path "./icons/spotify_buttons/Backward.svg"
+                    :image-width 16))
+            (button :onclick "./update_spotify_playpause.sh" :class "playpause-icon"
+                (image
+                    :path {playstate == "Playing" ? "./icons/spotify_buttons/Play.svg" : "./icons/spotify_buttons/Pause2.svg"}
+                    :image-width 14))
+            (button :onclick "playerctl --player=spotify next" :class "forward-icon"
+                (image
+                    :path "./icons/spotify_buttons/Forward.svg"
+                    :image-width 16))
+        )
+        (box :class "song-time"
+        "${songpositiontime}/${songdurationtime}")
+    )
+)
+
+(defwidget music []
+    (centerbox
+        :orientation "v"
+        (box
+        :orientation "v"
+        :halign "start"
+        :valign "center"
+        (centerbox
+            :orientation "h"
+            (box :class "music-image"
+                (musicimage))
+            (padder :size 16)
+            (centerbox
+                :orientation "h"
+                (musicinfo)
+                (padder :size 24)
+                (dummy))))
+        (box  :class "music-slider"
+            :orientation "h"
+            :halign "start"
+            :valign "center"
+            :width "0%"
+            :height "0%"
+            (box :class "songtrack"
+            :orientation "h"
+            :halign "start"
+            :valign "center"
+            :width "0%"
+            :height "0%"
+            (scale
+                :orientation "h"
+                :min 0
+                :max 100.0
+                :active {songposition != 0}
+                :onchange songposition
+                :value songposition)))
+        (musiccontrols)
+    )
+
+)
+
+
+(defwidget musicinfo []
+    (box
+        :width "0%"
+        :height "0%"
+        :orientation "v"
+        :halign "start"
+        :valign "center"
+        (transform
+            (box :class "music songinfo2"
+                (label
+                    :limit-width 20
+                    :text {musictitle != "" ? "${musictitle}" : ""})))
+        (transform
+            (box :class "music songinfo1"
+                (label
+                    :limit-width 20
+                    :text {musicartist != "" ? "${musicartist}" : ""}))))
+)
+
+
+(defwidget musicimage []
+    (box
+        :width "0%"
+        :height "0%"
+        :orientation "v"
+        :halign "start"
+        :valign "center"
+        (image
+            :path "${songimage}"
+            :image-width 48 :image-height 48))
+)
+
+
+(defwidget rammonitor []
+    (circular-progress
+    :class "ram_monitor_circle"
+    :clockwise false
+    :value {EWW_RAM["used_mem_perc"]}
+    :thickness 5
+    (box :class "ram_texts"
+        :orientation "v"
+        :spacing 4
+        (box
+            :class "ram_monitor_label"
+            (label
+                :text "RAM"
+                :height "0%"
+                :width  "0%"))
+        (box
+            :class "ram_monitor_percentage_box"
+            (label
+                :valign "end"
+                :halign "center"
+                :text "${round(EWW_RAM['used_mem_perc'], 0)}%"
+                :height "0%"
+                :width  "0%"))))
+)
+
+(defwidget cpumonitor []
+    (circular-progress
+    :class "cpu_monitor_circle"
+    :clockwise false
+    :value {EWW_CPU["avg"]}
+    :thickness 5
+    (box :class "cpu_texts"
+        :orientation "v"
+        :spacing 4
+        (box
+            :class "cpu_monitor_label"
+            (label
+                :text "CPU"
+                :height "0%"
+                :width  "0%"))
+        (box
+            :class "cpu_monitor_percentage_box"
+            (label
+                :valign "end"
+                :halign "center"
+                :text "${round(EWW_CPU['avg'], 0)}%"
+                :height "0%"
+                :width  "0%"))))
+)
+
+(defwidget diskmonitor []
+    (circular-progress
+    :class "disk_monitor_circle"
+    :clockwise false
+    :value {EWW_DISK['/'].used_perc}
+    :thickness 5
+    (box :class "disk_texts"
+        :orientation "v"
+        :spacing 4
+        (box
+            :class "disk_monitor_label"
+            (label
+                :text "DISK"
+                :height "0%"
+                :width  "0%"))
+        (box
+            :class "disk_monitor_percentage_box"
+            (label
+                :valign "end"
+                :halign "center"
+                :text "${round(EWW_DISK['/'].used_perc, 0)}%"
+                :height "0%"
+                :width  "0%"))))
+)
+
+(defwidget sysmonitors []
+    (box
+        :orientation "h"
+        :spacing 16
+        (rammonitor)
+        (cpumonitor)
+        (diskmonitor))
+)
+
+(defwidget powermenu []
+    (box
+        :class "powermenu"
+        :orientation "v"
+        :spacing 8
+        (button :onclick "bspc quit"
+            (image :image-width 16 :path "./icons/powermenu_icons/Logout_Icon.svg"))
+        (button :onclick "systemctl reboot"
+            (image :image-width 16 :path "./icons/powermenu_icons/Reboot_Icon.svg"))
+        (button :onclick "systemctl poweroff"
+            (image :image-width 16 :path "./icons/powermenu_icons/PowerOff_Icon.svg"))
+    )
+)
+
+(defwindow sysmonitors
+    :monitor 0
+    :windowtype "desktop"
+    :geometry (geometry :x "3%"
+                        :y "22%"
+                        :width "0%"
+                        :height "0%"
+                        :anchor "top left")
+    :wm-ignore false
+    :stacking "bg"
+    (sysmonitors)
+)
+
+(defwindow spotifysong
+    :monitor 0
+    :windowtype "desktop"
+    :geometry (geometry :x "1%"
+                        :y "5%"
+                        :width "0%"
+                        :height "0%"
+                        :anchor "top left")
+    :wm-ignore false
+    :stacking "bg"
+    (music)
+)
+
+(defwindow powermenubar
+    :monitor 0
+    :windowtype "desktop"
+    :geometry (geometry :x "1%"
+                        :y "22%"
+                        :width "0%"
+                        :height "0%"
+                        :anchor "top left")
+    :wm-ignore false
+    :stacking "bg"
+    (powermenu)
+)
+
+(defwindow bar
+    :monitor 0
+    :windowtype "desktop"
+    :geometry (geometry :x "1%"
+                        :y "1%"
+                        :width "0%"
+                        :height "0%"
+                        :anchor "top left")
+    :wm-ignore false
+    :stacking "bg"
+    (workspaces_box)
+)

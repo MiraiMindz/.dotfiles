@@ -1,0 +1,287 @@
+// @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+
+$rosewater: #f5e0dc;
+$flamingo: #f2cdcd;
+$pink: #f5c2e7;
+$mauve: #cba6f7;
+$red: #f38ba8;
+$maroon: #eba0ac;
+$peach: #fab387;
+$yellow: #f9e2af;
+$green: #a6e3a1;
+$teal: #94e2d5;
+$sky: #89dceb;
+$sapphire: #74c7ec;
+$blue: #89b4fa;
+$lavender: #b4befe;
+$text: #cdd6f4;
+$subtext1: #bac2de;
+$subtext0: #a6adc8;
+$overlay2: #9399b2;
+$overlay1: #7f849c;
+$overlay0: #6c7086;
+$surface2: #585b70;
+$surface1: #45475a;
+$surface0: #313244;
+$base: #1e1e2e;
+$mantle: #181825;
+$crust: #11111b;
+
+* {
+    all: unset;
+}
+
+.bar {
+    background-color: transparent;
+    border: $surface0 2px solid;
+    border-radius: 2rem;
+}
+
+.music {
+    background-color: transparent;
+    border-radius: 0.5rem;
+    border: $surface0 2px solid;
+}
+
+.music-slider {
+    background-color: transparent;
+    border-radius: 0.5rem;
+    border: $surface0 2px solid;
+    margin-top: 0.5rem;
+}
+
+.songtrack scale trough {
+    all: unset;
+    background-color: $surface0;
+    border-radius: 1rem;
+    min-height: 0.2rem;
+    min-width: 20rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.songtrack scale trough highlight {
+    all: unset;
+    background-color: $green;
+    color: #000000;
+    border-radius: 1rem;
+}
+
+.music-image {
+    background-color: transparent;
+    padding: 3px;
+    border-radius: 100%;
+    border: $surface0 2px solid;
+}
+
+.songinfo1 {
+    margin-top: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: $text;
+}
+
+.songinfo2 {
+    min-width: 15rem;
+    margin-bottom: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    color: $text;
+}
+
+
+.workspaces_box {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+
+
+
+
+
+
+
+
+.ram_monitor_circle {
+    background-color: transparent;
+    border: 0px solid $text;
+    border-radius: 100%;
+    padding: 0px;
+    color: $mauve;
+}
+
+.ram_monitor_label {
+    background-color: transparent;
+    border: 0px solid $text;
+    border-radius: 2rem;
+    padding-bottom: 0px;
+    color: $text;
+    padding: 5px;
+}
+
+
+.ram_monitor_percentage_box {
+    background-color: $mauve;
+    border: 0px solid $text;
+    border-radius: 2rem;
+    color: $crust;
+    padding: 0.5rem;
+}
+
+.ram_texts {
+    padding: 1.2rem;
+    background-color: transparent;
+    color: $text;
+}
+
+
+
+
+
+
+
+
+.cpu_monitor_circle {
+    background-color: transparent;
+    border: 0px solid $text;
+    border-radius: 100%;
+    padding: 0px;
+    color: $lavender;
+}
+
+.cpu_monitor_label {
+    background-color: transparent;
+    border: 0px solid $text;
+    border-radius: 2rem;
+    padding-bottom: 0px;
+    color: $text;
+    padding: 5px;
+}
+
+
+.cpu_monitor_percentage_box {
+    background-color: $lavender;
+    border: 0px solid $text;
+    border-radius: 2rem;
+    color: $crust;
+    padding: 0.5rem;
+}
+
+.cpu_texts {
+    padding: 1.2rem;
+    background-color: transparent;
+    color: $text;
+}
+
+
+
+
+
+
+.disk_monitor_circle {
+    background-color: transparent;
+    border: 0px solid $text;
+    border-radius: 100%;
+    padding: 0px;
+    color: $pink;
+}
+
+.disk_monitor_label {
+    background-color: transparent;
+    border: 0px solid $text;
+    border-radius: 2rem;
+    padding-bottom: 0px;
+    color: $text;
+    padding: 5px;
+}
+
+
+.disk_monitor_percentage_box {
+    background-color: $pink;
+    border: 0px solid $text;
+    border-radius: 2rem;
+    color: $crust;
+    padding: 0.5rem;
+}
+
+.disk_texts {
+    padding: 1.2rem;
+    background-color: transparent;
+    color: $text;
+}
+
+
+.spotify-control {
+    background-color: transparent;
+    border: 2px solid $surface0;
+    border-radius: 2rem;
+}
+
+.controls-wrapper {
+    margin-top: 0.5rem;
+}
+
+// .players-buttons {
+//     margin-left: 1rem;
+//     margin-right: 1rem;
+// }
+
+.song-time {
+    background-color: transparent;
+    border: 2px solid $surface0;
+    border-radius: 2rem;
+    color: $green;
+    padding-top: 0.1rem;
+    padding-bottom: 0.1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+
+.loop-button {
+    margin-left: 0rem;
+    margin-right: 0.5rem;
+    padding: 0.1rem;
+}
+
+.backward-icon {
+    background-color: transparent;
+    border: 2px solid $surface0;
+    border-radius: 2rem;
+    padding: 0.3rem;
+    margin-left: 2.9rem;
+    margin-right: 0.2rem;
+}
+
+.playpause-icon {
+    background-color: transparent;
+    border: 2px solid $surface0;
+    border-radius: 2rem;
+    padding: 0.3rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+.forward-icon {
+    background-color: transparent;
+    border: 2px solid $surface0;
+    border-radius: 2rem;
+    padding: 0.3rem;
+    margin-left: 0.2rem;
+    margin-right: 3rem;
+}
+
+.powermenu {
+    background-color: transparent;
+    border: 2px solid $surface0;
+    border-radius: 2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}

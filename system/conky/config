@@ -1,0 +1,63 @@
+-- Conky, a system monitor https://github.com/brndnmtthws/conky
+--
+-- This configuration file is Lua code. You can write code in here, and it will
+-- execute when Conky loads. You can use it to generate your own advanced
+-- configurations.
+--
+-- Try this (remove the `--`):
+--
+--   print("Loading Conky config")
+--
+-- For more on Lua, see:
+-- https://www.lua.org/pil/contents.html
+
+conky.config = {
+    xinerama_head = 0,
+    alignment = 'top_middle',
+    background = true,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    double_buffer = true,
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    extra_newline = false,
+    gap_x = 0,
+    gap_y = 30,
+    minimum_height = 1,
+    minimum_width = 1,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_ncurses = false,
+    out_to_stderr = false,
+    out_to_x = true,
+    own_window = true,
+    own_window_transparent = true,
+    own_window_argb_visual = true,
+    own_window_type = 'desktop',
+    own_window_hints = 'above',
+    text_buffer_size = 2048,
+    show_graph_range = false,
+    show_graph_scale = false,
+    stippled_borders = 0,
+    update_interval = 1.0,
+    use_spacer = 'none',
+    override_utf8_locale = true,
+    use_xft = true,
+    xftalpha = 1,
+    uppercase = true,
+    color1 = "6c7086",
+}
+
+
+
+conky.text = [[
+    ${color1}
+    ${alignc}${font Anurati:size=30} ${exec LC_ALL=C date '+%A'}
+    ${voffset -20}${alignc}${font CartographF Nerd Font:size=20}${time %H:%M:%S}
+]]
