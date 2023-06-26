@@ -74,7 +74,69 @@ local plugins = {
   {
     "Exafunction/codeium.vim",
     lazy = false,
-  }
+  },
+  {
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
+    keys = {
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          -- default options: exact mode, multi window, all directions, with a backdrop
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function()
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+    },
+  },
+  {
+    'tomiis4/Hypersonic.nvim',
+    event = "CmdlineEnter",
+    cmd = "Hypersonic",
+    config = function()
+      require('hypersonic').setup({
+      ---@type 'none'|'single'|'double'|'rounded'|'solid'|'shadow'|table
+      border = 'rounded',
+      ---@type number 0-100
+      winblend = 0,
+      ---@type boolean
+      add_padding = true,
+      ---@type string
+      hl_group = 'Keyword',
+      ---@type string
+      wrapping = '"',
+      ---@type boolean
+      enable_cmdline = true
+    })
+    end
+  },
+  {
+    "rgroli/other.nvim",
+    event="CmdlineEnter",
+    cmd="Other",
+  },
+
+
+
+
 
   --{
   --  "mattn/emmet-vim",
