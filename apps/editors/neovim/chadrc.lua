@@ -5,7 +5,7 @@ local M = {}
   M.ui = {
     -- Styling
     theme = "catppuccin",
-    transparency = true,
+    transparency = false,
     cheatsheet = {
     theme = "grid",
   },

@@ -11,6 +11,9 @@ M.general = {
       end,
       "toggle transparency",
     },
+    ["<F6>"] = {":CompilerOpen<CR>", "Opens a compiler", opts = { noremap = true, silent = true }},
+    ["<S-F6>"] = {":CompilerToggleResults<CR>", "Opens the compiling results", opts = { noremap = true, silent = true }},
+
   },
   i = {
     ["<C-BS>"] = {"<Esc>cvb", "Deletes entire words", opts = { noremap = true }},
