@@ -135,13 +135,39 @@ M.cmp = {
       end
     end, {"i", "s"}),
   },
+  -- Got from: https://github.com/tjdevries/config_manager/blob/78608334a7803a0de1a08a9a4bd1b03ad2a5eb11/xdg_config/nvim/after/plugin/completion.lua#L129
+  -- Planning to do my own sort on the future lol.
+  sorting = {
+    comparators = {
+      require("cmp").config.compare.offset,
+      require("cmp").config.compare.exact,
+      require("cmp").config.compare.score,
+
+      function(entry1, entry2)
+        local _, entry1_under = entry1.completion_item.label:find "^_+"
+        local _, entry2_under = entry2.completion_item.label:find "^_+"
+        entry1_under = entry1_under or 0
+        entry2_under = entry2_under or 0
+        if entry1_under > entry2_under then
+          return false
+        elseif entry1_under < entry2_under then
+          return true
+        end
+      end,
+
+      require("cmp").config.compare.kind,
+      require("cmp").config.compare.sort_text,
+      require("cmp").config.compare.length,
+      require("cmp").config.compare.order,
+    },
+  },
 }
 
 M.presence = {
   auto_update         = true,
   neovim_image_text   = "How do I exit it?",
   main_image          = "file",
-  log_level           = "debug",
+  log_level           = nil,
   debounce_timeout    = 10,
   enable_line_number  = false,
   buttons             = true,
