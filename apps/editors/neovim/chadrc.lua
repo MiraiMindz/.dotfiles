@@ -1,4 +1,4 @@
-local highlights = require("custom.configs.highlights")
+local highlights = require "custom.configs.highlights"
 
 ---@type ChadrcConfig
 local M = {}
@@ -64,5 +64,5 @@ local M = {}
   }
 
   M.plugins = "custom.plugins"
-  M.mappings = require("custom.mappings");
+  M.mappings = require "custom.mappings"
 return M
