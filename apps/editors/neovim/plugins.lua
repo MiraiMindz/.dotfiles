@@ -2,9 +2,25 @@ local overrides = require("custom.configs.overrides")
 
 ---@type NvPluginSpec[]
 local plugins = {
+  -- Overwriting default plugins configs
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.cmp
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = overrides.mason
+  },
 
-  -- Override plugin definition options
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = overrides.treesitter,
+  },
 
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = overrides.nvimtree,
+  },
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -22,23 +38,7 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- override plugin configs
-  {
-    "williamboman/mason.nvim",
-    opts = overrides.mason
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter,
-  },
-
-  {
-    "nvim-tree/nvim-tree.lua",
-    opts = overrides.nvimtree,
-  },
-
-  -- Install a plugin
+  -- Custom Plugins
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -133,33 +133,35 @@ local plugins = {
     event="CmdlineEnter",
     cmd="Other",
   },
-
-
-
-
-
-  --{
-  --  "mattn/emmet-vim",
-  --  keys = "<C-Z>"
-  --},
-
-  --{
-  --  "rafamadriz/friendly-snippets",
-  --  keys = "<C-\\>"
-  --},
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- All NvChad plugins are lazy-loaded by default
-  -- For a plugin to be loaded, you will need to set either `ft`, `cmd`, `keys`, `event`, or set `lazy = false`
-  -- If you want a plugin to load on startup, add `lazy = false` to a plugin spec, for example
-  -- {
-  --   "mg979/vim-visual-multi",
-  --   lazy = false,
-  -- }
+  {
+    "shellRaining/hlchunk.nvim",
+    event = "UIEnter",
+    config = function()
+      require("hlchunk").setup({
+        chunk = {
+          enable = true,
+          use_treesitter = true,
+          chars = {
+            horizontal_line = "─",
+            vertical_line = "│",
+            left_top = "╭",
+            left_bottom = "╰",
+            right_arrow = ">",
+          },
+          style = "#cba6f7",
+        },
+        indent = {
+          enable = false
+        },
+        line_num = {
+          enable = false
+        },
+        blank = {
+          enable = false
+        }
+      })
+    end
+  },
 }
 
 return plugins
