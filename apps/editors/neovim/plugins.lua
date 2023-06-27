@@ -154,7 +154,8 @@ local plugins = {
           enable = false
         },
         line_num = {
-          style = "#cba6f7"
+          enable = false,
+          style = "#cba6f7",
         },
         blank = {
           enable = false
