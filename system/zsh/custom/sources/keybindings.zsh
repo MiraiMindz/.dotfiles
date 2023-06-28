@@ -1,17 +1,17 @@
 #!/usr/bin/env zsh
 
 # Binds CTRL-F into the Projects fzf command
-bindkey -s '^F' 'fzcd\n'
+bindkey -s '^F' 'fzcd && clear\n'
 
 # Binds the CTRL-E into the edit dotfiles command
-bindkey -s '^E' 'editdot\n'
+bindkey -s '^E' 'editdot && clear\n'
 
 # Binds CTRL-Y into the pkg install command
-bindkey -s '^Y' 'pkginstall\n'
+bindkey -s '^Y' 'pkginstall && clear\n'
 
 # Binds CTRL-U into the pkg remove command
-bindkey -s '^U' 'pkgremove\n'
+bindkey -s '^U' 'pkgremove && clear\n'
 
 # Binds CTRL-B into the ranger command
-bindkey -s '^B' 'ranger\n'
+bindkey -s '^B' 'ranger && clear\n'
 

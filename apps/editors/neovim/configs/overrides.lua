@@ -172,7 +172,7 @@ M.presence = {
   enable_line_number  = false,
   buttons             = true,
   show_time           = true,
-
+  -- client_id           = discordID,
   -- Rich Presence text options
   editing_text        = "Editing %s",
   file_explorer_text  = "Browsing %s",
@@ -182,5 +182,7 @@ M.presence = {
   workspace_text      = "Working on %s",
   line_number_text    = "Line %s out of %s"
 }
+
+--M.presence = {}
 
 return M

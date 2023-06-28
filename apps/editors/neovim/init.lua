@@ -6,3 +6,4 @@ autocmd("VimResized", {
   command = "tabdo wincmd =",
 })
 
+-- vim.cmd.colorscheme "catppuccin"

@@ -3,4 +3,5 @@
 .history/
 .github/
 .obsidian/
+apps/editors/neovim/configs/.env
 
