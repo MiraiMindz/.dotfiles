@@ -289,7 +289,7 @@
     :monitor 0
     :windowtype "desktop"
     :geometry (geometry :x "3%"
-                        :y "22%"
+                        :y "6%"; 22%
                         :width "0%"
                         :height "0%"
                         :anchor "top left")
@@ -314,8 +314,8 @@
 (defwindow powermenubar
     :monitor 0
     :windowtype "desktop"
-    :geometry (geometry :x "1%"
-                        :y "22%"
+    :geometry (geometry :x "1%"; 22%
+                        :y "6%"
                         :width "0%"
                         :height "0%"
                         :anchor "top left")
