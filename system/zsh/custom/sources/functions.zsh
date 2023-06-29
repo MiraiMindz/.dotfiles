@@ -21,12 +21,12 @@ function editdot() {
 }
 
 function mount_func() {
-    mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | grep -E ^/dev/ | sort
+    /usr/bin/mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | grep -E ^/dev/ | sort
 }
 
 function shreddir() {
-    fd $1 -type f -x /usr/bin/shred -n 30 -v -u {} \;
-    /usr/bin/rmdir $1
+  /usr/bin/find $1 -type f -exec /usr/bin/shred -n 30 -v -u {} \;
+  /usr/bin/rmdir $1 
 }
 
 function rm_func() {

@@ -22,7 +22,7 @@ alias count='find . -type f | wc -l'
 alias ping='ping -c 5'
 alias untar='tar -zxvf'
 
-alias rm='rm_funct'
+alias rm='rm_func'
 alias rmdir='shreddir'
 alias mv='mv -i'
 alias cp='cp -i'
