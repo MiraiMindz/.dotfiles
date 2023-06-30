@@ -1,0 +1,28 @@
+:root {
+  --catppuccin_rosewater: rgb(245, 224, 220);
+  --catppuccin_flamingo: rgb(242, 205, 205);
+  --catppuccin_pink: rgb(245, 194, 231);
+  --catppuccin_mauve: rgb(203, 166, 247);
+  --catppuccin_red: rgb(243, 139, 168);
+  --catppuccin_maroon: rgb(235, 160, 172);
+  --catppuccin_peach: rgb(250, 179, 135);
+  --catppuccin_yellow: rgb(249, 226, 175);
+  --catppuccin_green: rgb(166, 227, 161);
+  --catppuccin_teal: rgb(148, 226, 213);
+  --catppuccin_sky: rgb(137, 220, 235);
+  --catppuccin_sapphire: rgb(116, 199, 236);
+  --catppuccin_blue: rgb(137, 180, 250);
+  --catppuccin_lavender: rgb(180, 190, 254);
+  --catppuccin_text: rgb(205, 214, 244);
+  --catppuccin_subtext1: rgb(186, 194, 222);
+  --catppuccin_subtext0: rgb(166, 173, 200);
+  --catppuccin_overlay2: rgb(147, 153, 178);
+  --catppuccin_overlay1: rgb(127, 132, 156);
+  --catppuccin_overlay0: rgb(108, 112, 134);
+  --catppuccin_surface2: rgb(88, 91, 112);
+  --catppuccin_surface1: rgb(69, 71, 90);
+  --catppuccin_surface0: rgb(49, 50, 68);
+  --catppuccin_base: rgb(30, 30, 46);
+  --catppuccin_mantle: rgb(24, 24, 37);
+  --catppuccin_crust: rgb(17, 17, 27);
+}

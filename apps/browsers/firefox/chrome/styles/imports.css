@@ -1,0 +1,25 @@
+/*
+* This file contains all the CSS used by the userChrome.css file.
+* The styles are imported from the Firefox-CSSHacks Github repository.
+*/
+
+@import url("./variables.css");
+@import url("./color_variable.css");
+@import url("./catppuccin_colors.css");
+@import url("./firefox-csshacks/chrome/round_ui_items.css");
+@import url("./firefox-csshacks/chrome/centered_tab_label.css");
+@import url("./firefox-csshacks/chrome/compact_extensions_panel.css");
+@import url("./firefox-csshacks/chrome/compact_proton.css");
+@import url("./firefox-csshacks/chrome/compact_urlbar_megabar.css");
+@import url("./firefox-csshacks/chrome/context_menus_more_proton.css");
+@import url("./firefox-csshacks/chrome/hide_tabs_toolbar.css");
+@import url("./firefox-csshacks/chrome/iconized_main_menu.css");
+@import url("./firefox-csshacks/chrome/iconized_menubar_items.css");
+@import url("./firefox-csshacks/chrome/inline_tab_audio_icons.css");
+@import url("./firefox-csshacks/chrome/integrated_searchbar_popup.css");
+@import url("./firefox-csshacks/chrome/linux_gtk_window_control_patch.css");
+@import url("./firefox-csshacks/chrome/status_inside_menubar_v2.css");
+@import url("./tab_center_reborn.css");
+@import url("./sideview.css");
+/* @import url("./firefox-csshacks/chrome/.css");
+@import url("./firefox-csshacks/chrome/.css"); */
