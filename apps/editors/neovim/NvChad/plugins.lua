@@ -62,10 +62,11 @@ local plugins = {
 
 	{
 		"andweeb/presence.nvim",
-		event = "VeryLazy",
-		config = function()
-			require("presence").setup(overrides.presence)
-		end,
+		lazy = false,
+		--event = "VeryLazy",
+		--config = function()
+		--	require("presence").setup(overrides.presence)
+		--end,
 	},
 
 	{

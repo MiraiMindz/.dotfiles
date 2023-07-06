@@ -22,7 +22,7 @@ See the above repository for updates as well as full license text. */
   --lwt-toolbarbutton-hover-background: var(--catppuccin_mantle) !important;
   --lwt-toolbarbutton-active-background: var(--catppuccin_mantle) !important;
   /* urlbar */
-  --toolbar-field-border-color: var(--catppuccin_mauve) !important;
+  --toolbar-field-border-color: transparent !important;
   --toolbar-field-focus-border-color: var(--catppuccin_mauve) !important;
   --urlbar-popup-url-color: var(--catppuccin_blue) !important;
   /* urlbar Firefox < 92 */

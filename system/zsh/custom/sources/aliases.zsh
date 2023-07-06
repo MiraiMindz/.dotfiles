@@ -33,6 +33,8 @@ alias chgrp='chgrp --preserve-root'
 
 alias mount="mount_func"
 alias mnt="mount_func"
+alias tmux="tmux -2"
+
 
 
 # Error correction

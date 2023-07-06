@@ -95,6 +95,17 @@ export GPG_TTY=$(tty) # GPG Terminal
 export EDITOR="nvim"
 export LANG=pt_BR.UTF-8
 source $ZSH_CUSTOM/imports.zsh
+
+
+# Automatically Starts TMUX with ZSH
+if command -v tmux &> /dev/null && [ -n "$PS1" ] \
+  && [[ ! "$TERM" =~ screen ]] \
+  && [[ ! "$TERM" =~ tmux ]] \
+  && [ -z "$TMUX" ]; then
+  exec tmux new-session -A -s main >/dev/null 2>&1
+fi
+
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
