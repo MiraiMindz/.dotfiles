@@ -1,6 +1,21 @@
 --[[
-
     Thanks to ThePrimeagen for some of these configs.
+--]]
+
+--[["$XDG_CONFIG_HOME/nvim,
+$XDG_CONFIG_DIRS[1]/nvim,
+$XDG_CONFIG_DIRS[2]/nvim,
+$HOME/.local/share/nvim,
+$XDG_DATA_HOME/nvim[-data]/site,
+$XDG_DATA_DIRS[1]/nvim/site,
+$XDG_DATA_DIRS[2]/nvim/site,
+$VIMRUNTIME,
+$XDG_DATA_DIRS[2]/nvim/site/after,
+$XDG_DATA_DIRS[1]/nvim/site/after,
+$XDG_DATA_HOME/nvim[-data]/site/after,
+$XDG_CONFIG_DIRS[2]/nvim/after,
+$XDG_CONFIG_DIRS[1]/nvim/after,
+$XDG_CONFIG_HOME/nvim/after"
 --]]
 
 -- This sets the master/leader key to the <space> key.
@@ -43,5 +58,10 @@ vim.opt.updatetime = 50
 -- Highlight the 80th column (good for formatting)
 vim.opt.colorcolumn = "80"
 
-vim.opt.showcmd = true
+-- Shows the command
+vim.opt.showcmd = false
+
+-- Remove bottom command line
+vim.opt.cmdheight=0
+
 

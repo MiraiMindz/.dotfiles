@@ -15,5 +15,5 @@ vim.api.nvim_set_keymap('n', '<Left>', 'h', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Right>', 'l', {noremap = true})
 
 -- This sets the default File Explorer to <Ctrl> + n
-vim.keymap.set("n", "<C-n>", vim.cmd.Ex)
+-- vim.keymap.set("n", "<C-n>", vim.cmd.Ex)
 
