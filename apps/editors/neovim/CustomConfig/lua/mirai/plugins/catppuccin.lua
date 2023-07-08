@@ -30,7 +30,9 @@ local M = {
         operators = {},
     },
     color_overrides = {},
-    custom_highlights = {},
+    custom_highlights = function(colors)
+        return {LineNr = {fg = colors.text }}
+    end,
     integrations = {
         cmp = true,
         gitsigns = true,

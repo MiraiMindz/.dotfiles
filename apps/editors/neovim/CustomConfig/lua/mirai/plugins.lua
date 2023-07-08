@@ -29,24 +29,79 @@ local plugins = {
     },
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        dependencies = { 
+            "nvim-lua/plenary.nvim",
+            "debugloop/telescope-undo.nvim"
+        },
         lazy = true,
+        config = function()
+            require("telescope").setup({
+                extensions = {
+                    undo = require("mirai.plugins.telescope").undo.config,
+                }
+            })
+            require("telescope").load_extension("undo")
+        end,
         keys = require("mirai.plugins.telescope").keys,
     },
     {
+        "debugloop/telescope-undo.nvim",
+        lazy = true,
+        keys = require("mirai.plugins.telescope").undo.keys,
+    },
+    {   -- This plugin was set here because it 
+        -- breaks when I put it in another file.
         "ThePrimeagen/harpoon",
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        lazy = false,
-        config = function()
-            require("harpoon").setup(opts)
-        end,
+        lazy = true,
         opts = {
-            keys = {
-                {"n", "<C-a>", require("harpoon.mark").add_file, desc = "Add the current file to the Harpoon list"},
-                {"n", "<C-e>", require("harpoon.ui").toggle_quick_menu, desc = "Toggles the Harpoon menu"},
-                {"n", "\\+z", function() require("harpoon.ui").nav_file(1) end, desc = ""},
-            },
+            tabline = true,
         },
+        keys = {
+            {'n', '<leader>f', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', desc = "Toggle harpoon menu" },
+            {'n', '<leader>a', '<cmd>lua require("harpoon.mark").toggle_file()<cr>',    desc = "Add file to harpoon list" },
+        },
+        config = function(_, opts)
+            require("harpoon").setup(opts)
+            for pos = 1, 9 do
+                vim.keymap.set("n", "<C-w>" .. pos, function()
+                    require("harpoon.ui").nav_file(pos)
+                end, { desc = "Move to harpoon mark #" .. pos })
+            end
+        end
+    },
+    -- Setup LSP and completions
+    {
+        "williamboman/mason.nvim",
+        build = ":MasonUpdate",
+        config = function()
+            require("mason").setup(require("mirai.plugins.mason"))
+        end,
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        dependencies = { "williamboman/mason.nvim" },
+    },
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = { "williamboman/mason-lspconfig.nvim" },
+    },
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            'neovim/nvim-lspconfig',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-cmdline',
+            'L3MON4D3/LuaSnip',
+            'saadparwaiz1/cmp_luasnip',
+        }
+    },
+    {
+        "L3MON4D3/LuaSnip",
+        build = "make install_jsregexp",
     },
 }
+
 return plugins
+
