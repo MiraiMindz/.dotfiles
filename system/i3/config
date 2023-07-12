@@ -191,10 +191,14 @@ bindsym $mod+r mode "resize"
 
 ###############################################################################
 # User Configs
-bindsym $mod+Return exec --no-startup-id kitty --single-instance tmux
+bindsym $mod+Return exec --no-startup-id kitty --single-instance tmux new-session -A -s main
 bindsym $mod+d exec rofi -show run
 exec_always --no-startup-id setxkbmap br abnt2
 #exec_always --no-startup-id glava -d -e rc.glsl
+
+### Dual Monitor
+exec_always xrandr --output VGA1 --mode 1360x768 --rate 59.80 --left-of LVDS1 --output LVDS1 --mode 1366x768 --rate 60.03
+
 
 ### Picom Config
 # exec_always --no-startup-id picom -b --experimental-backends --config $HOME/.config/picom/picom.conf

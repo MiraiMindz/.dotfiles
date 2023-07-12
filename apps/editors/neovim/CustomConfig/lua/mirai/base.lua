@@ -64,4 +64,9 @@ vim.opt.showcmd = false
 -- Remove bottom command line
 vim.opt.cmdheight=0
 
+-- Auto Resizes window
+vim.api.nvim_create_autocmd("VimResized", { pattern = "*", command = "tabdo wincmd ="})
+
+-- Make the arrow keys go to next or previous line.
+vim.cmd([[set whichwrap+=<,>,[,] ]])
 
