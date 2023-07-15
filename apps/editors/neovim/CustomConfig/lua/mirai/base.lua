@@ -70,3 +70,6 @@ vim.api.nvim_create_autocmd("VimResized", { pattern = "*", command = "tabdo winc
 -- Make the arrow keys go to next or previous line.
 vim.cmd([[set whichwrap+=<,>,[,] ]])
 
+-- Format on save
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+
