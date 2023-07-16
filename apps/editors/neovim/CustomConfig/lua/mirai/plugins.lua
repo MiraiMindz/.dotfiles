@@ -13,8 +13,8 @@ local plugins = {
     --    end,
     --},
     {
-        "catppuccin/nvim", 
-        name = "catppuccin", 
+        "catppuccin/nvim",
+        name = "catppuccin",
         priority = 1000,
         lazy = false,
         config = require("mirai.plugins.catppuccin")
@@ -22,45 +22,13 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
-        config = function () 
-        local configs = require("nvim-treesitter.configs")
-        configs.setup({
-                ensure_installed = {
-                    "c",
-                    "bash",
-                    "cpp",
-                    "css",
-                    "gitignore",
-                    "go",
-                    "gomod",
-                    "gosum",
-                    "gowork",
-                    "html",
-                    "java",
-                    "javascript",
-                    "json",
-                    "jsonc",
-                    "lua",
-                    "luadoc",
-                    --"makdown",
-                    --"makdown_inline",
-                    "prisma",
-                    "python",
-                    "regex",
-                    "rst",
-                    "rust",
-                    "scss",
-                    "sql",
-                    "tsx",
-                    "typescript",
-                    "v",
-                    "vim",
-                    "yuck",
-                    "zig",
-                },
+        config = function()
+            local configs = require("nvim-treesitter.configs")
+            configs.setup({
+                ensure_installed = require("mirai.lsp").ts_ensure_installed,
                 sync_install = false,
                 highlight = { enable = true },
-                indent = { enable = true },  
+                indent = { enable = true },
             })
         end
     },
@@ -68,13 +36,13 @@ local plugins = {
         "folke/which-key.nvim",
         lazy = true,
     },
-    { 
-        "folke/neoconf.nvim", 
-        cmd = "Neoconf" 
+    {
+        "folke/neoconf.nvim",
+        cmd = "Neoconf"
     },
     {
         "nvim-telescope/telescope.nvim",
-        dependencies = { 
+        dependencies = {
             "nvim-lua/plenary.nvim",
             "debugloop/telescope-undo.nvim"
         },
@@ -94,7 +62,7 @@ local plugins = {
         lazy = true,
         keys = require("mirai.plugins.telescope").undo.keys,
     },
-    {   -- This plugin was set here because it 
+    { -- This plugin was set here because it
         -- breaks when I put it in another file.
         "ThePrimeagen/harpoon",
         lazy = true,
@@ -102,8 +70,9 @@ local plugins = {
             tabline = true,
         },
         keys = {
-            {'n', '<leader>f', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', desc = "Toggle harpoon menu" },
-            {'n', '<leader>a', '<cmd>lua require("harpoon.mark").toggle_file()<cr>',    desc = "Add file to harpoon list" },
+            { 'n', '<leader>f', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', desc = "Toggle harpoon menu" },
+            { 'n', '<leader>a', '<cmd>lua require("harpoon.mark").toggle_file()<cr>',     desc =
+            "Add file to harpoon list" },
         },
         config = function(_, opts)
             require("harpoon").setup(opts)
@@ -125,13 +94,13 @@ local plugins = {
     {
         "williamboman/mason-lspconfig.nvim",
         dependencies = { "williamboman/mason.nvim" },
-        ensure_installed = require("mirai.lsp").ensure_installed,
+        ensure_installed = require("mirai.lsp").mason_ensure_installed,
         config = function()
             local lspconfig = require("lspconfig")
             local lsp_capabilities = require("cmp_nvim_lsp").default_capabilities()
             require("mason-lspconfig").setup_handlers({
                 function(server_name)
-                    lspconfig[server_name].setup({capabilities = lsp_capabilities})
+                    lspconfig[server_name].setup({ capabilities = lsp_capabilities })
                 end,
             })
         end,
@@ -176,11 +145,11 @@ local plugins = {
                 },
                 window = {
                     mapping = cmp.mapping.preset.cmdline(),
-		            sources = cmp.config.sources({
-			            { name = "path" },
-		            }, {
-			            { name = "cmdline" },
-		            }),
+                    sources = cmp.config.sources({
+                        { name = "path" },
+                    }, {
+                        { name = "cmdline" },
+                    }),
                 },
                 mappings = {
                     ['<Tab>'] = cmp.mapping(function(fallback)
@@ -189,34 +158,34 @@ local plugins = {
                         else
                             fallback()
                         end
-                    end, {'i', 'c'}),
+                    end, { 'i', 'c' }),
                     ['<C-e>'] = cmp.mapping({
                         i = cmp.mapping.abort(),
                         c = cmp.mapping.close(),
                     }),
                     ['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({
                         behavior = cmp.SelectBehavior.Select
-                    }), {'i', 'c'}),
+                    }), { 'i', 'c' }),
                     ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({
                         behavior = cmp.SelectBehavior.Select
-                    }), {'i', 'c'}),
+                    }), { 'i', 'c' }),
                     --["<C-Down>"] = cmp.mapping.scroll_docs(-4),
-			        --["<C-Up>"] = cmp.mapping.scroll_docs(4),
-			        --["<Tab>"] = cmp.mapping.complete(),
-			        --["<C-e>"] = cmp.mapping.abort(),
-			        --["<CR>"] = cmp.mapping.confirm({ select = true }),
+                    --["<C-Up>"] = cmp.mapping.scroll_docs(4),
+                    --["<Tab>"] = cmp.mapping.complete(),
+                    --["<C-e>"] = cmp.mapping.abort(),
+                    --["<CR>"] = cmp.mapping.confirm({ select = true }),
                     --['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select}), {'i', 'c'}),
                     --['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}), {'i', 'c'}),
-                 },
+                },
                 sources = cmp.config.sources({
-			        { name = "nvim_lsp" },
-			        { name = "nvim_lua" },
-			        { name = "luasnip" }, -- For luasnip users.
-			        -- { name = "orgmode" },
-		        }, {
-			        { name = "buffer" },
-			        { name = "path" },
-		        }),
+                    { name = "nvim_lsp" },
+                    { name = "nvim_lua" },
+                    { name = "luasnip" }, -- For luasnip users.
+                    -- { name = "orgmode" },
+                }, {
+                    { name = "buffer" },
+                    { name = "path" },
+                }),
                 enabled = function()
                     -- disable completion in comments
                     local context = require 'cmp.config.context'
@@ -225,18 +194,18 @@ local plugins = {
                         return true
                     else
                         return not context.in_treesitter_capture("comment")
-                        and not context.in_syntax_group("Comment")
+                            and not context.in_syntax_group("Comment")
                     end
                 end
             })
 
             cmp.setup.cmdline(":", {
                 mapping = cmp.mapping.preset.cmdline(),
-		        sources = cmp.config.sources({
-			        { name = "path" },
-		        }, {
-			        { name = "cmdline" },
-		        }),
+                sources = cmp.config.sources({
+                    { name = "path" },
+                }, {
+                    { name = "cmdline" },
+                }),
             })
         end,
     },
@@ -247,4 +216,3 @@ local plugins = {
 }
 
 return plugins
-

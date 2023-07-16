@@ -62,14 +62,17 @@ vim.opt.colorcolumn = "80"
 vim.opt.showcmd = false
 
 -- Remove bottom command line
-vim.opt.cmdheight=0
+vim.opt.cmdheight = 0
 
 -- Auto Resizes window
-vim.api.nvim_create_autocmd("VimResized", { pattern = "*", command = "tabdo wincmd ="})
+vim.api.nvim_create_autocmd("VimResized", { pattern = "*", command = "tabdo wincmd =" })
 
 -- Make the arrow keys go to next or previous line.
 vim.cmd([[set whichwrap+=<,>,[,] ]])
 
 -- Format on save
-vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})
