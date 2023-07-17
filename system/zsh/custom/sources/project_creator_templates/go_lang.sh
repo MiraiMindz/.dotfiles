@@ -32,7 +32,7 @@ printf "go vet ../...\n" >> $projectFolder/cmd/run.sh
 printf "go run \$1\n" >> $projectFolder/cmd/run.sh
 
 touch $projectFolder/.gitignore
-curl -L "https://raw.githubusercontent.com/github/gitignore/main/Go.gitignore" >> .gitignore
+curl -L "https://raw.githubusercontent.com/github/gitignore/main/Go.gitignore" >> $projectFolder/.gitignore
 cd $projectFolder
 if [[ -f Readme.md ]]; then rm -rf Readme.md;fi
 _generate_default_main "$projectFolder/main.go" 

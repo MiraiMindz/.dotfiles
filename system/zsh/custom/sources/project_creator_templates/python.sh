@@ -28,7 +28,7 @@ printf "python -m black ../src/*\n" >> $projectFolder/scripts/run.sh
 printf "python \$1\n" >> $projectFolder/scripts/run.sh
 
 touch $projectFolder/.gitignore
-curl -L "https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore" >> .gitignore
+curl -L "https://raw.githubusercontent.com/github/gitignore/main/Python.gitignore" >> $projectFolder/.gitignore
 cd $projectFolder
 if [[ -f Readme.md ]]; then rm -rf Readme.md;fi
 _generate_default_main "$projectFolder/src/app.py"

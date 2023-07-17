@@ -25,7 +25,7 @@ printf "gcc -o ./bin/main ./src/main.c\n" >> $projectFolder/run.sh
 printf "./bin/main\n" >> $projectFolder/run.sh
 
 touch $projectFolder/.gitignore
-curl -L "https://raw.githubusercontent.com/github/gitignore/main/C.gitignore" >> .gitignore
+curl -L "https://raw.githubusercontent.com/github/gitignore/main/C.gitignore" >> $projectFolder/.gitignore
 cd $projectFolder
 if [[ -f Readme.md ]]; then rm -rf Readme.md;fi
 _generate_default_main "$projectFolder/src/main.c" 
