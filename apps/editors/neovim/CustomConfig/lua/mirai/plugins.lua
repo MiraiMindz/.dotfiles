@@ -71,8 +71,13 @@ local plugins = {
         },
         keys = {
             { 'n', '<leader>f', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', desc = "Toggle harpoon menu" },
-            { 'n', '<leader>a', '<cmd>lua require("harpoon.mark").toggle_file()<cr>',     desc =
-            "Add file to harpoon list" },
+            {
+                'n',
+                '<leader>a',
+                '<cmd>lua require("harpoon.mark").toggle_file()<cr>',
+                desc =
+                "Add file to harpoon list"
+            },
         },
         config = function(_, opts)
             require("harpoon").setup(opts)
@@ -151,7 +156,7 @@ local plugins = {
                         { name = "cmdline" },
                     }),
                 },
-                mappings = {
+                mapping = cmp.mapping.preset.insert({
                     ['<Tab>'] = cmp.mapping(function(fallback)
                         if cmp.visible() then
                             cmp.confirm({ select = true })
@@ -169,27 +174,17 @@ local plugins = {
                     ['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({
                         behavior = cmp.SelectBehavior.Select
                     }), { 'i', 'c' }),
-                    --["<C-Down>"] = cmp.mapping.scroll_docs(-4),
-                    --["<C-Up>"] = cmp.mapping.scroll_docs(4),
-                    --["<Tab>"] = cmp.mapping.complete(),
-                    --["<C-e>"] = cmp.mapping.abort(),
-                    --["<CR>"] = cmp.mapping.confirm({ select = true }),
-                    --['<Up>'] = cmp.mapping(cmp.mapping.select_prev_item({behavior = cmp.SelectBehavior.Select}), {'i', 'c'}),
-                    --['<Down>'] = cmp.mapping(cmp.mapping.select_next_item({behavior = cmp.SelectBehavior.Select}), {'i', 'c'}),
-                },
+                }),
                 sources = cmp.config.sources({
                     { name = "nvim_lsp" },
                     { name = "nvim_lua" },
-                    { name = "luasnip" }, -- For luasnip users.
-                    -- { name = "orgmode" },
+                    { name = "luasnip" },
                 }, {
                     { name = "buffer" },
                     { name = "path" },
                 }),
                 enabled = function()
-                    -- disable completion in comments
                     local context = require 'cmp.config.context'
-                    -- keep command mode completion enabled when cursor is in a comment
                     if vim.api.nvim_get_mode().mode == 'c' then
                         return true
                     else
