@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 function fzcd() {
-  cd "$(while IFS="" read -r line; do echo "${line#*:}/"; done < "${HOME}/.warprc" | while IFS="" read -r line; do echo "${line#*:}"; done <<< "$(fd -d 2 --type d . /media/Arquivos/Programming)" | fzf --border-label="Projects Folders" --preview-label="Contents" --preview 'cat <(while IFS="" read -r line; do echo "${line#*{}}"; done <<< "$(fd --type f . {} | as-tree | bat --color=always --style=numbers --line-range=:500)")')"
+  cd "$(while IFS="" read -r line; do echo "${line#*:}/"; done < "${HOME}/.warprc" | while IFS="" read -r line; do echo "${line#*:}"; done <<< "$(fd -d 4 --type d . /home/mirai/Arquivos)" | fzf --border-label="Projects Folders" --preview-label="Contents" --preview 'cat <(while IFS="" read -r line; do echo "${line#*{}}"; done <<< "$(fd --type f . {} | as-tree | bat --color=always --style=numbers --line-range=:500)")')"
   clear 
 }
 
@@ -33,4 +33,53 @@ function rm_func() {
   /usr/bin/shred -n 30 -v -u $1
   /usr/bin/rm -rf -I --preserve-root $1
 }
+
+function project_creator() {
+    HELPER_FUNCTIONS=$DOTFILES/system/zsh/custom/sources/project_creator_templates
+
+    declare -a templates
+    templates=(
+        "Next JS"
+        "Go Lang"
+        "C Lang"
+        "Python"
+    )
+
+    answer=$(printf "%s\n" "${templates[@]}" | fzf)
+
+    if [[ ! -d $PROGRAMMING_PROJECTS ]]; then
+        mkdir -p $PROGRAMMING_PROJECTS
+    fi
+    
+    local gitConfigUserString="$(git config -l | grep user.name)"
+    gitUserName="${gitConfigUserString#*=}"
+
+    case $answer in
+        "Next JS")
+            sh $HELPER_FUNCTIONS/next_js.sh
+        ;;
+        "Go Lang")
+            sh $HELPER_FUNCTIONS/go_lang.sh
+        ;;
+        "C Lang")
+            sh $HELPER_FUNCTIONS/c_lang.sh
+        ;;
+        "Python")
+            cd $PROGRAMMING_PROJECTS
+            clear
+            read -p "Enter Project Name: " projectName
+            projectFolder="${PROGRAMMING_PROJECTS}/${projectName}"
+            mkdir -p $projectFolder
+            mkdir -p $projectFolder
+        ;;
+        *)
+            printf "Wrong Template, doing nothing\n"
+        ;;
+    esac
+}
+
+
+
+
+
 

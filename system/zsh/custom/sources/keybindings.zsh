@@ -15,3 +15,6 @@ bindkey -s '^U' 'pkgremove && clear\n'
 # Binds CTRL-\ into the ranger command
 bindkey -s '^\' 'ranger && clear\n'
 
+# Binds CTRL-P into the project creator
+bindkey -s '^P' 'project_creator && clear\n'
+
