@@ -8,9 +8,10 @@ go_version="${go_version#*go}"
 function _generate_default_main() {
     if [[ ! -f "$1" ]]; then touch "$1"; fi
     printf "#!/usr/bin/env python\n\n" >> "$1"
-    printf "def main():\n\n\n\n" >> "$1"
+    printf "def main():\n" >> "$1"
+    printf "    print('Hello World')\n\n\n" >> "$1"
     printf "if __name__ == '__main__':\n" >> "$1"
-    printf "    main()\n\n" >> "$1"
+    printf "    main()\n" >> "$1"
 }
 
 cd $PROGRAMMING_PROJECTS
@@ -18,8 +19,8 @@ clear
 read -p "Enter Project Name: " projectName
 projectFolder="${PROGRAMMING_PROJECTS}/${projectName}"
 mkdir -p $projectFolder
-mkdir -p $projectFolder/{docs,tests,src,lib,scripts} # Hexagonal Archtecture: https://youtu.be/oL6JBUk6tj0?t=1808
-touch $projectFolder/{script/run.sh,ReadMe.md,Install.md}
+mkdir -p $projectFolder/{docs,tests,src,lib,scripts}
+touch $projectFolder/{scripts/run.sh,ReadMe.md,Install.md}
 printf "# %s\n\n" $projectName >> $projectFolder/Readme.md
 
 printf "#!/usr/bin/env bash\n\n" >> $projectFolder/scripts/run.sh
@@ -33,6 +34,7 @@ if [[ -f Readme.md ]]; then rm -rf Readme.md;fi
 _generate_default_main "$projectFolder/src/app.py"
 python -m venv ./.venv
 source ./.venv/bin/activate
+python -m pip install black
 sh $HELPER_FUNCTIONS/_init_git.sh
 sh $HELPER_FUNCTIONS/_push_to_github.sh $projectName
 clear

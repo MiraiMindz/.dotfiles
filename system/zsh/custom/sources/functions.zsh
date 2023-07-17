@@ -65,12 +65,7 @@ function project_creator() {
             sh $HELPER_FUNCTIONS/c_lang.sh
         ;;
         "Python")
-            cd $PROGRAMMING_PROJECTS
-            clear
-            read -p "Enter Project Name: " projectName
-            projectFolder="${PROGRAMMING_PROJECTS}/${projectName}"
-            mkdir -p $projectFolder
-            mkdir -p $projectFolder
+            sh $HELPER_FUNCTIONS/python.sh
         ;;
         *)
             printf "Wrong Template, doing nothing\n"
