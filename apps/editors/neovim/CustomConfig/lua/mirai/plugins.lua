@@ -12,6 +12,9 @@ local plugins = {
     },
     {
         "nvim-treesitter/nvim-treesitter",
+        dependencies = {
+            "windwp/nvim-ts-autotag",
+        },
         build = ":TSUpdate",
         config = function()
             local configs = require("nvim-treesitter.configs")
@@ -20,6 +23,9 @@ local plugins = {
                 sync_install = false,
                 highlight = { enable = true },
                 indent = { enable = true },
+                autotag = {
+                    enable = true,
+                }
             })
         end
     },
@@ -79,6 +85,71 @@ local plugins = {
             end
         end
     },
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        dependencies = {
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
+        },
+        config = function()
+            require("noice").setup({
+                lsp = {
+                    override = {
+                        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+                        ["vim.lsp.util.stylize_markdown"] = true,
+                        ["cmp.entry.get_documentation"] = true,
+                    },
+                },
+                presets = {
+                    bottom_search = false,
+                    command_palette = true,
+                    long_message_to_split = true,
+                    inc_rename = false,
+                    lsp_doc_border = false,
+                },
+            })
+        end,
+    },
+    {
+        'axkirillov/hbac.nvim',
+        dependencies = {
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons'
+        },
+        config = function()
+            require("hbac").setup()
+        end
+    },
+    {
+        'Bekaboo/dropbar.nvim',
+        lazy = false,
+    },
+    {
+        "folke/trouble.nvim",
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+    },
+    {
+        'glepnir/dashboard-nvim',
+        event = 'VimEnter',
+        config = function()
+            require('dashboard').setup({})
+        end,
+        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+    },
+    {
+        'nvim-lualine/lualine.nvim',
+        lazy = false,
+        config = function()
+            require("lualine").setup({})
+        end,
+        dependencies = { 'nvim-tree/nvim-web-devicons' }
+    },
+
+
+
+
     -- Setup LSP and completions
     {
         "williamboman/mason.nvim",
