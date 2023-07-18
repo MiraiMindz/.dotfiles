@@ -35,11 +35,42 @@ local M = {
     end,
     integrations = {
         cmp = true,
-        gitsigns = true,
-        nvimtree = true,
         telescope = true,
-        notify = false,
-        mini = false,
+        notify = true,
+        dashboard = true,
+        dropbar = {
+            enabled = true,
+            color_mode = true,
+        },
+        harpoon = true,
+        noice = true,
+        mason = true,
+        dap = {
+            enabled = true,
+            enable_ui = true, -- enable nvim-dap-ui
+        },
+        native_lsp = {
+            enabled = true,
+            virtual_text = {
+                errors = { "italic" },
+                hints = { "italic" },
+                warnings = { "italic" },
+                information = { "italic" },
+            },
+            underlines = {
+                errors = { "underline" },
+                hints = { "underline" },
+                warnings = { "underline" },
+                information = { "underline" },
+            },
+            inlay_hints = {
+                background = true,
+            },
+        },
+        treesitter_context = true,
+        treesitter = true,
+        lsp_trouble = true,
+        which_key = true,
         -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
     },
 }
