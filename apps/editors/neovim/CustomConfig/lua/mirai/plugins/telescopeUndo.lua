@@ -15,14 +15,4 @@ M.config = {
     },
 }
 
-M.keys = {
-    {
-        "n",
-        "<leader>y",
-        utils.cmdstr("lua require('telescope-undo.actions').yank_additions"),
-        desc = "Yank undo addittions"
-    },
-}
-
 return M
-

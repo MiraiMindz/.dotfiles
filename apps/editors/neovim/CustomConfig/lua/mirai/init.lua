@@ -11,8 +11,6 @@ The imports (file structure) explained:
 --]]
 
 require("mirai.base")
-require("mirai.keymaps")
-
 
 local plugins = require("mirai.plugins")
 
@@ -32,5 +30,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup(plugins)
 
+require("mirai.keymaps")
 require("mirai.post")
 

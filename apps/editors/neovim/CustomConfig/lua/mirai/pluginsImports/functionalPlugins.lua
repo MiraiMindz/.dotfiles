@@ -25,25 +25,21 @@ local plugins = {
             require("telescope").setup(require("mirai.plugins.telescope").config)
             require("telescope").load_extension("undo")
         end,
-        keys = require("mirai.plugins.telescope").keys,
+        keys = require("mirai.keymaps").telescope,
     },
     {
         "debugloop/telescope-undo.nvim",
         lazy = true,
-        keys = require("mirai.plugins.telescopeUndo").keys,
+        keys = require("mirai.keymaps").telescopeUndo,
     },
     {
         "ThePrimeagen/harpoon",
         lazy = true,
         opts = require("mirai.plugins.harpoon").opts,
-        keys = require("mirai.plugins.harpoon").keys,
+        keys = require("mirai.keymaps").harpoon,
         config = function(_, opts)
             require("harpoon").setup(opts)
-            for pos = 1, 9 do
-                vim.keymap.set("n", "<C-w>" .. pos, function()
-                    require("harpoon.ui").nav_file(pos)
-                end, { desc = "Move to harpoon mark #" .. pos })
-            end
+            require("mirai.keymaps").getHarpoonJumps()
         end
     },
 }

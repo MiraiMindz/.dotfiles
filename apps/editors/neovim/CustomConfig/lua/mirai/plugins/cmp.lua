@@ -30,6 +30,10 @@ M.config = {
             { name = "cmdline" },
         }),
     },
+    --[[ 
+        Importing CMP into the Keymaps doens't work because they are loaded \
+        before the plugin itself, so the keymaps are stored here instead.
+    --]]
     mapping = cmp.mapping.preset.insert({
         ['<Tab>'] = cmp.mapping(function(fallback)
             if cmp.visible() then
