@@ -3,15 +3,6 @@ local plugins = {
         "andweeb/presence.nvim",
         lazy = false,
     },
-    --{
-    --    "alexghergh/nvim-tmux-navigation",
-    --    event = "VeryLazy",
-    --    config = function()
-    --        require("nvim-tmux-navigation").setup({
-    --            keybindings = { left = "<C-Left>", down = "<C-Down>", up = "<C-Up>", right = "<C-Right>", last_active = "<C-;>", next = "<C-Space>" }
-    --        })
-    --    end,
-    --},
     {
         "catppuccin/nvim",
         name = "catppuccin",
@@ -113,6 +104,28 @@ local plugins = {
     {
         "neovim/nvim-lspconfig",
         dependencies = { "williamboman/mason-lspconfig.nvim" },
+        opts = {
+            inlay_hints = { enabled = true },
+        },
+        config = function()
+            local lsp = require("lspconfig")
+            lsp.lua_ls.setup({
+                settings = {
+                    Lua = {
+                        runtime = {
+                            version = "LuaJIT",
+                        },
+                        diagnostics = {
+                            globals = { "vim" },
+                        },
+                        workspace = {
+                            library = vim.api.nvim_get_runtime_file("", true),
+                        },
+                        telemetry = { enable = false, enabled = false }
+                    },
+                },
+            })
+        end,
     },
     {
         "hrsh7th/nvim-cmp",
