@@ -5,7 +5,7 @@ local M = {
         shortcut = {
             { desc = '', group = '@property', action = '', key = 'MiraiMindz' },
         },
-        footer = { "", "Mirai" },
+        footer = { "", "-̶M̶i̶r̶a̶i̶-̶" },
         packages = { enable = true },
         project = { enable = true, limit = 4 },
         mru = { limit = 4 },

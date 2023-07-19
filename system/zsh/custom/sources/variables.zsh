@@ -1,7 +1,22 @@
 #!/usr/bin/env zsh
 
-export DOTFILES="$HOME/.dotfiles"
-FILES="$HOME/Arquivos"
+if [[ ! -d "$HOME/etc" ]]; then
+    export DOTFILES="$HOME/.dotfiles"
+else
+    export DOTFILES="$HOME/etc/dotfiles.d"
+fi
+
+if [[ ! -d "/media/Arquivos" ]]; then
+    if [[ ! -d "$HOME/media" ]]; then
+        FILES="$HOME/Arquivos"
+    else
+        FILES="$HOME/media/Arquivos"
+    fi
+else
+    FILES="/media/Arquivos"
+fi
+
+
 ARQUIVOS=$FILES
 PROGRAMMING="$FILES/Programming"
 export PROGRAMMING_PROJECTS="$PROGRAMMING/Projects"
