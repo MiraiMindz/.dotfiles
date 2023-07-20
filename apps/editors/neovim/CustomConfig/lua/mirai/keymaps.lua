@@ -1,11 +1,13 @@
 --[[
 
     This file contains all of my keymaps and keybindings
-    They are separated by sections.
+    They are separated by sections of the main table.
 
 --]]
 
 local utils = require("mirai.utils")
+
+-- This function dinamically creates 9 keymaps for me to jump to harpoon files.
 local function setHarpoonJumps()
     for pos = 1, 9 do
         vim.keymap.set("n", "<C-w>" .. pos, function()
@@ -21,13 +23,15 @@ function M.getHarpoonJumps()
 end
 
 M.harpoon = {
-    { 'n', '<leader>f', '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', desc = "Toggle harpoon menu" },
     {
-        'n',
+        '<leader>f',
+        utils.cmdstr('lua require("harpoon.ui").toggle_quick_menu()'),
+        desc = "Toggle harpoon menu"
+    },
+    {
         '<leader>a',
-        '<cmd>lua require("harpoon.mark").toggle_file()<cr>',
-        desc =
-        "Add file to harpoon list"
+        utils.cmdstr('lua require("harpoon.mark").toggle_file()'),
+        desc = "Add file to harpoon list"
     },
 }
 
@@ -59,7 +63,6 @@ M.harpoon = {
 -- }
 
 M.telescope = {
-    -- {"<leader>ff", utils.cmdstr("Telescope find_files"), desc = "Find Files" },
     { "<C-f>", utils.cmdstr("Telescope find_files"), desc = "Find Files" },
     { "<C-b>", utils.cmdstr("Telescope git_files"),  desc = "Find Git Files" },
     { "<C-g>", utils.cmdstr("Telescope live_grep"),  desc = "Grep through project" },
@@ -77,6 +80,3 @@ M.telescopeUndo = {
 
 
 return M
-
--- This sets the default File Explorer to <Ctrl> + n
--- vim.keymap.set("n", "<C-n>", vim.cmd.Ex)

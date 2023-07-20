@@ -1,16 +1,11 @@
 --[[
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
+    So first of all, I'll document/explain  my docs because  some of my friends
+    are using  them to base  their configs,  thus, I thought that would be cool
+    if I added  some explanation  of that they  do,  and I hope you enjoy them.
+    I recommend for everyone to read: https://neovim.io/doc/user/lua-guide.html
+                                                                        - Mirai
 --]]
 
+-- This line will load my configs, I opted for a separated module, so I could
+-- have multiple configs, and load them as I pleased.
 require("mirai")

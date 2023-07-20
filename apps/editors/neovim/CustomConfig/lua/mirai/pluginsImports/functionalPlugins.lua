@@ -11,6 +11,17 @@ local plugins = {
         end
     },
     {
+        'axkirillov/hbac.nvim',
+        dependencies = {
+            'nvim-telescope/telescope.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-tree/nvim-web-devicons'
+        },
+        config = function()
+            require("hbac").setup()
+        end
+    },
+    {
         "folke/which-key.nvim",
         lazy = true,
     },
@@ -36,7 +47,10 @@ local plugins = {
         "ThePrimeagen/harpoon",
         lazy = true,
         opts = require("mirai.plugins.harpoon").opts,
-        keys = require("mirai.keymaps").harpoon,
+        keys = function()
+            local keys = require("mirai.keymaps")
+            return keys.harpoon
+        end,
         config = function(_, opts)
             require("harpoon").setup(opts)
             require("mirai.keymaps").getHarpoonJumps()

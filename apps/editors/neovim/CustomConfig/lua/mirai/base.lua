@@ -1,5 +1,6 @@
 --[[
-    Thanks to ThePrimeagen for some of these configs.
+    This file defines some bare configs for NeoViM.
+    I would like say thanks to ThePrimeagen for some of these configs.
 --]]
 
 -- This sets the master/leader key to the <space> key.
@@ -61,5 +62,5 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     end,
 })
 
-
+-- This enables inlay_hints on LSP in case it fails to load on the plugin conf.
 vim.lsp.inlay_hint(0, true)
