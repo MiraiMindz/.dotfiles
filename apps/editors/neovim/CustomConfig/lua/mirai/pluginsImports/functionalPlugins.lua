@@ -18,7 +18,7 @@ local plugins = {
             'nvim-tree/nvim-web-devicons'
         },
         config = function()
-            require("hbac").setup()
+            require("hbac").setup(require("mirai.plugins.hbac"))
         end
     },
     {
