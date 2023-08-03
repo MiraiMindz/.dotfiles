@@ -30,7 +30,7 @@ M.config = {
             { name = "cmdline" },
         }),
     },
-    --[[ 
+    --[[
         Importing CMP into the Keymaps doens't work because they are loaded \
         before the plugin itself, so the keymaps are stored here instead.
     --]]

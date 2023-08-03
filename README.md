@@ -22,7 +22,7 @@ Para a versão em português brasileiro, [clique aqui](./README_BR.md).
 
 ## Showcase
 
-![Screenshot_01](./assets/meta/images/screenshots/screenshot_01.png)
+![Screenshot_01](./assets/images/screenshots/desktop/01.png)
 
 ![Screenshot_02](./assets/meta/images/screenshots/screenshot_02.png)
 

@@ -1,7 +1,5 @@
-;
 
-(defvar songimage "/home/mirai/.cache/album_covers/output.png")
-; (defvar songimage "/home/mirai/.config/eww/icons/Spotify_Icon.svg")
+;(defvar songimage "/home/mirai/.cache/album_covers/output.png")
 
 
 (deflisten musictitle :initial "Title"
@@ -69,122 +67,133 @@
         (button :onclick "bspc desktop -f 7" (image :path "./icons/Workspace_8_Icon.svg" :image-width 20))
         (button :onclick "bspc desktop -f 8" (image :path "./icons/Workspace_9_Icon.svg" :image-width 20))
         (button :onclick "bspc desktop -f 9" (image :path "./icons/Workspace_10_Icon.svg" :image-width 20)))
-)
-
-
-(defwidget musiccontrols []
-    (centerbox :class "controls-wrapper"
-        :orientation "h"
-        :halign "start"
-        :valign "center"
-        :spacing 2
-        :width "0%"
-        :height "0%"
-        (box :class "spotify-control loop-button"
-            (button :onclick "./update_spotify_loop.sh"
-                (image
-                    :width "0%"
-                    :height "0%"
-                    :path {loopstate == "Track" ? pathTrack : loopstate == "Playlist" ? pathList : pathNone}
-                    :image-width 24)))
-        (centerbox :class "players-buttons"
-            :orientation "h"
-            :halign "start"
-            :valign "center"
-            :spacing 2
-            :width "0%"
-            :height "0%"
-            (button :onclick "playerctl --player=spotify previous" :class "backward-icon"
-                (image
-                    :path "./icons/spotify_buttons/Backward.svg"
-                    :image-width 16))
-            (button :onclick "./update_spotify_playpause.sh" :class "playpause-icon"
-                (image
-                    :path {playstate == "Playing" ? "./icons/spotify_buttons/Play.svg" : "./icons/spotify_buttons/Pause2.svg"}
-                    :image-width 14))
-            (button :onclick "playerctl --player=spotify next" :class "forward-icon"
-                (image
-                    :path "./icons/spotify_buttons/Forward.svg"
-                    :image-width 16))
-        )
-        (box :class "song-time"
-        "${songpositiontime}/${songdurationtime}")
-    )
-)
-
-(defwidget music []
-    (centerbox
-        :orientation "v"
-        (box
-        :orientation "v"
-        :halign "start"
-        :valign "center"
-        (centerbox
-            :orientation "h"
-            (box :class "music-image"
-                (musicimage))
-            (padder :size 16)
-            (centerbox
-                :orientation "h"
-                (musicinfo)
-                (padder :size 24)
-                (dummy))))
-        (box  :class "music-slider"
-            :orientation "h"
-            :halign "start"
-            :valign "center"
-            :width "0%"
-            :height "0%"
-            (box :class "songtrack"
-            :orientation "h"
-            :halign "start"
-            :valign "center"
-            :width "0%"
-            :height "0%"
-            (scale
-                :orientation "h"
-                :min 0
-                :max 100.0
-                :active {songposition != 0}
-                :onchange songposition
-                :value songposition)))
-        (musiccontrols)
-    )
+        ;(button :onclick "wmctrl -s 0" (image :path "./icons/Terminal_Icon.svg" :image-width 20))
+        ;(button :onclick "wmctrl -s 1" (image :path "./icons/Chrome_Icon.svg" :image-width 20))
+        ;(button :onclick "wmctrl -s 2" (image :path "./icons/Discord_Icon.svg" :image-width 20))
+        ;(button :onclick "wmctrl -s 3" (image :path "./icons/VSCode_Icon.svg" :image-width 20))
+        ;(button :onclick "wmctrl -s 4" (image :path "./icons/Folder_Icon.svg" :image-width 21))
+        ;(button :onclick "wmctrl -s 5" (image :path "./icons/Spotify_Icon.svg" :image-width 20))
+        ;(button :onclick "wmctrl -s 6" (image :path "./icons/Workspace_7_Icon.svg" :image-width 20))
+        ;(button :onclick "wmctrl -s 7" (image :path "./icons/Workspace_8_Icon.svg" :image-width 20))
+        ;(button :onclick "wmctrl -s 8" (image :path "./icons/Workspace_9_Icon.svg" :image-width 20))
+        ;(button :onclick "wmctrl -s 9" (image :path "./icons/Workspace_10_Icon.svg" :image-width 20)))
 
 )
 
 
-(defwidget musicinfo []
-    (box
-        :width "0%"
-        :height "0%"
-        :orientation "v"
-        :halign "start"
-        :valign "center"
-        (transform
-            (box :class "music songinfo2"
-                (label
-                    :limit-width 20
-                    :text {musictitle != "" ? "${musictitle}" : ""})))
-        (transform
-            (box :class "music songinfo1"
-                (label
-                    :limit-width 20
-                    :text {musicartist != "" ? "${musicartist}" : ""}))))
-)
-
-
-(defwidget musicimage []
-    (box
-        :width "0%"
-        :height "0%"
-        :orientation "v"
-        :halign "start"
-        :valign "center"
-        (image
-            :path "${songimage}"
-            :image-width 48 :image-height 48))
-)
+;(defwidget musiccontrols []
+;    (centerbox :class "controls-wrapper"
+;        :orientation "h"
+;        :halign "start"
+;        :valign "center"
+;        :spacing 2
+;        :width "0%"
+;        :height "0%"
+;        (box :class "spotify-control loop-button"
+;            (button :onclick "./update_spotify_loop.sh"
+;                (image
+;                    :width "0%"
+;                    :height "0%"
+;                    :path {loopstate == "Track" ? pathTrack : loopstate == "Playlist" ? pathList : pathNone}
+;                    :image-width 24)))
+;        (centerbox :class "players-buttons"
+;            :orientation "h"
+;            :halign "start"
+;            :valign "center"
+;            :spacing 2
+;            :width "0%"
+;            :height "0%"
+;            (button :onclick "playerctl --player=spotify previous" :class "backward-icon"
+;                (image
+;                    :path "./icons/spotify_buttons/Backward.svg"
+;                    :image-width 16))
+;            (button :onclick "./update_spotify_playpause.sh" :class "playpause-icon"
+;                (image
+;                    :path {playstate == "Playing" ? "./icons/spotify_buttons/Play.svg" : "./icons/spotify_buttons/Pause2.svg"}
+;                    :image-width 14))
+;            (button :onclick "playerctl --player=spotify next" :class "forward-icon"
+;                (image
+;                    :path "./icons/spotify_buttons/Forward.svg"
+;                    :image-width 16))
+;        )
+;        (box :class "song-time"
+;        "${songpositiontime}/${songdurationtime}")
+;    )
+;)
+;
+;(defwidget music []
+;    (centerbox
+;        :orientation "v"
+;        (box
+;        :orientation "v"
+;        :halign "start"
+;        :valign "center"
+;        (centerbox
+;            :orientation "h"
+;            (box :class "music-image"
+;                (musicimage))
+;            (padder :size 16)
+;            (centerbox
+;                :orientation "h"
+;                (musicinfo)
+;                (padder :size 24)
+;                (dummy))))
+;        (box  :class "music-slider"
+;            :orientation "h"
+;            :halign "start"
+;            :valign "center"
+;            :width "0%"
+;            :height "0%"
+;            (box :class "songtrack"
+;            :orientation "h"
+;            :halign "start"
+;            :valign "center"
+;            :width "0%"
+;            :height "0%"
+;            (scale
+;                :orientation "h"
+;                :min 0
+;                :max 100.0
+;                :active {songposition != 0}
+;                :onchange songposition
+;                :value songposition)))
+;        (musiccontrols)
+;    )
+;
+;)
+;
+;
+;(defwidget musicinfo []
+;    (box
+;        :width "0%"
+;        :height "0%"
+;        :orientation "v"
+;        :halign "start"
+;        :valign "center"
+;        (transform
+;            (box :class "music songinfo2"
+;                (label
+;                    :limit-width 20
+;                    :text {musictitle != "" ? "${musictitle}" : ""})))
+;        (transform
+;            (box :class "music songinfo1"
+;                (label
+;                    :limit-width 20
+;                    :text {musicartist != "" ? "${musicartist}" : ""}))))
+;)
+;
+;
+;(defwidget musicimage []
+;    (box
+;        :width "0%"
+;        :height "0%"
+;        :orientation "v"
+;        :halign "start"
+;        :valign "center"
+;        (image
+;            :path "${songimage}"
+;            :image-width 48 :image-height 48))
+;)
 
 
 (defwidget rammonitor []
@@ -285,6 +294,19 @@
     )
 )
 
+;(defwindow spotifysong
+;    :monitor 0
+;    :windowtype "desktop"
+;    :geometry (geometry :x "1%"
+;                        :y "5%"
+;                        :width "0%"
+;                        :height "0%"
+;                        :anchor "top left")
+;    :wm-ignore false
+;    :stacking "bg"
+;    (music)
+;)
+
 (defwindow sysmonitors
     :monitor 0
     :windowtype "desktop"
@@ -296,19 +318,6 @@
     :wm-ignore false
     :stacking "bg"
     (sysmonitors)
-)
-
-(defwindow spotifysong
-    :monitor 0
-    :windowtype "desktop"
-    :geometry (geometry :x "1%"
-                        :y "5%"
-                        :width "0%"
-                        :height "0%"
-                        :anchor "top left")
-    :wm-ignore false
-    :stacking "bg"
-    (music)
 )
 
 (defwindow powermenubar
@@ -332,7 +341,49 @@
                         :width "0%"
                         :height "0%"
                         :anchor "top left")
-    :wm-ignore false
+    :wm-ignore true
     :stacking "bg"
     (workspaces_box)
 )
+
+; SECOND MONITOR
+
+(defwindow sysmonitors_second
+    :monitor 1
+    :windowtype "desktop"
+    :geometry (geometry :x "3%"
+                        :y "6%"; 22%
+                        :width "0%"
+                        :height "0%"
+                        :anchor "top left")
+    :wm-ignore false
+    :stacking "bg"
+    (sysmonitors)
+)
+
+(defwindow powermenubar_second
+    :monitor 1
+    :windowtype "desktop"
+    :geometry (geometry :x "1%"; 22%
+                        :y "6%"
+                        :width "0%"
+                        :height "0%"
+                        :anchor "top left")
+    :wm-ignore false
+    :stacking "bg"
+    (powermenu)
+)
+
+(defwindow bar_second
+    :monitor 1
+    :windowtype "desktop"
+    :geometry (geometry :x "1%"
+                        :y "1%"
+                        :width "0%"
+                        :height "0%"
+                        :anchor "top left")
+    :wm-ignore true
+    :stacking "bg"
+    (workspaces_box)
+)
+

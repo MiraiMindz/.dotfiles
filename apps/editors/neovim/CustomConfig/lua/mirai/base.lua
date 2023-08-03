@@ -63,6 +63,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- This enables inlay_hints on LSP in case it fails to load on the plugin conf.
+vim.g.inlay_hints_visible = true
 vim.lsp.inlay_hint(0, true)
 
 -- Enables autosaving

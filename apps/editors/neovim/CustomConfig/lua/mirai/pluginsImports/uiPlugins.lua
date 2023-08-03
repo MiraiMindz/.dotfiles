@@ -32,12 +32,16 @@ local plugins = {
         dependencies = { "nvim-tree/nvim-web-devicons" },
     },
     {
-        'glepnir/dashboard-nvim',
+        'startup-nvim/startup.nvim',
         event = 'VimEnter',
         config = function()
-            require('dashboard').setup(require("mirai.plugins.dashboard"))
+            require('startup').setup(require("mirai.plugins.dashboard"))
         end,
-        dependencies = { { 'nvim-tree/nvim-web-devicons' } }
+        dependencies = {
+            "nvim-tree/nvim-web-devicons",
+            "nvim-telescope/telescope.nvim",
+            "nvim-lua/plenary.nvim",
+        },
     },
     {
         'nvim-lualine/lualine.nvim',

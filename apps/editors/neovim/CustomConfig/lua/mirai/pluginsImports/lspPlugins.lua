@@ -2,6 +2,7 @@ local plugins = {
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate",
+        ensure_installed = require("mirai.lsp").mason_ensure_installed,
         config = function()
             require("mason").setup(require("mirai.plugins.mason"))
         end,

@@ -1,15 +1,27 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+WALLPAPER=/home/mirai/usr/Wallpapers/CatppuccinKittyBooksMocha.webp 
+
+pgrep -x xrandr > /dev/null || xrandr --output VGA1 --mode 1360x768 --rate 59.80 --left-of LVDS1 --output LVDS1 --mode 1366x768 --rate 60.03 &
+pgrep -x feh > /dev/null || feh --bg-fill $WALLPAPER $WALLPAPER &
 pgrep -x picom > /dev/null || picom -b &
-pgrep -x feh > /dev/null || feh --bg-fill /home/mirai/wallpaper_feh.png &
-pgrep -x glava > /dev/null || glava -d &
-setxkbmap br abnt2 &
-/home/mirai/.config/eww/run.sh &
-#/home/mirai/.config/eww/update_spotify_image.sh &
-conky --config /home/mirai/.config/conky/config &
 
-bspc monitor -d 0 1 2 3 4 5 6 7 8 9
+bspc monitor LVDS1 -n center
+bspc monitor VGA1 -n left
+
+#for m in $(bspc query --monitors --names); do
+#    bspc monitor "$m" -d 1 2 3 4 5 6 7 8 9 0
+#done
+
+bspc monitor left -d 2 3 6 7 8
+bspc monitor center -d 1 4 5 9 0
+
+#    bspc monitor -d 0 1 2 3 4 5 6 7 8 9
+pgrep -x sxhkd > /dev/null || sxhkd &
+setxkbmap br abnt2 &
+
+bash /home/mirai/.config/eww/run.sh &
+
 
 bspc config border_width        2
 bspc config window_gap          2
@@ -26,3 +38,7 @@ bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+
+systemctl --user import-environment DISPLAY
+

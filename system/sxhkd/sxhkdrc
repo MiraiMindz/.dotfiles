@@ -4,8 +4,7 @@
 
 # terminal emulator
 super + Return
-  kitty --config ~/.config/kitty/kitty.conf
-
+  kitty --config $HOME/.config/kitty/kitty.conf --single-instance tmux new-session -A -s main
 # program launcher
 super + d
 #	rofi -show run
@@ -120,3 +119,28 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+
+# I3 like bindings for multi monitors =========================================
+# Source:
+# https://www.reddit.com/r/bspwm/comments/hj50if/my_neat_multimonitor_config
+#
+# focus the node in the given direction
+# Now with multi-monitor support. (should work like i3)
+super + {_, shift +, ctrl +}{h,j,k,l}
+    mode={f,s,n}; \
+    direction={west,south,north,east}; \
+    if [ $mode = "f" ]; then \
+        bspc node -f $direction.local || bspc monitor -f $direction; \
+    else; \
+        bspc node -$mode $direction.local || bspc node -m $direction --follow; \
+    fi
+
+# focus or send to the given desktop
+# Now supports multimonitor where each monitor
+# can have up to 10 workspaces each.
+super + {_,shift + }{1-9,0}
+    monitor=$(bspc query -M --names -m focused); \
+    bspc {desktop -f,node -d} $monitor:'^'{1-9,10}
+
+
