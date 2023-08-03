@@ -1,8 +1,17 @@
 #!/usr/bin/env zsh
 
 function fzcd() {
-  cd "$(while IFS="" read -r line; do echo "${line#*:}/"; done < "${HOME}/.warprc" | while IFS="" read -r line; do echo "${line#*:}"; done <<< "$(fd -d 4 --type d . /home/mirai/media/Arquivos)" | fzf --border-label="Projects Folders" --preview-label="Contents" --preview 'cat <(while IFS="" read -r line; do echo "${line#*{}}"; done <<< "$(fd --type f . {} | as-tree | bat --color=always --style=numbers --line-range=:500)")')"
-  clear 
+    local projs_temp_var=""
+    local find_depth=1
+    if [[ -e "$HOME/.warprc" ]]; then
+        projs_temp_var+=$(cat "$HOME/.warprc")
+    fi
+    projs_temp_var+=$(fd -d $find_depth --type d . $PROGRAMMING_PROJECTS) 
+    local res="$(while IFS="" read -r line; do echo ${line#"$PROGRAMMING_PROJECTS/"}; done <<< $(echo $projs_temp_var) | fzf --border-label="Programming Projects" --preview-label="Project Contents" --preview 'cat <(while IFS="" read -r line; do echo "${line#*{}}"; done <<< $(fd --type f . $PROGRAMMING_PROJECTS/{} | as-tree | bat --color=always --style=numbers --line-range=:500))')"
+    if [[ "$res" != "" ]]; then
+        cd "${PROGRAMMING_PROJECTS}/${res}"
+    fi
+    clear
 }
 
 function pkginstall() {
