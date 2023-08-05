@@ -89,7 +89,8 @@ function editnotes() {
             trap - SIGINT
         ;;
         *)
-            echo "all"
+            quick_notes="$HOME/usr/.quick_notes"
+            /usr/bin/nvim "$quick_notes"
         ;;
     esac
     clear
