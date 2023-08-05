@@ -12,9 +12,6 @@ bindkey -s '^Y' 'pkginstall && clear\n'
 # Binds CTRL-U into the pkg remove command
 bindkey -s '^U' 'pkgremove && clear\n'
 
-# Binds CTRL-\ into the ranger command
-bindkey -s '^\' 'ranger && clear\n'
-
 # Binds CTRL-P into the project creator
 bindkey -s '^P' 'project_creator && clear\n'
 
