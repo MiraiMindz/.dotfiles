@@ -142,6 +142,6 @@ source $ZSH_CUSTOM/imports.zsh
 # Created by `pipx` on 2023-05-19 13:06:34
 export PATH="$PATH:/home/mirai/.local/bin"
 
-export TERM="xterm-kitty"
+#export TERM="xterm-kitty"
 
 

@@ -26,7 +26,7 @@ function pkgremove() {
 }
 
 function editdot() {
-  sh -c "curdir=\$(pwd); cd $DOTFILES && nvim; cd \$curdir"
+  sh -c "curdir=\$(pwd); cd $DOTFILES && nvim && git add . && git commit -m 'made some changes' && git push; cd \$curdir"
 }
 
 function mount_func() {
@@ -41,6 +41,58 @@ function shreddir() {
 function rm_func() {
   /usr/bin/shred -n 30 -v -u $1
   /usr/bin/rm -rf -I --preserve-root $1
+}
+
+function editnotes() {
+    CHOICE=$(dialog --menu "Select a option" \
+            0 0 5 "1" "Quick Notes" \
+            "2" "Personal Notes" \
+            3>&1 1>&2 2>&3 3>&-)
+    clear
+    case $CHOICE in
+        "1" || 1)
+            quick_notes="$HOME/usr/.quick_notes"
+            /usr/bin/nvim "$quick_notes"
+        ;;
+        "2" || 2)
+            trap SIGINT
+            trap EXIT
+            local personal_notes="$HOME/usr/.personal_notes"
+            local passwd0=$(dialog --passwordbox "Type Password" 0 0 3>&1 1>&2 2>&3 3>&-)
+            local passwd1=$(dialog --passwordbox "Re-type Password" 0 0 3>&1 1>&2 2>&3 3>&-)
+            if [[ "$passwd0" == "$passwd1" ]]; then
+                passwd0=$(openssl rand -hex 16)
+                passwd1=$(openssl rand -hex 16)
+                unset passwd0
+                unset passwd1
+                if [[ ! -e "$personal_notes" ]]; then
+                    local tmp_file=$(mktemp)
+                    /usr/bin/nvim "$tmp_file"
+                    openssl enc -k "$passwd0" -aes256 -base64 -e -pbkdf2 -in "$tmp_file" -out "$personal_notes"
+                    rm -f "$tmp_file"
+                else
+                    local tmp_file=$(mktemp)
+                    openssl enc -k "$passwd0" -aes256 -base64 -d -pbkdf2 -in "$personal_notes" -out "$tmp_file"
+                    /usr/bin/nvim "$tmp_file"
+                    rm -f "$personal_notes"
+                    openssl enc -k "$passwd0" -aes256 -base64 -e -pbkdf2 -in "$tmp_file" -out "$personal_notes"
+                    rm -f "$tmp_file"
+                fi
+            else
+                passwd0=$(openssl rand -hex 16)
+                passwd1=$(openssl rand -hex 16)
+                unset passwd0
+                unset passwd1
+                printf "Passwords do not match\n"
+            fi
+            trap - EXIT
+            trap - SIGINT
+        ;;
+        *)
+            echo "all"
+        ;;
+    esac
+    clear
 }
 
 function project_creator() {
@@ -81,9 +133,4 @@ function project_creator() {
         ;;
     esac
 }
-
-
-
-
-
 

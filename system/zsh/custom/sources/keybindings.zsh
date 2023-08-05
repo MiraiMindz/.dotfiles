@@ -18,3 +18,6 @@ bindkey -s '^\' 'ranger && clear\n'
 # Binds CTRL-P into the project creator
 bindkey -s '^P' 'project_creator && clear\n'
 
+# Binds CTRL-N into the edit notes function
+bindkey -s '^N' 'editnotes && clear\n'
+

@@ -8,7 +8,8 @@ exec_always xset -dpms
 
 ### Wallpaper
 #set $wallpaper "/home/mirai/usr/Wallpapers/Fuji_Samurai_Catppuccin_Mocha.png"
-set $wallpaper "/home/mirai/usr/Wallpapers/CatppuccinKittyBooksMocha.webp"
+#set $wallpaper "/home/mirai/usr/Wallpapers/CatppuccinKittyBooksMocha.webp"
+set $wallpaper "/home/mirai/usr/Wallpapers/wp1933988-pixel-art-wallpapers-hald8-Mocha.png"
 exec_always --no-startup-id feh --bg-fill $wallpaper $wallpaper
 
 
@@ -208,6 +209,8 @@ bindsym $mod+r mode "resize"
 ###############################################################################
 # User Configs
 bindsym $mod+Return exec --no-startup-id kitty --single-instance tmux new-session -A -s main
+#bindsym $mod+Return exec --no-startup-id terminator -e "tmux new-session -A -s main"
+
 #bindsym $mod+d exec rofi -show run
 bindsym $mod+d exec sh $HOME/.config/rofi/scripts/launcher_t7
 # exec_always --no-startup-id setxkbmap br abnt2

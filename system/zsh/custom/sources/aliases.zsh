@@ -35,7 +35,8 @@ alias mount="mount_func"
 alias mnt="mount_func"
 alias tmux="tmux -2"
 
-
+alias initsystem="rm -rfv $HOME/.cache/* && clear && startx"
+alias initsys=initsystem
 
 # Error correction
 # Vim aliases 
