@@ -18,3 +18,5 @@ bindkey -s '^P' 'project_creator && clear\n'
 # Binds CTRL-N into the edit notes function
 bindkey -s '^N' 'editnotes && clear\n'
 
+# Binds CTRL-H into the helper cheatsheet function
+bindkey -s '^H' 'cheatsheet && clear\n'

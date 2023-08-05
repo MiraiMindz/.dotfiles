@@ -6,7 +6,7 @@ function fzcd() {
     if [[ -e "$HOME/.warprc" ]]; then
         projs_temp_var+=$(cat "$HOME/.warprc")
     fi
-    projs_temp_var+=$(fd -d $find_depth --type d . $PROGRAMMING_PROJECTS) 
+    projs_temp_var+=$(fd -d $find_depth --type d . $PROGRAMMING_PROJECTS)
     local res="$(while IFS="" read -r line; do echo ${line#"$PROGRAMMING_PROJECTS/"}; done <<< $(echo $projs_temp_var) | fzf --border-label="Programming Projects" --preview-label="Project Contents" --preview 'cat <(while IFS="" read -r line; do echo "${line#*{}}"; done <<< $(fd --type f . $PROGRAMMING_PROJECTS/{} | as-tree | bat --color=always --style=numbers --line-range=:500))')"
     if [[ "$res" != "" ]]; then
         cd "${PROGRAMMING_PROJECTS}/${res}"
@@ -16,7 +16,7 @@ function fzcd() {
 
 function pkginstall() {
   clear
-  yay -Fyyy 
+  yay -Fyyy
   yay -Slq | fzf --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -S
 }
 
@@ -35,7 +35,7 @@ function mount_func() {
 
 function shreddir() {
   /usr/bin/find $1 -type f -exec /usr/bin/shred -n 30 -v -u {} \;
-  /usr/bin/rmdir $1 
+  /usr/bin/rmdir $1
 }
 
 function rm_func() {
@@ -112,7 +112,7 @@ function project_creator() {
     if [[ ! -d $PROGRAMMING_PROJECTS ]]; then
         mkdir -p $PROGRAMMING_PROJECTS
     fi
-    
+
     local gitConfigUserString="$(git config -l | grep user.name)"
     gitUserName="${gitConfigUserString#*=}"
 
@@ -135,3 +135,7 @@ function project_creator() {
     esac
 }
 
+function cheatsheet() {
+    python3 $HOME/etc/dotfiles.d/system/zsh/custom/sources/scripts/cheatsheet.py
+    clear
+}
