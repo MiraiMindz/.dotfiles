@@ -2,6 +2,8 @@
 ### Dual Monitor
 #exec_always xrandr --output VGA1 --mode 1360x768 --rate 59.80 --left-of LVDS1 --output LVDS1 --mode 1366x768 --rate 60.03
 
+exec_always xrandr --output LVDS1 --primary --mode 1366x768 --pos 900x672 --rotate normal --output DP1 --off --output HDMI1 --mode 1440x900 --pos 0x0 --rotate right --output VGA1 --off --output VIRTUAL1 --off
+
 ### Disables Screen Blanking
 exec_always xset s 0
 exec_always xset -dpms
@@ -10,8 +12,8 @@ exec_always xset -dpms
 #set $wallpaper "/home/mirai/usr/Wallpapers/Fuji_Samurai_Catppuccin_Mocha.png"
 #set $wallpaper "/home/mirai/usr/Wallpapers/CatppuccinKittyBooksMocha.webp"
 set $wallpaper "/home/mirai/usr/Wallpapers/wp1933988-pixel-art-wallpapers-hald8-Mocha.png"
-#exec_always --no-startup-id feh --bg-fill $wallpaper $wallpaper
-exec_always --no-startup-id feh --bg-fill $wallpaper
+exec_always --no-startup-id feh --bg-fill $wallpaper $wallpaper
+#exec_always --no-startup-id feh --bg-fill $wallpaper
 
 
 
