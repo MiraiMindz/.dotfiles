@@ -81,3 +81,5 @@ alias sl="ls"
 alias ssl="ls"
 alias lls="ls"
 
+alias ssh="TERM=tmux-256color ssh"
+
