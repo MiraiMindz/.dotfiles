@@ -139,3 +139,15 @@ function cheatsheet() {
     python3 $HOME/etc/dotfiles.d/system/zsh/custom/sources/scripts/cheatsheet.py
     clear
 }
+
+# Connect Remote Server (CRS)
+function crs() {
+    usernameRaw=$(cat $DOTFILES/system/zsh/custom/sources/environment/.server_user.txt)
+    addressRaw=$(cat $DOTFILES/system/zsh/custom/sources/environment/.server_address.txt)
+    username="${usernameRaw// /}"
+    address="${addressRaw// /}"
+    finalConnection="${username}@${address}"
+    ssh $finalConnection
+}
+
+

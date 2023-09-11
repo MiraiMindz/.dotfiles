@@ -6,3 +6,4 @@
 apps/editors/neovim/configs/.env
 apps/browsers/firefox/chrome/styles/firefox-csshacks/
 system/tmux/plugins/**/
+system/zsh/custom/sources/environment/.*
