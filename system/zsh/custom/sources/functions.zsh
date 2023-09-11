@@ -51,8 +51,14 @@ function editnotes() {
     clear
     case $CHOICE in
         "1" || 1)
+            
             quick_notes="$HOME/usr/.quick_notes"
             /usr/bin/nvim "$quick_notes"
+            cdir=$(pwd)
+            cd $quick_notes
+            git add .
+            git commit -m "made some changes"
+            cd $cdir
         ;;
         "2" || 2)
             trap SIGINT
