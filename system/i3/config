@@ -4,6 +4,8 @@
 
 #exec_always xrandr --output LVDS1 --primary --mode 1366x768 --pos 900x672 --rotate normal --output DP1 --off --output HDMI1 --mode 1440x900 --pos 0x0 --rotate right --output VGA1 --off --output VIRTUAL1 --off
 
+exec_always xrandr --output LVDS1 --primary --mode 1366x768 --pos 0x0 --rotate normal --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1366x0 --rotate normal --output VGA1 --off --output VIRTUAL1 --off
+
 ### Disables Screen Blanking
 exec_always xset s 0
 exec_always xset -dpms

@@ -145,3 +145,10 @@ export PATH="$PATH:/home/mirai/.local/bin"
 #export TERM="xterm-kitty"
 
 
+
+# bun completions
+[ -s "/home/mirai/.bun/_bun" ] && source "/home/mirai/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
