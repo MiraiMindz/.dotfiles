@@ -157,15 +157,15 @@ function crs() {
 }
 
 function mkfile() {
-    path="$1"
-
-    if [[ ! "$path" = /* ]]; then
-        path="$(realpath "$path")"
+    pathb="$1"
+    if [[ "$pathb" != "${pathb#/}" ]]; then
+        filepath="$(pwd)/$pathb"
+        mkdir -p "$(dirname "$filepath")"
+        touch "$filepath"
+    else
+        filepath="$pathb"
+        mkdir -p "$(dirname "$filepath")"
+        touch "$filepath"
     fi
-
-    mkdir -p "$(dirname "$path")"
-
-    touch "$path"
-    # echo "File created at $path"
 }
 
