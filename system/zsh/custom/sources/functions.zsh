@@ -156,4 +156,16 @@ function crs() {
     ssh $finalConnection
 }
 
+function mkfile() {
+    path="$1"
+
+    if [[ ! "$path" = /* ]]; then
+        path="$(realpath "$path")"
+    fi
+
+    mkdir -p "$(dirname "$path")"
+
+    touch "$path"
+    # echo "File created at $path"
+}
 
