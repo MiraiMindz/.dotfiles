@@ -1,6 +1,10 @@
 #!/usr/bin/env zsh
 
 function fzcd() {
+    # The TNUX sessionizer add-on was inspired by ThePrimeagen's sessionizer
+    # You can check on the link below.
+    # https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+    #
     local projs_temp_var=""
     local find_depth=1
     if [[ -e "$HOME/.warprc" ]]; then
@@ -9,7 +13,22 @@ function fzcd() {
     projs_temp_var+=$(fd -d $find_depth --type d . $PROGRAMMING_PROJECTS)
     local res="$(while IFS="" read -r line; do echo ${line#"$PROGRAMMING_PROJECTS/"}; done <<< $(echo $projs_temp_var) | fzf --border-label="Programming Projects" --preview-label="Project Contents" --preview 'cat <(while IFS="" read -r line; do echo "${line#*{}}"; done <<< $(fd --type f . $PROGRAMMING_PROJECTS/{} | as-tree | bat --color=always --style=numbers --line-range=:500))')"
     if [[ "$res" != "" ]]; then
-        cd "${PROGRAMMING_PROJECTS}/${res}"
+        # Sessionizer
+        if [ -e $(command -v tmux) ]; then
+            selected="${PROGRAMMING_PROJECTS}/${res}"
+            selected_name=$(basename "$selected" | tr . _)
+            tmux_running=$(pgrep tmux)
+            if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+                tmux new-session -s $selected_name -c $selected
+                 exit 0
+            fi
+            if ! tmux has-session -t=$selected_name 2> /dev/null; then
+                tmux new-session -ds $selected_name -c $selected
+            fi
+            tmux switch-client -t $selected_name
+        else
+            cd "${PROGRAMMING_PROJECTS}/${res}"
+        fi
     fi
     clear
 }
@@ -168,4 +187,36 @@ function mkfile() {
         touch "$filepath"
     fi
 }
+
+function tmuxsessionizer() {
+    # The TNUX sessionizer add-on was inspired by ThePrimeagen's sessionizer
+    # You can check on the link below.
+    # https://github.com/ThePrimeagen/.dotfiles/blob/master/bin/.local/scripts/tmux-sessionizer
+
+    if [[ $# -eq 1 ]]; then
+        selected=$1
+    else
+        selected=$(find ~/work/builds ~/projects ~/ ~/work ~/personal ~/personal/yt -mindepth 1 -maxdepth 1 -type d | fzf)
+    fi
+
+    if [[ -z $selected ]]; then
+        exit 0
+    fi
+
+    selected_name=$(basename "$selected" | tr . _)
+    tmux_running=$(pgrep tmux)
+
+    if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+        tmux new-session -s $selected_name -c $selected
+        exit 0
+    fi
+
+    if ! tmux has-session -t=$selected_name 2> /dev/null; then
+        tmux new-session -ds $selected_name -c $selected
+    fi
+
+    tmux switch-client -t $selected_name
+
+}
+
 
