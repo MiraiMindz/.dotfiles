@@ -14,7 +14,7 @@ function fzcd() {
     local res="$(while IFS="" read -r line; do echo ${line#"$PROGRAMMING_PROJECTS/"}; done <<< $(echo $projs_temp_var) | fzf --border-label="Programming Projects" --preview-label="Project Contents" --preview 'cat <(while IFS="" read -r line; do echo "${line#*{}}"; done <<< $(fd --type f . $PROGRAMMING_PROJECTS/{} | as-tree | bat --color=always --style=numbers --line-range=:500))')"
     if [[ "$res" != "" ]]; then
         # Sessionizer
-        if [ -e $(command -v tmux) ]; then
+        if [ -e /usr/bin/tmux ]; then
             selected="${PROGRAMMING_PROJECTS}/${res}"
             selected_name=$(basename "$selected" | tr . _)
             tmux_running=$(pgrep tmux)
