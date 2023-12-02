@@ -69,7 +69,7 @@ vim.lsp.inlay_hint(0, true)
 
 -- Enables autosaving
 vim.cmd("set autowriteall")
-vi.api.nvim_create_autocmd("TextChanged,TextChangedI", {pattern = "*", command = "silent write"})
+vim.api.nvim_create_autocmd("TextChanged,TextChangedI", {pattern = "*", command = "silent write"})
 
 -- vim.api.nvim_exec([[
 --    augroup AutoWrite
