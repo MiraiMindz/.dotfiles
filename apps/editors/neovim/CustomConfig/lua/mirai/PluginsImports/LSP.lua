@@ -6,8 +6,7 @@ local plugins = {
             "mason.nvim",
             "williamboman/mason-lspconfig.nvim",
         },
-    }
-
+    },
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate",
