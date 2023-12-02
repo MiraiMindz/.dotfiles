@@ -1,6 +1,24 @@
 # Plugins List
 
+## Functional
+
 https://github.com/nvim-treesitter/nvim-treesitter
+
+## UI
+
+
+
+## LSP
+
+
+
+## Languages
+
+
+
+## Others
+
+
 https://github.com/neovim/nvim-lspconfig
 https://github.com/nvim-lua/plenary.nvim
 https://github.com/hrsh7th/nvim-cmp
@@ -68,4 +86,35 @@ https://github.com/hrsh7th/cmp-cmdline
 https://github.com/L3MON4D3/LuaSnip
 https://github.com/saadparwaiz1/cmp_luasnip
 https://github.com/onsails/lspkind.nvim
-
+https://github.com/L3MON4D3/cmp-luasnip-choice
+https://github.com/rcarriga/cmp-dap
+https://github.com/hrsh7th/cmp-nvim-lua
+https://github.com/KadoBOT/cmp-plugins
+https://github.com/ray-x/cmp-treesitter
+https://github.com/jmbuhr/otter.nvim
+https://github.com/gbprod/yanky.nvim
+https://github.com/chrisgrieser/cmp_yanky
+https://github.com/epwalsh/obsidian.nvim
+https://github.com/jc-doyle/cmp-pandoc-references
+https://github.com/David-Kunz/cmp-npm
+https://github.com/Jezda1337/nvim-html-css
+https://github.com/mmolhoek/cmp-scss
+https://github.com/pontusk/cmp-sass-variables
+https://github.com/amarakon/nvim-cmp-fonts
+https://github.com/nat-418/cmp-color-names.nvim
+https://github.com/jcha0713/cmp-tw2css
+https://github.com/garyhurtz/cmp_bulma.nvim
+https://github.com/Exafunction/codeium.nvim
+https://github.com/hrsh7th/cmp-emoji
+https://github.com/andersevenrud/cmp-tmux
+https://github.com/tzachar/cmp-fuzzy-buffer
+https://github.com/tzachar/cmp-fuzzy-path
+https://github.com/lukas-reineke/cmp-rg
+https://github.com/FelipeLema/cmp-async-path
+https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol
+https://github.com/hrsh7th/cmp-nvim-lsp-signature-help
+https://github.com/JMarkin/cmp-diag-codes
+https://github.com/hrsh7th/cmp-calc
+https://github.com/uga-rosa/cmp-dictionary
+https://github.com/hrsh7th/cmp-omni
+https://github.com/nvim-treesitter/nvim-tree-docs

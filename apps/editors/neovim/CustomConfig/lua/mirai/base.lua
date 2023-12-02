@@ -51,7 +51,8 @@ vim.opt.showcmd = false
 vim.opt.cmdheight = 0
 
 -- Auto Resizes window
-vim.api.nvim_create_autocmd("VimResized", { pattern = "*", command = "tabdo wincmd =" })
+vim.api.nvim_create_autocmd("VimResized", 
+    { pattern = "*", command = "tabdo wincmd =" })
 
 -- Make the arrow keys go to next or previous line.
 vim.cmd([[set whichwrap+=<,>,[,] ]])
@@ -69,7 +70,9 @@ vim.lsp.inlay_hint(0, true)
 
 -- Enables autosaving
 vim.cmd("set autowriteall")
-vim.api.nvim_create_autocmd("TextChanged,TextChangedI", {pattern = "*", command = "silent write"})
+vim.api.nvim_create_autocmd("TextChanged,TextChangedI", 
+    {pattern = "<buffer>", command = "silent write"})
+-- use pattern = '*' to all kinds of windows
 
 -- vim.api.nvim_exec([[
 --    augroup AutoWrite
