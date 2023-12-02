@@ -9,8 +9,8 @@
 local uiPlugins = require("mirai.PluginsImports.UI")
 local functionalPlugins = require("mirai.PluginsImports.Functional")
 local lspPlugins = require("mirai.PluginsImports.LSP")
---local languagePlugins = require("mirai.PluginsImports.Languages")
---local otherPlugins = require("mirai.PluginsImports.Others")
+local languagePlugins = require("mirai.PluginsImports.Languages")
+local otherPlugins = require("mirai.PluginsImports.Others")
 
 --[[
     I'm using this inner-loops implementation because the vim.tbl_deep_extend
@@ -23,13 +23,11 @@ local lspPlugins = require("mirai.PluginsImports.LSP")
 
     For instance, you could completely disable the UI plugins to save some time.
 --]]
---local pluginsSize = #uiPlugins + -- Here I calculate the raw size of all
---    #functionalPlugins +         -- tables to speedup the performance by
---    #lspPlugins +                -- pre-allocating the size of the final
---    #languagePlugins +           -- table.
---    #otherPlugins
-
-local pluginsSize = #lspPlugins + #uiPlugins + #functionalPlugins
+local pluginsSize = #uiPlugins + -- Here I calculate the raw size of all
+    #functionalPlugins +         -- tables to speedup the performance by
+    #lspPlugins +                -- pre-allocating the size of the final
+    #languagePlugins +           -- table.
+    #otherPlugins
 
 -- pre-allocation of the final table.
 local plugins = {}
@@ -43,8 +41,8 @@ for _, tbl in ipairs({
     uiPlugins,
     functionalPlugins,
     lspPlugins,
-    --languagePlugins,
-    --otherPlugins 
+    languagePlugins,
+    otherPlugins 
     }) do
     for _, value in ipairs(tbl) do
         plugins[pluginsIndex] = value
