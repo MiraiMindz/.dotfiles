@@ -6,7 +6,7 @@
     Sorry if the identation is a little messy, the auto-formatter has done it.
 --]]
 
---local uiPlugins = require("mirai.PluginsImports.UI")
+local uiPlugins = require("mirai.PluginsImports.UI")
 --local functionalPlugins = require("mirai.PluginsImports.Functional")
 local lspPlugins = require("mirai.PluginsImports.LSP")
 --local languagePlugins = require("mirai.PluginsImports.Languages")
