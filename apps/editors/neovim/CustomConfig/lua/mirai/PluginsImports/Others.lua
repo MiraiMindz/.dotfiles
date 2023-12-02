@@ -5,4 +5,4 @@ local plugins = {
     },
 }
 
-return plugin
+return plugins
