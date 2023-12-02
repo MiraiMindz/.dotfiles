@@ -7,7 +7,7 @@
 --]]
 
 local uiPlugins = require("mirai.PluginsImports.UI")
---local functionalPlugins = require("mirai.PluginsImports.Functional")
+local functionalPlugins = require("mirai.PluginsImports.Functional")
 local lspPlugins = require("mirai.PluginsImports.LSP")
 --local languagePlugins = require("mirai.PluginsImports.Languages")
 --local otherPlugins = require("mirai.PluginsImports.Others")
@@ -29,7 +29,7 @@ local lspPlugins = require("mirai.PluginsImports.LSP")
 --    #languagePlugins +           -- table.
 --    #otherPlugins
 
-local pluginsSize = #lspPlugins + #uiPlugins
+local pluginsSize = #lspPlugins + #uiPlugins + #functionalPlugins
 
 -- pre-allocation of the final table.
 local plugins = {}
@@ -41,7 +41,7 @@ end
 local pluginsIndex = 1
 for _, tbl in ipairs({ 
     uiPlugins,
-    --functionalPlugins,
+    functionalPlugins,
     lspPlugins,
     --languagePlugins,
     --otherPlugins 
