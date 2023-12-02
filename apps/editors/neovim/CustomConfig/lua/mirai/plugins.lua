@@ -29,7 +29,7 @@ local lspPlugins = require("mirai.PluginsImports.LSP")
 --    #languagePlugins +           -- table.
 --    #otherPlugins
 
-local pluginsSize = #lspPlugins
+local pluginsSize = #lspPlugins + #uiPlugins
 
 -- pre-allocation of the final table.
 local plugins = {}
@@ -40,7 +40,7 @@ end
 -- In this function I create the final table by inserting all values into it.
 local pluginsIndex = 1
 for _, tbl in ipairs({ 
-    --uiPlugins,
+    uiPlugins,
     --functionalPlugins,
     lspPlugins,
     --languagePlugins,
