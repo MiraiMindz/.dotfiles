@@ -6,9 +6,8 @@ local plugins = {
         },
         build = ":TSUpdate",
         config = function()
-            require("nvim-treesitter.configs").setup({})
-            --local configs = require("nvim-treesitter.configs")
-            --configs.setup(require("mirai.plugins.treesitter"))
+            local configs = require("nvim-treesitter.configs")
+            configs.setup(require("mirai.plugins.treesitter"))
         end
     },
 }
