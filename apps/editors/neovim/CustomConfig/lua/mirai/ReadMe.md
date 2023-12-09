@@ -2,58 +2,63 @@
 
 ## Base
 
-https://github.com/folke/lazy.nvim
+https://github.com/folke/lazy.nvim X
 
 ## Functional
 
-https://github.com/nvim-treesitter/nvim-treesitter
-https://github.com/nvim-treesitter/nvim-tree-docs
-https://github.com/nvim-lua/plenary.nvim
-https://github.com/nvim-telescope/telescope.nvim
-https://github.com/nvim-lualine/lualine.nvim
-https://github.com/numToStr/Comment.nvim
-https://github.com/windwp/nvim-autopairs
-https://github.com/folke/which-key.nvim
-https://github.com/nvim-treesitter/nvim-treesitter-context
+https://github.com/nvim-treesitter/nvim-treesitter X
+https://github.com/nvim-treesitter/nvim-tree-docs X
+https://github.com/nvim-lua/plenary.nvim X
+https://github.com/nvim-telescope/telescope.nvim X
+https://github.com/numToStr/Comment.nvim X
+https://github.com/windwp/nvim-autopairs X
+https://github.com/folke/which-key.nvim X
+https://github.com/nvim-treesitter/nvim-treesitter-context X
 https://github.com/iamcco/markdown-preview.nvim | Maybe cuz Glow Exists
-https://github.com/kevinhwang91/nvim-ufo
-https://github.com/folke/flash.nvim
-https://github.com/ThePrimeagen/harpoon
-https://github.com/stevearc/conform.nvim <!-- Formatter -->
-https://github.com/ahmedkhalf/project.nvim
-https://github.com/danymat/neogen
-https://github.com/debugloop/telescope-undo.nvim
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-align.md
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-cursorword.md
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-operators.md
-https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-trailspace.md
-https://github.com/rmagatti/auto-session
-https://github.com/uga-rosa/ccc.nvim
-https://github.com/anuvyklack/windows.nvim
-https://github.com/ellisonleao/glow.nvim
-https://github.com/roobert/tailwindcss-colorizer-cmp.nvim
-https://github.com/rmagatti/goto-preview
-https://github.com/mrjones2014/legendary.nvim
-https://github.com/axkirillov/hbac.nvim
+https://github.com/folke/flash.nvim X
+https://github.com/ThePrimeagen/harpoon X
+https://github.com/stevearc/conform.nvim X <!-- Formatter -->
+https://github.com/ahmedkhalf/project.nvim X
+https://github.com/danymat/neogen X
+https://github.com/debugloop/telescope-undo.nvim X
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-ai.md X
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-align.md X
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-bracketed.md X
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-cursorword.md X
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-operators.md X
+https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-trailspace.md X
+https://github.com/rmagatti/auto-session X
+https://github.com/uga-rosa/ccc.nvim X
+https://github.com/anuvyklack/windows.nvim X
+https://github.com/ellisonleao/glow.nvim X
+https://github.com/roobert/tailwindcss-colorizer-cmp.nvim X
+<!--
+require("cmp").config.formatting = {
+  format = require("tailwindcss-colorizer-cmp").formatter
+}
+-->
+https://github.com/rmagatti/goto-preview X
+https://github.com/mrjones2014/legendary.nvim X
+https://github.com/axkirillov/hbac.nvim X
 
 
 ## UI
 
-https://github.com/lewis6991/gitsigns.nvim
-https://github.com/MunifTanjim/nui.nvim
-https://github.com/folke/trouble.nvim
-https://github.com/nvim-tree/nvim-web-devicons
-https://github.com/folke/noice.nvim
-https://github.com/stevearc/dressing.nvim
-https://github.com/catppuccin/nvim
-https://github.com/folke/todo-comments.nvim
-https://github.com/goolord/alpha-nvim
-https://github.com/onsails/lspkind.nvim
-https://github.com/karb94/neoscroll.nvim
-https://github.com/shellRaining/hlchunk.nvim
-https://github.com/Bekaboo/dropbar.nvim
+https://github.com/kevinhwang91/nvim-ufo X
+https://github.com/nvim-lualine/lualine.nvim X
+https://github.com/lewis6991/gitsigns.nvim X
+https://github.com/MunifTanjim/nui.nvim X
+https://github.com/folke/trouble.nvim X
+https://github.com/nvim-tree/nvim-web-devicons X
+https://github.com/folke/noice.nvim X
+https://github.com/stevearc/dressing.nvim X
+https://github.com/catppuccin/nvim X X
+https://github.com/folke/todo-comments.nvim X
+https://github.com/goolord/alpha-nvim X
+https://github.com/onsails/lspkind.nvim X
+https://github.com/karb94/neoscroll.nvim X
+https://github.com/shellRaining/hlchunk.nvim X
+https://github.com/Bekaboo/dropbar.nvim X
 
 ## LSP
 
@@ -123,4 +128,3 @@ https://github.com/dstein64/vim-startuptime
 https://github.com/andweeb/presence.nvim
 https://github.com/epwalsh/obsidian.nvim
 https://github.com/Exafunction/codeium.nvim
-
