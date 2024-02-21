@@ -62,9 +62,9 @@ https://github.com/Bekaboo/dropbar.nvim X
 
 ## LSP
 
-https://github.com/neovim/nvim-lspconfig
-https://github.com/williamboman/mason.nvim
-https://github.com/williamboman/mason-lspconfig.nvim
+https://github.com/neovim/nvim-lspconfig X
+https://github.com/williamboman/mason.nvim X
+https://github.com/williamboman/mason-lspconfig.nvim X
 https://github.com/jay-babu/mason-nvim-dap.nvim
 https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 

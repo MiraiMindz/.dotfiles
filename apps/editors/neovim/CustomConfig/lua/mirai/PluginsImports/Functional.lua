@@ -1,3 +1,4 @@
+print("LOADED MIRAI/PLUGINS Functional.lua")
 local plugins = {
     {
         'mrjones2014/legendary.nvim',
@@ -27,7 +28,8 @@ local plugins = {
     {
         "nvim-treesitter/nvim-treesitter-context",
         config = function()
-            require("nvim-treesitter-context").setup(require("mirai.plugins.treesitter").context)
+            local contextconfig = require("mirai.plugins.treesitter").context
+            require("nvim-treesitter-context").setup(contextconfig) -- !IMPORTANT ERROR
         end
     },
     {
@@ -114,7 +116,8 @@ local plugins = {
         "danymat/neogen",
         dependencies = "nvim-treesitter/nvim-treesitter",
         config = true,
-        version = "*"
+        version = "*",
+        keys = require("mirai.keymaps").neogen
     },
     {
         'echasnovski/mini.ai',

@@ -4,8 +4,9 @@
     They are separated by sections of the main table.
 
 --]]
-
+print("LOADED MIRAI keymaps.lua")
 local utils = require("mirai.utils")
+local M = {}
 
 -- This function dinamically creates 9 keymaps for me to jump to harpoon files.
 local function setHarpoonJumps()
@@ -16,7 +17,6 @@ local function setHarpoonJumps()
     end
 end
 
-local M = {}
 
 function M.getHarpoonJumps()
     return setHarpoonJumps
@@ -131,18 +131,17 @@ M.conform = {
     },
 }
 
-vim.api.nvim_set_keymap(
-    "n",
-    "<Leader>nff",
-    utils.cmdstr("lua require('neogen').generate({ type = 'func' })"),
-    { noremap = true, silent = true }
-)
-
-vim.api.nvim_set_keymap(
-    "n",
-    "<Leader>nfc",
-    utils.cmdstr("lua require('neogen').generate({ type = 'class' })"),
-    { noremap = true, silent = true }
-)
+M.neogen = {
+    {
+        "<Leader>nff",
+        utils.cmdstr("lua require('neogen').generate({ type = 'func' })"),
+        desc = "Generate function notation"
+    },
+    {
+        "<Leader>nfc",
+        utils.cmdstr("lua require('neogen').generate({ type = 'class' })"),
+        desc = "Generate class notation"
+    },
+}
 
 return M

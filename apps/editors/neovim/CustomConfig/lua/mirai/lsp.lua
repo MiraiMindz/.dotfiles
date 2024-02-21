@@ -1,3 +1,4 @@
+print("LOADED MIRAI lsp.lua")
 local M = {}
 
 M.treesitter_ensure_installed = {

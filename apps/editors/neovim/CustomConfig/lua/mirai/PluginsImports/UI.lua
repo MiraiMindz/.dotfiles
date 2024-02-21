@@ -1,3 +1,5 @@
+print("LOADED MIRAI/PLUGINS UI.lua")
+
 local plugins = {
     {
         "catppuccin/nvim",
@@ -21,7 +23,7 @@ local plugins = {
         'kevinhwang91/nvim-ufo',
         dependencies = 'kevinhwang91/promise-async',
         config = function()
-            require("nvim-ufo").setup();
+            require("nvim-ufo").setup({}) -- !IMPORTANT ERROR
         end
     },
     {
@@ -33,7 +35,7 @@ local plugins = {
     {
         'MunifTanjim/nui.nvim',
         config = function()
-            require("nui").setup()
+            require("nui").setup({}) -- !IMPORTANT ERROR
         end
     },
     {
@@ -82,7 +84,7 @@ local plugins = {
     {
         "onsails/lspkind.nvim",
         config = function()
-            require("lspkind").setup()
+            require("lspkind").setup({}) -- !IMPORTANT ERROR
         end
     },
     {

@@ -3,6 +3,8 @@
     I would like say thanks to ThePrimeagen for some of these configs.
 --]]
 
+print("LOADED MIRAI base.lua")
+
 
 -- This sets the master/leader key to the <space> key.
 vim.g.mapleader = " "

@@ -1,6 +1,7 @@
 --[[
     This file contains utility functions
 --]]
+print("LOADED MIRAI utils.lua")
 
 local M = {}
 

@@ -1,3 +1,5 @@
+print("LOADED MIRAI/PLUGINS Languages.lua")
+
 local plugins = {
     {
         "olexsmir/gopher.nvim",

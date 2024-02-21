@@ -22,6 +22,7 @@
 
 --]]
 
+print("LOADED MIRAI init.lua")
 require("mirai.base")
 local plugins = require("mirai.plugins")
 

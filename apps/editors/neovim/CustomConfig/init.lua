@@ -8,4 +8,6 @@
 
 -- This line will load my configs, I opted for a separated module, so I could
 -- have multiple configs, and load them as I pleased.
+
+print("LOADED MAIN init.lua")
 require("mirai")

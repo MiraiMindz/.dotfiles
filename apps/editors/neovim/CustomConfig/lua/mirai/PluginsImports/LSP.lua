@@ -1,12 +1,5 @@
+print("LOADED MIRAI/PLUGINS LSP.lua")
 local plugins = {
-    {
-        "neovim/nvim-lspconfig",
-        event = { "BufReadPre", "BufNewFile" },
-        dependencies = {
-            "mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
-        },
-    },
     {
         "williamboman/mason.nvim",
         build = ":MasonUpdate",
@@ -28,6 +21,14 @@ local plugins = {
                 end,
             })
         end,
+    },
+    {
+        "neovim/nvim-lspconfig",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "mason.nvim",
+            "williamboman/mason-lspconfig.nvim",
+        },
     },
     {
         "hrsh7th/nvim-cmp",
@@ -64,7 +65,7 @@ local plugins = {
         config = function()
             vim.opt.completeopt = { "menu", "menuone", "noselect" }
             local cmp = require("cmp")
-            cmp.setup(require("mirai.plugins.cmp").config)
+            cmp.setup(require("mirai.plugins.cmp").config) -- !IMPORTANT ERROR
             cmp.setup.cmdline(":", {
                 mapping = cmp.mapping.preset.cmdline(),
                 sources = cmp.config.sources({
