@@ -2,7 +2,7 @@
 
 --]]
 
-print("#01 BASE MODULE LOADED /lua/mirai/base.lua")
+-- print("#01 BASE MODULE LOADED /lua/mirai/base.lua")
 
 -- Sets the <SPACE> key as the leader key.
 vim.g.mapleader = " "

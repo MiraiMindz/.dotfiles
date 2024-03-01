@@ -1,4 +1,4 @@
-print("#02 KEYMAPS MODULE LOADED /lua/mirai/keymaps.lua")
+-- print("#02 KEYMAPS MODULE LOADED /lua/mirai/keymaps.lua")
 
 local utils = require("mirai.utils")
 local M = {}

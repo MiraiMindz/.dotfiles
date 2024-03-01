@@ -1,4 +1,4 @@
-print("#02 PLUGINS MODULE LOADED /lua/mirai/plugins.lua")
+-- print("#02 PLUGINS MODULE LOADED /lua/mirai/plugins.lua")
 
 local IMPORTS_PATH = "mirai.imports."
 local uiPlugins = require(IMPORTS_PATH .. "interface")
