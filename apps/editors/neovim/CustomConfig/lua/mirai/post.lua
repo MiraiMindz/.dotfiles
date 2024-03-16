@@ -1,9 +1,11 @@
 -- print("#03 POST MODULE LOADED /lua/mirai/post.lua")
 
 vim.cmd.colorscheme("catppuccin")
+local autocmd = vim.api.nvim_create_autocmd
+
 
 -- Auto format on save using conform
-vim.api.nvim_create_autocmd("BufWritePre", {
+autocmd("BufWritePre", {
     pattern = "*",
     callback = function(args)
         require("conform").format({ bufnr = args.buf })
