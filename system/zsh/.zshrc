@@ -156,4 +156,4 @@ PATH="$BUN_INSTALL/bin:$PATH"
 # Go
 PATH="$(go env GOPATH)/bin:$PATH"
 
-export "$PATH"
+export PATH="$PATH"
