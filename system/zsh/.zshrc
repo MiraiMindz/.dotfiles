@@ -140,7 +140,7 @@ source $ZSH_CUSTOM/imports.zsh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Created by `pipx` on 2023-05-19 13:06:34
-export PATH="$PATH:/home/mirai/.local/bin"
+PATH="$PATH:/home/mirai/.local/bin"
 
 #export TERM="xterm-kitty"
 
@@ -151,4 +151,9 @@ export PATH="$PATH:/home/mirai/.local/bin"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+PATH="$BUN_INSTALL/bin:$PATH"
+
+# Go
+PATH="$(go env GOPATH)/bin:$PATH"
+
+export "$PATH"
