@@ -156,4 +156,7 @@ PATH="$BUN_INSTALL/bin:$PATH"
 # Go
 PATH="$(go env GOPATH)/bin:$PATH"
 
+# Open Watcom Compilers
+PATH="/opt/watcom/binl64:$PATH"
+
 export PATH="$PATH"
