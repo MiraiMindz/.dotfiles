@@ -10,6 +10,10 @@ exec_always xrandr --output LVDS1 --primary --mode 1366x768 --pos 0x0 --rotate n
 exec_always xset s 0
 exec_always xset -dpms
 
+# enables LALT+LSHIFT or RALT+RSHIFT to toggle between brazillian or russian keyboard.
+exec_always --no-startup-id setxkbmap -layout br,ru -variant abnt2, -option grp:alts_toggle
+
+
 ### Wallpaper
 #set $wallpaper "/home/mirai/usr/Wallpapers/Fuji_Samurai_Catppuccin_Mocha.png"
 #set $wallpaper "/home/mirai/usr/Wallpapers/CatppuccinKittyBooksMocha.webp"
