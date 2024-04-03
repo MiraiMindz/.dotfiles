@@ -17,4 +17,8 @@ M.lua_ls = {
     },
 }
 
+M.clangd = {
+    arguments = { "-D_cdecl=1" },
+}
+
 return M

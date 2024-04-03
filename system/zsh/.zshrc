@@ -159,4 +159,7 @@ PATH="$(go env GOPATH)/bin:$PATH"
 # Open Watcom Compilers
 PATH="/opt/watcom/binl64:$PATH"
 
+# Rust Binaries
+PATH="/home/mirai/.cargo/bin:$PATH"
+
 export PATH="$PATH"

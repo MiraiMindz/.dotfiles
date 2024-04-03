@@ -113,7 +113,9 @@ local M = {
         config = function()
             local lsp = require("lspconfig")
             local lua_config = require(CONFIG_BASE_DIR .. "lspconfig").lua_ls
+            local clangd_conf = require(CONFIG_BASE_DIR .. "lspconfig").clangd
             lsp.lua_ls.setup(lua_config)
+            lsp.clangd.setup(clangd_conf)
         end,
     },
     {
