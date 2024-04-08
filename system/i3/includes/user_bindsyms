@@ -1,5 +1,0 @@
-# Change default i3 terminal to kitty
-bindsym $mod+Return exec --no-startup-id kitty --single-instance
-
-# Run ROFI
-bindsym $mod+d exec --no-startup-id rofi -show run
