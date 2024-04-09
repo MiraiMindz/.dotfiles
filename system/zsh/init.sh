@@ -32,7 +32,7 @@ function edit_dotfiles() {
 }
 
 function project_creator() {
-    if [[ ! $(command -v jq) ]];
+    if [[ ! $(command -v jq) ]]; then
         printf "%s\n" "jq not installed, doing nothing."
     fi
 
