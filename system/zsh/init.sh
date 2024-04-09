@@ -185,8 +185,6 @@ function project_creator() {
                 texteditors+="xorg-xedit"
             else
                 printf "Zero text editors found.\n"
-            if
-
             fi
 
             if [[ "${#texteditors[@]}" -gt 1 ]]; then
