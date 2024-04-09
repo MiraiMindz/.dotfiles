@@ -31,7 +31,7 @@ function edit_dotfiles() {
 }
 
 function project_creator() {
-    declare -a options
+    local declare -a options
     options=(
         "[LANGUAGE] C"
         "[LANGUAGE] Assembly"
@@ -52,6 +52,61 @@ function project_creator() {
     
     answer=$(printf "%s\n" "${options[@]}" | fzf)
     result=$(echo $answer | cut -d' ' -f2)
-    echo $result
+    if [[ ! -d $PROGRAMMING_PROJECTS ]]; then
+        mkdir -p $PROGRAMMING_PROJECTS
+    fi
+
+    case $result in
+        "C")
+            echo "C";
+        ;;
+        "Assembly")
+            echo "ASM";
+        ;;
+        "Python")
+            echo "Python";
+        ;;
+        "Rust")
+            echo "Rust";
+        ;;
+        "Go")
+            echo "Go";
+        ;;
+        "Lua")
+            echo "Lua";
+        ;;
+        "Java")
+            echo "Java";
+        ;;
+        "Shell")
+            echo "Shell";
+        ;;
+        "NextJS")
+            echo "NextJS";
+        ;;
+        "SolidJS")
+            echo "SolidJS";
+        ;;
+        "Svelt")
+            echo "Svelt";
+        ;;
+        "Angular")
+            echo "Angular";
+        ;;
+        "Spring")
+            echo "SpringBoot";
+        ;;
+        "ToyOS")
+            echo "Toy OS";
+        ;;
+        "FullStackApp")
+            echo "Full Stack App";
+        ;;
+
+        *)
+            printf "%s\n" "Unknown Option, doing nothing."
+        ;;
+    esac
+
 }
 
