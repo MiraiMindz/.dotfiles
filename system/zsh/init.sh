@@ -31,7 +31,7 @@ function edit_dotfiles() {
 }
 
 function project_creator() {
-    local declare -a options
+    declare -a options
     options=(
         "[LANGUAGE] C"
         "[LANGUAGE] Assembly"
