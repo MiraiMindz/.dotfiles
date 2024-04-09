@@ -216,7 +216,7 @@ function project_creator() {
             else
                 cd "${PROGRAMMING_PROJECTS}/${res}"
                 clear
-                $selected_editor
+                exec $selected_editor
             fi
         ;;
         "Assembly")
