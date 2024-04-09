@@ -5,6 +5,7 @@
 PROGRAMMING_PROJECTS="$HOME/usr/Programming/Projects"
 PROGRAMMING_COURSES="$HOME/usr/Programming/Courses"
 DOTFILES="$HOME/etc/dotfiles.d"
+local _programming_projects_list_file=$HOME/.programming_projects_list.json
 
 # ALIASES
 alias nv=nvim
@@ -31,6 +32,19 @@ function edit_dotfiles() {
 }
 
 function project_creator() {
+    if [[ ! $(command -v jq) ]];
+        printf "%s\n" "jq not installed, doing nothing."
+    fi
+
+    local function add_to_json() {
+        path=$(realpath "$1")
+        if [[ ! -f $_programming_projects_list_file ]]; then
+            touch $_programming_projects_list_file
+        fi
+
+
+    }
+
     declare -a options
     options=(
         "[LANGUAGE] C"
@@ -55,6 +69,19 @@ function project_creator() {
     if [[ ! -d $PROGRAMMING_PROJECTS ]]; then
         mkdir -p $PROGRAMMING_PROJECTS
     fi
+
+    # jq '.projects += [item]' source_file.json > tmp.json && mv tmp.json source_file.json
+    # touch test.json
+    # printf "{\n\t\"projects\": [\"one\",\"two\"]\n}\n" >> test.json
+    # cat test.json
+    #
+    # a=$(jq '.projects += ["three"]' test.json)
+    # echo "" > test.json
+    # echo $a >> test.json
+    # unset a
+    # 
+    # cat test.json
+    # rm -rfv test.json
 
     case $result in
         "C")
@@ -102,7 +129,6 @@ function project_creator() {
         "FullStackApp")
             echo "Full Stack App";
         ;;
-
         *)
             printf "%s\n" "Unknown Option, doing nothing."
         ;;
