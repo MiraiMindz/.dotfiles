@@ -8,6 +8,10 @@ DOTFILES="$HOME/etc/dotfiles.d"
 
 # ALIASES
 alias nv=nvim
+alias claer=clear
+alias cler=clear
+alias clar=clear
+alias cls=clear
 
 # HELPER FUNCTIONS
 function edit_dotfiles() {
@@ -24,5 +28,30 @@ function edit_dotfiles() {
     git commit -m "$commit_msg"
     git push
     cd $curr_dir
+}
+
+function project_creator() {
+    declare -a options
+    options=(
+        "[LANGUAGE] C"
+        "[LANGUAGE] Assembly"
+        "[LANGUAGE] Python"
+        "[LANGUAGE] Rust"
+        "[LANGUAGE] Go"
+        "[LANGUAGE] Lua"
+        "[LANGUAGE] Java"
+        "[LANGUAGE] Shell"
+        "[FRAMEWORK] NextJS"
+        "[FRAMEWORK] SolidJS"
+        "[FRAMEWORK] Svelt"
+        "[FRAMEWORK] Angular"
+        "[FRAMEWORK] Spring"
+        "[PROJECT] ToyOS"
+        "[PROJECT] FullStackApp"
+    )
+    
+    answer=$(printf "%s\n" "${options[@]}" | fzf)
+    result=$(echo $answer | cut -d' ' -f2)
+    echo $result
 }
 
