@@ -208,6 +208,7 @@ function project_creator() {
         "[FRAMEWORK] Spring"
         "[PROJECT] ToyOS"
         "[PROJECT] FullStackApp"
+        "[META] Empty"
     )
 
     answer=$(printf "%s\n" "${options[@]}" | fzf)
@@ -302,10 +303,8 @@ function project_creator() {
                 else
                     printf ".section .data\n" >> $projectFolder/src/main.asm
                     printf "\thello: .string \"Hello World\!\\\n\"\t\t\t\t\t\t\t\t\t\t\t\t# string to be printed, with newline character\n\n" >> $projectFolder/src/main.asm
-
                     printf ".section .text\n" >> $projectFolder/src/main.asm
                     printf "\t.globl _start\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# entry point for the program\n\n" >> $projectFolder/src/main.asm
-
                     printf "_start:\n" >> $projectFolder/src/main.asm
                     printf "\t# write system call\n" >> $projectFolder/src/main.asm
                     printf "\tmov\t\$1, %%rax\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# syscall number for write\n" >> $projectFolder/src/main.asm
@@ -322,9 +321,37 @@ function project_creator() {
 
                 unset asmsyntax
             elif [[ -a "$(command -v gas)" || -a "$(command -v as)" ]]; then
-                echo "GAS or AS exists"
+                printf ".section .data\n" >> $projectFolder/src/main.asm
+                printf "\thello: .string \"Hello World\!\\\n\"\t\t\t\t\t\t\t\t\t\t\t\t# string to be printed, with newline character\n\n" >> $projectFolder/src/main.asm
+                printf ".section .text\n" >> $projectFolder/src/main.asm
+                printf "\t.globl _start\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# entry point for the program\n\n" >> $projectFolder/src/main.asm
+                printf "_start:\n" >> $projectFolder/src/main.asm
+                printf "\t# write system call\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\$1, %%rax\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# syscall number for write\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\$1, %%rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# file descriptor 1 (stdout)\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\$hello, %%rsi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# pointer to the message to print\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\$13, %%rdx\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# message length\n" >> $projectFolder/src/main.asm
+                printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# invoke syscall\n\n" >> $projectFolder/src/main.asm
+                printf "\t# exit system call\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\$60, %%rax\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# syscall number for exit\n" >> $projectFolder/src/main.asm
+                printf "\txor\t%%rdi, %%rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# exit code 0\n" >> $projectFolder/src/main.asm
+                printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# invoke syscall\n" >> $projectFolder/src/main.asm
             elif [[ -a "$(command -v nasm)" ]]; then
-                echo "NASM exists"
+                printf "section .data\n" >> $projectFolder/src/main.asm
+                printf "\thello\tdb\t\"Hello World\!\", 10\t\t\t\t\t\t\t\t\t\t\t\t; string to be printed, with newline character (10)\n" >> $projectFolder/src/main.asm
+                printf "section .text\n" >> $projectFolder/src/main.asm
+                printf "global _start\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; entry point for the program\n" >> $projectFolder/src/main.asm
+                printf "_start:\n" >> $projectFolder/src/main.asm
+                printf "\t; write system call\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\trax, 1\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; syscall number for write\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\trdi, 1\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; file descriptor 1 (stdout)\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\trsi, hello\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; pointer to the message to print\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\trdx, 13\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; message length\n" >> $projectFolder/src/main.asm
+                printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; invoke syscall\n\n" >> $projectFolder/src/main.asm
+                printf "\t; exit system call\n" >> $projectFolder/src/main.asm
+                printf "\tmov\t\trax, 60\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; syscall number for exit\n" >> $projectFolder/src/main.asm
+                printf "\txor\t\trdi, rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; exit code 0\n" >> $projectFolder/src/main.asm
+                printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; invoke syscall\n" >> $projectFolder/src/main.asm
             else
                 echo "AS,GAS nor NASM exists"
             fi
@@ -369,6 +396,9 @@ function project_creator() {
         ;;
         "FullStackApp")
             echo "Full Stack App";
+        ;;
+        "Empty")
+            echo "Empty";
         ;;
         *)
             printf "%s\n" "Unknown Option, doing nothing."
