@@ -202,19 +202,11 @@ function project_creator() {
 
             printf "%s\n" "${texteditors[@]}"
 
-            selected_editor=""
             if [[ "${#texteditors[@]}" -gt 1 ]]; then
                 selected_editor=$(printf "%s\n" "${texteditors[@]}" | fzf)
             else
-                selected_editor="${texteditors[0]}"
+                selected_editor=$(printf "%s" "${texteditors[@]}")
             fi
-
-            printf "$selected_editor"
-            printf "\n"
-            selected_editor=$(printf "%s" "${texteditors[@]}")
-
-            printf "$selected_editor"
-            printf "\n"
 
             if [[ -a "$(command -v tmux)" ]]; then
                 tmux_running=$(pgrep tmux)
