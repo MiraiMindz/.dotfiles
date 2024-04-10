@@ -32,26 +32,12 @@ function edit_dotfiles() {
     unset curr_dir
 }
 
-
-
 function project_creator() {
     if [[ ! $(command -v jq) ]]; then
         printf "%s\n" "jq not installed, doing nothing."
     fi
 
-    function pinput() {
-        local prompt_message="$1"
-        printf "$prompt_message"
-        printf "\n"
-        args=("${@:2}")
-        printf "%s\n" "${args[@]}"
-        #shift
-        #local input_value
-        #read -r "$@" input_value
-        #echo "$input_value"
-    }
-
-    function add_to_json() {
+    local add_to_json() {
         path=$(realpath "$1")
         if [[ ! -f $_programming_projects_list_file ]]; then
             touch $_programming_projects_list_file
@@ -92,7 +78,8 @@ function project_creator() {
     case $result in
         "C")
             printf "[CREATING C PROJECT]\n"
-            projectName=$(pinput "Enter Project Name: ")
+            printf "Enter Project Name: " 
+            read -r projectName
             local projectFolder=$(realpath "${PROGRAMMING_PROJECTS}/${projectName}")
             mkdir -pv $projectFolder/{src/include,doc,build,test}
             touch $projectFolder/{README.md,makefile,src/main.c,.gitignore}
@@ -141,10 +128,12 @@ function project_creator() {
                 git init
                 git add .
                 git commit -m "Initialized project $projectName"
-                gitanswer=$(pinput "Would you like to publish the Git repository on GitHub (y/n)? " -k1)
+                printf "Would you like to publish the Git repository on GitHub (y/n)? "
+                read -r -k1 gitanswer
                 if [ "$gitanswer" != "${gitanswer#[Yy]}" ];then
                     if [[ -e $(command -v gh) ]]; then
-                        repoViewr=$(pinput "Is your repo public (y/n)? " -k1)
+                        printf "Is your repo public (y/n)? "
+                        read -r -k1 repoView
                         if [ "$repoView" != "${repoView#[Yy]}" ]; then
                             gh repo create "$projectName" --public --source=.
                         else
@@ -213,7 +202,8 @@ function project_creator() {
                 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
                     tmux new-session -ds $projectName -c $projectFolder
                     tmux send-keys -t $projectName "$selected_editor" Enter
-                    deltmuxsessanswer=$(pinput "Would you lke to delete your current tmux session (y/n)? " -k1)
+                    printf "Would you like to delete your current tmux session (y/n)? "
+                    read -r -k1 deltmuxsessanswer
                     if [ "$deltmuxsessanswer" != "${deltmuxsessanswer#[Yy]}" ];then
                         SESSION_ID=$(tmux display-message -p '#{session_id}')
                         tmux kill-session -t "$SESSION_ID"
