@@ -1155,7 +1155,8 @@ local plugins = {
 	},
 	{
 		"andweeb/presence.nvim",
-		lazy = false,
+		lazy = true,
+		event = "UIEnter",
 	},
 }
 
