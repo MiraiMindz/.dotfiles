@@ -143,6 +143,9 @@ vim.api.nvim_create_autocmd("TextChangedI", {
 	end,
 })
 
+-- disables the tilde at the end of buffer
+vim.opt.fillchars = { eob = " " }
+
 -- Sync current directory and browsing directory
 vim.g.netrw_browse_split = 0
 
