@@ -158,6 +158,17 @@ function project_creator() {
             fi
 
             add_to_json $projectFolder
+            path=$(realpath "$projectFolder")
+            if [[ ! -e $_programming_projects_list_file ]]; then
+                touch $_programming_projects_list_file
+                printf "{\n\t\"projects:\"[]\n}\n" >> $_programming_projects_list_file
+            fi
+
+            updated_file=$(jq ".projects += [\"${path}\"]" $_programming_projects_list_file)
+            echo "" > $_programming_projects_list_file
+            echo $updated_file >> $_programming_projects_list_file
+            unset updated_files
+
             declare -a texteditors
 
             if command -v nvim >/dev/null; then
