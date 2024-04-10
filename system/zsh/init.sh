@@ -50,53 +50,42 @@ function add_to_json() {
 }
 
 function select_terminal_text_editor() {
-    declare -a texteditors
+    declare -a available_editors
+    declare -a texteditors=(
+        "nvim"
+        "vim"
+        "vi"
+        "emacs"
+        "nano"
+        "micro"
+        "gedit"
+        "ed"
+        "helix"
+        "textadept"
+        "code"
+        "codium"
+        "kakoune"
+        "kate"
+        "pluma"
+        "mousepad"
+        "xorg-xedit"
+    )
 
-    if [[ -a "$(command -v nvim)" ]]; then
-        texteditors+="nvim"
-    elif [[ -a "$(command -v vim)" ]]; then
-        texteditors+="vim"
-    elif [[ -a "$(command -v vi)" ]]; then
-        texteditors+="vi"
-    elif [[ -a "$(command -v emacs)" ]]; then
-        texteditors+="emacs"
-    elif [[ -a "$(command -v nano)" ]]; then
-        texteditors+="nano"
-    elif [[ -a "$(command -v micro)" ]]; then
-        texteditors+="micro"
-    elif [[ -a "$(command -v gedit)" ]]; then
-        texteditors+="gedit"
-    elif [[ -a "$(command -v ed)" ]]; then
-        texteditors+="ed"
-    elif [[ -a "$(command -v helix)" ]]; then
-        texteditors+="helix"
-    elif [[ -a "$(command -v textadept)" ]]; then
-        texteditors+="textadept"
-    elif [[ -a "$(command -v code)" ]]; then
-        texteditors+="code"
-    elif [[ -a "$(command -v codium)" ]]; then
-        texteditors+="codium"
-    elif [[ -a "$(command -v kakoune)" ]]; then
-        texteditors+="kakoune"
-    elif [[ -a "$(command -v kate)" ]]; then
-        texteditors+="kate"
-    elif [[ -a "$(command -v pluma)" ]]; then
-        texteditors+="pluma"
-    elif [[ -a "$(command -v mousepad)" ]]; then
-        texteditors+="mousepad"
-    elif [[ -a "$(command -v xorg-xedit)" ]]; then
-        texteditors+="xorg-xedit"
-    else
+    for editor in "${texteditors[@]}"; do
+        if command -v "$editor" &> /dev/null; then
+            available_editors+=("$editor")
+        fi
+    done
+
+    if (( ${#available_editors[@]} == 0 )); then
         printf "0"
-    fi
-
-    if [[ "${#texteditors[@]}" -gt 1 ]]; then
-        sel_editor=$(printf "%s\n" "${texteditors[@]}" | fzf)
+    elif (( ${#available_editors[@]} == 1 )); then
+        sel_editor=${available_editors[1]}
     else
-        sel_editor=$(printf "%s" "${texteditors[@]}")
+        sel_editor=$(printf "%s\n" "${available_editors[@]}" | fzf)
     fi
 
-    printf $sel_editor
+    printf "%s" $sel_editor
     unset sel_editor
     unset texteditors
 }
@@ -214,7 +203,7 @@ function project_creator() {
 
             add_to_json $projectFolder
             selected_editor=$(select_terminal_text_editor)
-            if [[ $selected_editor == "0" ]];
+            if [[ $selected_editor == "0" ]]; then
                 printf "Zero text editors found.\n"
             fi
 
