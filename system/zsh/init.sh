@@ -200,8 +200,6 @@ function project_creator() {
                 printf "Zero text editors found.\n"
             fi
 
-            printf "%s\n" "${texteditors[@]}"
-
             if [[ "${#texteditors[@]}" -gt 1 ]]; then
                 selected_editor=$(printf "%s\n" "${texteditors[@]}" | fzf)
             else
