@@ -226,7 +226,8 @@ function project_creator() {
         "C")
             mkdir -pv $projectFolder/{src/include,doc,build,test}
             touch $projectFolder/{README.md,makefile,src/main.c,.gitignore}
-            curl -L "https://raw.githubusercontent.com/github/gitignore/main/C.gitignore" >> $projectFolder/.gitignore
+
+            printf "# Prerequisites\n*.d\n\n# Object files\n*.o\n*.ko\n*.obj\n*.elf\n\n# Linker output\n*.ilk\n*.map\n*.exp\n\n# Precompiled Headers\n*.gch\n*.pch\n\n# Libraries\n*.lib\n*.a\n*.la\n*.lo\n\n# Shared objects (inc. Windows DLLs)\n*.dll\n*.so\n*.so.*\n*.dylib\n\n# Executables\n*.exe\n*.out\n*.app\n*.i*86\n*.x86_64\n*.hex\n\n# Debug files\n*.dSYM/\n*.su\n*.idb\n*.pdb\n\n# Kernel Module Compile Results\n*.mod*\n*.cmd\n.tmp_versions/\nmodules.order\nModule.symvers\nMkfile.old\ndkms.conf\n\n# Directories\nbuild/\n" >> $projectFolder/.gitignore 
 
             printf "Creating README.md file\n"
             printf "# %s\n\n" $projectName >> $projectFolder/README.md
@@ -270,7 +271,35 @@ function project_creator() {
             printf "makefile created.\n"
         ;;
         "Assembly")
-            echo "ASM";
+            mkdir -pv $projectFolder/{src/,build,test}
+            touch $projectFolder/{README.md,makefile,src/main.asm,.gitignore}
+            printf "# Directories\nbuild/\n" >> $projectFolder/.gitignore
+
+            printf "Creating README.md file\n"
+            printf "# %s\n\n" $projectName >> $projectFolder/README.md
+            printf "README.md file created.\n"
+
+            if [[ (-a "$(command -v gas)" || -a "$(command -v as)") && -a "$(command -v nasm)" ]]; then
+                echo "Both GAS/AS and NASM exist"
+            elif [[ -a "$(command -v gas)" || -a "$(command -v as)" ]]; then
+                echo "GAS or AS exists"
+            elif [[ -a "$(command -v nasm)" ]]; then
+                echo "NASM exists"
+            else
+                echo "AS,GAS nor NASM exists"
+            fi
+            # 
+            # printf "Would you like to use INTEL Syntax (y/n)? "
+            # read -r -k1 asmsyntax
+            # printf "\n"
+            # if [ "$asmsyntax" != "${asmsyntax#[Yy]}" ];then
+            #     printf ""
+            # else
+            # 
+            # fi
+            #
+            # unset asmsyntax
+
         ;;
         "Python")
             echo "Python";
@@ -326,24 +355,28 @@ function project_creator() {
         fi
         git add .
         git commit -m "Initialized project $projectName"
-        printf "Would you like to publish the Git repository on GitHub (y/n)? "
-        read -r -k1 gitanswer
-        printf "\n"
-        if [ "$gitanswer" != "${gitanswer#[Yy]}" ];then
-            if [[ -a "$(command -v gh)" ]]; then
-                printf "Is your repo public (y/n)? "
-                read -r -k1 repoView
-                printf "\n"
-                if [ "$repoView" != "${repoView#[Yy]}" ]; then
-                    gh repo create "$projectName" --public --source=.
+        if ping -q -c 1 -W 1 8.8.8.8 >/dev/null; then
+            printf "Would you like to publish the Git repository on GitHub (y/n)? "
+            read -r -k1 gitanswer
+            printf "\n"
+            if [ "$gitanswer" != "${gitanswer#[Yy]}" ];then
+                if [[ -a "$(command -v gh)" ]]; then
+                    printf "Is your repo public (y/n)? "
+                    read -r -k1 repoView
+                    printf "\n"
+                    if [ "$repoView" != "${repoView#[Yy]}" ]; then
+                        gh repo create "$projectName" --public --source=.
+                    else
+                        gh repo create "$projectName" --private --source=.
+                    fi
+                        git branch -M main
+                        git push -u origin main
                 else
-                    gh repo create "$projectName" --private --source=.
+                    printf "GitHub CLI not found initializing local repository only.\n"
                 fi
-                    git branch -M main
-                    git push -u origin main
-            else
-                printf "GitHub CLI not found initializing local repository only.\n"
             fi
+        else
+            echo "No network connection available, initializing local repository only. \n"
         fi
         cd $curr_dir
         unset curr_dir
@@ -405,4 +438,7 @@ bindkey -s '^T' 'add_current_dir_to_json && clear\n'
 
 # Binds CTRL+r to the remove_current_dir_from_json function
 bindkey -s '^R' 'remove_current_dir_from_json && clear\n'
+
+# Binds CTRL+p to the project_creator function
+bindkey -s '^R' 'project_creator && clear\n'
 
