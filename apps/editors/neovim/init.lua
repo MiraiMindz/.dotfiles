@@ -126,7 +126,7 @@ end
 vim.cmd("set autowriteall")
 vim.api.nvim_create_autocmd("TextChanged", {
 	pattern = "<buffer>",
-	command = function()
+	callback = function()
 		local buftype = vim.bo.buftype
 		if not Is_excluded_buffer(buftype) then
 			vim.cmd("silent write")
@@ -135,7 +135,7 @@ vim.api.nvim_create_autocmd("TextChanged", {
 })
 vim.api.nvim_create_autocmd("TextChangedI", {
 	pattern = "<buffer>",
-	command = function()
+	callback = function()
 		local buftype = vim.bo.buftype
 		if not Is_excluded_buffer(buftype) then
 			vim.cmd("silent write")
