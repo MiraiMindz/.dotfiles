@@ -42,11 +42,37 @@ function add_to_json() {
         printf "{\n\t\"projects\": []\n}\n" >> $_programming_projects_list_file
     fi
 
-    local updated_file=$(jq ".projects += [\"${ppath}\"]" $_programming_projects_list_file)
+    # local updated_file=$(jq ".projects += [\"${ppath}\"]" $_programming_projects_list_file)
+    local updated_file=$(jq "if (.projects | index(\"${ppath}\")) then . else .projects += [\"${ppath}\"] end" $_programming_projects_list_file)
     echo "" > $_programming_projects_list_file
     echo "$updated_file" >> $_programming_projects_list_file
     unset updated_files
     unset ppath
+}
+
+function remove_from_json() {
+    if [[ ! -a "$(command -v jq)" ]]; then
+        printf "%s\n" "jq not installed, doing nothing."
+    fi
+    local ppath=$(realpath "$1")
+
+    local updated_file=$(jq "if (.projects | index(\"${ppath}\")) then .projects |= map(select(. != \"${ppath}\")) else . end" $_programming_projects_list_file)
+    echo "" > $_programming_projects_list_file
+    echo "$updated_file" >> $_programming_projects_list_file
+    unset updated_files
+    unset ppath
+}
+
+function add_current_dir_to_json() {
+    c_dir=$(realpath "$(pwd)")
+    add_to_json "${c_dir}"
+    unset c_dir
+}
+
+function remove_current_dir_from_json() {
+    c_dir=$(realpath "$(pwd)")
+    remove_from_json "${c_dir}"
+    unset c_dir
 }
 
 function select_terminal_text_editor() {
@@ -298,4 +324,15 @@ function project_creator() {
     unset SESSION_ID
     unset selected_editor
 }
+
+# KEYBINDS
+
+# Binds CTRL+e to the edit_dotifiles function
+bindkey -s '^E' 'edit_dotfiles && clear\n'
+
+# Binds CTRL+a to the add_current_dir_to_json function
+bindkey -s '^A' 'add_current_dir_to_json && clear\n'
+
+# Binds CTRL+R to the remove_current_dir_from_json function
+bindkey -s '^R' 'remove_current_dir_from_json && clear\n'
 
