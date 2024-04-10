@@ -216,7 +216,7 @@ function project_creator() {
         mkdir -p $PROGRAMMING_PROJECTS
     fi
 
-    printf "[CREATING ${result^^} PROJECT]\n"
+    printf "[CREATING %s PROJECT]\n" "$(echo \"$result\" | tr '[:lower:]' '[:upper:]')"
     printf "Enter Project Name: " 
     read -r projectName
     printf "\n"
@@ -440,5 +440,5 @@ bindkey -s '^T' 'add_current_dir_to_json && clear\n'
 bindkey -s '^R' 'remove_current_dir_from_json && clear\n'
 
 # Binds CTRL+p to the project_creator function
-bindkey -s '^R' 'project_creator && clear\n'
+bindkey -s '^P' 'project_creator && clear\n'
 
