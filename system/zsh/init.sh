@@ -42,6 +42,8 @@ function project_creator() {
     function pinput() {
         local prompt_message="$1"
         printf "$prompt_message"
+        args=("${@:2}")
+        printf $args
         #shift
         #local input_value
         #read -r "$@" input_value
