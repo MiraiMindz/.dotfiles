@@ -33,7 +33,7 @@ function edit_dotfiles() {
 }
 
 function add_to_json() {
-    if ! command -v jq >/dev/null; then
+    if ! -e command -v jq >/dev/null; then
         printf "%s\n" "jq not installed, doing nothing."
     fi
 
@@ -50,7 +50,7 @@ function add_to_json() {
 }
 
 function project_creator() {
-    if ! command -v jq >/dev/null; then
+    if ! -e command -v jq >/dev/null; then
         printf "%s\n" "jq not installed, doing nothing."
     fi
 
