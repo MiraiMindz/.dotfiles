@@ -16,7 +16,7 @@ alias cls=clear
 
 # HELPER FUNCTIONS
 function edit_dotfiles() {
-    if [[ ! $(command -v git) ]]; then
+    if [[ ! -a "$(command -v git)" ]]; then
         echo "Git not installed"
     fi
 
@@ -33,10 +33,9 @@ function edit_dotfiles() {
 }
 
 function add_to_json() {
-    if ! -e command -v jq >/dev/null; then
+    if [[ ! -a "$(command -v jq)" ]]; then
         printf "%s\n" "jq not installed, doing nothing."
     fi
-
     path=$(realpath "$1")
     if [[ ! -e $_programming_projects_list_file ]]; then
         touch $_programming_projects_list_file
@@ -50,7 +49,7 @@ function add_to_json() {
 }
 
 function project_creator() {
-    if ! -e command -v jq >/dev/null; then
+    if [[ ! -a "$(command -v jq)" ]]; then
         printf "%s\n" "jq not installed, doing nothing."
     fi
 
@@ -128,7 +127,7 @@ function project_creator() {
 
             printf "\rmakefile created.\n"
 
-            if ! command -v git >/dev/null; then
+            if [[ -a "$(command -v git)" ]]; then
                 curr_dir=$(pwd)
                 cd $projectFolder
                 git init
@@ -137,7 +136,7 @@ function project_creator() {
                 printf "Would you like to publish the Git repository on GitHub (y/n)? "
                 read -r -k1 gitanswer
                 if [ "$gitanswer" != "${gitanswer#[Yy]}" ];then
-                    if [[ -e $(command -v gh) ]]; then
+                    if [[ -a "$(command -v gh)" ]]; then
                         printf "Is your repo public (y/n)? "
                         read -r -k1 repoView
                         if [ "$repoView" != "${repoView#[Yy]}" ]; then
@@ -158,52 +157,41 @@ function project_creator() {
             fi
 
             add_to_json $projectFolder
-            path=$(realpath "$projectFolder")
-            if [[ ! -e $_programming_projects_list_file ]]; then
-                touch $_programming_projects_list_file
-                printf "{\n\t\"projects:\"[]\n}\n" >> $_programming_projects_list_file
-            fi
-
-            updated_file=$(jq ".projects += [\"${path}\"]" $_programming_projects_list_file)
-            echo "" > $_programming_projects_list_file
-            echo $updated_file >> $_programming_projects_list_file
-            unset updated_files
-
             declare -a texteditors
 
-            if command -v nvim >/dev/null; then
+            if [[ -a "$(command -v nvim)" ]]; then
                 texteditors+="nvim"
-            elif command -v vim >/dev/null; then
+            elif [[ -a "$(command -v vim)" ]]; then
                 texteditors+="vim"
-            elif command -v vi >/dev/null; then
+            elif [[ -a "$(command -v vi)" ]]; then
                 texteditors+="vi"
-            elif command -v emacs >/dev/null; then
+            elif [[ -a "$(command -v emacs)" ]]; then
                 texteditors+="emacs"
-            elif command -v nano >/dev/null; then
+            elif [[ -a "$(command -v nano)" ]]; then
                 texteditors+="nano"
-            elif command -v micro >/dev/null; then
+            elif [[ -a "$(command -v micro)" ]]; then
                 texteditors+="micro"
-            elif command -v gedit >/dev/null; then
+            elif [[ -a "$(command -v gedit)" ]]; then
                 texteditors+="gedit"
-            elif command -v ed >/dev/null; then
+            elif [[ -a "$(command -v ed)" ]]; then
                 texteditors+="ed"
-            elif command -v helix >/dev/null; then
+            elif [[ -a "$(command -v helix)" ]]; then
                 texteditors+="helix"
-            elif command -v textadept >/dev/null; then
+            elif [[ -a "$(command -v textadept)" ]]; then
                 texteditors+="textadept"
-            elif command -v code >/dev/null; then
+            elif [[ -a "$(command -v code)" ]]; then
                 texteditors+="code"
-            elif command -v codium >/dev/null; then
+            elif [[ -a "$(command -v codium)" ]]; then
                 texteditors+="codium"
-            elif command -v kakoune >/dev/null; then
+            elif [[ -a "$(command -v kakoune)" ]]; then
                 texteditors+="kakoune"
-            elif command -v kate >/dev/null; then
+            elif [[ -a "$(command -v kate)" ]]; then
                 texteditors+="kate"
-            elif command -v pluma >/dev/null; then
+            elif [[ -a "$(command -v pluma)" ]]; then
                 texteditors+="pluma"
-            elif command -v mousepad >/dev/null; then
+            elif [[ -a "$(command -v mousepad)" ]]; then
                 texteditors+="mousepad"
-            elif command -v xorg-xedit >/dev/null; then
+            elif [[ -a "$(command -v xorg-xedit)" ]]; then
                 texteditors+="xorg-xedit"
             else
                 printf "Zero text editors found.\n"
@@ -216,7 +204,7 @@ function project_creator() {
             fi
 
 
-            if command -v tmux >/dev/null; then
+            if [ -a "$(command -v tmux)" ]; then
                 tmux_running=$(pgrep tmux)
                 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
                     tmux new-session -ds $projectName -c $projectFolder
