@@ -120,22 +120,24 @@ function project_creator() {
         mkdir -p $PROGRAMMING_PROJECTS
     fi
 
+    printf "[CREATING ${result^^} PROJECT]\n"
+    printf "Enter Project Name: " 
+    read -r projectName
+    printf "\n"
+    local projectFolder=$(realpath "${PROGRAMMING_PROJECTS}/${projectName}")
+
     case $result in
         "C")
-            printf "[CREATING C PROJECT]\n"
-            printf "Enter Project Name: " 
-            read -r projectName
-            printf "\n"
-            local projectFolder=$(realpath "${PROGRAMMING_PROJECTS}/${projectName}")
             mkdir -pv $projectFolder/{src/include,doc,build,test}
             touch $projectFolder/{README.md,makefile,src/main.c,.gitignore}
             curl -L "https://raw.githubusercontent.com/github/gitignore/main/C.gitignore" >> $projectFolder/.gitignore
 
             printf "Creating README.md file\n"
             printf "# %s\n\n" $projectName >> $projectFolder/README.md
-            printf "\rREADME.md file created.\n"
+            printf "README.md file created.\n"
 
             printf "Creating src/main.c file\n"
+
             printf "#include <stdio.h>\n" >> $projectFolder/src/main.c
             printf "#include <stdlib.h>\n\n" >> $projectFolder/src/main.c
             printf "int main() {\n" >> $projectFolder/src/main.c
@@ -143,7 +145,8 @@ function project_creator() {
             printf "\n" >> $projectFolder/src/main.c
             printf "\treturn 0;\n" >> $projectFolder/src/main.c
             printf "}\n" >> $projectFolder/src/main.c
-            printf "\rsrc/main.c file created.\n"
+
+            printf "src/main.c file created.\n"
 
             printf "Creating makefile\n"
 
@@ -168,70 +171,7 @@ function project_creator() {
             printf "\tgit commit -m \"Automatic commit\"\n" >> $projectFolder/makefile
             printf "\tgit push\n" >> $projectFolder/makefile
 
-            printf "\rmakefile created.\n"
-
-            if [[ -a "$(command -v git)" ]]; then
-                curr_dir=$(pwd)
-                cd $projectFolder
-                git init
-                git add .
-                git commit -m "Initialized project $projectName"
-                printf "Would you like to publish the Git repository on GitHub (y/n)? "
-                read -r -k1 gitanswer
-                printf "\n"
-                if [ "$gitanswer" != "${gitanswer#[Yy]}" ];then
-                    if [[ -a "$(command -v gh)" ]]; then
-                        printf "Is your repo public (y/n)? "
-                        read -r -k1 repoView
-                        printf "\n"
-                        if [ "$repoView" != "${repoView#[Yy]}" ]; then
-                            gh repo create "$projectName" --public --source=.
-                        else
-                            gh repo create "$projectName" --private --source=.
-                        fi
-                        git branch -M main
-                        git push -u origin main
-                    else
-                        printf "GitHub CLI not found initializing local repository only.\n"
-                    fi
-                fi
-                cd $curr_dir
-                unset curr_dir
-            else
-                printf "Git not installed.\n"
-            fi
-
-            add_to_json $projectFolder
-            selected_editor=$(select_terminal_text_editor)
-            if [[ $selected_editor == "0" ]]; then
-                printf "Zero text editors found.\n"
-            fi
-
-            if [[ -a "$(command -v tmux)" ]]; then
-                tmux_running=$(pgrep tmux)
-                if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-                    tmux new-session -s $projectName -c $projectFolder
-                    exit 0
-                fi
-
-                if ! tmux has-session -t=$projectName 2> /dev/null; then
-                    tmux new-session -ds $projectName -c $projectFolder
-                    tmux send-keys -t "${projectName}" "${selected_editor} && clear" Enter
-                    printf "Would you like to delete your current tmux session (y/n)? "
-                    read -r -k1 deltmuxsessanswer
-                    printf "\n"
-                    tmux switch-client -t $projectName
-                    if [ "$deltmuxsessanswer" != "${deltmuxsessanswer#[Yy]}" ];then
-                        SESSION_ID=$(tmux display-message -p '#{session_id}')
-                        tmux kill-session -t "$SESSION_ID"
-                    fi
-                    # tmux attach-session -t $projectName
-                fi
-            else
-                cd "${PROGRAMMING_PROJECTS}/${res}"
-                clear
-                exec $selected_editor
-            fi
+            printf "makefile created.\n"
         ;;
         "Assembly")
             echo "ASM";
@@ -280,6 +220,72 @@ function project_creator() {
         ;;
     esac
 
+
+
+    if [[ -a "$(command -v git)" ]]; then
+        curr_dir=$(pwd)
+        cd $projectFolder
+        if [[ ! -d "./.git" ]]; then
+            git init
+        fi
+        git add .
+        git commit -m "Initialized project $projectName"
+        printf "Would you like to publish the Git repository on GitHub (y/n)? "
+        read -r -k1 gitanswer
+        printf "\n"
+        if [ "$gitanswer" != "${gitanswer#[Yy]}" ];then
+            if [[ -a "$(command -v gh)" ]]; then
+                printf "Is your repo public (y/n)? "
+                read -r -k1 repoView
+                printf "\n"
+                if [ "$repoView" != "${repoView#[Yy]}" ]; then
+                    gh repo create "$projectName" --public --source=.
+                else
+                    gh repo create "$projectName" --private --source=.
+                fi
+                    git branch -M main
+                    git push -u origin main
+            else
+                printf "GitHub CLI not found initializing local repository only.\n"
+            fi
+        fi
+        cd $curr_dir
+        unset curr_dir
+    else
+        printf "Git not installed.\n"
+    fi
+
+    add_to_json $projectFolder
+    selected_editor=$(select_terminal_text_editor)
+    if [[ $selected_editor == "0" ]]; then
+        printf "Zero text editors found.\n"
+    fi
+
+    if [[ -a "$(command -v tmux)" ]]; then
+        tmux_running=$(pgrep tmux)
+        if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+            tmux new-session -s $projectName -c $projectFolder
+            exit 0
+        fi
+
+        if ! tmux has-session -t=$projectName 2> /dev/null; then
+            tmux new-session -ds $projectName -c $projectFolder
+            tmux send-keys -t "${projectName}" "${selected_editor} && clear" Enter
+            printf "Would you like to delete your current tmux session (y/n)? "
+            read -r -k1 deltmuxsessanswer
+            printf "\n"
+            tmux switch-client -t $projectName
+            if [ "$deltmuxsessanswer" != "${deltmuxsessanswer#[Yy]}" ];then
+                SESSION_ID=$(tmux display-message -p '#{session_id}')
+                tmux kill-session -t "$SESSION_ID"
+            fi
+        fi
+    else
+        cd "${projectFolder}"
+        clear
+        eval $selected_editor
+    fi
+
     unset options
     unset answer
     unset result
@@ -289,6 +295,7 @@ function project_creator() {
     unset repoView
     unset tmux_running
     unset deltmuxsessanswer
+    unset SESSION_ID
     unset selected_editor
 }
 
