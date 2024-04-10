@@ -35,8 +35,9 @@ function edit_dotfiles() {
 function pinput() {
         local prompt_message="$1"
         printf "$prompt_message"
+        printf "\n"
         args=("${@:2}")
-        printf $args
+        printf "%s\n" "${args[@]}"
         #shift
         #local input_value
         #read -r "$@" input_value
