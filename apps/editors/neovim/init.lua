@@ -104,10 +104,44 @@ vim.cmd([[set whichwrap+=<,>,[,] ]])
 -- This enables inlay_hints on LSP in case it fails to load on the plugin conf.
 vim.g.inlay_hints_visible = true
 
--- Enables autosaving
+-- Enables autosaving excluding certain buffer types
+function Is_excluded_buffer(buftype)
+	Autosave_excluded_buftypes = {
+		"terminal",
+		"nofile",
+		"help",
+		"quickfix",
+		"nowrite",
+		"acwrite",
+	}
+
+	for _, excluded_type in ipairs(Autosave_excluded_buftypes) do
+		if buftype == excluded_type then
+			return true
+		end
+	end
+	return false
+end
+
 vim.cmd("set autowriteall")
-vim.api.nvim_create_autocmd("TextChanged", { pattern = "<buffer>", command = "silent write" })
-vim.api.nvim_create_autocmd("TextChangedI", { pattern = "<buffer>", command = "silent write" })
+vim.api.nvim_create_autocmd("TextChanged", {
+	pattern = "<buffer>",
+	action = function()
+		local buftype = vim.bo.buftype
+		if not Is_excluded_buffer(buftype) then
+			vim.cmd("silent write")
+		end
+	end,
+})
+vim.api.nvim_create_autocmd("TextChangedI", {
+	pattern = "<buffer>",
+	action = function()
+		local buftype = vim.bo.buftype
+		if not Is_excluded_buffer(buftype) then
+			vim.cmd("silent write")
+		end
+	end,
+})
 
 -- Sync current directory and browsing directory
 vim.g.netrw_browse_split = 0
