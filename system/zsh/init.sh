@@ -125,6 +125,8 @@ function project_creator() {
             printf "\rmakefile created.\n"
 
             if [[ -e $(command -v git) ]]; then
+                curr_dir=$(pwd)
+                cd $projectFolder
                 git init
                 git add .
                 git commit -m "Initialized project $projectName"
@@ -145,6 +147,8 @@ function project_creator() {
                         printf "GitHub CLI not found initializing local repository only.\n"
                     fi
                 fi
+                cd $curr_dir
+                unset curr_dir
             else
                 printf "Git not installed.\n"
             fi
