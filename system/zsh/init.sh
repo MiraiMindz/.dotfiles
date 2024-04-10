@@ -8,11 +8,81 @@ DOTFILES="$HOME/etc/dotfiles.d"
 local _programming_projects_list_file=$HOME/.programming_projects_list.json
 
 # ALIASES
-alias nv=nvim
-alias claer=clear
-alias cler=clear
-alias clar=clear
-alias cls=clear
+if [[ -a "$(command -v doas)" ]]; then
+    alias sudo='doas'
+    alias dias='doas'
+    alias root='doas -u root su'
+    alias su='doas -u root su'
+  
+    if [[ -a "$(command -v nvim)" ]];then
+        alias sudoedit='doas nvim'
+    fi
+else
+    alias root='sudo -i'
+    alias su='sudo -i'
+fi
+
+alias nv="nvim"
+alias count='find . -type f | wc -l'
+alias ping='ping -c 5'
+alias untar='tar -zxvf'
+
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+
+alias tmux="tmux -2"
+
+alias initsystem="rm -rfv $HOME/.cache/* && clear && startx"
+alias initsys=initsystem
+
+# Error correction
+# Vim aliases 
+alias :q="exit"
+alias :wq="exit"
+alias :w="exit"
+
+# Typos
+alias cler="clear"
+alias claer="clear"
+alias clar="clear"
+alias cleer="clear"
+alias claar="clear"
+alias clera="clear"
+alias cçear="clear"
+alias cls="clear"
+alias clr="clear"
+
+alias dc="cd"
+alias cdc="cd"
+alias dcd="cd"
+alias cdd="cd"
+alias dcc="cd"
+alias ccd="cd"
+alias ddc="cd"
+alias cd.='cd ../'
+alias cd..='cd ../../'
+alias cd...='cd ../../../'
+alias cd....='cd ../../../../'
+alias cd.....='cd ../../../../../'
+alias dc.="cd."
+alias dc..="cd.."
+alias dc...="cd..."
+alias dc....="cd...."
+alias dc.....="cd....."
+
+alias exi="exit"
+alias ext="exit"
+alias exot="exit"
+
+alias sl="ls"
+alias ssl="ls"
+alias lls="ls"
+
+alias ssh="TERM=tmux-256color ssh"
 
 # HELPER FUNCTIONS
 function edit_dotfiles() {
