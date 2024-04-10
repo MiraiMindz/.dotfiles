@@ -200,14 +200,14 @@ function project_creator() {
                 printf "Zero text editors found.\n"
             fi
 
-            printf "%s\n" "${texteditors[@]}"
-
+            selected_editor=""
             if [[ "${#texteditors[@]}" -gt 1 ]]; then
                 selected_editor=$(printf "%s\n" "${texteditors[@]}" | fzf)
             else
                 selected_editor="${texteditors[0]}"
             fi
 
+            printf "$selected_editor"
 
             if [[ -a "$(command -v tmux)" ]]; then
                 tmux_running=$(pgrep tmux)
