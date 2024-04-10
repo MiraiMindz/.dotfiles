@@ -32,7 +32,14 @@ function edit_dotfiles() {
     unset curr_dir
 }
 
-function pinput() {
+
+
+function project_creator() {
+    if [[ ! $(command -v jq) ]]; then
+        printf "%s\n" "jq not installed, doing nothing."
+    fi
+
+    function pinput() {
         local prompt_message="$1"
         printf "$prompt_message"
         printf "\n"
@@ -56,11 +63,6 @@ function pinput() {
         echo $updated_file >> $_programming_projects_list_file
         unset updated_files
     }
-
-function project_creator() {
-    if [[ ! $(command -v jq) ]]; then
-        printf "%s\n" "jq not installed, doing nothing."
-    fi
 
     declare -a options
     options=(
