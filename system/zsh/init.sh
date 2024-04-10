@@ -32,7 +32,14 @@ function edit_dotfiles() {
     unset curr_dir
 }
 
-function pinput() {
+
+
+function project_creator() {
+    if [[ ! $(command -v jq) ]]; then
+        printf "%s\n" "jq not installed, doing nothing."
+    fi
+
+    function pinput() {
         local prompt_message="$1"
         shift
         local input_value
@@ -41,12 +48,7 @@ function pinput() {
         echo "$input_value"
     }
 
-function project_creator() {
-    if [[ ! $(command -v jq) ]]; then
-        printf "%s\n" "jq not installed, doing nothing."
-    fi
-
-    local add_to_json() {
+    function add_to_json() {
         path=$(realpath "$1")
         if [[ ! -f $_programming_projects_list_file ]]; then
             touch $_programming_projects_list_file
