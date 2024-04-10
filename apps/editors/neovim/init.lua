@@ -177,7 +177,7 @@ vim.opt.splitbelow = true
 
 -- Sets how neovim will show the spaces.
 vim.opt.list = true
-vim.opt.listchars = { tab = ">> ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "> ", trail = "·", nbsp = "␣" }
 
 -- Realtime substitution preview
 vim.opt.inccommand = "split"
