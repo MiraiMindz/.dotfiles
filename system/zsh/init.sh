@@ -32,6 +32,15 @@ function edit_dotfiles() {
     unset curr_dir
 }
 
+function pinput() {
+        local prompt_message="$1"
+        shift
+        local input_value
+        echo -n "$prompt_message"
+        read -r "$@" input_value
+        echo "$input_value"
+    }
+
 function project_creator() {
     if [[ ! $(command -v jq) ]]; then
         printf "%s\n" "jq not installed, doing nothing."
@@ -50,14 +59,7 @@ function project_creator() {
         unset updated_files
     }
 
-    local pinput() {
-        local prompt_message="$1"
-        shift
-        local input_value
-        echo -n "$prompt_message"
-        read -r "$@" input_value
-        echo "$input_value"
-    }
+    
 
     declare -a options
     options=(
