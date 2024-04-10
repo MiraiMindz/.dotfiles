@@ -32,23 +32,27 @@ function edit_dotfiles() {
     unset curr_dir
 }
 
-function project_creator() {
-    if [[ ! $(command -v jq) ]]; then
+function add_to_json() {
+    if ! command -v jq >/dev/null; then
         printf "%s\n" "jq not installed, doing nothing."
     fi
 
-    local add_to_json() {
-        path=$(realpath "$1")
-        if [[ ! -f $_programming_projects_list_file ]]; then
-            touch $_programming_projects_list_file
-            printf "{\n\t\"projects:\"[]\n}\n" >> $_programming_projects_list_file
-        fi
+    path=$(realpath "$1")
+    if [[ ! -e $_programming_projects_list_file ]]; then
+        touch $_programming_projects_list_file
+        printf "{\n\t\"projects:\"[]\n}\n" >> $_programming_projects_list_file
+    fi
 
-        updated_file=$(jq ".projects += [\"${path}\"]" $_programming_projects_list_file)
-        echo "" > $_programming_projects_list_file
-        echo $updated_file >> $_programming_projects_list_file
-        unset updated_files
-    }
+    updated_file=$(jq ".projects += [\"${path}\"]" $_programming_projects_list_file)
+    echo "" > $_programming_projects_list_file
+    echo $updated_file >> $_programming_projects_list_file
+    unset updated_files
+}
+
+function project_creator() {
+    if ! command -v jq >/dev/null; then
+        printf "%s\n" "jq not installed, doing nothing."
+    fi
 
     declare -a options
     options=(
@@ -124,7 +128,7 @@ function project_creator() {
 
             printf "\rmakefile created.\n"
 
-            if [[ -e $(command -v git) ]]; then
+            if ! command -v git >/dev/null; then
                 curr_dir=$(pwd)
                 cd $projectFolder
                 git init
@@ -156,39 +160,39 @@ function project_creator() {
             add_to_json $projectFolder
             declare -a texteditors
 
-            if [[ -e $(command -v nvim) ]]; then
+            if command -v nvim >/dev/null; then
                 texteditors+="nvim"
-            elif [[ -e $(command -v vim) ]]; then
+            elif command -v vim >/dev/null; then
                 texteditors+="vim"
-            elif [[ -e $(command -v vi) ]]; then
+            elif command -v vi >/dev/null; then
                 texteditors+="vi"
-            elif [[ -e $(command -v emacs) ]]; then
+            elif command -v emacs >/dev/null; then
                 texteditors+="emacs"
-            elif [[ -e $(command -v nano) ]]; then
+            elif command -v nano >/dev/null; then
                 texteditors+="nano"
-            elif [[ -e $(command -v micro) ]]; then
+            elif command -v micro >/dev/null; then
                 texteditors+="micro"
-            elif [[ -e $(command -v gedit) ]]; then
+            elif command -v gedit >/dev/null; then
                 texteditors+="gedit"
-            elif [[ -e $(command -v ed) ]]; then
+            elif command -v ed >/dev/null; then
                 texteditors+="ed"
-            elif [[ -e $(command -v helix) ]]; then
+            elif command -v helix >/dev/null; then
                 texteditors+="helix"
-            elif [[ -e $(command -v textadept) ]]; then
+            elif command -v textadept >/dev/null; then
                 texteditors+="textadept"
-            elif [[ -e $(command -v code) ]]; then
+            elif command -v code >/dev/null; then
                 texteditors+="code"
-            elif [[ -e $(command -v codium) ]]; then
+            elif command -v codium >/dev/null; then
                 texteditors+="codium"
-            elif [[ -e $(command -v kakoune) ]]; then
+            elif command -v kakoune >/dev/null; then
                 texteditors+="kakoune"
-            elif [[ -e $(command -v kate) ]]; then
+            elif command -v kate >/dev/null; then
                 texteditors+="kate"
-            elif [[ -e $(command -v pluma) ]]; then
+            elif command -v pluma >/dev/null; then
                 texteditors+="pluma"
-            elif [[ -e $(command -v mousepad) ]]; then
+            elif command -v mousepad >/dev/null; then
                 texteditors+="mousepad"
-            elif [[ -e $(command -v xorg-xedit) ]]; then
+            elif command -v xorg-xedit >/dev/null; then
                 texteditors+="xorg-xedit"
             else
                 printf "Zero text editors found.\n"
@@ -201,7 +205,7 @@ function project_creator() {
             fi
 
 
-            if [ -e $(command -v tmux) ]; then
+            if command -v tmux >/dev/null; then
                 tmux_running=$(pgrep tmux)
                 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
                     tmux new-session -ds $projectName -c $projectFolder
