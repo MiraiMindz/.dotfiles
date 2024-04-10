@@ -330,9 +330,9 @@ function project_creator() {
 # Binds CTRL+e to the edit_dotifiles function
 bindkey -s '^E' 'edit_dotfiles && clear\n'
 
-# Binds CTRL+a to the add_current_dir_to_json function
-bindkey -s '^A' 'add_current_dir_to_json && clear\n'
+# Binds CTRL+t to the add_current_dir_to_json function
+bindkey -s '^T' 'add_current_dir_to_json && clear\n'
 
-# Binds CTRL+R to the remove_current_dir_from_json function
+# Binds CTRL+r to the remove_current_dir_from_json function
 bindkey -s '^R' 'remove_current_dir_from_json && clear\n'
 
