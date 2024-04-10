@@ -36,13 +36,13 @@ function add_to_json() {
     if [[ ! -a "$(command -v jq)" ]]; then
         printf "%s\n" "jq not installed, doing nothing."
     fi
-    path=$(realpath "$1")
+    local ppath=$(realpath "$1")
     if [[ ! -e $_programming_projects_list_file ]]; then
         touch $_programming_projects_list_file
         printf "{\n\t\"projects:\"[]\n}\n" >> $_programming_projects_list_file
     fi
 
-    updated_file=$(jq ".projects += [\"${path}\"]" $_programming_projects_list_file)
+    local updated_file=$(jq ".projects += [\"${ppath}\"]" $_programming_projects_list_file)
     echo "" > $_programming_projects_list_file
     echo $updated_file >> $_programming_projects_list_file
     unset updated_files
@@ -204,7 +204,7 @@ function project_creator() {
             fi
 
 
-            if [ -a "$(command -v tmux)" ]; then
+            if [[ -a "$(command -v tmux)" ]]; then
                 tmux_running=$(pgrep tmux)
                 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
                     tmux new-session -ds $projectName -c $projectFolder
