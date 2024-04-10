@@ -218,7 +218,7 @@ function project_creator() {
 
                 if ! tmux has-session -t=$projectName 2> /dev/null; then
                     tmux new-session -ds $projectName -c $projectFolder
-                    tmux send-keys -t $projectName "$selected_editor" Enter
+                    tmux send-keys -t "${projectName}" "${selected_editor}" Enter
                     printf "Would you like to delete your current tmux session (y/n)? "
                     read -r deltmuxsessanswer
                     printf "\n"
