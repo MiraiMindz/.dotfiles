@@ -83,6 +83,7 @@ function project_creator() {
             printf "[CREATING C PROJECT]\n"
             printf "Enter Project Name: " 
             read -r projectName
+            printf "\n"
             local projectFolder=$(realpath "${PROGRAMMING_PROJECTS}/${projectName}")
             mkdir -pv $projectFolder/{src/include,doc,build,test}
             touch $projectFolder/{README.md,makefile,src/main.c,.gitignore}
@@ -135,10 +136,12 @@ function project_creator() {
                 git commit -m "Initialized project $projectName"
                 printf "Would you like to publish the Git repository on GitHub (y/n)? "
                 read -r -k1 gitanswer
+                printf "\n"
                 if [ "$gitanswer" != "${gitanswer#[Yy]}" ];then
                     if [[ -a "$(command -v gh)" ]]; then
                         printf "Is your repo public (y/n)? "
                         read -r -k1 repoView
+                        printf "\n"
                         if [ "$repoView" != "${repoView#[Yy]}" ]; then
                             gh repo create "$projectName" --public --source=.
                         else
@@ -197,6 +200,8 @@ function project_creator() {
                 printf "Zero text editors found.\n"
             fi
 
+            printf "%s\n" "${texteditors[@]}"
+
             if [[ "${#texteditors[@]}" -gt 1 ]]; then
                 selected_editor=$(printf "%s\n" "${texteditors[@]}" | fzf)
             else
@@ -211,7 +216,8 @@ function project_creator() {
                     tmux send-keys -t $projectName "$selected_editor" Enter
                     printf "Would you like to delete your current tmux session (y/n)? "
                     read -r -k1 deltmuxsessanswer
-                    if [ "$deltmuxsessanswer" != "${deltmuxsessanswer#[Yy]}" ];then
+                    printf "\n"
+                    if [[ "$deltmuxsessanswer" != "${deltmuxsessanswer#[Yy]}" ]];then
                         SESSION_ID=$(tmux display-message -p '#{session_id}')
                         tmux kill-session -t "$SESSION_ID"
                     fi
