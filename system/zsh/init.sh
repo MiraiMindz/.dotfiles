@@ -212,7 +212,12 @@ function project_creator() {
             if [[ -a "$(command -v tmux)" ]]; then
                 tmux_running=$(pgrep tmux)
                 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-                    tmux new-session -d -s $projectName -c $projectFolder
+                    tmux new-session -s $projectName -c $projectFolder
+                    exit 0
+                fi
+
+                if ! tmux has-session -t=$projectName 2> /dev/null; then
+                    tmux new-session -ds $projectName -c $projectFolder
                     tmux send-keys -t $projectName "$selected_editor" Enter
                     printf "Would you like to delete your current tmux session (y/n)? "
                     read -r deltmuxsessanswer
@@ -221,12 +226,7 @@ function project_creator() {
                         SESSION_ID=$(tmux display-message -p '#{session_id}')
                         tmux kill-session -t "$SESSION_ID"
                     fi
-                    tmux attach-session -t $projectName
-                    exit 0
-                fi
-
-                if ! tmux has-session -t=$projectName 2> /dev/null; then
-                    tmux new-session -ds $projectName -c $projectFolder
+                    # tmux attach-session -t $projectName
                 fi
 
                 tmux switch-client -t $projectName
