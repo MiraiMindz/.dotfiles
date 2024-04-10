@@ -98,7 +98,7 @@ function project_creator() {
             printf "#include <stdio.h>\n" >> $projectFolder/src/main.c
             printf "#include <stdlib.h>\n\n" >> $projectFolder/src/main.c
             printf "int main() {\n" >> $projectFolder/src/main.c
-            printf "\tprintf(\"Hello World!\\n\");\n" >> $projectFolder/src/main.c
+            printf "\tprintf(\"Hello World!\\\n\");\n" >> $projectFolder/src/main.c
             printf "\n" >> $projectFolder/src/main.c
             printf "\treturn 0;\n" >> $projectFolder/src/main.c
             printf "}\n" >> $projectFolder/src/main.c
