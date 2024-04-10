@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # VARIABLES
 
@@ -37,7 +37,7 @@ function project_creator() {
         printf "%s\n" "jq not installed, doing nothing."
     fi
 
-    function add_to_json() {
+    local add_to_json() {
         path=$(realpath "$1")
         if [[ ! -f $_programming_projects_list_file ]]; then
             touch $_programming_projects_list_file
@@ -48,6 +48,15 @@ function project_creator() {
         echo "" > $_programming_projects_list_file
         echo $updated_file >> $_programming_projects_list_file
         unset updated_files
+    }
+
+    local pinput() {
+        local prompt_message="$1"
+        shift
+        local input_value
+        echo -n "$prompt_message"
+        read -r "$@" input_value
+        echo "$input_value"
     }
 
     declare -a options
@@ -78,7 +87,7 @@ function project_creator() {
     case $result in
         "C")
             printf "[CREATING C PROJECT]\n"
-            read -p "Enter Project Name: " projectName
+            projectName=$(pinput "Enter Project Name: ")
             local projectFolder=$(realpath "${PROGRAMMING_PROJECTS}/${projectName}")
             mkdir -pv $projectFolder/{src/include,doc,build,test}
             touch $projectFolder/{README.md,makefile,src/main.c,.gitignore}
@@ -127,10 +136,10 @@ function project_creator() {
                 git init
                 git add .
                 git commit -m "Initialized project $projectName"
-                read -n 1 -p "Would you like to publish the Git repository on GitHub (y/n)? " gitanswer
+                gitanswer=$(pinput "Would you like to publish the Git repository on GitHub (y/n)? " -k1)
                 if [ "$gitanswer" != "${gitanswer#[Yy]}" ];then
                     if [[ -e $(command -v gh) ]]; then
-                        read -n 1 -p "Is your repo public (y/n)? " repoView
+                        repoViewr=$(pinput "Is your repo public (y/n)? " -k1)
                         if [ "$repoView" != "${repoView#[Yy]}" ]; then
                             gh repo create "$projectName" --public --source=.
                         else
@@ -199,7 +208,7 @@ function project_creator() {
                 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
                     tmux new-session -ds $projectName -c $projectFolder
                     tmux send-keys -t $projectName "$selected_editor" Enter
-                    read -n 1 -p "Would you like to delete your current tmux session (y/n)? " deltmuxsessanswer
+                    deltmuxsessanswer=$(pinput "Would you lke to delete your current tmux session (y/n)? " -k1)
                     if [ "$deltmuxsessanswer" != "${deltmuxsessanswer#[Yy]}" ];then
                         SESSION_ID=$(tmux display-message -p '#{session_id}')
                         tmux kill-session -t "$SESSION_ID"
