@@ -225,7 +225,7 @@ function project_creator() {
 
     case $result in
         "C")
-            mkdir -pv $projectFolder/{src/include,doc,build,test}
+            mkdir -pv $projectFolder/{src/include,doc,build}
             touch $projectFolder/{README.md,makefile,src/main.c,.gitignore}
 
             printf "# Prerequisites\n*.d\n\n# Object files\n*.o\n*.ko\n*.obj\n*.elf\n\n# Linker output\n*.ilk\n*.map\n*.exp\n\n# Precompiled Headers\n*.gch\n*.pch\n\n# Libraries\n*.lib\n*.a\n*.la\n*.lo\n\n# Shared objects (inc. Windows DLLs)\n*.dll\n*.so\n*.so.*\n*.dylib\n\n# Executables\n*.exe\n*.out\n*.app\n*.i*86\n*.x86_64\n*.hex\n\n# Debug files\n*.dSYM/\n*.su\n*.idb\n*.pdb\n\n# Kernel Module Compile Results\n*.mod*\n*.cmd\n.tmp_versions/\nmodules.order\nModule.symvers\nMkfile.old\ndkms.conf\n\n# Directories\nbuild/\n" >> $projectFolder/.gitignore 
@@ -272,7 +272,7 @@ function project_creator() {
             printf "makefile created.\n"
         ;;
         "Assembly")
-            mkdir -pv $projectFolder/{src/,build,test}
+            mkdir -pv $projectFolder/{src/{include},build}
             touch $projectFolder/{README.md,makefile,src/main.asm,.gitignore}
             printf "# Directories\nbuild/\n" >> $projectFolder/.gitignore
 
@@ -280,7 +280,7 @@ function project_creator() {
             printf "# %s\n\n" $projectName >> $projectFolder/README.md
             printf "README.md file created.\n"
 
-            if [[ (-a "$(command -v gas)" || -a "$(command -v as)") && -a "$(command -v nasm)" ]]; then
+            if ( -a "$(command -v gas)" || -a "$(command -v as)") && -a "$(command -v nasm)"; then
                 printf "Would you like to use INTEL Syntax (y/n)? "
                 read -r -k1 asmsyntax
                 printf "\n"
@@ -300,27 +300,53 @@ function project_creator() {
                     printf "\tmov\t\trax, 60\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; syscall number for exit\n" >> $projectFolder/src/main.asm
                     printf "\txor\t\trdi, rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; exit code 0\n" >> $projectFolder/src/main.asm
                     printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t; invoke syscall\n" >> $projectFolder/src/main.asm
+
+                    printf "Creating makefile\n"
+
+                    printf "CC=gcc\n" >> $projectFolder/makefile
+                    printf "CFLAGS=-Wall -Wextra -Werror -Wshadow -Wfloat-equal -Wundef -Wpointer-arith -Wcast-align -Wstrict-prototypes -Wstrict-overflow=5 -Wwrite-strings -Waggregate-return -Wcast-qual -Wswitch-default -Wswitch-enum -Wconversion -Wunreachable-code -Wformat=2 -fverbose-asm -finstrument-functions --coverage -fsanitize={address,thread,undefined} -Winit-self -Wuninitialized -Werror=implicit-function-declaration -Wmissing-prototypes -g -O3 -pedantic -save-temps\n\n" >> $projectFolder/makefile
+                    printf "EDITOR=nvim\n\n" >> $projectFolder/makefile
+                    printf "SRC_DIR=src\n" >> $projectFolder/makefile
+                    printf "BUILD_DIR=build\n\n" >> $projectFolder/makefile
+                    printf ".PHONY main run clean code always\n" >> $projectFolder/makefile
+                    printf "main: \$(BUILD_DIR)/main always\n" >> $projectFolder/makefile
+                    printf "\t\$(CC) \$(CFLAGS) -o \$(BUILD_DIR)/main \$(SRC_DIR)/main.c\n\n" >> $projectFolder/makefile
+                    printf "run: main\n" >> $projectFolder/makefile
+                    printf "\t\$(BUILD_DIR)/main\n\n" >> $projectFolder/makefile
+                    printf "always: \$(BUILD_DIR)\n" >> $projectFolder/makefile
+                    printf "\tmkdir -p \$(BUILD_DIR)\n\n" >> $projectFolder/makefile
+                    printf "clean:\n" >> $projectFolder/makefile
+                    printf "\t rm -rf \$(BUILD_DIR)\n\n" >> $projectFolder/makefile
+                    printf "code:\n" >> $projectFolder/makefile
+                    printf "\tgit pull\n" >> $projectFolder/makefile
+                    printf "\t\$(EDITOR)\n" >> $projectFolder/makefile
+                    printf "\tgit add .\n" >> $projectFolder/makefile
+                    printf "\tgit commit -m \"Automatic commit\"\n" >> $projectFolder/makefile
+                    printf "\tgit push\n" >> $projectFolder/makefile
+
+                    printf "makefile created.\n"
+
                 else
-                    printf ".section .data\n" >> $projectFolder/src/main.asm
-                    printf "\thello: .string \"Hello World\!\\\n\"\t\t\t\t\t\t\t\t\t\t\t\t# string to be printed, with newline character\n\n" >> $projectFolder/src/main.asm
-                    printf ".section .text\n" >> $projectFolder/src/main.asm
-                    printf "\t.globl _start\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# entry point for the program\n\n" >> $projectFolder/src/main.asm
-                    printf "_start:\n" >> $projectFolder/src/main.asm
-                    printf "\t# write system call\n" >> $projectFolder/src/main.asm
-                    printf "\tmov\t\$1, %%rax\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# syscall number for write\n" >> $projectFolder/src/main.asm
-                    printf "\tmov\t\$1, %%rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# file descriptor 1 (stdout)\n" >> $projectFolder/src/main.asm
-                    printf "\tmov\t\$hello, %%rsi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# pointer to the message to print\n" >> $projectFolder/src/main.asm
-                    printf "\tmov\t\$13, %%rdx\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# message length\n" >> $projectFolder/src/main.asm
-                    printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# invoke syscall\n\n" >> $projectFolder/src/main.asm
+                    printf ".section .data\n" >> $projectFolder/src/main.s
+                    printf "\thello: .string \"Hello World\!\\\n\"\t\t\t\t\t\t\t\t\t\t\t\t# string to be printed, with newline character\n\n" >> $projectFolder/src/main.s
+                    printf ".section .text\n" >> $projectFolder/src/main.s
+                    printf "\t.globl _start\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# entry point for the program\n\n" >> $projectFolder/src/main.s
+                    printf "_start:\n" >> $projectFolder/src/main.s
+                    printf "\t# write system call\n" >> $projectFolder/src/main.s
+                    printf "\tmov\t\$1, %%rax\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# syscall number for write\n" >> $projectFolder/src/main.s
+                    printf "\tmov\t\$1, %%rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# file descriptor 1 (stdout)\n" >> $projectFolder/src/main.s
+                    printf "\tmov\t\$hello, %%rsi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# pointer to the message to print\n" >> $projectFolder/src/main.s
+                    printf "\tmov\t\$13, %%rdx\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# message length\n" >> $projectFolder/src/main.s
+                    printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# invoke syscall\n\n" >> $projectFolder/src/main.s
 
                     printf "\t# exit system call\n" >> $projectFolder/src/main.asm
-                    printf "\tmov\t\$60, %%rax\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# syscall number for exit\n" >> $projectFolder/src/main.asm
-                    printf "\txor\t%%rdi, %%rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# exit code 0\n" >> $projectFolder/src/main.asm
-                    printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# invoke syscall\n" >> $projectFolder/src/main.asm
+                    printf "\tmov\t\$60, %%rax\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# syscall number for exit\n" >> $projectFolder/src/main.s
+                    printf "\txor\t%%rdi, %%rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# exit code 0\n" >> $projectFolder/src/main.s
+                    printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# invoke syscall\n" >> $projectFolder/src/main.s
                 fi
 
                 unset asmsyntax
-            elif [[ -a "$(command -v gas)" || -a "$(command -v as)" ]]; then
+            elif -a "$(command -v gas)" || -a "$(command -v as)"; then
                 printf ".section .data\n" >> $projectFolder/src/main.asm
                 printf "\thello: .string \"Hello World\!\\\n\"\t\t\t\t\t\t\t\t\t\t\t\t# string to be printed, with newline character\n\n" >> $projectFolder/src/main.asm
                 printf ".section .text\n" >> $projectFolder/src/main.asm
@@ -336,7 +362,7 @@ function project_creator() {
                 printf "\tmov\t\$60, %%rax\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# syscall number for exit\n" >> $projectFolder/src/main.asm
                 printf "\txor\t%%rdi, %%rdi\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# exit code 0\n" >> $projectFolder/src/main.asm
                 printf "\tsyscall\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t# invoke syscall\n" >> $projectFolder/src/main.asm
-            elif [[ -a "$(command -v nasm)" ]]; then
+            elif -a "$(command -v nasm)"; then
                 printf "section .data\n" >> $projectFolder/src/main.asm
                 printf "\thello\tdb\t\"Hello World\!\", 10\t\t\t\t\t\t\t\t\t\t\t\t; string to be printed, with newline character (10)\n" >> $projectFolder/src/main.asm
                 printf "section .text\n" >> $projectFolder/src/main.asm

@@ -86,8 +86,21 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- Highlight the 80th column (good for formatting)
-vim.opt.colorcolumn = "80"
+-- Highlight the 80th column and beyond (good for formatting)
+local function set_color_column_range(start, final)
+	local color_column_range = {}
+	for i = start, final do
+		table.insert(color_column_range, tostring(i))
+	end
+
+	-- Join the range elements into a comma-separated string
+	local color_column_str = table.concat(color_column_range, ",")
+
+	-- Set the color column using the joined string
+	return color_column_str
+end
+
+vim.opt.colorcolumn = set_color_column_range(80, 119)
 
 -- Shows the command
 vim.opt.showcmd = false
