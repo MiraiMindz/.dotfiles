@@ -86,34 +86,29 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- -- Highlight the 80th column and beyond (good for formatting)
--- local function set_color_column_range(start, final)
--- 	local color_column_range = {}
--- 	for i = start, final do
--- 		table.insert(color_column_range, tostring(i))
--- 	end
---
--- 	-- Join the range elements into a comma-separated string
--- 	local color_column_str = table.concat(color_column_range, ",")
---
--- 	-- Set the color column using the joined string
--- 	return color_column_str
--- end
---
--- vim.opt.colorcolumn = set_color_column_range(80, 119)
+-- Define a function to set the color column range
+local function set_color_column_range(start, final, color)
+	local color_column_range = {}
+	for i = start, final do
+		table.insert(color_column_range, tostring(i))
+	end
 
--- Define highlighting for each range of columns
-vim.api.nvim_command("highlight Column80To119 ctermbg=236")
-vim.api.nvim_command("highlight Column120To159 ctermbg=237")
-vim.api.nvim_command("highlight Column160To999 ctermbg=238")
+	-- Join the range elements into a comma-separated string
+	local color_column_str = table.concat(color_column_range, ",")
 
--- Match columns 80 to 119 and apply the corresponding highlighting
-vim.api.nvim_command("augroup ColumnHighlighting")
-vim.api.nvim_command("autocmd!")
-vim.api.nvim_command('autocmd BufWinEnter * call matchadd("Column80To119", "\\%>79v\\%<120v")')
-vim.api.nvim_command('autocmd BufWinEnter * call matchadd("Column120To159", "\\%>119v\\%<160v")')
-vim.api.nvim_command('autocmd BufWinEnter * call matchadd("Column160To999", "\\%>159v")')
-vim.api.nvim_command("augroup END")
+	-- Set the color column using the joined string
+	vim.cmd("highlight ColorColumn" .. start .. "_" .. final .. " ctermfg=" .. color)
+	vim.cmd("set colorcolumn+=" .. color_column_str)
+end
+
+-- Set color for columns 80 to 119
+set_color_column_range(80, 119, 236)
+
+-- Set color for columns 120 to 159
+set_color_column_range(120, 159, 237)
+
+-- Set color for columns 160 to 999
+set_color_column_range(160, 999, 238)
 
 -- Shows the command
 vim.opt.showcmd = false
