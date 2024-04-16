@@ -519,7 +519,7 @@ function project_creator() {
 function pkg() {
     operation="${@[1]}"
     args="${@:2}"
-    echo $#args[3,-1]
+    num_args=$#args[3,-1]
     echo $#args
     echo $args
 
@@ -527,7 +527,7 @@ function pkg() {
         "install")
             sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
             yay -Syyy
-            if [[ $variable -eq 0 ]]; then
+            if [[ $num_args -eq 0 ]]; then
                 yay -Slq | fzf --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -S
             else
                 yay -Slyyy $args
@@ -538,7 +538,7 @@ function pkg() {
             yay -Syyyu
         ;;
         "remove")
-            if [[ $variable -eq 0 ]]; then
+            if [[ $num_args -eq 0 ]]; then
                 yay -Qq | fzf --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Qi {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -Rnsc
             else
                 yay -Rnsc $args
@@ -548,7 +548,14 @@ function pkg() {
             sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
             yay -Syyy
         ;;
+        *)
+            yay --help
+        ;;
     esac
+
+    unset args
+    unset num_args
+    unset operation
 }
 
 # KEYBINDS
