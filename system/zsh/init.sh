@@ -3,7 +3,7 @@
 # VARIABLES
 
 PROGRAMMING_PROJECTS="$HOME/usr/Programming/Projects"
-PROGRAMMING_COURSES="$HOME/usr/Programming/Courses"
+PROGRAMMING_PRATICES="$HOME/usr/Programming/Pratices"
 DOTFILES="$HOME/etc/dotfiles.d"
 local _programming_projects_list_file=$HOME/.programming_projects_list.json
 
@@ -57,6 +57,8 @@ alias clera="clear"
 alias cçear="clear"
 alias cls="clear"
 alias clr="clear"
+
+alias cd='z'
 
 alias dc="cd"
 alias cdc="cd"
