@@ -528,7 +528,7 @@ function pkg() {
             if [[ $num_args -eq 0 ]]; then
                 yay -Slq | fzf --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -S
             else
-                yay -Slyyy $args
+                yay -Syyy $args
             fi
         ;;
         "update")
