@@ -520,9 +520,7 @@ function pkg() {
     operation="${@[1]}"
     args="${@:2}"
     num_args=$#args[3,-1]
-    echo $#args
-    echo $args
-
+    
     case $operation in
         "install")
             sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
