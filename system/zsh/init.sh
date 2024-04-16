@@ -22,6 +22,8 @@ else
     alias su='sudo -i'
 fi
 
+alias lscmds = "history | awk '{print \$2}' | sort | uniq -c | sort -nr | head -16"
+
 alias nv="nvim"
 alias count='find . -type f | wc -l'
 alias ping='ping -c 5'
