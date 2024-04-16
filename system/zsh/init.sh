@@ -519,8 +519,9 @@ function project_creator() {
 function pkg() {
     operation="${@[1]}"
     args="${@:2}"
+    echo $#args[3,-1]
     echo $#args
-    echo $args[3, -1]
+    echo $args
 
     case $operation in
         "install")
