@@ -871,7 +871,7 @@ local plugins = {
 		dependencies = {
 			{
 				"L3MON4D3/LuaSnip",
-				build = "make install_jsrgexp",
+				-- build = "make install_jsrgexp",
 				dependencies = {
 					{
 						"rafamadriz/friendly-snippets",
