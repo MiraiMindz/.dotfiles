@@ -522,7 +522,7 @@ function pkg() {
     num_args=$#args[3,-1]
     
     case $operation in
-        "install")
+        "install" || "i")
             sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
             yay -Syyy
             yay -Fy
@@ -532,13 +532,13 @@ function pkg() {
                 yay -Syyy $args
             fi
         ;;
-        "update")
+        "update" || "s")
             sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
             yay -Syyy
             yay -Fy
             yay -Syyyu
         ;;
-        "remove")
+        "remove" || "r")
             yay -Fy
             if [[ $num_args -eq 0 ]]; then
                 yay -Qq | fzf --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Qi {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -Rnsc
@@ -546,7 +546,7 @@ function pkg() {
                 yay -Rnsc $args
             fi
         ;;
-        "refresh")
+        "refresh" || "u")
             sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
             yay -Syyy
             yay -Fy
