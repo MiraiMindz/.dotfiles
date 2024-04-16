@@ -516,6 +516,29 @@ function project_creator() {
     unset selected_editor
 }
 
+function pkg() {
+    operation="${@[1]}"
+    args="${@:2}"
+    echo $#args
+    echo $args[3, -1]
+
+    case $operation in
+        "install")
+            sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
+            yay -Syyy $args
+        ;;
+        "update")
+            sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
+            yay -Syyyu
+        ;;
+        "remove")
+        ;;
+        "refresh")
+            sudo bash -c 'rm -rfv /etc/pacman.d/mirrorlist; while IFS="" read -r p || [ -n "$p" ]; do printf "%s\n" "${p##\#}" >> /etc/pacman.d/mirrorlist; done <<< $(curl https://archlinux.org/mirrorlist/all/)'
+        ;;
+    esac
+}
+
 # KEYBINDS
 
 # Binds CTRL+e to the edit_dotifiles function
