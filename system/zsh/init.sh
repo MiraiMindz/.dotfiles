@@ -530,3 +530,6 @@ bindkey -s '^R' 'remove_current_dir_from_json && clear\n'
 # Binds CTRL+p to the project_creator function
 bindkey -s '^P' 'project_creator && clear\n'
 
+# Enables zoxide
+eval "$(zoxide init zsh)"
+
