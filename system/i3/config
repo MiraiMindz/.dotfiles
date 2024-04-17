@@ -191,7 +191,7 @@ bindsym $mod+r mode "resize"
 
 # CUSTOM CONFIG
 bindsym $mod+Return exec --no-startup-id kitty --single-instance tmux new-session -A -s main
-bindsym $mod+d exec rofi -show run
+bindsym $mod+d exec rofi -show drun
 
 ### Disables Screen Blanking
 exec_always xset s 0
