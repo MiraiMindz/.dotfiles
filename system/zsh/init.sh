@@ -162,7 +162,7 @@ function project_search() {
     local prName=$(basename "$prPath")
 
     echo $prPath
-    echo $pName
+    echo $prName
 
     if [[ -a "$(command -v tmux)" ]]; then
         tmux_running=$(pgrep tmux)
