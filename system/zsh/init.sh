@@ -89,6 +89,75 @@ alias lls="ls"
 alias ssh="TERM=tmux-256color ssh"
 
 # HELPER FUNCTIONS
+function fmap() {
+  local -n input_list=$1
+  local -r transform_fn=$2
+
+  local mapped_list=()
+  for element in "${input_list[@]}"; do
+    mapped_list+=("$("$transform_fn" "$element")")
+  done
+
+  echo "${mapped_list[@]}"
+}
+
+function ffilter() {
+  local -n input_list=$1
+  local -r predicate=$2
+
+  local filtered_list=()
+  for element in "${input_list[@]}"; do
+    if "$predicate" "$element"; then
+      filtered_list+=("$element")
+    fi
+  done
+
+  echo "${filtered_list[@]}"
+}
+
+function freduce() {
+  local -n input_list=$1
+  local -r accumulate_fn=$2
+  local initial_value=$3
+
+  local accumulator=$initial_value
+  for element in "${input_list[@]}"; do
+    accumulator="$("$accumulate_fn" "$accumulator" "$element")"
+  done
+
+  echo "$accumulator"
+}
+
+function fsum() {
+  local accumulator=$1
+  local element=$2
+  echo "$((accumulator + element))"
+}
+
+function fzip() {
+  local -n input_list1=$1
+  local -n input_list2=$2
+
+  local zipped_list=()
+  local length=${#input_list1[@]}
+
+  for ((i=0; i<length; i++)); do
+    zipped_list+=("${input_list1[$i]},${input_list2[$i]}")
+  done
+
+  echo "${zipped_list[@]}"
+}
+
+function fcompose() {
+  local result="$1"
+  shift
+  for func in "$@"; do
+    result="$($func "$result")"
+  done
+  echo "$result"
+}
+
+
 function edit_dotfiles() {
     if [[ ! -a "$(command -v git)" ]]; then
         echo "Git not installed"
