@@ -167,23 +167,22 @@ function project_search() {
     if [[ -a "$(command -v tmux)" ]]; then
         tmux_running=$(pgrep tmux)
         if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-            tmux new-session -s $prName -c $prPath
+            tmux new-session -s "${prName}" -c "${prPath}"
             exit 0
         fi
 
-        if ! tmux has-session -t=$prName 2> /dev/null; then
-            tmux new-session -ds $prName -c $prPath
+        if ! tmux has-session -t="${prName}" 2> /dev/null; then
+            tmux new-session -ds "${prName}" -c "${prPath}"
         fi
-            tmux switch-client -t $prName
+            tmux switch-client -t "${prName}"
     else
         cd "${prPath}"
         clear
     fi
 
-    unset projectName
-    unset projectPath
+    unset prName
+    unset prPath
     unset selectedProject
-    exit 0
 }
 
 function edit_dotfiles() {
