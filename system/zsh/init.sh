@@ -158,31 +158,31 @@ function fcompose() {
 
 function project_search() {
     local selectedProject=$(jq -r '.projects[]' $_programming_projects_list_file | fzf)
-    local projectPath=$(realpath "$selectedProject")
-    local projectName=$(basename "$projectPath")
+    local prPath=$(realpath "$selectedProject")
+    local prName=$(basename "$prPath")
 
-    echo $projectPath
-    echo $projectName
+    echo $prPath
+    echo $pName
 
-    # if [[ -a "$(command -v tmux)" ]]; then
-    #     tmux_running=$(pgrep tmux)
-    #     if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-    #         tmux new-session -s $projectName -c $projectFolder
-    #         exit 0
-    #     fi
-    #
-    #     if ! tmux has-session -t=$projectName 2> /dev/null; then
-    #         tmux new-session -ds $projectName -c $projectFolder
-    #     fi
-    #         tmux switch-client -t $projectName
-    # else
-    #     cd "${projectFolder}"
-    #     clear
-    # fi
-    #
-    # unset projectName
-    # unset projectPath
-    # unset selectedProject
+    if [[ -a "$(command -v tmux)" ]]; then
+        tmux_running=$(pgrep tmux)
+        if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+            tmux new-session -s $prName -c $prPath
+            exit 0
+        fi
+
+        if ! tmux has-session -t=$prName 2> /dev/null; then
+            tmux new-session -ds $prName -c $prPath
+        fi
+            tmux switch-client -t $prName
+    else
+        cd "${prPath}"
+        clear
+    fi
+
+    unset projectName
+    unset projectPath
+    unset selectedProject
 }
 
 function edit_dotfiles() {
