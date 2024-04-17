@@ -183,6 +183,7 @@ function project_search() {
     unset projectName
     unset projectPath
     unset selectedProject
+    exit 0
 }
 
 function edit_dotfiles() {
