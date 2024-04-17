@@ -159,7 +159,7 @@ function fcompose() {
 function project_search() {
     local selectedProject=$(jq -r '.projects[]' $_programming_projects_list_file | fzf)
     local projectPath=$(realpath "$selectedProject")
-    local projectName=$(dirname "$projectPath")
+    local projectName=$(basename "$projectPath")
 
     echo $projectPath
     echo $projectName
