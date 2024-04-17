@@ -36,7 +36,7 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-alias tmux="tmux -2"
+#alias tmux="tmux -2"
 
 alias initsystem="rm -rfv $HOME/.cache/* && clear && startx"
 alias initsys=initsystem
