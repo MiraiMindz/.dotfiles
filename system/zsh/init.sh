@@ -165,23 +165,29 @@ function project_search() {
     echo $prName
 
     if [[ -a "$(command -v tmux)" ]]; then
-        tmux_running=$(pgrep tmux)
-        if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
-            tmux new-session -s $prName -c $prPath
-            exit 0
-        fi
-
-        if ! tmux has-session -t=$prName 2> /dev/null; then
-            otmx=$TMUX
-            unset TMUX
-            tmux new-session -ds $prName -c $prPath
-        fi
-            tmux switch-client -t $prName
-            export TMUX=$otmx
+        echo "TMUX EXISTS"
     else
-        cd "${prPath}"
-        clear
+        echo "NO"
     fi
+
+    # if [[ -a "$(command -v tmux)" ]]; then
+    #     tmux_running=$(pgrep tmux)
+    #     if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    #         tmux new-session -s $prName -c $prPath
+    #         exit 0
+    #     fi
+    #
+    #     if ! tmux has-session -t=$prName 2> /dev/null; then
+    #         otmx=$TMUX
+    #         unset TMUX
+    #         tmux new-session -ds $prName -c $prPath
+    #     fi
+    #         tmux switch-client -t $prName
+    #         export TMUX=$otmx
+    # else
+    #     cd "${prPath}"
+    #     clear
+    # fi
 
     unset prName
     unset prPath
