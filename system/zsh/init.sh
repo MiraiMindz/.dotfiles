@@ -172,9 +172,12 @@ function project_search() {
         fi
 
         if ! tmux has-session -t="${prName}" 2> /dev/null; then
+            otmx=$TMUX
+            unset TMUX
             tmux new-session -ds "${prName}" -c "${prPath}"
         fi
             tmux switch-client -t "${prName}"
+            export TMUX=$otmx
     else
         cd "${prPath}"
         clear
