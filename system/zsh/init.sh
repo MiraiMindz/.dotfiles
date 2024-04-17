@@ -156,6 +156,31 @@ function fcompose() {
   echo "$result"
 }
 
+function project_search() {
+    local selectedProject=$(jq -r '.projects[]' $_programming_projects_list_file | fzf)
+    local projectPath=$(realpath "$selectedProject")
+    local projectName=$(dirname "$projectPath")
+
+    if [[ -a "$(command -v tmux)" ]]; then
+        tmux_running=$(pgrep tmux)
+        if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+            tmux new-session -s $projectName -c $projectFolder
+            exit 0
+        fi
+
+        if ! tmux has-session -t=$projectName 2> /dev/null; then
+            tmux new-session -ds $projectName -c $projectFolder
+            tmux switch-client -t $projectName
+        fi
+    else
+        cd "${projectFolder}"
+        clear
+    fi
+
+    unset projectName
+    unset projectPath
+    unset selectedProject
+}
 
 function edit_dotfiles() {
     if [[ ! -a "$(command -v git)" ]]; then
@@ -644,6 +669,9 @@ bindkey -s '^R' 'remove_current_dir_from_json && clear\n'
 
 # Binds CTRL+p to the project_creator function
 bindkey -s '^P' 'project_creator && clear\n'
+
+# Binds CTRL+f to the project_search function
+bindkey -s '^F' 'project_search && clear\n'
 
 # Enables zoxide
 eval "$(zoxide init zsh)"
