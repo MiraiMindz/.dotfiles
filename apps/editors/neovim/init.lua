@@ -89,7 +89,7 @@ vim.opt.isfname:append("@-@")
 -- Color the columns 80, 120, 160 and beyond
 local function colorcolumnfunc()
 	local col_range = { "80", "120" }
-	for i = 160, 999999999 do
+	for i = 160, 221 do
 		table.insert(col_range, tostring(i))
 	end
 	local column_string = table.concat(col_range, ",")
@@ -97,7 +97,7 @@ local function colorcolumnfunc()
 end
 
 colorcolumnfunc()
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Shows the command
 vim.opt.showcmd = false
 
