@@ -40,6 +40,7 @@ alias tmux="tmux -2"
 
 alias initsystem="rm -rfv $HOME/.cache/* && clear && startx"
 alias initsys=initsystem
+alias cd='z'
 
 # Error correction
 # Vim aliases 
@@ -57,8 +58,6 @@ alias clera="clear"
 alias cçear="clear"
 alias cls="clear"
 alias clr="clear"
-
-alias cd='z'
 
 alias dc="cd"
 alias cdc="cd"

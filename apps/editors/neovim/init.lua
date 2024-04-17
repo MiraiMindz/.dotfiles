@@ -86,29 +86,18 @@ vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
--- Define a function to set the color column range
-local function set_color_column_range(start, final, color)
-	local color_column_range = {}
-	for i = start, final do
-		table.insert(color_column_range, tostring(i))
-	end
 
-	-- Join the range elements into a comma-separated string
-	local color_column_str = table.concat(color_column_range, ",")
-
-	-- Set the color column using the joined string
-	vim.cmd("highlight ColorColumn" .. start .. "_" .. final .. " ctermfg=" .. color)
-	vim.cmd("set colorcolumn+=" .. color_column_str)
+-- Color the columns 80, 120, 160 and beyond
+local function colorcolumnfunc()
+    local col_range = {"80", "120"}
+    for i = 160, 9999 do
+        table.insert(col_range, tostring(i))
+    end
+    local column_string = table.concat(col_range, ",")
+    vim.cmd("set colorcolumn+=" .. column_string)
 end
 
--- Set color for columns 80 to 119
-set_color_column_range(80, 119, 236)
-
--- Set color for columns 120 to 159
-set_color_column_range(120, 159, 237)
-
--- Set color for columns 160 to 999
-set_color_column_range(160, 999, 238)
+colorcolumnfunc()
 
 -- Shows the command
 vim.opt.showcmd = false
