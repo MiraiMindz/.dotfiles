@@ -481,8 +481,6 @@ function project_creator() {
             else
                 echo "AS,GAS nor NASM exists"
             fi
-
-
         ;;
         "Python")
             echo "Python";
