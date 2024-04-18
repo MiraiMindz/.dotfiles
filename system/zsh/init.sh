@@ -165,12 +165,6 @@ function project_search() {
     echo $prName
 
     if [[ -a "$(command -v tmux)" ]]; then
-        echo "TMUX EXISTS"
-    else
-        echo "NO"
-    fi
-
-    if [[ -a "$(command -v tmux)" ]]; then
         tmux_running=$(pgrep tmux)
         if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
             tmux new-session -s $prName -c $prPath
