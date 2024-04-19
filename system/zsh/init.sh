@@ -157,7 +157,7 @@ function fcompose() {
 }
 
 function project_search() {
-    local selectedProject=$(jq -r '.projects[]' $_programming_projects_list_file | fzf)
+    local selectedProject=$(jq -r '.projects[]' $_programming_projects_list_file | fzf --cycle)
     local prPath=$(realpath "$selectedProject")
     local prName=$(basename "$prPath")
 
@@ -623,7 +623,7 @@ function pkg() {
             yay -Syyy
             yay -Fy
             if [[ $num_args -eq 0 ]]; then
-                yay -Slq | fzf --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -S
+                yay -Slq | fzf --cycle --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -S
             else
                 yay -Syyy $args
             fi
@@ -637,7 +637,7 @@ function pkg() {
         "remove" || "r")
             yay -Fy
             if [[ $num_args -eq 0 ]]; then
-                yay -Qq | fzf --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Qi {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -Rnsc
+                yay -Qq | fzf --cycle --border-label="Packages" --multi --preview-label="Info" --preview 'cat <(yay -Qi {1}) <(yay -Fl {1} | awk "{print \$2}" | bat --color=always --style=plain --line-range=:500)' | xargs -ro yay -Rnsc
             else
                 yay -Rnsc $args
             fi
